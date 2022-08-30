@@ -1,0 +1,57 @@
+$btn-color: rgb(47, 56, 108);
+$shadow: 1px 1px #999, -1px -1px #999;
+
+@mixin Jost {
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 2.5px;
+}
+
+.home_container {
+  .video {
+    width: 100%;
+  }
+
+  .home_main {
+    background-image: url(../../../public/Images/home.jpg);
+    background-size: cover;
+    height: 100vh;
+    -webkit-animation: fadein 1.5s;
+
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .text_container {
+      position: absolute;
+      right: 60px;
+      bottom: 60px;
+      color: white;
+
+      text-align: right;
+
+      .text_1 {
+        font-size: 14px;
+      }
+
+      .text_2 {
+        margin: 20px 0;
+        font-size: 30px;
+      }
+
+      .text_btn {
+        width: 155px;
+        height: 45.6px;
+        margin-left: 180px;
+        color: black;
+        background-color: white;
+        font-size: 15px;
+        cursor: pointer;
+      }
+    }
+  }
+}

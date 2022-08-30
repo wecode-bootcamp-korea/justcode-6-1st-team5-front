@@ -1,0 +1,31 @@
+.nav_container {
+  .expand_container {
+    .expand_wrapper {
+      align-items: flex-start;
+      justify-content: space-evenly;
+      width: 100vw;
+      padding: 100px 0 40px 0;
+      background-color: white;
+      box-shadow: 1px 1px #999, -1px -1px #999;
+
+      .menu_list {
+        margin-top: 15px;
+        flex-direction: column;
+
+        &:first-of-type {
+          margin-left: 20px;
+        }
+
+        .title {
+          font-size: 22.5px;
+          margin-bottom: 40px;
+        }
+
+        .menu {
+          font-size: 17.5;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
