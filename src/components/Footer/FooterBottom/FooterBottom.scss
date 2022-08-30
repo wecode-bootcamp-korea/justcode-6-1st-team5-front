@@ -1,0 +1,41 @@
+$btn-color: rgb(47, 56, 108);
+$shadow: 1px 1px #999, -1px -1px #999;
+
+@mixin Jost {
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 2.5px;
+}
+
+.footer_container {
+  .bottom_container {
+    width: 100%;
+    .bottom_box {
+      margin: 75px 0;
+      width: 25%;
+
+      &:first-of-type {
+        margin-right: 50px;
+      }
+
+      &:last-of-type {
+        margin-left: -100px;
+      }
+      .wrapper {
+        flex-direction: column;
+        width: 255px;
+
+        .text {
+          line-height: 23.5px;
+          margin-top: 25px;
+          margin-bottom: -25px;
+        }
+
+        .corporate {
+          font-size: 17.5px;
+          margin-top: 40px;
+          margin-bottom: -20px;
+        }
+      }
+    }
+  }
+}

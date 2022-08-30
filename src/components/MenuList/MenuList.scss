@@ -1,0 +1,25 @@
+.menu_list {
+  .wrapper {
+    flex-direction: column;
+    width: 255px;
+
+    .title {
+      font-size: 17.5px;
+      width: 100%;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .menu {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .text {
+      line-height: 23.5px;
+      margin-top: 25px;
+      margin-bottom: -25px;
+    }
+  }
+}

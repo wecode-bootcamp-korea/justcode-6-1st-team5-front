@@ -1,0 +1,11 @@
+$btn-color: rgb(47, 56, 108);
+$shadow: 1px 1px #999, -1px -1px #999;
+
+@mixin Jost {
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 2.5px;
+}
+
+.footer_container {
+  flex-direction: column;
+}

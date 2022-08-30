@@ -1,9 +1,15 @@
 import React from 'react';
-
-import css from './Footer.module.scss';
+import './Footer.scss';
+import FooterTop from './FooterTop/FooterTop';
+import FooterBottom from './FooterBottom/FooterBottom';
 
 function Footer() {
-  return <div className={css.container}></div>;
+  return (
+    <div className="footer_container flex_center">
+      <FooterTop />
+      <FooterBottom />
+    </div>
+  );
 }
 
 export default Footer;

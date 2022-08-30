@@ -1,0 +1,38 @@
+$btn-color: rgb(47, 56, 108);
+$shadow: 1px 1px #999, -1px -1px #999;
+
+@mixin Jost {
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 2.5px;
+}
+
+.home_container {
+  .home_part {
+    display: flex;
+    .img {
+      width: 50%;
+    }
+    .text_container {
+      width: 50%;
+      flex-direction: column;
+
+      .text_1 {
+        font-size: 30px;
+      }
+
+      .text_2 {
+        margin: 35px 0;
+        font-size: 16px;
+      }
+
+      .text_btn {
+        width: 155px;
+        height: 45.6px;
+        color: white;
+        background-color: $btn-color;
+        font-size: 15px;
+        cursor: pointer;
+      }
+    }
+  }
+}

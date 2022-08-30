@@ -1,0 +1,19 @@
+.items_container {
+  .item_container {
+    flex-direction: column;
+    padding: 0 30px;
+    font-size: 14px;
+    .img {
+      width: 275px;
+      // height: 250px;
+    }
+    .name {
+      margin: 30px 0 20px 0;
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .price {
+      margin-top: 10px;
+    }
+  }
+}
