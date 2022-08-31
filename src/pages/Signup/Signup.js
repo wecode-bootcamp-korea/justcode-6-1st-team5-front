@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRef, useState, useEffect } from 'react';
 import './Signup.scss';
-import axios from '../../api/axios';
+// import axios from '../../api/axios';
 
 const USER_REGEX = /^[a-zA-Z]{3,10}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
@@ -50,6 +50,23 @@ function Signup() {
   useEffect(() => {
     setErrMsg('');
   }, [user, pwd, email]);
+
+  const sendHandler = e => {
+    e.preventDefault();
+    const user = e.target.user.value;
+    const pwd = e.target.pwd.value;
+    fetch('http://localhost:4000/api/info', {
+      method: 'POST',
+      body: JSON.stringify({
+        user,
+        pwd,
+      }),
+    });
+  };
+
+  // fetch('http://localhost:4000/api/info')
+  //   .then(res => res.json())
+  //   .then(data => console.log(data));
 
   // const handleSubmit = async e => {
   //   e.preventDefault();
@@ -115,6 +132,7 @@ function Signup() {
 
             <div className="input_content_signup">
               <input
+                name="user"
                 className="signup_input"
                 placeholder="Name"
                 type="text"
@@ -165,6 +183,7 @@ function Signup() {
               </p>
 
               <input
+                name="pwd"
                 className="signup_input"
                 placeholder="Password"
                 type="password"
@@ -192,7 +211,7 @@ function Signup() {
               <button
                 className="signup_btn"
                 onClick={setSuccess}
-                type="submit"
+                onSubmit={sendHandler}
                 disabled={!validName || !validPwd ? true : false}
               >
                 Create My Account
