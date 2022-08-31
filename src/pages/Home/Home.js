@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import './Home.scss';
 import Part from './Part/Part';
 import Trending from './Trending/Trending';
@@ -36,6 +37,17 @@ function Home() {
         muted
         className="video"
       ></video>
+=======
+import React from 'react';
+import Logout from '../Logout';
+
+import css from './Home.module.scss';
+
+function Home() {
+  return (
+    <div className={css.container}>
+      <Logout />
+>>>>>>> 6bb9bea ([Add] 로그인 token 저장 추가)
     </div>
   );
 }
