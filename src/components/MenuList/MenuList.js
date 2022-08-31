@@ -3,9 +3,9 @@ import './MenuList.scss';
 
 export default function MenuList({ title, menu }) {
   const navigate = useNavigate();
-  const menuData = menu.map(el => {
+  const menuData = menu.map((el, i) => {
     return (
-      <div onClick={() => navigate(el.url)} className="menu">
+      <div onClick={() => navigate(el.url)} className="menu" key={i}>
         {el.name}
       </div>
     );

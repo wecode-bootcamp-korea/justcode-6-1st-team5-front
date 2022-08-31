@@ -1,20 +1,43 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import './Trending.scss';
 import ItemContainer from '../ItemContainer/ItemContainer';
 import Xbar from '../Xbar/Xbar';
 
 export default function Trending() {
-  const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+  const arr = [1, 2, 3, 4];
 
-  const datas = arr.map(data => (
-    <ItemContainer
-      key={data}
-      img="./Images/home_part_1.jpg"
-      name="로이시 시그니처 초콜릿"
-      rate={5}
-      price={'32,000'}
-    />
-  ));
+  const [datas, setDatas] = useState(
+    arr.map(data => (
+      <ItemContainer
+        key={data}
+        img="./Images/home_part_1.jpg"
+        name="로이시 시그니처 초콜릿"
+        rate={5}
+        price={'32,000'}
+      />
+    ))
+  );
+
+  useEffect(() => {
+    fetch('./products.json')
+      .then(res => res.json())
+      .then(data => {
+        setDatas(
+          data.map(data => {
+            return (
+              <ItemContainer
+                id={data.id}
+                key={data.id}
+                img={data.photo}
+                name={data.name}
+                rate={data.rate}
+                price={data.price}
+              />
+            );
+          })
+        );
+      });
+  }, []);
 
   return (
     <div className="home_trending ">

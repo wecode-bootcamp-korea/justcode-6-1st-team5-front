@@ -4,9 +4,6 @@ import 'slick-carousel/slick/slick-theme.css';
 import './Xbar.scss';
 
 export default function Xbar({ data }) {
-  console.log('slider : ', Slider);
-  console.log(data);
-
   const settings = {
     dots: false,
     infinite: true,
