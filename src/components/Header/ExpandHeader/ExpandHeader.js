@@ -15,9 +15,12 @@ const popular = [
   { url: '/', name: '와퍼' },
 ];
 
-export default function ExpandHeader() {
+export default function ExpandHeader({ setIsShopClicked }) {
   return (
-    <div className="expand_container flex_center">
+    <div
+      className="expand_container flex_center"
+      onMouseLeave={() => setIsShopClicked(false)}
+    >
       <div className="expand_wrapper flex_center">
         <div className="menu_list flex_center">
           <MenuList title="현재 트렌드" menu={trend}></MenuList>
@@ -25,22 +28,18 @@ export default function ExpandHeader() {
         <div className="menu_list flex_center">
           <MenuList title="인기 상품" menu={popular}></MenuList>
         </div>
-        <div className="items_container">
-          <ItemContainer
-            img="./Images/home_part_1.jpg"
-            name="로이시 시그니처 초콜릿"
-            rate={5}
-            price={'32,000'}
-          />
-        </div>
-        <div className="items_container">
-          <ItemContainer
-            img="./Images/home_part_1.jpg"
-            name="로이시 시그니처 초콜릿"
-            rate={5}
-            price={'32,000'}
-          />
-        </div>
+        <ItemContainer
+          img="./Images/home_part_1.jpg"
+          name="로이시 시그니처 초콜릿"
+          rate={5}
+          price={'32,000'}
+        />
+        <ItemContainer
+          img="./Images/home_part_1.jpg"
+          name="로이시 시그니처 초콜릿"
+          rate={5}
+          price={'32,000'}
+        />
       </div>
     </div>
   );

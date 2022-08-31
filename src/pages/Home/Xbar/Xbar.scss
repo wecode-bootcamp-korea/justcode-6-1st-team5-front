@@ -13,20 +13,24 @@
       display: none;
     }
 
-    .slick-arrow {
-      background-color: rgb(47, 56, 108);
-      border-radius: 100%;
-
-      width: 30px;
-      height: 30px;
-    }
-
     .slick-prev {
-      margin-left: -10px;
+      width: 0px;
+      height: 0px;
+      margin-left: -20px;
+      border-bottom: 25px solid transparent;
+      border-top: 25px solid transparent;
+      border-left: 25px solid transparent;
+      border-right: 25px solid rgb(47, 56, 108);
     }
 
     .slick-next {
-      margin-right: -10px;
+      width: 0px;
+      height: 0px;
+      margin-right: -20px;
+      border-bottom: 25px solid transparent;
+      border-top: 25px solid transparent;
+      border-left: 25px solid rgb(47, 56, 108);
+      border-right: 25px solid transparent;
     }
   }
 }

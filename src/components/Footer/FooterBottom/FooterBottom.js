@@ -48,10 +48,8 @@ export default function FooterBottom() {
       </div>
       <div className="bottom_box flex_center">
         <div className="wrapper flex_center">
-          <div className="sns_icons">
-            <div className="icons">
-              <SnsIcons />
-            </div>
+          <div className="icons">
+            <SnsIcons />
           </div>
         </div>
       </div>

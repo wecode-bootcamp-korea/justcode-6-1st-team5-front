@@ -1,4 +1,3 @@
-import React from 'react';
 import './Home.scss';
 import Part from './Part/Part';
 import Trending from './Trending/Trending';

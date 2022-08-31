@@ -2,7 +2,7 @@ import './SnsIcons.scss';
 
 export default function SnsIcons() {
   return (
-    <>
+    <div className="sns_icons">
       <img
         src="./Images/facebook.png"
         alt="facebook"
@@ -33,6 +33,6 @@ export default function SnsIcons() {
           )
         }
       />
-    </>
+    </div>
   );
 }
