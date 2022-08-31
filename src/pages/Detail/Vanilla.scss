@@ -1,0 +1,262 @@
+@mixin font {
+  font-family: "Jost", sans-serif;
+  font-weight: 350;
+}
+
+
+
+// .description {
+//   width: 400px;
+//   margin-left: 50px;
+//   @include font;
+
+//   .product_meta {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-around;
+//     height: 114px;
+
+//     h1 {
+//       letter-spacing: 4px;
+//       // text-rendering: optimizeSpeed;
+//       font-size: 19px;
+//     }
+
+//     span {
+//       color: rgb(255, 208, 0);
+//       letter-spacing: 4px;
+//       font-size: 16px;
+//     }
+
+//     a {
+//       letter-spacing: 0.4px;
+//       font-size: 16px;
+//       text-decoration: underline;
+//     }
+
+//     p {
+//       letter-spacing: 4px;
+//       font-size: 16.5px;
+//     }
+//   }
+
+//   .product_form {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     margin-top: 24px;
+//     height: 120px;
+
+//     .quantity_selector {
+//       display: flex;
+//       width: 139px;
+//       border: 1px solid black;
+//       text-align: center;
+
+//       span {
+//         width: 40%;
+//         height: 46px;
+//         line-height: 43px;
+//         font-size: 22px;
+//         cursor: pointer;
+//         @include font;
+      
+//       }
+
+//       input {
+//         width: 35px;
+//         border: none;
+//         text-align: center;
+//         font-size: 18px;
+//         @include font;
+//       }
+//     }
+
+//     button {
+//       width: 398px;
+//       height: 45px;
+//       background-color: #2f386c;
+//       color: white;
+//       font-size: 13px;
+//       letter-spacing: 4px;
+//       @include font;
+//     }
+//   }
+
+//   .product_description {
+//     font-size: 15.8px;
+//     @include font;
+//     line-height: 26px;
+
+//     p {
+//       margin-top: 20px;
+//     }
+
+//     .nutrition {
+//       text-decoration: underline;
+//     }
+//   }
+// }
+
+// .review_container {
+//   .star_rating {
+//     padding: 40px 0;
+//     text-align: center;
+//     font-size: 26px;
+//     letter-spacing: 3px;
+//     color: rgb(69, 68, 68);
+//   }
+
+//   .review_wrapper {
+//     margin: 0 105px;
+
+//     .write_btn {
+//       position: relative;
+//       height: 40px;
+//       span {
+//         display: flex;
+//         position: absolute;
+//         justify-content: space-evenly;
+//         align-items: center;
+//         right: 0;
+//         width: 155px;
+//         height: 38px;
+//         border: 1px solid lightgray;
+//         border-radius: 3px;
+
+//         img {
+//           height: 12px;
+//           padding-left: 10px;
+//         }
+
+//         p {
+//           font-size: 15px;
+//           font-weight: 600;
+//         }
+//       }
+//     }
+
+//     .tab-review {
+//       position: relative;
+//       height: 49px;
+
+//       div {
+//         position: absolute;
+//         left: 0;
+//         padding: 15px 10px;
+//         border-bottom: 3px solid black;
+//       }
+
+//       span {
+//         font-size: 16px;
+//       }
+
+//       .num {
+//         padding: 5px;
+//         margin-left: 8px;
+//         background-color: rgb(251, 251, 251);
+//         border-radius: 3px;
+//       }
+//     }
+
+//     .review_form {
+//       border: 1px solid lightgray;
+//       padding: 15px;
+//       font-size: 15px;
+
+//       input {
+//         padding: 0 8px;
+//         height: 30px;
+//         border-radius: 0;
+//         border: 1px solid lightgray;
+
+//         &:focus {
+//           outline: none;
+//         }
+//       }
+
+//       label {
+//         margin-bottom: 5px;
+//       }
+
+//       .contact-box {
+//         display: flex;
+
+//         .name,
+//         .email {
+//           display: flex;
+//           flex-direction: column;
+//         }
+//       }
+
+//       .rating_box {
+//         p {
+//           margin-top: 7px;
+//           color: rgb(255, 208, 0);
+//           letter-spacing: 4px;
+//           font-size: 22px;
+//         }
+//       }
+
+//       .review_title_box {
+//         display: flex;
+//         flex-direction: column;
+//       }
+
+//       .review_content_box {
+//         display: flex;
+//         flex-direction: column;
+
+//         textarea {
+//           padding: 0;
+
+//           height: 300px;
+//           border-radius: 0;
+//           border: 1px solid lightgray;
+        
+//           max-width: 100%;
+//           min-width: 100%;
+
+//           &:focus {
+//             outline: none;
+//           }
+//         }
+//       }
+
+//       .submit_btn_box {
+//         position: relative;
+//         height: 40px;
+
+//         button {
+//           position: absolute;
+//           right: 0;
+//           background-color: black;
+//           color: white;
+//           padding: 10px 20px;
+//         }
+//       }
+//     }
+//   }
+
+//   .view_review {
+//     margin: 50px 0;
+//     text-align: center;
+//     color: gray;
+
+//     .rating {
+//       letter-spacing: 3px;
+//       font-size: 18px;
+//     }
+
+//     p {
+//       padding: 15px 0;
+//     }
+//   }
+// }
+
+
+
+
+.space {
+  margin-bottom: 15px;
+}
