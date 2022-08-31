@@ -1,16 +1,16 @@
 .modal {
-  overflow-y: auto;
-
+  display: flex;
   flex-direction: column;
+  align-items: center;
   position: absolute;
   right: 0;
-  width: 30vw;
-  height: 100%;
-  border: none;
+  width: 32.5vw;
+  height: calc(100vh - 243px);
   box-shadow: 1px 1px #999, -1px -1px #999;
   background-color: white;
-
+  margin: 63px 0;
   animation: fadein 0.25s;
+  overflow-y: auto;
 
   @keyframes fadein {
     from {
@@ -21,10 +21,69 @@
     }
   }
 
-  .modal_top {
-    position: fixed;
+  .item_box {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+
+    .pic {
+      height: 150px;
+      margin: 25px;
+    }
+
+    .text_box {
+      .title {
+        font-weight: 600;
+      }
+      .price {
+        margin: 20px 0;
+      }
+      .wrapper {
+        display: flex;
+        flex-direction: row;
+
+        .quantity {
+          margin: 0 10px;
+        }
+        .add,
+        .minus {
+          height: 15px;
+          width: 15px;
+          cursor: pointer;
+        }
+        .remove {
+          position: absolute;
+          right: 1.5vw;
+          cursor: pointer;
+        }
+      }
+    }
   }
+
   .modal_bottom {
+    flex-direction: column;
     position: fixed;
+    width: 32.5vw;
+    height: 180px;
+    right: 0;
+    bottom: 0px;
+    box-shadow: 1px 1px #999, -1px -1px #999;
+    background-color: white;
+    z-index: 1;
+
+    .total_price {
+      text-align: left;
+      width: 25vw;
+    }
+
+    .buy_btn {
+      margin-top: 5vh;
+      width: 25vw;
+      height: 8vh;
+      background-color: rgb(47, 56, 108);
+      color: white;
+      cursor: pointer;
+    }
   }
 }
