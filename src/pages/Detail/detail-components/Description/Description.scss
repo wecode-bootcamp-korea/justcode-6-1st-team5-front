@@ -6,7 +6,8 @@
 .description {
   width: 400px;
   margin-left: 50px;
-  position: fixed;
+  position: sticky;
+  top: 50px;
   right: 100px;
   @include font;
 

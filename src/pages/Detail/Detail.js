@@ -4,6 +4,8 @@ import PhotoList from './detail-components/Photo/PhotoList';
 import Description from './detail-components/Description/Description';
 import Review from './detail-components/Reiview/Review';
 
+import './Detail.scss';
+
 const Detail = () => {
   useEffect(() => {
     fetch(
@@ -23,7 +25,9 @@ const Detail = () => {
             <PhotoList />
           </div>
         </div>
-        <Description />
+        <div>
+          <Description />
+        </div>
       </section>
       <Review />
     </>

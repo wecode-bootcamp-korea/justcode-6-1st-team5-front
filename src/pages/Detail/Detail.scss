@@ -1,0 +1,35 @@
+.detail_container {
+  display: flex;
+  padding: 50px 0;
+  height: fit-content;
+
+  .photo {
+    display: flex;
+    margin-left: 50px;
+    height: fit-content;
+
+    .small-photo {
+      display: flex;
+      flex-direction: column;
+      position: sticky;
+      height: fit-content;
+      top: 50px;
+      left: 50px;
+
+      img {
+        width: 68px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .big-photo {
+      display: flex;
+      flex-direction: column;
+      margin-left: 50px;
+
+      img {
+        width: 720px;
+      }
+    }
+  }
+}
