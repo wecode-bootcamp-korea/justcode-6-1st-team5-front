@@ -2,48 +2,45 @@ import React, { useState } from 'react';
 
 import './Description.scss';
 
-const Description = () => {
+const Description = ({ description }) => {
+  const { name, rate, price, info, allerge, temp, nutrition, tags } =
+    description;
+
   const [quantity, setQuantity] = useState(1);
-  const onClick = e => {
+
+  const handleQuantity = e => {
     const check = e.target.textContent;
-    if (check === '⎼') {
-      if (quantity > 1) setQuantity(quantity - 1);
-    } else {
-      setQuantity(quantity + 1);
-    }
+    if (check === '⎼' && quantity > 1) setQuantity(current => current - 1);
+    else if (check === '+') setQuantity(current => current + 1);
   };
 
   return (
     <div className="description">
       <div className="product_meta">
-        <h1>ROYCE’ TASTING BOX</h1>
+        <h1>{name}</h1>
         <div className="review">
           <span>☆☆☆☆☆</span>
           <a>Write A Review</a>
         </div>
-        <p>$51.99</p>
+        <p>${price}</p>
       </div>
       <form className="product_form">
         <div className="quantity_selector">
-          <span onClick={onClick}>⎼</span>
+          <span onClick={handleQuantity}>⎼</span>
           <input
             value={quantity}
             onChange={e => console.log('바보')}
             type="text"
           />
-          <span onClick={onClick}>+</span>
+          <span onClick={handleQuantity}>+</span>
         </div>
-        <button>ADD TO CART • $19.99</button>
+        <button>ADD TO CART • ${price * quantity} </button>
       </form>
       <div className="product_description">
-        <p className="content">
-          A confection made with a rich and smooth blend of premium milk
-          chocolate and fresh cream with a slight hint of brandy. Contains
-          liquor. 20 pieces inside.
-        </p>
-        <p className="allergens">Allergens: Milk, Soy, May Contain Tree Nuts</p>
-        <p className="temperature">Storage Temperature: 50°F Or Below</p>
-        <p className="nutrition">Nutrition Facts (Download Here)</p>
+        <p className="content">{info}</p>
+        <p className="allergens">{allerge}</p>
+        <p className="temperature">{temp}</p>
+        <p className="nutrition">{nutrition}</p>
       </div>
     </div>
   );

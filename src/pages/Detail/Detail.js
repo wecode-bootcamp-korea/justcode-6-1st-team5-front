@@ -1,32 +1,40 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import PhotoList from './detail-components/Photo/PhotoList';
 import Description from './detail-components/Description/Description';
 import Review from './detail-components/Reiview/Review';
 
 import './Detail.scss';
+import { useParams } from 'react-router-dom';
 
 const Detail = () => {
+  const params = useParams();
+  const productId = params.id;
+
+  const [product, setProduct] = useState([]);
   useEffect(() => {
-    fetch(
-      'https://wecode-bootcamp.slack.com/archives/C040KJR4FNU/p1661826928500109'
-    )
+    fetch('http://localhost:3001/data/mockupDataEng.json')
       .then(res => res.json())
-      .then(json => console.log(json));
+      .then(json => {
+        setProduct(json);
+        console.log(json);
+      });
   }, []);
+  const { photo, ...description } = product;
+
   return (
     <>
       <section className="detail_container">
         <div className="photo">
           <div className="small-photo">
-            <PhotoList />
+            <PhotoList photo={photo} />
           </div>
           <div className="big-photo">
-            <PhotoList />
+            <PhotoList photo={photo} />
           </div>
         </div>
         <div>
-          <Description />
+          <Description description={description} />
         </div>
       </section>
       <Review />
