@@ -1,0 +1,100 @@
+@mixin font {
+  font-family: 'Jost', sans-serif;
+  font-weight: 350;
+}
+
+.description {
+  width: 400px;
+  margin-left: 50px;
+  position: sticky;
+  top: 50px;
+  right: 100px;
+  @include font;
+
+  .product_meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 114px;
+
+    h1 {
+      letter-spacing: 4px;
+      // text-rendering: optimizeSpeed;
+      font-size: 19px;
+    }
+
+    span {
+      color: rgb(255, 208, 0);
+      letter-spacing: 4px;
+      font-size: 16px;
+    }
+
+    a {
+      letter-spacing: 0.4px;
+      font-size: 16px;
+      text-decoration: underline;
+    }
+
+    p {
+      letter-spacing: 4px;
+      font-size: 16.5px;
+    }
+  }
+
+  .product_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 24px;
+    height: 120px;
+
+    .quantity_selector {
+      display: flex;
+      width: 139px;
+      border: 1px solid black;
+      text-align: center;
+
+      span {
+        width: 40%;
+        height: 46px;
+        line-height: 43px;
+        font-size: 22px;
+        cursor: pointer;
+        @include font;
+      }
+
+      input {
+        width: 35px;
+        border: none;
+        text-align: center;
+        font-size: 16px;
+        letter-spacing: 2.5px;
+        @include font;
+      }
+    }
+
+    button {
+      width: 398px;
+      height: 45px;
+      background-color: #2f386c;
+      color: white;
+      font-size: 13px;
+      letter-spacing: 4px;
+      @include font;
+    }
+  }
+
+  .product_description {
+    font-size: 15.8px;
+    @include font;
+    line-height: 26px;
+
+    p {
+      margin-top: 20px;
+    }
+
+    .nutrition {
+      text-decoration: underline;
+    }
+  }
+}
