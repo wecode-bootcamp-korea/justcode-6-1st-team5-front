@@ -1,0 +1,202 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "salesmethod": "offline",
+      "flavor": "maccha",
+      "imageurl": "https://cdn.shopify.com/s/files/1/0561/1179/2335/products/Nama-Boxes-and-Brown-Ribbon-1-Vertical_Web_801a50c6-79ae-4134-ad57-9036ecc79f67_1200x.jpg?v=1627060554",
+      "productname": "SIGNATURE NAMA CHOCOLATE COLECTION",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 2,
+      "salesmethod": "online",
+      "flavor": "maccha",
+      "imageurl": "https://cdn.shopify.com/s/files/1/0561/1179/2335/products/UpdatedROYCE_MatchaCollection07.14.2022_1620x1620.jpg?v=1657809439",
+      "productname": "MATCHA COLLECTION",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 3,
+      "salesmethod": "offline",
+      "flavor": "maccha",
+      "imageurl": "https://cdn.shopify.com/s/files/1/0561/1179/2335/products/ROYCE_BarGiftSet04_1200x.jpg?v=1627057817",
+      "productname": "BAR COLLECTION",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 4,
+      "salesmethod": "online",
+      "flavor": "coffee",
+      "imageurl": "https://cdn.shopify.com/s/files/1/0561/1179/2335/products/ROYCE_MilkChocolateGiftSetCompressed_1200x.jpg?v=1627055428",
+      "productname": "MILK CHOCOLATE",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 5,
+      "salesmethod": "offline",
+      "flavor": "coffee",
+      "imageurl": "https://cdn.shopify.com/s/files/1/0561/1179/2335/products/ROYCE_ChocolateBarGiftSetCompressed_1200x.jpg?v=1627055204",
+      "productname": "CHOCOLATE BAR SELECTION",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 6,
+      "salesmethod": "online",
+      "flavor": "coffee",
+      "imageurl": "https://cdn.shopify.com/s/files/1/0561/1179/2335/products/Website_Blue_Collection_2_10adb142-f73a-4337-a175-06549e35f5a9_400x.jpg?v=1656446085",
+      "productname": "COLLECTION 'BLUE'",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 7,
+      "salesmethod": "online",
+      "flavor": "coffee",
+      "imageurl": "https://cdn.shopify.com/s/files/1/0561/1179/2335/products/ChocolatNoShikiHokkaidoNew_1_2160x.jpg?v=1656445936",
+      "productname": "NO SHIKI 'HOKKAIDO'",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 8,
+      "salesmethod": "online",
+      "flavor": "sugar",
+      "imageurl": "https://cdn.shopify.com/s/files/1/0561/1179/2335/products/Variety_Pack_Flavourful_WEBSITE_FINAL_c91fc449-c179-4d9f-92bb-11539befa911_1500x.jpg?v=1628012501",
+      "productname": "VARIETY PACK 'FLAVORFUL'",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 9,
+      "salesmethod": "online",
+      "flavor": "sugar",
+      "imageurl": "https://cdn.shopify.com/s/files/1/0561/1179/2335/products/Nama-aulait_8a709c6c-ae2f-409e-a3b3-08d9512c82a4_1200x.jpg?v=1626991360",
+      "productname": "CHOCOLATE 'AU LAIT'",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 10,
+      "salesmethod": "online",
+      "flavor": "sugar",
+      "imageurl": "https://cdn.shopify.com/s/files/1/0561/1179/2335/products/CHAMPAGINE_NAMA_40e58702-c2e3-4ed3-82b3-271fdb971382_1200x.jpg?v=1626992435",
+      "productname": "CHOCOLATE CHAMPAGNE PIERRE",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 11,
+      "salesmethod": "online",
+      "flavor": "sugar",
+      "imageurl": "https://cdn.shopify.com/s/files/1/0561/1179/2335/products/Nama-Chocolate-Port-Charlotte_2_789d81a6-1215-4e58-90cb-78ab6b1abf03_1200x.jpg?v=1626993909",
+      "productname": "CHOCOLATE ISLAY WHISKY (PORT",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 12,
+      "salesmethod": "online",
+      "flavor": "sugar",
+      "imageurl": "https://cdn.shopify.com/s/files/1/0561/1179/2335/products/nama-MC-web_cf7d9d9b-e435-4648-85bf-9d04977f454e_1200x.jpg?v=1626994758",
+      "productname": "SIGNATURE NAMA CHOCOLATE COLECTION",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 13,
+      "salesmethod": "online",
+      "flavor": "sugar",
+      "imageurl": "https://cdn.shopify.com/s/files/1/0561/1179/2335/products/ghana-revised_efc49edd-9c1f-4fc8-b267-94f1dd98151c_1200x.jpg?v=1626992825",
+      "productname": "MATCHA COLLECTION",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 14,
+      "salesmethod": "offline",
+      "flavor": "sugar",
+      "imageurl": "https://cdn.shopify.com/s/files/1/0561/1179/2335/products/nama-bitterweb_f73a79ea-7b46-437e-b4ee-324bd669042f_1200x.jpg?v=1626992088",
+      "productname": "BAR COLLECTION",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 15,
+      "salesmethod": "online",
+      "flavor": "chocolate",
+      "imageurl": "https://cdn.shopify.com/s/files/1/0561/1179/2335/products/nama-macca_8bd35113-d518-42b9-8219-9fa023034655_1200x.jpg?v=1626994336",
+      "productname": "MILK CHOCOLATE",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 16,
+      "salesmethod": "online",
+      "flavor": "chocolate",
+      "imageurl": "https://cdn.shopify.com/s/files/1/0561/1179/2335/products/white-nama_ebbc3d26-bfa9-4cdf-8fd2-6ffa69476a82_1200x.jpg?v=1631100103",
+      "productname": "CHOCOLATE BAR SELECTION",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 17,
+      "salesmethod": "online",
+      "flavor": "chocolate",
+      "imageurl": "https://cdn.mindgil.com/news/photo/202108/72081_9739_4532.jpg",
+      "productname": "COLLECTION 'BLUE'",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 18,
+      "salesmethod": "offline",
+      "flavor": "chocolate",
+      "imageurl": "https://cdn.mindgil.com/news/photo/202108/72081_9739_4532.jpg",
+      "productname": "NO SHIKI 'HOKKAIDO'",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 19,
+      "salesmethod": "offline",
+      "flavor": "chocolate",
+      "imageurl": "https://cdn.mindgil.com/news/photo/202108/72081_9739_4532.jpg",
+      "productname": "VARIETY PACK 'FLAVORFUL'",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 20,
+      "salesmethod": "online",
+      "flavor": "chocolate",
+      "imageurl": "https://cdn.mindgil.com/news/photo/202108/72081_9739_4532.jpg",
+      "productname": "CHOCOLATE 'AU LAIT'",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 21,
+      "salesmethod": "online",
+      "flavor": "chocolate",
+      "imageurl": "https://cdn.mindgil.com/news/photo/202108/72081_9739_4532.jpg",
+      "productname": "CHOCOLATE CHAMPAGNE PIERRE",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 22,
+      "salesmethod": "offline",
+      "flavor": "chocolate",
+      "imageurl": "https://cdn.mindgil.com/news/photo/202108/72081_9739_4532.jpg",
+      "productname": "CHOCOLATE ISLAY WHISKY (PORT",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    }
+  ]
+}
