@@ -6,6 +6,7 @@ import Login from './Login/Login';
 import Signup from './Signup/Signup';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
+import Detail from './Detail/Detail';
 
 function Router() {
   return (
@@ -15,6 +16,7 @@ function Router() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/itemDetail" element={<Detail />} />
       </Routes>
       <Footer />
     </BrowserRouter>
