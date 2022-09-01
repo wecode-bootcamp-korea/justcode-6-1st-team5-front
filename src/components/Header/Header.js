@@ -4,11 +4,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import ExpandHeader from './ExpandHeader/ExpandHeader';
 import Logo from './Logo/Logo';
 import Cart from './Cart/Cart';
+import Search from './Search/Search';
 
 export default function Header() {
   const navigate = useNavigate();
   const [isShopClicked, setIsShopClicked] = useState(false);
   const [isCartClicked, setIsCartClicked] = useState(false);
+  const [isSearchClicked, setIsSearchClicked] = useState(false);
 
   // useEffect(() => {
   //   window.addEventListener('scroll', function () {
@@ -43,10 +45,22 @@ export default function Header() {
           <div className="nav_menu" onClick={() => navigate('/login')}>
             ACCOUNT
           </div>
-          <div className="nav_menu">SEARCH</div>
           <div
             className="nav_menu"
             onClick={() => {
+              setIsShopClicked(false);
+              setIsCartClicked(false);
+              if (isSearchClicked === false) setIsSearchClicked(true);
+              else setIsSearchClicked(false);
+            }}
+          >
+            SEARCH
+          </div>
+          <div
+            className="nav_menu"
+            onClick={() => {
+              setIsShopClicked(false);
+              setIsSearchClicked(false);
               if (isCartClicked === false) setIsCartClicked(true);
               else setIsCartClicked(false);
             }}
@@ -58,6 +72,7 @@ export default function Header() {
 
       {isShopClicked && <ExpandHeader setIsShopClicked={setIsShopClicked} />}
       {isCartClicked && <Cart setIsCartClicked={setIsCartClicked} />}
+      {isSearchClicked && <Search setIsSearchClicked={setIsSearchClicked} />}
     </div>
   );
 }
