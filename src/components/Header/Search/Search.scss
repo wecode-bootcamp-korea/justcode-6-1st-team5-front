@@ -24,7 +24,7 @@
       border: none;
       box-shadow: 1px 1px #999, -1px -1px #999;
       font-family: 'Pretendard', sans-serif;
-      font-size: 6vh;
+      font-size: 4vh;
       word-break: break-all;
       position: fixed;
       top: 63px;
@@ -43,8 +43,8 @@
       display: flex;
 
       .img {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
         margin: 20px;
       }
       .info {
@@ -53,12 +53,12 @@
         .name {
           width: 100%;
           margin-bottom: 25px;
-          font-size: 25px;
+          font-size: 1.3rem;
           font-weight: 600;
         }
         .price {
           width: 100%;
-          font-size: 20px;
+          font-size: 1.2rem;
         }
       }
     }
