@@ -72,7 +72,7 @@ function Signup() {
   }, [email]);
 
   return (
-    <>
+    <section className="outter_content_signup ">
       {success ? (
         <section className="toLogin">
           <h1>Success</h1>
@@ -176,7 +176,7 @@ function Signup() {
           </div>
         </section>
       )}
-    </>
+    </section>
   );
 }
 
