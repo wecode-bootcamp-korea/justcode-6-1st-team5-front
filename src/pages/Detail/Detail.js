@@ -13,11 +13,10 @@ const Detail = () => {
 
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:3001/data/mockupDataEng.json')
+    fetch('http://localhost:3000/data/mockupDataEng.json')
       .then(res => res.json())
       .then(json => {
         setProduct(json);
-        console.log(json);
       });
   }, []);
   const { photo, ...description } = product;

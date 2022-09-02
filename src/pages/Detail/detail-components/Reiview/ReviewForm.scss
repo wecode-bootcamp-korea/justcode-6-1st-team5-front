@@ -1,0 +1,80 @@
+.review_form {
+  border: 1px solid lightgray;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 200;
+
+  input {
+    padding: 0 8px;
+    height: 30px;
+    border-radius: 0;
+    border: 1px solid lightgray;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  label {
+    margin-bottom: 5px;
+  }
+
+  .contact-box {
+    display: flex;
+
+    .name,
+    .email {
+      display: flex;
+      flex-direction: column;
+      width: 280px;
+      margin-right: 10px;
+    }
+  }
+
+  .rating_box {
+    p {
+      margin-top: 7px;
+      color: rgb(255, 208, 0);
+      letter-spacing: 4px;
+      font-size: 22px;
+    }
+  }
+
+  .review_title_box {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .review_content_box {
+    display: flex;
+    flex-direction: column;
+
+    textarea {
+      padding-left: 10px;
+
+      height: 300px;
+      border-radius: 0;
+      border: 1px solid lightgray;
+
+      max-width: 100%;
+      min-width: 100%;
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .submit_btn_box {
+    position: relative;
+    height: 40px;
+
+    button {
+      position: absolute;
+      right: 0;
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+    }
+  }
+}

@@ -20,14 +20,16 @@ function Shop() {
             </button>
           </span>
           <section id="right_tool">
-            <span>SORT</span>
-            <button className="downdirection_button">
-              <img
-                id="downdirection"
-                src="images/left-arrow.png"
-                alt="downdirection"
-              />
-            </button>
+            <select id="sortoption">
+              <option>BEST SELLLING</option>
+              <option>FEATURED</option>
+              <option>LOWEST PRICE</option>
+              <option>HIGHEST PRICE</option>
+              <option>ALPHABETICALLY, A-Z</option>
+              <option>ALPHABETICALLY, Z-A</option>
+              <option>DATE, NEW TO OLD</option>
+              <option>DATE, OLD TO NEW</option>
+            </select>
           </section>
         </div>
         <CollectionInner sortbutton={sortbutton} />
