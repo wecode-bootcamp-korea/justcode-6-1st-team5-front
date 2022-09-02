@@ -11,7 +11,7 @@ export default function Trending() {
       <ItemContainer
         key={data}
         img="./Images/home_part_1.jpg"
-        name="로이시 시그니처 초콜릿"
+        name="ROCYE SIGNATURE CHOCOLATE"
         rate={5}
         price={'32,000'}
       />
@@ -19,7 +19,7 @@ export default function Trending() {
   );
 
   useEffect(() => {
-    fetch('./products.json')
+    fetch('./mockdata/products.json')
       .then(res => res.json())
       .then(data => {
         setDatas(
@@ -41,9 +41,9 @@ export default function Trending() {
 
   return (
     <div className="home_trending ">
-      <div className="title_1 flex_center">특집 컬렉션</div>
+      <div className="title_1 flex_center">FEATURED COLLECTIONS</div>
       <div className="menu_container flex_center">
-        <div className="title_2">인기 상품</div>
+        <div className="title_2">TRENDING</div>
       </div>
       <div className="x_bar">
         <Xbar data={datas} />

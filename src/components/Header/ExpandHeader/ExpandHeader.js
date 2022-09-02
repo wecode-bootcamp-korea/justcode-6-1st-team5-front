@@ -4,15 +4,15 @@ import MenuList from '../../MenuList/MenuList';
 import ItemContainer from '../../../pages/Home/ItemContainer/ItemContainer';
 
 const trend = [
-  { url: '/', name: '선물 세트' },
-  { url: '/', name: '전용 매장 상품' },
-  { url: '/', name: '초콜릿 바' },
+  { url: '/', name: 'Gift Set' },
+  { url: '/', name: 'Boutique Exclusives Only' },
+  { url: '/', name: 'Bars' },
 ];
 
 const popular = [
-  { url: '/', name: '퓨어 초콜릿' },
-  { url: '/', name: '스위트 & 솔티' },
-  { url: '/', name: '와퍼' },
+  { url: '/', name: 'Pure Chocolate' },
+  { url: '/', name: 'Sweet & Salty' },
+  { url: '/', name: 'Wafers' },
 ];
 
 export default function ExpandHeader({ setIsShopClicked }) {
@@ -23,20 +23,20 @@ export default function ExpandHeader({ setIsShopClicked }) {
     >
       <div className="expand_wrapper flex_center">
         <div className="menu_list flex_center">
-          <MenuList title="현재 트렌드" menu={trend}></MenuList>
+          <MenuList title="TRENDING" menu={trend}></MenuList>
         </div>
         <div className="menu_list flex_center">
-          <MenuList title="인기 상품" menu={popular}></MenuList>
+          <MenuList title="POPULAR" menu={popular}></MenuList>
         </div>
         <ItemContainer
           img="./Images/home_part_1.jpg"
-          name="로이시 시그니처 초콜릿"
+          name="ROECY Signature Chocolate"
           rate={5}
           price={'32,000'}
         />
         <ItemContainer
           img="./Images/home_part_1.jpg"
-          name="로이시 시그니처 초콜릿"
+          name="ROECY Signature Chocolate"
           rate={5}
           price={'32,000'}
         />

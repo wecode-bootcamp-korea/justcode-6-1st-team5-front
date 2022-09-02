@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 
 function ItemBox({ itemData, name, img, price, num }) {
   function plus() {
-    fetch(url, {
+    fetch('asd', {
       method: 'put',
       body: {
         user_id: itemData.user_id,
@@ -23,7 +23,7 @@ function ItemBox({ itemData, name, img, price, num }) {
           <img src="./Images/add.png" alt="add" className="add" />
           <p className="quantity">{num}</p>
           <img src="./Images/minus.png" alt="minus" className="minus" />
-          <div className="remove">제거</div>
+          <div className="remove">Remove</div>
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@ function Cart({ setIsCartClicked }) {
   itemData.product_price.map((el, i) => (price += el * itemData.num[i]));
 
   useEffect(() => {
-    fetch('./cart.json')
+    fetch('./mockdata/cart.json')
       .then(res => res.json())
       .then(data => {
         data.map(el => {
@@ -74,9 +74,9 @@ function Cart({ setIsCartClicked }) {
       })}
 
       <div className="modal_bottom flex_center">
-        <p className="total_price">총 금액 : {price.toLocaleString()}</p>
+        <p className="total_price">Total : ₩ {price.toLocaleString()}</p>
         <div className="buy_btn flex_center" onClick={() => navigate('/cart')}>
-          구매하기
+          REVIEW CART
         </div>
       </div>
     </Modal>

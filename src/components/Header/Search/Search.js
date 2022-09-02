@@ -11,7 +11,7 @@ export default function Search({ setIsSearchClicked }) {
   const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
-    fetch('./products.json')
+    fetch('./mockdata/products.json')
       .then(res => res.json())
       .then(data => setItemData(data));
   }, []);
@@ -19,10 +19,9 @@ export default function Search({ setIsSearchClicked }) {
   const filtered = itemData.filter(el => {
     return el.name
       .replace(/(\s*)/g, '')
-      .includes(inputValue.replace(/(\s*)/g, ''));
+      .toUpperCase()
+      .includes(inputValue.replace(/(\s*)/g, '').toUpperCase());
   });
-
-  console.log('filtered', filtered);
 
   return (
     <Modal
@@ -35,7 +34,7 @@ export default function Search({ setIsSearchClicked }) {
           type="text"
           name="text"
           className="input_search"
-          placeholder="검색어를 입력해주세요."
+          placeholder="SEARCH"
           onChange={e => {
             setInputValue(e.target.value);
           }}

@@ -1,33 +1,69 @@
 import './CartDetail.scss';
 import { ItemBox } from '../../components/Header/Cart/Cart';
+import { useState, useEffect } from 'react';
+
 export default function CartDetail() {
+  const [itemData, setItemData] = useState({
+    product_name: [],
+    product_price: [],
+  });
+
+  let price = 0;
+  itemData.product_price.map((el, i) => (price += el * itemData.num[i]));
+  const toShipping = 130000 - price;
+
+  useEffect(() => {
+    fetch('./mockdata/cart.json')
+      .then(res => res.json())
+      .then(data => {
+        data.map(el => {
+          if (el.user_id === 1) {
+            setItemData(el);
+            console.log(el);
+          }
+        });
+      });
+  }, []);
+
   return (
     <div className="cart_detail flex_center">
       <div className="cart_title">CART</div>
       <div className="cart_subtitle">
-        Spend ₩40000 more and get free shipping!
+        Spend ₩ {toShipping} more and get free shipping!
       </div>
       <div className="cart_container">
         <div className="items_box">
-          <ItemBox
-            key={1}
-            name="로이시 시그니처 초콜릿"
-            img={'Images/home_part_1.jpg'}
-            price={32000}
-            num={2}
-          />
-          <ItemBox
-            key={1}
-            name="로이시 시그니처 초콜릿"
-            img={'Images/home_part_1.jpg'}
-            price={32000}
-            num={2}
-          />
+          {itemData.product_name.map((el, i) => {
+            return (
+              <ItemBox
+                itemData={itemData}
+                key={itemData.product_id[i]}
+                name={itemData.product_name[i]}
+                img={itemData.product_photos[i]}
+                price={itemData.product_price[i]}
+                num={itemData.num[i]}
+              />
+            );
+          })}
         </div>
-        <div className="cart_bottom">
+        <div className="cart_bottom flex_center">
           <div className="order_note">
-            <p className="order_note">Add Order Note</p>
-            <textarea name="" id="" cols="20" rows="10"></textarea>
+            <p className="order_title">Add Order Note</p>
+            <textarea
+              className="text_area"
+              cols="30"
+              rows="10"
+              placeholder="How Can We Help You?"
+            ></textarea>
+          </div>
+          <div className="cart_checkout flex_center">
+            <div className="cart_checkout_title">
+              TOTAL : ₩ {price.toLocaleString()}
+            </div>
+            <div className="cart_checkout_subtitle">
+              Shipping & taxes not calculated at checkout
+            </div>
+            <div className="checkout_btn flex_center">CHECKOUT</div>
           </div>
         </div>
       </div>

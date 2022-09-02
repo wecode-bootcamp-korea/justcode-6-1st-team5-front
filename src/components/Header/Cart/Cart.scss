@@ -27,6 +27,7 @@
     align-items: center;
     flex-direction: row;
     width: 100%;
+    font-size: 0.9rem;
 
     .pic {
       height: 10vw;
@@ -36,7 +37,6 @@
 
     .text_box {
       .title {
-        font-weight: 600;
       }
       .price {
         margin: 20px 0;
