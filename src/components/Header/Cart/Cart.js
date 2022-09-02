@@ -2,17 +2,16 @@ import { useState, useEffect } from 'react';
 import './Cart.scss';
 import Modal from 'react-modal';
 
-function ItemBox() {
-  let price = 28000;
+function ItemBox({ name, img, price, num }) {
   return (
     <div className="item_box">
-      <img src="./Images/home_part_1.jpg" alt="item" className="pic" />
+      <img src={img} alt="item" className="pic" />
       <div className="text_box">
-        <div className="title">로이시 시그니처 초콜릿</div>
+        <div className="title">{name}</div>
         <div className="price">₩ {price.toLocaleString()}</div>
         <div className="wrapper">
           <img src="./Images/add.png" alt="add" className="add" />
-          <p className="quantity">3</p>
+          <p className="quantity">{num}</p>
           <img src="./Images/minus.png" alt="minus" className="minus" />
           <div className="remove">제거</div>
         </div>
@@ -22,22 +21,38 @@ function ItemBox() {
 }
 
 export default function Cart({ setIsCartClicked }) {
-  const arr = [1, 2, 3, 4];
+  const [itemData, setItemData] = useState({ product_name: [] });
 
-  const [itemData, setItemData] = useState(
-    arr.map(() => {
-      return <ItemBox />;
-    })
-  );
+  useEffect(() => {
+    fetch('./cart.json')
+      .then(res => res.json())
+      .then(data => {
+        data.map(el => {
+          if (el.user_id === 1) {
+            setItemData(el);
+            console.log(el);
+          }
+        });
+      });
+  }, []);
 
   return (
     <Modal
       isOpen={true}
       onRequestClose={() => setIsCartClicked(false)}
-      style={{ outline: 'none' }}
       className="modal_cart"
     >
-      {itemData}
+      {itemData.product_name.map((el, i) => {
+        return (
+          <ItemBox
+            key={itemData.product_id[i]}
+            name={itemData.product_name[i]}
+            img={itemData.product_photos[i]}
+            price={itemData.product_price[i]}
+            num={itemData.num[i]}
+          />
+        );
+      })}
 
       <div className="modal_bottom flex_center">
         <p className="total_price">총 금액 : ₩ 184,000</p>

@@ -27,7 +27,7 @@ export default function FooterBottom() {
     <div className="bottom_container flex_center">
       <div className="bottom_box flex_center">
         <div className="wrapper flex_center">
-          <Logo fontSize={'42px'} />
+          <Logo fontSize={'2.65rem'} />
           <p className="text">
             최고 품질의 재료만을 사용하여 <br /> 정교하게 만들어진 'ROECY'는
             홋카이도(일본 최북단 섬)에서 <br /> 정교하고 세계적인 과자를

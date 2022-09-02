@@ -34,7 +34,7 @@ export default function Search({ setIsSearchClicked }) {
         <input
           type="text"
           name="text"
-          className="input"
+          className="input_search"
           placeholder="검색어를 입력해주세요."
           onChange={e => {
             setInputValue(e.target.value);
