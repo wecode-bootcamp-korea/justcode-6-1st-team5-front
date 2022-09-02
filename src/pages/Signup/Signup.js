@@ -179,5 +179,4 @@ function Signup() {
     </section>
   );
 }
-
 export default Signup;
