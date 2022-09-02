@@ -58,84 +58,6 @@
         border-radius: 3px;
       }
     }
-
-    .review_form {
-      border: 1px solid lightgray;
-      padding: 15px;
-      font-size: 15px;
-
-      input {
-        padding: 0 8px;
-        height: 30px;
-        border-radius: 0;
-        border: 1px solid lightgray;
-
-        &:focus {
-          outline: none;
-        }
-      }
-
-      label {
-        margin-bottom: 5px;
-      }
-
-      .contact-box {
-        display: flex;
-
-        .name,
-        .email {
-          display: flex;
-          flex-direction: column;
-        }
-      }
-
-      .rating_box {
-        p {
-          margin-top: 7px;
-          color: rgb(255, 208, 0);
-          letter-spacing: 4px;
-          font-size: 22px;
-        }
-      }
-
-      .review_title_box {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .review_content_box {
-        display: flex;
-        flex-direction: column;
-
-        textarea {
-          padding-left: 10px;
-
-          height: 300px;
-          border-radius: 0;
-          border: 1px solid lightgray;
-
-          max-width: 100%;
-          min-width: 100%;
-
-          &:focus {
-            outline: none;
-          }
-        }
-      }
-
-      .submit_btn_box {
-        position: relative;
-        height: 40px;
-
-        button {
-          position: absolute;
-          right: 0;
-          background-color: black;
-          color: white;
-          padding: 10px 20px;
-        }
-      }
-    }
   }
 
   .view_review {
@@ -156,4 +78,28 @@
 
 .space {
   margin-bottom: 15px;
+}
+
+.bubble {
+  position: relative;
+  width: 250px;
+  height: 55px;
+  padding: 0px;
+  background: #ffffff;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.bubble:after {
+  content: '';
+  position: absolute;
+  border-style: solid;
+  border-width: 0 14px 13px;
+  border-color: #ffffff transparent;
+  display: block;
+  width: 0;
+  z-index: 1;
+  top: -13px;
+  left: 30px;
 }

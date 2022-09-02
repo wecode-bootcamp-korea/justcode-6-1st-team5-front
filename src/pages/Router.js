@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-
 import Home from './Home/Home';
 import Login from './Login/Login';
 import Signup from './Signup/Signup';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import Detail from './Detail/Detail';
+import Shop from './Shop/Main';
 
 function Router() {
   return (
@@ -17,6 +17,7 @@ function Router() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/product/detail/:id" element={<Detail />} />
+        <Route path="/shop" element={<Shop />} />
       </Routes>
       <Footer />
     </BrowserRouter>
