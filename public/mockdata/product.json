@@ -1,0 +1,202 @@
+{
+  "product": [
+    {
+      "id": 1,
+      "salesmethod": "offline",
+      "flavor": "maccha",
+      "imageurl": "/images/product/img_1364.jpg",
+      "productname": "SIGNATURE NAMA CHOCOLATE COLECTION",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 2,
+      "salesmethod": "online",
+      "flavor": "maccha",
+      "imageurl":  "/images/product/img_1376.jpg",
+      "productname": "MATCHA COLLECTION",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 3,
+      "salesmethod": "offline",
+      "flavor": "maccha",
+      "imageurl": "/images/product/img_1377.jpg",
+      "productname": "BAR COLLECTION",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 4,
+      "salesmethod": "online",
+      "flavor": "coffee",
+      "imageurl": "/images/product/img_1379.jpg",
+      "productname": "MILK CHOCOLATE",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 5,
+      "salesmethod": "offline",
+      "flavor": "coffee",
+      "imageurl": "/images/product/img_1380.jpg",
+      "productname": "CHOCOLATE BAR SELECTION",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 6,
+      "salesmethod": "online",
+      "flavor": "coffee",
+      "imageurl": "/images/product/img_1382.jpg",
+      "productname": "COLLECTION 'BLUE'",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 7,
+      "salesmethod": "online",
+      "flavor": "coffee",
+      "imageurl": "/images/product/img_5433.jpg",
+      "productname": "NO SHIKI 'HOKKAIDO'",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 8,
+      "salesmethod": "online",
+      "flavor": "sugar",
+      "imageurl":"/images/product/img_5627.jpg",
+      "productname": "VARIETY PACK 'FLAVORFUL'",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 9,
+      "salesmethod": "online",
+      "flavor": "sugar",
+      "imageurl": "/images/product/img_5633.jpg",
+      "productname": "CHOCOLATE 'AU LAIT'",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 10,
+      "salesmethod": "online",
+      "flavor": "sugar",
+      "imageurl": "/images/product/img_5639.jpg",
+      "productname": "CHOCOLATE CHAMPAGNE PIERRE",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 11,
+      "salesmethod": "online",
+      "flavor": "sugar",
+      "imageurl": "/images/product/img_5657.jpg",
+      "productname": "CHOCOLATE ISLAY WHISKY (PORT",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 12,
+      "salesmethod": "online",
+      "flavor": "sugar",
+      "imageurl": "/images/product/img_5658.jpg",
+      "productname": "SIGNATURE NAMA CHOCOLATE COLECTION",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 13,
+      "salesmethod": "online",
+      "flavor": "sugar",
+      "imageurl": "/images/product/img_5661.jpg",
+      "productname": "MATCHA COLLECTION",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 14,
+      "salesmethod": "offline",
+      "flavor": "sugar",
+      "imageurl": "/images/product/img_5669.jpg",
+      "productname": "BAR COLLECTION",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 15,
+      "salesmethod": "online",
+      "flavor": "chocolate",
+      "imageurl": "/images/product/img_5670.jpg",
+      "productname": "MILK CHOCOLATE",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 16,
+      "salesmethod": "online",
+      "flavor": "chocolate",
+      "imageurl": "/images/product/img_5685.jpg",
+      "productname": "CHOCOLATE BAR SELECTION",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 17,
+      "salesmethod": "online",
+      "flavor": "chocolate",
+      "imageurl": "/images/product/img_5686.jpg",
+      "productname": "COLLECTION 'BLUE'",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 18,
+      "salesmethod": "offline",
+      "flavor": "chocolate",
+      "imageurl": "https://cdn.mindgil.com/news/photo/202108/72081_9739_4532.jpg",
+      "productname": "NO SHIKI 'HOKKAIDO'",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 19,
+      "salesmethod": "offline",
+      "flavor": "chocolate",
+      "imageurl": "https://cdn.mindgil.com/news/photo/202108/72081_9739_4532.jpg",
+      "productname": "VARIETY PACK 'FLAVORFUL'",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 20,
+      "salesmethod": "online",
+      "flavor": "chocolate",
+      "imageurl": "https://cdn.mindgil.com/news/photo/202108/72081_9739_4532.jpg",
+      "productname": "CHOCOLATE 'AU LAIT'",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 21,
+      "salesmethod": "online",
+      "flavor": "chocolate",
+      "imageurl": "https://cdn.mindgil.com/news/photo/202108/72081_9739_4532.jpg",
+      "productname": "CHOCOLATE CHAMPAGNE PIERRE",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    },
+    {
+      "id": 22,
+      "salesmethod": "offline",
+      "flavor": "chocolate",
+      "imageurl": "https://cdn.mindgil.com/news/photo/202108/72081_9739_4532.jpg",
+      "productname": "CHOCOLATE ISLAY WHISKY (PORT",
+      "starurl": "images/star.png",
+      "price": "$105.99"
+    }
+  ]
+}

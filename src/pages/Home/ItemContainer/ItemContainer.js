@@ -7,7 +7,7 @@ export default function ItemContainer({ id, img, name, rate, price }) {
     <div className="items_container">
       <div
         className="item_container flex_center"
-        onClick={() => navigate(`/collections/all-products/${id}`)}
+        onClick={() => navigate(`/product/detail/${id}`)}
       >
         <img src={img} alt={name} className="img" />
         <div className="name">{name}</div>

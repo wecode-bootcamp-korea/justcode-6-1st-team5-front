@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import ExpandHeader from './ExpandHeader/ExpandHeader';
 import Logo from './Logo/Logo';
-import Cart from './Cart/Cart';
+import { Cart } from './Cart/Cart';
 import Search from './Search/Search';
 
 export default function Header() {
@@ -31,7 +31,7 @@ export default function Header() {
           </div>
           <div
             className="nav_menu"
-            onClick={() => navigate('/collections/all-products')}
+            onClick={() => navigate('/shop')}
             onMouseOver={() => setIsShopClicked(true)}
           >
             SHOP ▽

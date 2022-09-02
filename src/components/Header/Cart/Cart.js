@@ -1,8 +1,18 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Cart.scss';
 import Modal from 'react-modal';
 
-function ItemBox({ name, img, price, num }) {
+function ItemBox({ itemData, name, img, price, num }) {
+  function plus() {
+    fetch(url, {
+      method: 'put',
+      body: {
+        user_id: itemData.user_id,
+      },
+    }).then(res => res.json());
+  }
+
   return (
     <div className="item_box">
       <img src={img} alt="item" className="pic" />
@@ -20,8 +30,16 @@ function ItemBox({ name, img, price, num }) {
   );
 }
 
-export default function Cart({ setIsCartClicked }) {
-  const [itemData, setItemData] = useState({ product_name: [] });
+function Cart({ setIsCartClicked }) {
+  const navigate = useNavigate();
+  const [itemData, setItemData] = useState({
+    product_name: [],
+    product_price: [],
+  });
+
+  let price = 0;
+
+  itemData.product_price.map((el, i) => (price += el * itemData.num[i]));
 
   useEffect(() => {
     fetch('./cart.json')
@@ -45,6 +63,7 @@ export default function Cart({ setIsCartClicked }) {
       {itemData.product_name.map((el, i) => {
         return (
           <ItemBox
+            itemData={itemData}
             key={itemData.product_id[i]}
             name={itemData.product_name[i]}
             img={itemData.product_photos[i]}
@@ -55,12 +74,15 @@ export default function Cart({ setIsCartClicked }) {
       })}
 
       <div className="modal_bottom flex_center">
-        <p className="total_price">총 금액 : ₩ 184,000</p>
-        <div className="buy_btn flex_center">구매하기</div>
+        <p className="total_price">총 금액 : {price.toLocaleString()}</p>
+        <div className="buy_btn flex_center" onClick={() => navigate('/cart')}>
+          구매하기
+        </div>
       </div>
     </Modal>
   );
 }
 
+export { Cart, ItemBox };
 // get으로 내 토큰을 보내면 백엔드에서 토큰과 일치하는 아이다 값을 찾고 데이터를 보내줌
 // 카트가 눌렸을 때가 아니라 nav에서 useEffect로 받아 props로 전달받는 형태

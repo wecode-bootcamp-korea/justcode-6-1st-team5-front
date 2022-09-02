@@ -49,7 +49,7 @@ export default function Search({ setIsSearchClicked }) {
             className="item_container_x"
             onClick={() => {
               setIsSearchClicked(false);
-              navigate(`/collections/all-products/${data.id}`);
+              navigate(`/product/detail/${data.id}`);
             }}
           >
             <img src={data.photo} alt="item" className="img" />

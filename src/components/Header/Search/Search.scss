@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   max-height: 60vh;
-  margin-top: calc(8vh + 2% + 63px);
+  margin-top: calc(8vh + 2% + 64.8px);
   box-shadow: 1px 1px #999, -1px -1px #999;
   animation: fadein 0.25s;
   overflow-y: auto;
@@ -27,7 +27,7 @@
       font-size: 4vh;
       word-break: break-all;
       position: fixed;
-      top: 63px;
+      top: 64.8px;
       box-sizing: content-box;
       &:focus {
         outline: 0;

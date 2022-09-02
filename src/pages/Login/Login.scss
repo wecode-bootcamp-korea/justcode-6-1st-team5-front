@@ -1,0 +1,64 @@
+@mixin font {
+  font-family: 'Nanum Gothic', sans-serif;
+  letter-spacing: 2.5px;
+}
+
+.border_box_login {
+  width: 400px;
+  height: 350px;
+  margin: 20px 50px;
+}
+
+.header_content_login {
+  text-align: center;
+}
+
+.input_content_login {
+  display: flex;
+  flex-direction: column;
+  color: rgb(157, 157, 157);
+}
+
+.link_content_login {
+  margin-top: 15px;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.span_link {
+  color: rgb(157, 157, 157);
+}
+
+h1.login-text-h {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 24px;
+  letter-spacing: 2px;
+  @include font();
+}
+
+p.login-text-p {
+  font-size: 15px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  @include font();
+}
+
+input.login_input {
+  margin-bottom: 15px;
+  padding: 12px 14px;
+  @include font();
+}
+
+button.login_btn {
+  height: 46px;
+  padding: 12px 14px;
+  background-color: #2f386c;
+  color: #ffffff;
+  @include font();
+}
+
+span.login_span {
+  @include font();
+}
