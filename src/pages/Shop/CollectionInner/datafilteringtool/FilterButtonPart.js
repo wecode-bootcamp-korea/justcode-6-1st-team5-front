@@ -10,10 +10,10 @@ function FilterButtonPart(props) {
   const goodsstate = props.goodsstate;
 
   useEffect(() => {
-    name === 'producttype' &&
+    name === 'Producttype' &&
       setFilterKeyword(<ProductType goodsstate={goodsstate} />);
-    name === 'price' && setFilterKeyword(<Price />);
-    name === 'flavor' && setFilterKeyword(<Flavor />);
+    name === 'Price' && setFilterKeyword(<Price />);
+    name === 'Flavor' && setFilterKeyword(<Flavor />);
   }, [setdisplay]);
 
   return (

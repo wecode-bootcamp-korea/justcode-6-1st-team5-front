@@ -57,6 +57,6 @@ function CollectionInner(props) {
   );
 }
 
-const FIRSTNAME = ['producttype', 'price', 'flavor'];
+const FIRSTNAME = ['Producttype', 'Price', 'Flavor'];
 
 export default CollectionInner;
