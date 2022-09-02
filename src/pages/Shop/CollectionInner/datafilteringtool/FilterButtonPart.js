@@ -17,7 +17,7 @@ function FilterButtonPart(props) {
   }, [setdisplay]);
 
   return (
-    <>
+    <div id="filterbuttonstyle">
       <ul className="button_style" id="bottomspace">
         <li className="smallfont1">{props.buttonname}</li>
         <button className="plusbutton" onClick={() => setdisplay(p => !p)}>
@@ -25,7 +25,7 @@ function FilterButtonPart(props) {
         </button>
       </ul>
       <div className="underline">{display && filterKeyword}</div>
-    </>
+    </div>
   );
 }
 

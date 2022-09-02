@@ -1,5 +1,5 @@
 // import { useEffect, useState } from 'react';
-import './filteringkeyword.css';
+import './filteringkeyword.scss';
 function ProductType(props) {
   // const [offLineButton, setOffLineButton] = useState(false);
 
@@ -9,7 +9,7 @@ function ProductType(props) {
   // }, [setOffLineButton]);
 
   return (
-    <>
+    <div id="product_filtering_category">
       <div className="button_style">
         <button id="inner_keyword_button">
           In Store Purchase
@@ -21,7 +21,7 @@ function ProductType(props) {
         <div className="margin_right">Ecommerce</div>
         <div className="margin_right">(갯수)</div>
       </div>
-    </>
+    </div>
   );
 }
 export default ProductType;

@@ -1,4 +1,4 @@
-import './productlist.css';
+import './productlist.scss';
 
 function ProductList({ goodsdata }) {
   return (

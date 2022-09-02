@@ -1,6 +1,6 @@
 import ProductList from './productlist/ProductList';
 import BigProductList from './productlist/BigProductList';
-import './collectioninner.css';
+import './collectioninner.scss';
 import { useEffect, useState } from 'react';
 import FilterButtonPart from './datafilteringtool/FilterButtonPart';
 

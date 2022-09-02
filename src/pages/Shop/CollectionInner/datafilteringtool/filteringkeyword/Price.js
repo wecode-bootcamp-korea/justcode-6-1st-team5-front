@@ -2,7 +2,7 @@
 
 function Price() {
   return (
-    <>
+    <div id="price_filtering_category">
       <div className="button_style">
         <input className="pricebox" placeholder="9" />
         <span id="minus">-</span>
@@ -12,7 +12,7 @@ function Price() {
         <div id="priceline"></div> <div id="pricenavigator"></div>
         <div id="bottomlinebox" className="margin_right"></div>
       </div>
-    </>
+    </div>
   );
 }
 export default Price;

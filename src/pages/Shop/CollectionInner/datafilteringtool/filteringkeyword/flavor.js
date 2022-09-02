@@ -12,9 +12,11 @@ function Flavor() {
   // }, []);
 
   return (
-    <div className="button_style">
-      <div className="margin_right">Maccha</div>
-      <div className="margin_right">(갯수)</div>
+    <div id="flavor_filtering_category">
+      <div className="button_style">
+        <div className="margin_right">Maccha</div>
+        <div className="margin_right">(갯수)</div>
+      </div>
     </div>
   );
 }
