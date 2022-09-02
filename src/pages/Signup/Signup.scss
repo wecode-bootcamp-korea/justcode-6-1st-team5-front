@@ -10,6 +10,15 @@
 //   @include font();
 // }
 
+.outter_content_signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 150px;
+  padding-bottom: 100px;
+  height: 100%;
+}
+
 div.border_box_signup {
   width: 400px;
   height: 400px;
