@@ -5,10 +5,11 @@
 
   .photo {
     display: flex;
-    margin-left: 50px;
+    margin-left: 100px;
     height: fit-content;
 
     .small-photo {
+      padding-top: 50px;
       display: flex;
       flex-direction: column;
       position: sticky;
@@ -23,6 +24,7 @@
     }
 
     .big-photo {
+      padding-top: 50px;
       display: flex;
       flex-direction: column;
       margin-left: 50px;
