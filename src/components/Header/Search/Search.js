@@ -5,6 +5,11 @@ import Modal from 'react-modal';
 
 export default function Search({ setIsSearchClicked }) {
   const navigate = useNavigate();
+
+  let price = 10000;
+  const [itemData, setItemData] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+
   const moveAndScrollToTop = url => {
     navigate(url);
     window.scrollTo({
@@ -12,9 +17,6 @@ export default function Search({ setIsSearchClicked }) {
       behavior: 'auto',
     });
   };
-  let price = 10000;
-  const [itemData, setItemData] = useState([]);
-  const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
     fetch('./mockdata/products.json')

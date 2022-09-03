@@ -8,6 +8,7 @@ import Footer from '../components/Footer/Footer';
 import Detail from './Detail/Detail';
 import Shop from './Shop/Main';
 import CartDetail from './CartDetail/CartDetail';
+import Chatting from '../components/Chatting/Chatting';
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
         <Route path="/cart" element={<CartDetail />} />
       </Routes>
       <Footer />
+      <Chatting />
     </BrowserRouter>
   );
 }
