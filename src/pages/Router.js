@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Home/Home';
 import Login from './Login/Login';
 import Signup from './Signup/Signup';
+import Contact from './Contact/Contact';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import Detail from './Detail/Detail';
@@ -17,6 +18,7 @@ function Router() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/product/detail/:id" element={<Detail />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/cart" element={<CartDetail />} />
