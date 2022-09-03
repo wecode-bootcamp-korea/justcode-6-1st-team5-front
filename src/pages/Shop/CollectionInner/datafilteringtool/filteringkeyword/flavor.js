@@ -5,6 +5,7 @@ function Flavor(props) {
   };
   const detailviewer = () => {
     const filterinfor = {
+      id: '2',
       title: 'Flavor',
       value: ' Maccha',
     };

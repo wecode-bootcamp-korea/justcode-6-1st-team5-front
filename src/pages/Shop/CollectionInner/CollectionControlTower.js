@@ -8,7 +8,7 @@ import Filterviewer from './datafilteringtool/filterkeywordviewer/Filterviewer';
 function CollectionInner(props) {
   const [goodsstate, setgoodsstate] = useState([]); //데이터상태
   const [createFilterViewer, setcreateFilterViewer] = useState(false); //필터뷰어를 뜨게 한다.
-  const [filterviewerarr, setFilterViewerArr] = useState([]);
+  const [filterviewerarr, setFilterViewerArr] = useState([]); //필터뷰어 배열에 객체를 추가한다.
 
   useEffect(() => {
     fetch('mockdata/product.json')

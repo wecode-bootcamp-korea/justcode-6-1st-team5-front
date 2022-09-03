@@ -1,14 +1,18 @@
 import './filteringkeyword.scss';
 import Filterviewerbutton from '../filterkeywordviewer/Filterviewerbutton';
+import { useState } from 'react';
 
 function ProductType(props) {
   const { createfilterviewer, createfilterarr, filterarrstate } = props;
+  const [id, setid] = useState(1);
 
   const productfilterview = () => {
     createfilterviewer(true);
   };
+
   const detailviewer = () => {
     const filterinfor = {
+      id: setid(id + 1),
       title: 'Product Type',
       value: ' In Store Purchase',
     };

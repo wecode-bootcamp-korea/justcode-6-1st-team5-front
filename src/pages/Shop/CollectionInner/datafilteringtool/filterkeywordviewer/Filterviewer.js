@@ -13,7 +13,13 @@ function Filterviewer(props) {
       <ul>
         <div>
           {props.filterarrstate.map(obj => {
-            return <Filterviewerbutton title={obj.title} value={obj.value} />;
+            return (
+              <Filterviewerbutton
+                key={obj.id}
+                title={obj.title}
+                value={obj.value}
+              />
+            );
           })}
         </div>
       </ul>
