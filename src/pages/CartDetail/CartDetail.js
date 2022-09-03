@@ -10,7 +10,7 @@ export default function CartDetail() {
 
   let price = 0;
   itemData.product_price.map((el, i) => (price += el * itemData.num[i]));
-  const toShipping = 130000 - price;
+  const toShipping = 990 - price;
 
   useEffect(() => {
     fetch('./mockdata/cart.json')
@@ -29,7 +29,8 @@ export default function CartDetail() {
     <div className="cart_detail flex_center">
       <div className="cart_title">CART</div>
       <div className="cart_subtitle">
-        Spend ₩ {toShipping} more and get free shipping!
+        {toShipping > 0 &&
+          `Spend $ ${toShipping.toLocaleString()} more and get free shipping!`}
       </div>
       <div className="cart_container">
         <div className="items_box">
@@ -58,7 +59,7 @@ export default function CartDetail() {
           </div>
           <div className="cart_checkout flex_center">
             <div className="cart_checkout_title">
-              TOTAL : ₩ {price.toLocaleString()}
+              TOTAL : $ {price.toLocaleString()}
             </div>
             <div className="cart_checkout_subtitle">
               Shipping & taxes not calculated at checkout

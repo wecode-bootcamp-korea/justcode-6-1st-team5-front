@@ -12,6 +12,14 @@ export default function Header() {
   const [isCartClicked, setIsCartClicked] = useState(false);
   const [isSearchClicked, setIsSearchClicked] = useState(false);
 
+  const moveAndScrollToTop = url => {
+    navigate(url);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  };
+
   // useEffect(() => {
   //   window.addEventListener('scroll', function () {
   //     let value = window.scrollY;
@@ -23,15 +31,18 @@ export default function Header() {
     <div className="nav_container flex_center">
       <div id="nav">
         <div className="nav_menu_container">
-          <div className="nav_menu" onClick={() => navigate('/')}>
+          <div className="nav_menu" onClick={() => moveAndScrollToTop('/')}>
             HOME
           </div>
-          <div className="nav_menu" onClick={() => navigate('/about')}>
+          <div
+            className="nav_menu"
+            onClick={() => moveAndScrollToTop('/about')}
+          >
             ABOUT
           </div>
           <div
             className="nav_menu"
-            onClick={() => navigate('/shop')}
+            onClick={() => moveAndScrollToTop('/shop')}
             onMouseOver={() => setIsShopClicked(true)}
           >
             SHOP ▽
@@ -42,7 +53,10 @@ export default function Header() {
         </div>
 
         <div className="nav_menu_container">
-          <div className="nav_menu" onClick={() => navigate('/login')}>
+          <div
+            className="nav_menu"
+            onClick={() => moveAndScrollToTop('/login')}
+          >
             ACCOUNT
           </div>
           <div

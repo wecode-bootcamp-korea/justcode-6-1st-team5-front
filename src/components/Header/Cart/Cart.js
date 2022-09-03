@@ -18,7 +18,7 @@ function ItemBox({ itemData, name, img, price, num }) {
       <img src={img} alt="item" className="pic" />
       <div className="text_box">
         <div className="title">{name}</div>
-        <div className="price">₩ {price.toLocaleString()}</div>
+        <div className="price">$ {price}</div>
         <div className="wrapper">
           <img src="./Images/add.png" alt="add" className="add" />
           <p className="quantity">{num}</p>
@@ -40,6 +40,14 @@ function Cart({ setIsCartClicked }) {
   let price = 0;
 
   itemData.product_price.map((el, i) => (price += el * itemData.num[i]));
+
+  const moveAndScrollToTop = url => {
+    navigate(url);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  };
 
   useEffect(() => {
     fetch('./mockdata/cart.json')
@@ -74,8 +82,14 @@ function Cart({ setIsCartClicked }) {
       })}
 
       <div className="modal_bottom flex_center">
-        <p className="total_price">Total : ₩ {price.toLocaleString()}</p>
-        <div className="buy_btn flex_center" onClick={() => navigate('/cart')}>
+        <p className="total_price">Total : $ {price.toLocaleString()}</p>
+        <div
+          className="buy_btn flex_center"
+          onClick={() => {
+            moveAndScrollToTop('/cart');
+            setIsCartClicked(false);
+          }}
+        >
           REVIEW CART
         </div>
       </div>

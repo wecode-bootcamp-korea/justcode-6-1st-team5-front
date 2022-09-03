@@ -4,15 +4,15 @@ import MenuList from '../../MenuList/MenuList';
 import ItemContainer from '../../../pages/Home/ItemContainer/ItemContainer';
 
 const trend = [
-  { url: '/', name: 'Gift Set' },
-  { url: '/', name: 'Boutique Exclusives Only' },
-  { url: '/', name: 'Bars' },
+  { url: '/shop/gift-set', name: 'Gift Set' },
+  { url: '/shop/boutique-exclusive-only', name: 'Boutique Exclusives Only' },
+  { url: '/shop/bars', name: 'Bars' },
 ];
 
 const popular = [
-  { url: '/', name: 'Pure Chocolate' },
-  { url: '/', name: 'Sweet & Salty' },
-  { url: '/', name: 'Wafers' },
+  { url: '/shop/pure-chocolate', name: 'Pure Chocolate' },
+  { url: '/shop/sweet-salty', name: 'Sweet & Salty' },
+  { url: '/shop/wafers', name: 'Wafers' },
 ];
 
 export default function ExpandHeader({ setIsShopClicked }) {

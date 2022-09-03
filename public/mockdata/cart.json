@@ -12,7 +12,7 @@
       "https://i.esdrop.com/d/f/ZMy3lUAiyF/srhR3ctnhz.jpg",
       "https://i.esdrop.com/d/f/ZMy3lUAiyF/GQ15r1oLVT.jpg"
     ],
-    "product_price": [7000, 4500, 13500],
+    "product_price": [70.99, 40.99, 100.99],
     "num": [1, 2, 1]
   },
   {
@@ -23,7 +23,7 @@
       "https://i.esdrop.com/d/f/ZMy3lUAiyF/srhR3ctnhz.jpg",
       "https://i.esdrop.com/d/f/ZMy3lUAiyF/GQ15r1oLVT.jpg"
     ],
-    "product_price": [4500, 13500],
+    "product_price": [40.99, 130.99],
     "num": [1, 1]
   },
   {
@@ -31,7 +31,7 @@
     "product_id": [6],
     "product_name": ["Simple Chocolate"],
     "product_photos": ["https://i.esdrop.com/d/f/ZMy3lUAiyF/jAn4nPT2tf.jpg"],
-    "product_price": [7000],
+    "product_price": [70.99],
     "num": [4]
   }
 ]

@@ -22,7 +22,7 @@ export default function ItemContainer({ id, img, name, rate, price }) {
         <img src={img} alt={name} className="img" />
         <div className="name flex_center">{name}</div>
         <div className="rate">{rate} / 5</div>
-        <div className="price">₩ {price.toLocaleString()}</div>
+        <div className="price">$ {price.toLocaleString()}</div>
       </div>
     </div>
   );
