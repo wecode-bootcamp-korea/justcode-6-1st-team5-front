@@ -32,13 +32,13 @@ export default function ExpandHeader({ setIsShopClicked }) {
           img="./Images/home_part_1.jpg"
           name="ROECY Signature Chocolate"
           rate={5}
-          price={'32,000'}
+          price={'30.99'}
         />
         <ItemContainer
           img="./Images/home_part_1.jpg"
           name="ROECY Signature Chocolate"
           rate={5}
-          price={'32,000'}
+          price={'30.99'}
         />
       </div>
     </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './Trending.scss';
 import ItemContainer from '../ItemContainer/ItemContainer';
-import Xbar from '../Xbar/Xbar';
+import Carousel from '../Carousel/Carousel';
 
 export default function Trending() {
   const arr = [1, 2, 3, 4];
@@ -45,9 +45,7 @@ export default function Trending() {
       <div className="menu_container flex_center">
         <div className="title_2">TRENDING</div>
       </div>
-      <div className="x_bar">
-        <Xbar data={datas} />
-      </div>
+      <Carousel data={datas} />
 
       <div></div>
     </div>

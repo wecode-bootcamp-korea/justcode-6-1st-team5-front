@@ -9,8 +9,10 @@ export default function CartDetail() {
   });
 
   let price = 0;
-  itemData.product_price.map((el, i) => (price += el * itemData.num[i]));
-  const toShipping = 990 - price;
+  itemData.product_price.map(
+    (el, i) => (price += Number(el * itemData.num[i]))
+  );
+  const toShipping = 999 - price;
 
   useEffect(() => {
     fetch('./mockdata/cart.json')
@@ -59,7 +61,10 @@ export default function CartDetail() {
           </div>
           <div className="cart_checkout flex_center">
             <div className="cart_checkout_title">
-              TOTAL : $ {price.toLocaleString()}
+              TOTAL : ${' '}
+              {price.toLocaleString > 990
+                ? price.toLocaleString()
+                : Number(price.toLocaleString())}
             </div>
             <div className="cart_checkout_subtitle">
               Shipping & taxes not calculated at checkout
