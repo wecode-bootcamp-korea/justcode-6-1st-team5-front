@@ -3,12 +3,20 @@
   flex-direction: column;
   margin-top: 0.5%;
   position: fixed;
+  animation: buttonfadein 0.5s;
+
+  @keyframes buttonfadein {
+    from{opacity: 0; }
+    to{opacity: 1;}
+    }
 
 #row_reverse {
   z-index: 3;
   display: flex;
   flex-direction: row-reverse;
   
+ 
+
 #triangle {
   margin-right: 10px;
   width:0;

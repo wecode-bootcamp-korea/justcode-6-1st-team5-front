@@ -11,9 +11,18 @@ function FilterButtonPart(props) {
 
   useEffect(() => {
     name === 'Producttype' &&
-      setFilterKeyword(<ProductType goodsstate={goodsstate} />);
-    name === 'Price' && setFilterKeyword(<Price />);
-    name === 'Flavor' && setFilterKeyword(<Flavor />);
+      setFilterKeyword(
+        <ProductType
+          goodsstate={goodsstate}
+          createfilterviewer={props.createfilterviewer}
+        />
+      );
+    name === 'Price' &&
+      setFilterKeyword(<Price createfilterviewer={props.createfilterviewer} />);
+    name === 'Flavor' &&
+      setFilterKeyword(
+        <Flavor createfilterviewer={props.createfilterviewer} />
+      );
   }, [setdisplay]);
 
   return (

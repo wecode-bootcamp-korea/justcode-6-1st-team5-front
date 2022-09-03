@@ -3,9 +3,11 @@ import BigProductList from './productlist/BigProductList';
 import './collectioninner.scss';
 import { useEffect, useState } from 'react';
 import FilterButtonPart from './datafilteringtool/FilterButtonPart';
+import Filterviewer from './datafilteringtool/filterkeywordviewer/Filterviewer';
 
 function CollectionInner(props) {
-  const [goodsstate, setgoodsstate] = useState([]);
+  const [goodsstate, setgoodsstate] = useState([]); //데이터상태
+  const [createFilterViewer, setcreateFilterViewer] = useState(false); //필터뷰어를 뜨게 한다.
 
   useEffect(() => {
     fetch('mockdata/product.json')
@@ -14,21 +16,26 @@ function CollectionInner(props) {
         setgoodsstate(data.product);
       });
   }, []);
-
   return (
     <div className="collection_inner">
       <div className="custom_tool">
         <div className="filter_container">
           <div className="product_type">
+            {createFilterViewer && (
+              <Filterviewer stopviewing={setcreateFilterViewer} />
+            )}
             <FilterButtonPart
+              createfilterviewer={setcreateFilterViewer}
               buttonname={FIRSTNAME[0]}
               goodsstate={goodsstate}
             />
             <FilterButtonPart
+              createfilterviewer={setcreateFilterViewer}
               buttonname={FIRSTNAME[1]}
               goodsstate={goodsstate}
             />
             <FilterButtonPart
+              createfilterviewer={setcreateFilterViewer}
               buttonname={FIRSTNAME[2]}
               goodsstate={goodsstate}
             />

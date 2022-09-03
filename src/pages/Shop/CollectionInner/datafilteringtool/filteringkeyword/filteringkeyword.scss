@@ -1,53 +1,58 @@
-#flavor_filtering_category{
+#filterbuttonstyle {
+  .button_style {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    margin: 7px 0 6px;
+    padding-left: 0;
+    font-size: 11px;
+  }
 
-.margin_right {
-  margin-right: 15px;
+  #bottomspace {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .underline {
+    border-bottom: 0.5px solid rgb(207, 207, 207);
+  }
 }
 
-.button_style {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgb(255, 255, 255);
-  margin: 7px 0 6px;
-  padding-left: 0;
-  font-size: 11px;
-}
-.underline {
-  border-bottom: 0.5px solid rgb(207, 207, 207);
-}
-#bottomspace {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-}
+#product_filtering_category {
+  .inner_keyword_button {
+    font-size: 11px;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    cursor: pointer;
+  }
 
-#filterbuttonstyle
-{
-.button_style {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgb(255, 255, 255);
-  margin: 7px 0 6px;
-  padding-left: 0;
-  font-size: 11px;
-}
+  .button_style {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    margin: 7px 0 6px;
+    padding-left: 0;
+    font-size: 11px;
+  }
 
-#bottomspace {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.underline {
-  border-bottom: 0.5px solid rgb(207, 207, 207);
-}
+  .margin_right {
+    margin-right: 15px;
+  }
+  .underline {
+    border-bottom: 0.5px solid rgb(207, 207, 207);
+  }
+  #bottomspace {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 
-
-
-
-
-#price_filtering_category{
-
+#price_filtering_category {
   #linebox {
     display: flex;
     flex-direction: column;
@@ -81,78 +86,76 @@
     border-radius: 50%;
     background-color: white;
   }
-  
-#pricenavibase {
-  position: relative;
-  padding-top: 20px;
+
+  #pricenavibase {
+    position: relative;
+    padding-top: 20px;
+  }
+
+  .pricebox {
+    width: 70px;
+    height: 26px;
+    border: 0.5px solid rgb(206, 206, 206);
+    margin-right: 15px;
+  }
+
+  #minus {
+    padding-top: 6px;
+    font-size: 15px;
+    margin-right: 12px;
+  }
+
+  #priceline {
+    border: 1.1px solid rgb(108, 108, 108);
+    background-color: rgb(108, 108, 108);
+    width: 94%;
+    height: 0%;
+  }
+
+  .margin_right {
+    margin-right: 15px;
+  }
+  .underline {
+    border-bottom: 0.5px solid rgb(207, 207, 207);
+  }
+  #bottomspace {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }
 
-.pricebox {
-  width: 70px;
-  height: 26px;
-  border: 0.5px solid rgb(206, 206, 206);
-  margin-right: 15px;
-}
+#flavor_filtering_category {
+  // @keyframes buttonmotion {
+  //   0% {height :0; }
+  //   100% {height :40px;}
+  //   }
+  button {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 11px;
+  }
 
-#minus {
-  padding-top: 6px;
-  font-size: 15px;
-  margin-right: 12px;
-}
+  .margin_right {
+    margin-right: 15px;
+  }
 
-#priceline {
-  border: 1.1px solid rgb(108, 108, 108);
-  background-color: rgb(108, 108, 108);
-  width: 94%;
-  height: 0%;
-}
-
-.margin_right {
-  margin-right: 15px;
-}
-.underline {
-  border-bottom: 0.5px solid rgb(207, 207, 207);
-}
-#bottomspace {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-}
-
-
-
-
-#product_filtering_category{
-
-#inner_keyword_button {
-  font-size: 11px;
-  border: none;
-  background-color: transparent;
-  width: 100%;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  cursor: pointer;
-}
-
-.button_style {
-  display: flex;
-  justify-content: space-between;
-  background-color: rgb(255, 255, 255);
-  margin: 7px 0 6px;
-  padding-left: 0;
-  font-size: 11px;
-}
-
-.margin_right {
-  margin-right: 15px;
-}
-.underline {
-  border-bottom: 0.5px solid rgb(207, 207, 207);
-}
-#bottomspace {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+  .button_style {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    margin: 7px 0 6px;
+    padding-left: 0;
+    font-size: 11px;
+  }
+  .underline {
+    border-bottom: 0.5px solid rgb(207, 207, 207);
+  }
+  #bottomspace {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
 }

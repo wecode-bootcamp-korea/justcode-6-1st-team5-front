@@ -1,21 +1,11 @@
-import { useEffect, useState } from 'react';
-
-function Flavor() {
-  // const [goodsstate, setgoodsstate] = useState();
-
-  // useEffect(() => {
-  //   fetch('mockdata/product.json')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setgoodsstate(data.product);
-  //     });
-  // }, []);
-
+function Flavor(props) {
   return (
     <div id="flavor_filtering_category">
       <div className="button_style">
-        <div className="margin_right">Maccha</div>
-        <div className="margin_right">(갯수)</div>
+        <button onClick={() => props.createfilterviewer(p => !p)}>
+          <div className="margin_right">Maccha</div>
+          <div className="margin_right">(갯수)</div>
+        </button>
       </div>
     </div>
   );
