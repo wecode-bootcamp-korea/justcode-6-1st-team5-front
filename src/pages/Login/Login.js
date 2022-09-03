@@ -125,7 +125,7 @@ function Login() {
 
           <button
             type="button"
-            className="signup_btn"
+            className="login_btn"
             onClick={go_main}
             onMouseDown={sendHandler}
             disabled={!validPwd || !validEmail ? true : false}
