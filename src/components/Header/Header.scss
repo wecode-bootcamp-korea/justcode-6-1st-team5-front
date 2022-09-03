@@ -1,24 +1,24 @@
 .nav_container {
-  z-index: 3;
-  flex-direction: column;
   position: fixed;
+  flex-direction: column;
+  z-index: 3;
 
   #nav {
     display: flex;
-    flex-direction: row;
-    font-family: 'Nanum Gothic', sans-serif;
     align-items: center;
+    flex-direction: row;
     justify-content: space-between;
-    padding: 18px 50px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    padding: 18px 50px;
+    font-family: 'Nanum Gothic', sans-serif;
     background-color: rgba(255, 255, 255);
     box-shadow: 1px 1px #999, -1px -1px #999;
 
     .logo_container {
-      margin-left: 20px;
+      margin-left: 2.5vw;
     }
 
     .nav_menu_container {

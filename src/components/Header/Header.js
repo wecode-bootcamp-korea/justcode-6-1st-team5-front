@@ -47,12 +47,24 @@ export default function Header() {
           >
             SHOP ▽
           </div>
+          <div
+            className="nav_menu"
+            onClick={() => moveAndScrollToTop('/contact')}
+          >
+            CONTACT
+          </div>
         </div>
         <div className="logo_container">
           <Logo />
         </div>
 
         <div className="nav_menu_container">
+          <div
+            className="nav_menu"
+            onClick={() => moveAndScrollToTop('/location')}
+          >
+            LOCATION
+          </div>
           <div
             className="nav_menu"
             onClick={() => moveAndScrollToTop('/login')}

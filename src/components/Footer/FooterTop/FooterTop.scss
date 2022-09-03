@@ -1,23 +1,17 @@
 $btn-color: rgb(47, 56, 108);
-$shadow: 1px 1px #999, -1px -1px #999;
-
-@mixin Jost {
-  font-family: 'Jost', sans-serif;
-  letter-spacing: 2.5px;
-}
 
 .footer_container {
   .top_container {
     flex-direction: row;
-    background-color: rgb(47, 56, 108);
     width: 100%;
+    background-color: $btn-color;
     color: white;
     font-size: 0.7rem;
     letter-spacing: 0.05rem;
 
     .top_box {
-      height: 110px;
       width: 25%;
+      height: 110px;
 
       .icon {
         width: 45px;
