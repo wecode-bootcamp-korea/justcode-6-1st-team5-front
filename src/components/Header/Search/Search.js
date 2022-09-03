@@ -11,7 +11,7 @@ export default function Search({ setIsSearchClicked }) {
   const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
-    fetch('./products.json')
+    fetch('./mockdata/products.json')
       .then(res => res.json())
       .then(data => setItemData(data));
   }, []);
@@ -19,10 +19,9 @@ export default function Search({ setIsSearchClicked }) {
   const filtered = itemData.filter(el => {
     return el.name
       .replace(/(\s*)/g, '')
-      .includes(inputValue.replace(/(\s*)/g, ''));
+      .toUpperCase()
+      .includes(inputValue.replace(/(\s*)/g, '').toUpperCase());
   });
-
-  console.log('filtered', filtered);
 
   return (
     <Modal
@@ -34,8 +33,8 @@ export default function Search({ setIsSearchClicked }) {
         <input
           type="text"
           name="text"
-          className="input"
-          placeholder="검색어를 입력해주세요."
+          className="input_search"
+          placeholder="SEARCH"
           onChange={e => {
             setInputValue(e.target.value);
           }}
@@ -49,7 +48,7 @@ export default function Search({ setIsSearchClicked }) {
             className="item_container_x"
             onClick={() => {
               setIsSearchClicked(false);
-              navigate(`/collections/all-products/${data.id}`);
+              navigate(`/product/detail/${data.id}`);
             }}
           >
             <img src={data.photo} alt="item" className="img" />
