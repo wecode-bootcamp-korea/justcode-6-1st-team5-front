@@ -4,37 +4,93 @@
   color: #2f386c;
 }
 
-.wrapper_content_contact {
+title.contact_header_titile {
   display: flex;
-  padding-top: 25vh;
-  padding-bottom: 15vh;
+  padding-top: 10vh;
+  padding-bottom: 2vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 130px;
+  border-bottom: 1px solid #2f386c;
+  font-size: 20px;
+  font-weight: 900;
+  @include font();
+}
+
+section.wrapper_content_contact {
+  display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
-}
-.contact_description {
-  width: 500px;
-  h1.contact_description_h1 {
-    font-weight: 900;
-    font-size: 20px;
-    @include font();
-    margin-bottom: 3%;
+  padding: 40px 40px 60px 40px;
+
+  div.contact_description {
+    width: 650px;
+    height: 700px;
+
+    h1.contact_description_h1 {
+      font-weight: 900;
+      font-size: 20px;
+      @include font();
+      margin-bottom: 25px;
+    }
+
+    img.contact_img {
+      width: 100%;
+      height: 60%;
+    }
+
+    div.description_text {
+      height: 30%;
+      @include font();
+      font-size: 17px;
+      font-weight: 500;
+      p {
+        width: 100%;
+        margin-top: 25px;
+        margin-bottom: 30px;
+        letter-spacing: 0px;
+      }
+    }
   }
-}
-.contact_form {
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-}
 
-img.contact_img {
-  width: 100%;
-  height: 50%;
-}
+  form.contact_form {
+    width: 650px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    @include font();
 
-button.contact_btn {
-  height: 40px;
-  padding: 12px 14px;
-  @include font();
-  background-color: #2f386c;
-  color: #ffffff;
+    label.contact_form_label {
+      margin-bottom: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    input.contact_form_input {
+      height: 8%;
+      margin-bottom: 20px;
+      padding-left: 10px;
+      font-size: 16px;
+    }
+
+    input.contact_form_input_lg {
+      height: 40%;
+      margin-bottom: 10px;
+      padding-left: 10px;
+      padding-bottom: 35%;
+      font-size: 16px;
+    }
+
+    button.contact_btn {
+      height: 8%;
+      padding: 12px 14px;
+      @include font();
+      font-size: 18px;
+      font-weight: 200;
+      background-color: #2f386c;
+      color: #ffffff;
+    }
+  }
 }
