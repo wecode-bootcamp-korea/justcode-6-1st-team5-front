@@ -11,6 +11,7 @@
   margin: 63px 0;
   animation: fadein 0.25s;
   overflow-y: auto;
+  z-index: 3;
 
   @keyframes fadein {
     from {
@@ -26,15 +27,16 @@
     align-items: center;
     flex-direction: row;
     width: 100%;
+    font-size: 0.9rem;
 
     .pic {
-      height: 150px;
+      height: 10vw;
+      width: 10vw;
       margin: 25px;
     }
 
     .text_box {
       .title {
-        font-weight: 600;
       }
       .price {
         margin: 20px 0;

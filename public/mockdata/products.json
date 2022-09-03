@@ -2,7 +2,7 @@
   {
     "id": 6,
     "photo": "https://i.esdrop.com/d/f/ZMy3lUAiyF/jAn4nPT2tf.jpg",
-    "name": "심플초콜렛",
+    "name": "Simple Chocolate",
     "rate": "1",
     "price": 7000,
     "info": "평범한 초콜렛",
@@ -14,7 +14,7 @@
   {
     "id": 7,
     "photo": "https://i.esdrop.com/d/f/ZMy3lUAiyF/srhR3ctnhz.jpg",
-    "name": "심플 화이트 초콜렛",
+    "name": "Simple White Chocolate",
     "rate": "2",
     "price": 4500,
     "info": "평범한 화이트 초콜렛",
@@ -26,7 +26,7 @@
   {
     "id": 8,
     "photo": "https://i.esdrop.com/d/f/ZMy3lUAiyF/GQ15r1oLVT.jpg",
-    "name": "딸기 초콜렛",
+    "name": "Strawberry Chocolate",
     "rate": "5",
     "price": 13500,
     "info": "두툼한 딸기 초콜렛",
@@ -38,7 +38,7 @@
   {
     "id": 9,
     "photo": "https://i.esdrop.com/d/f/ZMy3lUAiyF/eoICBrDf5A.jpg",
-    "name": "동글래미 초콜렛",
+    "name": "Circle Chocolate",
     "rate": "4",
     "price": 5500,
     "info": "동글동글\n맛있는\n초콜렛",
@@ -50,7 +50,7 @@
   {
     "id": 10,
     "photo": "https://i.esdrop.com/d/f/ZMy3lUAiyF/gNVkFUI3s7.jpg",
-    "name": "쵹쵹한쵸쵹호 박스",
+    "name": "Chocombo Box",
     "rate": "4",
     "price": 10000,
     "info": "팔기 싫어서 비싸게 측정한 쵸코박스",
@@ -62,7 +62,7 @@
   {
     "id": 11,
     "photo": "https://i.esdrop.com/d/f/ZMy3lUAiyF/S1kqMjWrGX.jpg",
-    "name": "이쁜 동글동글 초콜렛",
+    "name": "Ball Chocolate",
     "rate": "3",
     "price": 450000,
     "info": "FOREVER 1\nIt's love It's love\nWe're not stopping\n네가 머문 이 세상이 더\n아름다운 건\n겁 없이 외치던 말 '사랑해 너를'\n영원하기에\nYou and I\n터지는 눈물이\n말하잖아\n난 그냥 전부 던진 거야\n아무런 망설임 따위도\n멋대로 끌렸던 그대로\nOh my baby 달려가 안을게\nI love 너의 모든 것, 내 전부인 너\n우리는 영원\nWe are one\n전율 속에 뜨거운 그 맘을 던져\nJust like a love bomb\nWe are one\nGirls, We are forever\n(Yeah we are, We're still FOREVER 1)\nIt's now or never\n(We keep on, We're still FOREVER 1)",
@@ -74,7 +74,7 @@
   {
     "id": 12,
     "photo": "https://i.esdrop.com/d/f/ZMy3lUAiyF/bgYzCwwg45.jpg",
-    "name": "초코로 탑을 쌓아볼래요?",
+    "name": "Chocolate Tower",
     "rate": "4.5",
     "price": 2200,
     "info": "탑을쌓은것같지만 아니랍니다",
@@ -86,7 +86,7 @@
   {
     "id": 13,
     "photo": "https://i.esdrop.com/d/f/ZMy3lUAiyF/XayrGZq4sQ.jpg",
-    "name": "이쁜박스",
+    "name": "Pretty Chocolate Box",
     "rate": "4.5",
     "price": 32000000,
     "info": "정보",
@@ -98,7 +98,7 @@
   {
     "id": 14,
     "photo": "https://i.esdrop.com/d/f/ZMy3lUAiyF/XayrGZq4sQ.jpg",
-    "name": "이쁜박스",
+    "name": "Pretty Chocolate Box",
     "rate": "4.5",
     "price": 32000000,
     "info": "정보",
@@ -110,7 +110,7 @@
   {
     "id": 15,
     "photo": "https://i.esdrop.com/d/f/ZMy3lUAiyF/XayrGZq4sQ.jpg",
-    "name": "이쁜박스",
+    "name": "Pretty Chocolate Box",
     "rate": "4.5",
     "price": 32000000,
     "info": "정보",
@@ -122,7 +122,7 @@
   {
     "id": 16,
     "photo": "https://i.esdrop.com/d/f/ZMy3lUAiyF/XayrGZq4sQ.jpg",
-    "name": "이쁜박스",
+    "name": "Pretty Chocolate Box",
     "rate": "4.5",
     "price": 32000000,
     "info": "정보",
@@ -134,7 +134,7 @@
   {
     "id": 17,
     "photo": "https://i.esdrop.com/d/f/ZMy3lUAiyF/XayrGZq4sQ.jpg",
-    "name": "이쁜박스",
+    "name": "Pretty Chocolate Box",
     "rate": "4.5",
     "price": 32000000,
     "info": "정보",
