@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 import PhotoList from './detail-components/Photo/PhotoList';
 import Description from './detail-components/Description/Description';
@@ -13,13 +13,20 @@ const Detail = () => {
 
   const [product, setProduct] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:3000/data/mockupDataEng.json')
+    fetch('http://localhost:3000/data/mockDataEng.json')
       .then(res => res.json())
       .then(json => {
         setProduct(json);
       });
   }, []);
+
   const { photo, ...description } = product;
+
+  const scrollToReview = () => {
+    reviewRef.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const reviewRef = useRef(null);
 
   return (
     <>
@@ -33,10 +40,13 @@ const Detail = () => {
           </div>
         </div>
         <div>
-          <Description description={description} />
+          <Description
+            description={description}
+            scrollFunction={scrollToReview}
+          />
         </div>
       </section>
-      <Review />
+      <Review props={photo} ref={reviewRef} />
     </>
   );
 };

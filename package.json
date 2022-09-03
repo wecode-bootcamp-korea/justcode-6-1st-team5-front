@@ -18,13 +18,9 @@
     "react-script": "^2.0.5",
     "sass": "^1.54.5",
     "react-slick": "^0.29.0",
-<<<<<<< HEAD
-    "slick-carousel": "^1.8.1"
-=======
     "slick-carousel": "^1.8.1",
     "react-script": "^2.0.5",
     "sass": "^1.54.5"
->>>>>>> 7c6661349b019a37383464d7e6184666e83ed4af
   },
   "devDependencies": {
     "eslint": "^8.17.0",

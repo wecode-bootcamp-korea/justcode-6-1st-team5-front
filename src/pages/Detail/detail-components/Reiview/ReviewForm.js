@@ -50,6 +50,7 @@ const ReviewForm = () => {
             onChange={handleInput}
             id="name"
             placeholder="Enter your name"
+            autocomplete="off"
           />
         </div>
         <div className="email">

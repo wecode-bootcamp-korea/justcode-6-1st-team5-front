@@ -13,6 +13,7 @@
     .write_btn {
       position: relative;
       height: 40px;
+
       span {
         display: flex;
         position: absolute;
@@ -30,8 +31,8 @@
         }
 
         p {
-          font-size: 15px;
-          font-weight: 600;
+          font-size: 13px;
+          font-weight: 500;
         }
       }
     }
@@ -78,28 +79,4 @@
 
 .space {
   margin-bottom: 15px;
-}
-
-.bubble {
-  position: relative;
-  width: 250px;
-  height: 55px;
-  padding: 0px;
-  background: #ffffff;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  border-radius: 8px;
-}
-
-.bubble:after {
-  content: '';
-  position: absolute;
-  border-style: solid;
-  border-width: 0 14px 13px;
-  border-color: #ffffff transparent;
-  display: block;
-  width: 0;
-  z-index: 1;
-  top: -13px;
-  left: 30px;
 }

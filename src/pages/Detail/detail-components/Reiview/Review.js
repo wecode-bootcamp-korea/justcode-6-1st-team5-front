@@ -1,18 +1,23 @@
-import React from 'react';
+import React, { useState, forwardRef } from 'react';
 import ReviewForm from './ReviewForm';
 
 import './Review.scss';
 import './ReviewForm.scss';
 
-const Review = () => {
+const Review = forwardRef((props, ref) => {
+  console.log(ref);
+  const [visible, setVisible] = useState(false);
+  const handleOpenForm = () => {
+    setVisible(current => !current);
+  };
   return (
     <>
-      <section className="review_container">
+      <section ref={ref} className="review_container">
         <div className="star_rating">☆☆☆☆☆</div>
         <div className="review_wrapper">
-          <div className="write_btn">
+          <div onClick={handleOpenForm} className="write_btn">
             <span>
-              <img src="image/edit.png" />
+              <img src="public/image/edit.png" />
               <p>Write a Review</p>
             </span>
           </div>
@@ -22,16 +27,15 @@ const Review = () => {
               <span className="num">0</span>
             </div>
           </div>
-          <ReviewForm />
+          {visible && <ReviewForm />}
           <div className="view_review">
             <div className="rating">★★★★★</div>
             <p>Be the first to review this item</p>
           </div>
         </div>
-        <div className="bubble"></div>
       </section>
     </>
   );
-};
+});
 
 export default Review;
