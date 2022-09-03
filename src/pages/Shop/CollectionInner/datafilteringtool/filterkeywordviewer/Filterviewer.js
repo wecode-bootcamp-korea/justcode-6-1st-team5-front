@@ -1,6 +1,6 @@
 import './filterviewer.scss';
 import Filterviewerbutton from './Filterviewerbutton';
-import { useState } from 'react';
+
 function Filterviewer(props) {
   return (
     <div id="filter_viewer_mum">
@@ -12,18 +12,13 @@ function Filterviewer(props) {
       </div>
       <ul>
         <div>
-          <Filterviewerbutton filtername={FILTERINFOR[0]} />
-          <Filterviewerbutton filtername={FILTERINFOR[1]} />
-          <Filterviewerbutton filtername={FILTERINFOR[2]} />
+          {props.filterarrstate.map(obj => {
+            return <Filterviewerbutton title={obj.title} value={obj.value} />;
+          })}
         </div>
       </ul>
     </div>
   );
 }
 
-const FILTERINFOR = [
-  'Product Type: In Store purchase',
-  'flavor:Maccha',
-  'price:0-97',
-];
 export default Filterviewer;

@@ -1,6 +1,17 @@
 // import { useEffect, useState } from 'react';
 
 function Price() {
+  // const productfilterview = () => {
+  //   createfilterviewer(p => !p);
+  // };
+  // const detailviewer = () => {
+  //   const filterinfor = {
+  //     title: 'Product Type',
+  //     value: ' In Store Purchase',
+  //   };
+  //   createfilterarr([...filterarrstate, filterinfor]);
+  // };
+
   return (
     <div id="price_filtering_category">
       <div className="button_style">

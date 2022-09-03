@@ -7,13 +7,15 @@ function FilterButtonPart(props) {
   const [display, setdisplay] = useState(false);
   const [filterKeyword, setFilterKeyword] = useState(<ProductType />);
   const name = props.buttonname;
-  const goodsstate = props.goodsstate;
+  const createFilterarr = props.createfilterarr;
 
   useEffect(() => {
     name === 'Producttype' &&
       setFilterKeyword(
         <ProductType
-          goodsstate={goodsstate}
+          filterarrstate={props.filterarrstate}
+          createfilterarr={createFilterarr}
+          goodsstate={props.goodsstate}
           createfilterviewer={props.createfilterviewer}
         />
       );
@@ -21,7 +23,11 @@ function FilterButtonPart(props) {
       setFilterKeyword(<Price createfilterviewer={props.createfilterviewer} />);
     name === 'Flavor' &&
       setFilterKeyword(
-        <Flavor createfilterviewer={props.createfilterviewer} />
+        <Flavor
+          createfilterviewer={props.createfilterviewer}
+          createfilterarr={createFilterarr}
+          filterarrstate={props.filterarrstate}
+        />
       );
   }, [setdisplay]);
 
