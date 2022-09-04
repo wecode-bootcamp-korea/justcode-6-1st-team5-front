@@ -5,8 +5,8 @@
   position: absolute;
   right: 0;
   width: 32.5vw;
-  height: calc(100vh - 243px);
-  margin: 63px 0;
+  height: calc(100vh - (64.8px + 25vh));
+  margin: 64.8px 0;
   box-shadow: 1px 1px #999, -1px -1px #999;
   background-color: white;
   animation: fadein 0.4s;
@@ -32,7 +32,7 @@
     .pic {
       height: 10vw;
       width: 10vw;
-      margin: 25px;
+      margin: 1.8vw;
     }
 
     .text_box {
@@ -51,8 +51,8 @@
         }
         .add,
         .minus {
-          height: 15px;
-          width: 15px;
+          height: 1vw;
+          width: 1vw;
           cursor: pointer;
         }
         .remove {
@@ -68,7 +68,7 @@
     flex-direction: column;
     position: fixed;
     width: 32.5vw;
-    height: 180px;
+    height: 25vh;
     right: 0;
     bottom: 0px;
     box-shadow: 1px 1px #999, -1px -1px #999;

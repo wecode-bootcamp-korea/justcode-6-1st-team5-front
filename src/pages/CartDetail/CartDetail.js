@@ -62,12 +62,12 @@ export default function CartDetail() {
           <div className="cart_checkout flex_center">
             <div className="cart_checkout_title">
               TOTAL : ${' '}
-              {price.toLocaleString > 990
+              {price.toLocaleString > 999
                 ? price.toLocaleString()
-                : Number(price.toLocaleString())}
+                : Number((price + 3).toLocaleString())}
             </div>
             <div className="cart_checkout_subtitle">
-              Shipping & taxes not calculated at checkout
+              Shipping & taxes calculated at checkout
             </div>
             <div className="checkout_btn flex_center">CHECKOUT</div>
           </div>

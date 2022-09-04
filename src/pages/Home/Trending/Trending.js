@@ -46,8 +46,6 @@ export default function Trending() {
         <div className="title_2">TRENDING</div>
       </div>
       <Carousel data={datas} />
-
-      <div></div>
     </div>
   );
 }
