@@ -7,7 +7,7 @@ function FooterTop() {
         <img src="/Images/truck.png" alt="truck" className="icon" />
         <p className="text">
           WE OFFER FREE SHIPPING ON <br />
-          ORDERS OVER ₩ 130,000 WON
+          ORDERS OVER $ 999 USD
         </p>
       </div>
       <div className="top_box flex_center">
@@ -18,7 +18,7 @@ function FooterTop() {
         </p>
       </div>
       <div className="top_box flex_center">
-        <img src="/Images/shop.png" alt="snowflake" className="icon" />
+        <img src="/Images/shop.png" alt="shop" className="icon" />
         <p className="text">
           WE OFFER SAME-DAY DELIVERY <br />
           AND PICK-UP SERVICES IN <br />
@@ -26,7 +26,7 @@ function FooterTop() {
         </p>
       </div>
       <div className="top_box flex_center">
-        <img src="/Images/security.png" alt="snowflake" className="icon" />
+        <img src="/Images/security.png" alt="security" className="icon" />
         <p className="text">
           100% SAFE & SECURE CHECKOUT <br />
           WORRY-FREE-PURCHASES

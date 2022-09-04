@@ -1,24 +1,25 @@
 .nav_container {
-  z-index: 3;
   flex-direction: column;
   position: fixed;
+  letter-spacing: 0.1rem;
+  z-index: 3;
 
-  #nav {
+  .nav {
     display: flex;
-    flex-direction: row;
-    font-family: 'Nanum Gothic', sans-serif;
     align-items: center;
+    flex-direction: row;
     justify-content: space-between;
-    padding: 18px 50px;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
+    padding: 18px 50px;
     background-color: rgba(255, 255, 255);
     box-shadow: 1px 1px #999, -1px -1px #999;
+    transition: background-color 0.3s, box-shadow 0.3s;
 
     .logo_container {
-      margin-left: 20px;
+      margin-left: 2.5vw;
     }
 
     .nav_menu_container {
@@ -26,11 +27,44 @@
 
       .nav_menu {
         height: 100%;
-        padding: 0px 15px;
-        font-family: 'Jost', sans-serif;
-        font-size: 13px;
+        padding: 0 1.1vw;
+        font-size: 0.85rem;
         font-weight: 400;
-        letter-spacing: 2.5px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .invisibleNav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 18px 50px;
+    background-color: rgba(255, 255, 255, 0);
+    transition: background-color 0.3s, box-shadow 0.3s;
+
+    .logo_container {
+      margin-left: 2.5vw;
+
+      .logo {
+        color: white;
+      }
+    }
+
+    .nav_menu_container {
+      display: flex;
+
+      .nav_menu {
+        height: 100%;
+        padding: 0 1.1vw;
+        color: white;
+        font-size: 0.85rem;
+        font-weight: 400;
         cursor: pointer;
       }
     }

@@ -9,6 +9,15 @@ export default function ItemContainer({ id, img, name, rate, price }) {
     });
   };
 
+  function starRate() {
+    if (rate == 5) return '★★★★★';
+    if (rate == 4) return '★★★★☆';
+    if (rate == 3) return '★★★☆☆';
+    if (rate == 2) return '★★☆☆☆';
+    if (rate == 1) return '★☆☆☆☆';
+    else return '☆☆☆☆☆';
+  }
+
   const navigate = useNavigate();
   return (
     <div className="items_container">
@@ -21,8 +30,8 @@ export default function ItemContainer({ id, img, name, rate, price }) {
       >
         <img src={img} alt={name} className="img" />
         <div className="name flex_center">{name}</div>
-        <div className="rate">{rate} / 5</div>
-        <div className="price">₩ {price.toLocaleString()}</div>
+        <div className="rate">{starRate()}</div>
+        <div className="price">$ {price.toLocaleString()}</div>
       </div>
     </div>
   );
