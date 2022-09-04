@@ -8,6 +8,7 @@ import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import Detail from './Detail/Detail';
 import Shop from './Shop/Main';
+import Location from './Location/Location';
 import CartDetail from './CartDetail/CartDetail';
 
 function Router() {
@@ -21,6 +22,7 @@ function Router() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/product/detail/:id" element={<Detail />} />
         <Route path="/shop" element={<Shop />} />
+        <Route path="/location" element={<Location />} />
         <Route path="/cart" element={<CartDetail />} />
       </Routes>
       <Footer />
