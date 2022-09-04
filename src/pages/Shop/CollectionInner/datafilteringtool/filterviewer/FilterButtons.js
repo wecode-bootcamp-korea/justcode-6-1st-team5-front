@@ -6,13 +6,14 @@ import './filterbuttons.scss';
 
 function FilterButtons(props) {
   const [display, setdisplay] = useState(false);
-  const [filterKeyword, setFilterKeyword] = useState(<ProductType />);
-  const name = props.name;
+  const [filterKeyword, setFilterKeyword] = useState();
+  const { name, mission } = props;
 
   useEffect(() => {
-    name === 'Producttype' && setFilterKeyword(<ProductType />);
-    name === 'Price' && setFilterKeyword(<Price />);
-    name === 'Flavor' && setFilterKeyword(<Flavor />);
+    name === 'Producttype' &&
+      setFilterKeyword(<ProductType mission={mission} />);
+    name === 'Price' && setFilterKeyword(<Price mission={mission} />);
+    name === 'Flavor' && setFilterKeyword(<Flavor mission={mission} />);
   }, []);
 
   return (

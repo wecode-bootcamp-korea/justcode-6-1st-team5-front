@@ -1,8 +1,8 @@
 function Flavor(props) {
-  const { createfilterviewer, setFlavorFilterViewer } = props;
-  const flavorfilterview = () => {
-    createfilterviewer(true);
-    setFlavorFilterViewer(p => !p);
+  const { mission } = props;
+
+  const detailviewer = () => {
+    mission(p => !p);
   };
 
   return (
@@ -10,7 +10,7 @@ function Flavor(props) {
       <div className="button_style">
         <button
           onClick={() => {
-            flavorfilterview();
+            detailviewer();
           }}
         >
           <div className="margin_right">Maccha</div>

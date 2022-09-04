@@ -1,11 +1,10 @@
 import './filteringkeyword.scss';
 
 function ProductType(props) {
-  const { createfilterviewer, setProductFilterViewer } = props;
+  const { mission } = props;
 
   const detailviewer = () => {
-    createfilterviewer(true);
-    setProductFilterViewer(p => !p);
+    mission(p => !p);
   };
 
   return (

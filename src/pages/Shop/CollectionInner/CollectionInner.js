@@ -6,7 +6,6 @@ import FilterController from './datafilteringtool/filterviewer/filterController'
 
 function CollectionInner(props) {
   const [goodsstate, setgoodsstate] = useState([]); //데이터상태
-  const [stopview, setstopview] = useState(true);
 
   useEffect(() => {
     fetch('mockdata/product.json')
@@ -18,7 +17,7 @@ function CollectionInner(props) {
 
   return (
     <div className="collection_inner">
-      {stopview && <FilterController setstopview={setstopview} />}
+      <FilterController />
       <div className="products_space">
         {props.sortbutton
           ? goodsstate.map(f => {

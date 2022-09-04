@@ -43,12 +43,14 @@
     height: 295px;
 
     .sortbutton {
+      width: 100%;
+      text-align: right;
       font-size: 10px;
       color: rgb(160, 160, 160);
       background-color: transparent;
       border: none;
       margin: 6px 0;
-      margin-right: 28px;
+      padding-right: 28px;
     }
   }
 }

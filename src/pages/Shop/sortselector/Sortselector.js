@@ -7,7 +7,6 @@ function Sortselector() {
         {' '}
         <div id="triangle"></div>
       </div>
-
       <ul id="sort_selector">
         <li>
           <button className="sortbutton">BEST SELLING</button>

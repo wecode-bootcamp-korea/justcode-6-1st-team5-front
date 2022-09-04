@@ -6,6 +6,12 @@
   margin: 0 10px 0 50px;
   background-color: rgb(255, 255, 255);
 
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
   .filter_container {
     width: 200px;
     height: 595px;
