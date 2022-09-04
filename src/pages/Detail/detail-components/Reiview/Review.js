@@ -17,7 +17,7 @@ const Review = forwardRef((props, ref) => {
         <div className="review_wrapper">
           <div onClick={handleOpenForm} className="write_btn">
             <span>
-              <img src="public/image/edit.png" />
+              <img src="/image/edit.png" />
               <p>Write a Review</p>
             </span>
           </div>

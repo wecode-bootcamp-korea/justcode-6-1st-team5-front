@@ -14,9 +14,6 @@ const Description = ({ description, scrollFunction }) => {
     if (check === '⎼' && quantity > 1) setQuantity(current => current - 1);
     else if (check === '+') setQuantity(current => current + 1);
   };
-  // const scrollToReview = () => {
-  //   reviewRef.current?.scrollIntoView({ behavior: 'smooth' })
-  // }
 
   return (
     <div className="description">

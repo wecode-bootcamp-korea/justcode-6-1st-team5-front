@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Review from './Review';
 
 import './ReviewForm.scss';
@@ -8,6 +8,7 @@ const ReviewForm = () => {
   const [email, setEmail] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [star, setStar] = useState(false);
 
   const handleInput = e => {
     const value = e.target.value;
@@ -25,6 +26,10 @@ const ReviewForm = () => {
       title,
       content,
     };
+    setName('');
+    setEmail('');
+    setTitle('');
+    setContent('');
     console.log(body);
 
     fetch('http://localhost:3000/review', {
@@ -40,6 +45,24 @@ const ReviewForm = () => {
       });
   };
 
+  const [rating] = useState([1, 2, 3, 4, 5]);
+
+  const handleRating = e => {
+    console.log(star);
+    const rate = e.target.id;
+    console.log('rate');
+    if (rate === '1') {
+      setStar('★☆☆☆☆');
+      console.log('1');
+    }
+    if (rate === '2') {
+      setStar('★★☆☆☆');
+      console.log('2');
+    } else if (rate === '3') setStar('★★★☆☆');
+    else if (rate === '4') setStar('★★★★☆');
+    else if (rate === '5') setStar('★★★★★');
+  };
+
   return (
     <form onSubmit={onSubmit} className="review_form">
       <div className="contact-box space">
@@ -50,7 +73,7 @@ const ReviewForm = () => {
             onChange={handleInput}
             id="name"
             placeholder="Enter your name"
-            autocomplete="off"
+            autoComplete="off"
           />
         </div>
         <div className="email">
@@ -60,12 +83,23 @@ const ReviewForm = () => {
             onChange={handleInput}
             id="email"
             placeholder="john.smith@example.com"
+            autoComplete="off"
           />
         </div>
       </div>
       <div className="rating_box space">
         <label htmlFor="rating">Raiting</label>
-        <p>☆☆☆☆☆</p>
+        <div className="star">
+          {star ? (
+            <span>{star}</span>
+          ) : (
+            rating.map(el => (
+              <span key={el} id={el} onClick={handleRating}>
+                ☆
+              </span>
+            ))
+          )}
+        </div>
       </div>
       <div className="review_title_box space">
         <label htmlFor="review_title">Title of Review</label>
@@ -75,6 +109,7 @@ const ReviewForm = () => {
           id="review_title"
           type="text"
           placeholder="Give your review a title"
+          autoComplete="off"
         />
       </div>
       <div className="review_content_box space">

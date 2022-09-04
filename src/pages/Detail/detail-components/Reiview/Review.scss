@@ -24,6 +24,7 @@
         height: 38px;
         border: 1px solid lightgray;
         border-radius: 3px;
+        box-shadow: 3px 3px 5px gray;
 
         img {
           height: 12px;
@@ -33,6 +34,11 @@
         p {
           font-size: 13px;
           font-weight: 500;
+          cursor: pointer;
+        }
+
+        &:hover {
+          box-shadow: none;
         }
       }
     }
