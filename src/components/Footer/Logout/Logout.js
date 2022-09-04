@@ -1,4 +1,5 @@
 import React from 'react';
+import './Logout.scss';
 
 function Logout() {
   const handleLogout = () => {
@@ -7,7 +8,9 @@ function Logout() {
   };
   return (
     <div>
-      <button onClick={handleLogout}>로그아웃</button>
+      <button className="logout_btn" onClick={handleLogout}>
+        Logout
+      </button>
     </div>
   );
 }

@@ -1,0 +1,14 @@
+@mixin font {
+  font-family: 'Nanum Gothic', sans-serif;
+  letter-spacing: 1px;
+  color: #2f386c;
+}
+
+.wrapper_content_account {
+  padding-top: 10vh;
+  margin: 0px 90px;
+
+  .account_header {
+    padding: 80px;
+  }
+}

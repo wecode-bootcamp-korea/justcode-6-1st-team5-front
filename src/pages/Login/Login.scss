@@ -7,7 +7,7 @@ section.wrapper_content_login {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 25vh;
+  padding-top: 20vh;
   padding-bottom: 15vh;
   height: 100%;
 
@@ -60,6 +60,7 @@ section.wrapper_content_login {
       }
 
       button.login_btn {
+        cursor: pointer;
         height: 33%;
         padding: 12px 14px;
         background-color: #2f386c;
@@ -74,6 +75,7 @@ section.wrapper_content_login {
     font-size: 15px;
     text-align: center;
     letter-spacing: 0.5px;
+    cursor: pointer;
 
     span.login_span {
       @include font();
