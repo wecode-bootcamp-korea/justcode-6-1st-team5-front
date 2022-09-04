@@ -19,13 +19,13 @@
     padding-top: 20px;
     height: 114px;
 
-    h1 {
+    .product_name {
       letter-spacing: 4px;
       // text-rendering: optimizeSpeed;
       font-size: 19px;
     }
 
-    span {
+    .total_rating {
       color: rgb(255, 208, 0);
       letter-spacing: 4px;
       font-size: 16px;
@@ -35,9 +35,10 @@
       letter-spacing: 0.4px;
       font-size: 16px;
       text-decoration: underline;
+      cursor: pointer;
     }
 
-    p {
+    .price {
       letter-spacing: 4px;
       font-size: 16.5px;
     }

@@ -1,0 +1,96 @@
+@mixin font {
+  font-family: 'Jost', sans-serif;
+}
+
+.store_locator {
+  padding-top: 80px;
+  padding-bottom: 30px;
+  text-align: center;
+  border-bottom: 1px solid rgb(46, 56, 108);
+  letter-spacing: 0.8px;
+  font-size: 22px;
+  font-weight: 700;
+  color: rgb(46, 56, 108);
+  @include font;
+}
+
+.location_container {
+  display: flex;
+  justify-content: space-between;
+  margin: 100px;
+
+  .location_list {
+    width: 25%;
+
+    .search {
+      margin-bottom: 15px;
+
+      input {
+        width: 80%;
+        height: 34px;
+        padding: 6px 10px;
+        border: 1px solid #ccc;
+        border-radius: 0px;
+        @include font;
+      }
+
+      button {
+        background-color: #333333;
+        margin-left: 10px;
+        padding: 8px 10px;
+        border: none;
+        border-radius: 4px;
+
+        img {
+          width: 16px;
+        }
+      }
+    }
+
+    .list {
+      overflow: scroll;
+      height: 300px;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        list-style-type: none;
+        border-top: 1px dotted #ccc;
+        line-height: 25px;
+        @include font;
+
+        .pin_icon {
+          width: 20%;
+          padding: 20px 20px;
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .location_info {
+          width: 80%;
+          padding: 15px 0px;
+          .store_name {
+            font-weight: 700;
+          }
+
+          .store_address {
+            padding-bottom: 13px;
+            font-weight: 300;
+          }
+
+          .phone_number {
+            margin-top: 13px;
+            font-weight: 300;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .location_map {
+    width: 60%;
+  }
+}

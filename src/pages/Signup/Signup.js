@@ -43,7 +43,6 @@ function Signup() {
       }),
     })
       .then(res => res.json())
-      //! res.json() 적용 시 오류 발생
       .then(data => console.log(data));
   };
 
@@ -179,5 +178,4 @@ function Signup() {
     </section>
   );
 }
-
 export default Signup;
