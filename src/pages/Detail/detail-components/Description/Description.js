@@ -15,12 +15,21 @@ const Description = ({ description, scrollFunction }) => {
     else if (check === '+') setQuantity(current => current + 1);
   };
 
+  function starRate(rate) {
+    if (rate === 5) return '★★★★★';
+    if (rate === 4) return '★★★★☆';
+    if (rate === 3) return '★★★☆☆';
+    if (rate === 2) return '★★☆☆☆';
+    if (rate === 1) return '★☆☆☆☆';
+    else return '☆☆☆☆☆';
+  }
+
   return (
     <div className="description">
       <div className="product_meta">
         <h1 className="product_name">{name}</h1>
         <div className="review">
-          <span className="total_rating">☆☆☆☆☆</span>
+          <span className="total_rating">{starRate(rate)}</span>
           <a onClick={scrollFunction}>Write A Review</a>
         </div>
         <p className="price">${price}</p>
