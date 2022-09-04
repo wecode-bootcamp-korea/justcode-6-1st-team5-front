@@ -19,7 +19,7 @@ export default function Search({ setIsSearchClicked }) {
   };
 
   useEffect(() => {
-    fetch('./mockdata/products.json')
+    fetch('/mockdata/products.json')
       .then(res => res.json())
       .then(data => setItemData(data));
   }, []);

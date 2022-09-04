@@ -1,6 +1,6 @@
 import './Header.scss';
 import { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import ExpandHeader from './ExpandHeader/ExpandHeader';
 import Logo from './Logo/Logo';
 import { Cart } from './Cart/Cart';
@@ -8,9 +8,19 @@ import Search from './Search/Search';
 
 export default function Header() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [isShopClicked, setIsShopClicked] = useState(false);
   const [isCartClicked, setIsCartClicked] = useState(false);
   const [isSearchClicked, setIsSearchClicked] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const updateScroll = () => {
+    if (location.pathname === '/') setScrollPosition(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', updateScroll);
+  }, []);
 
   const moveAndScrollToTop = url => {
     navigate(url);
@@ -20,16 +30,22 @@ export default function Header() {
     });
   };
 
-  // useEffect(() => {
-  //   window.addEventListener('scroll', function () {
-  //     let value = window.scrollY;
-  //     if (value === 0) return 1;
-  //   });
-  // }, [window.scrollY]);
-
   return (
-    <div className="nav_container flex_center">
-      <div id="nav">
+    <div
+      className="nav_container flex_center"
+      onMouseOver={() => setScrollPosition(60)}
+      onMouseLeave={() => {
+        setScrollPosition(window.scrollY);
+        setIsShopClicked(false);
+      }}
+    >
+      <div
+        className={
+          scrollPosition < 30 && location.pathname === '/'
+            ? 'invisibleNav'
+            : 'nav'
+        }
+      >
         <div className="nav_menu_container">
           <div className="nav_menu" onClick={() => moveAndScrollToTop('/')}>
             HOME
@@ -96,7 +112,7 @@ export default function Header() {
         </div>
       </div>
 
-      {isShopClicked && <ExpandHeader setIsShopClicked={setIsShopClicked} />}
+      {isShopClicked && <ExpandHeader />}
       {isCartClicked && <Cart setIsCartClicked={setIsCartClicked} />}
       {isSearchClicked && <Search setIsSearchClicked={setIsSearchClicked} />}
     </div>

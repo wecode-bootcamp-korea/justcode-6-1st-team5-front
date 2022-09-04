@@ -10,7 +10,7 @@ export default function Trending() {
     arr.map(data => (
       <ItemContainer
         key={data}
-        img="./Images/home_part_1.jpg"
+        img="/Images/home_part_1.jpg"
         name="ROCYE SIGNATURE CHOCOLATE"
         rate={5}
         price={'32,000'}
@@ -19,7 +19,7 @@ export default function Trending() {
   );
 
   useEffect(() => {
-    fetch('./mockdata/products.json')
+    fetch('/mockdata/products.json')
       .then(res => res.json())
       .then(data => {
         setDatas(

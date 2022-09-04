@@ -15,7 +15,7 @@ export default function CartDetail() {
   const toShipping = 999 - price;
 
   useEffect(() => {
-    fetch('./mockdata/cart.json')
+    fetch('/mockdata/cart.json')
       .then(res => res.json())
       .then(data => {
         data.map(el => {

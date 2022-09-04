@@ -15,12 +15,9 @@ const popular = [
   { url: '/shop/wafers', name: 'Wafers' },
 ];
 
-export default function ExpandHeader({ setIsShopClicked }) {
+export default function ExpandHeader() {
   return (
-    <div
-      className="expand_container flex_center"
-      onMouseLeave={() => setIsShopClicked(false)}
-    >
+    <div className="expand_container flex_center">
       <div className="expand_wrapper flex_center">
         <div className="menu_list flex_center">
           <MenuList title="TRENDING" menu={trend}></MenuList>
@@ -29,13 +26,13 @@ export default function ExpandHeader({ setIsShopClicked }) {
           <MenuList title="POPULAR" menu={popular}></MenuList>
         </div>
         <ItemContainer
-          img="./Images/home_part_1.jpg"
+          img="/Images/home_part_1.jpg"
           name="ROECY Signature Chocolate"
           rate={5}
           price={'30.99'}
         />
         <ItemContainer
-          img="./Images/home_part_1.jpg"
+          img="/Images/home_part_1.jpg"
           name="ROECY Signature Chocolate"
           rate={5}
           price={'30.99'}

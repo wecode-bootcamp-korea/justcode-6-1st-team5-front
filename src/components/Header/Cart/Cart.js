@@ -50,13 +50,12 @@ function Cart({ setIsCartClicked }) {
   };
 
   useEffect(() => {
-    fetch('./mockdata/cart.json')
+    fetch('/mockdata/cart.json')
       .then(res => res.json())
       .then(data => {
         data.map(el => {
           if (el.user_id === 1) {
             setItemData(el);
-            console.log(el);
           }
         });
       });
