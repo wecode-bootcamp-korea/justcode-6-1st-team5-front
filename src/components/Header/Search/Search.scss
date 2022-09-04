@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   max-height: 60vh;
-  margin-top: calc(8vh + 2% + 63px);
+  margin-top: calc(8vh + 2% + 64.8px);
   box-shadow: 1px 1px #999, -1px -1px #999;
   animation: fadein 0.25s;
   overflow-y: auto;
@@ -17,17 +17,19 @@
   }
 
   .input_container {
-    .input {
+    .input_search {
       padding: 1% 2%;
-      width: 96%;
+      width: 100%;
       height: 8vh;
       border: none;
       box-shadow: 1px 1px #999, -1px -1px #999;
       font-family: 'Pretendard', sans-serif;
       font-size: 4vh;
+      letter-spacing: 0.25rem;
       word-break: break-all;
       position: fixed;
-      top: 63px;
+      top: 64.8px;
+      box-sizing: content-box;
       &:focus {
         outline: 0;
       }
@@ -52,13 +54,11 @@
         flex-direction: column;
         .name {
           width: 100%;
-          margin-bottom: 25px;
-          font-size: 1.3rem;
-          font-weight: 600;
+          margin-bottom: 5vh;
+          font-size: 1.1rem;
         }
         .price {
           width: 100%;
-          font-size: 1.2rem;
         }
       }
     }

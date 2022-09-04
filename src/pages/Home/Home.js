@@ -7,24 +7,24 @@ function Home() {
     <div className="home_container">
       <div className="home_main">
         <div className="text_container">
-          <div className="text_1">당일 매장 픽업</div>
-          <div className="text_2">딜리셔스 유니크</div>
-          <div className="text_btn flex_center">구매하기</div>
+          <div className="text_1">SAME-DAY BOUTIQUE PICK-UP</div>
+          <div className="text_2">DELICIOUSLY UNIQUE</div>
+          <div className="text_btn flex_center">SHOP NOW</div>
         </div>
       </div>
 
       <Part
         type="left"
         pic="./Images/home_part_1.jpg"
-        text1="퓨어 초콜릿"
-        text2={`그 "순수함"에 중독되다`}
+        text1="PURE CHOCOLATE"
+        text2={`WE ARE "PURELY" ADDICTED`}
       />
 
       <Part
         type="right"
         pic="./Images/home_part_2.jpg"
-        text1="선물 세트"
-        text2="럭셔리한 경험을 선물하고 싶다면"
+        text1="GIFT SET"
+        text2="IF YOU WANT TO GIVE LUXURY AS A GIFT"
       />
 
       <Trending />
