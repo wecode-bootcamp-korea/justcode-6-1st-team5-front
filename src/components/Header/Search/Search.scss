@@ -4,7 +4,7 @@
   max-height: 60vh;
   margin-top: calc(8vh + 2% + 64.8px);
   box-shadow: 1px 1px #999, -1px -1px #999;
-  animation: fadein 0.25s;
+  animation: fadein 0.4s;
   overflow-y: auto;
 
   @keyframes fadein {
@@ -47,9 +47,9 @@
       display: flex;
 
       .img {
-        width: 120px;
-        height: 120px;
-        margin: 20px;
+        width: 10vw;
+        height: 10vw;
+        margin: 1.8vw;
       }
       .info {
         flex-direction: column;

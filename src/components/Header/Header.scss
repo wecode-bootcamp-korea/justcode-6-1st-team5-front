@@ -13,7 +13,6 @@
     left: 0;
     right: 0;
     padding: 18px 50px;
-    font-family: 'Nanum Gothic', sans-serif;
     background-color: rgba(255, 255, 255);
     box-shadow: 1px 1px #999, -1px -1px #999;
     transition: background-color 0.4s;
@@ -28,11 +27,9 @@
 
       .nav_menu {
         height: 100%;
-        padding: 0px 15px;
-        font-family: 'Jost', sans-serif;
-        font-size: 13px;
+        padding: 0 1.1vw;
+        font-size: 0.85rem;
         font-weight: 400;
-        letter-spacing: 2.5px;
         cursor: pointer;
       }
     }
@@ -48,7 +45,6 @@
     left: 0;
     right: 0;
     padding: 18px 50px;
-    font-family: 'Nanum Gothic', sans-serif;
     background-color: rgba(255, 255, 255, 0);
     transition: background-color 0.3s;
     transition: box-shadow 0.4;
@@ -66,12 +62,10 @@
 
       .nav_menu {
         height: 100%;
-        padding: 0px 15px;
+        padding: 0 1.1vw;
         color: white;
-        font-family: 'Jost', sans-serif;
-        font-size: 13px;
+        font-size: 0.85rem;
         font-weight: 400;
-        letter-spacing: 2.5px;
         cursor: pointer;
       }
     }

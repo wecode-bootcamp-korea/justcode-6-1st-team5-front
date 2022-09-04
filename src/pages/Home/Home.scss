@@ -7,7 +7,7 @@
     background-image: url(../../../public/Images/home.jpg);
     background-size: cover;
     height: 100vh;
-    -webkit-animation: fadein 1.5s;
+    -webkit-animation: fadein 1s;
 
     @keyframes fadein {
       from {
@@ -20,24 +20,24 @@
 
     .text_container {
       position: absolute;
-      right: 60px;
-      bottom: 60px;
+      right: 9vh;
+      bottom: 9vh;
       color: white;
       text-align: right;
 
       .text_1 {
-        font-size: 14px;
+        font-size: 0.8rem;
       }
 
       .text_2 {
-        margin: 20px 0;
-        font-size: 30px;
+        margin: 3.5vh 0;
+        font-size: 1.85rem;
       }
 
       .text_btn {
-        width: 155px;
-        height: 45.6px;
-        margin-left: 180px;
+        width: 10.5vw;
+        height: 6.5vh;
+        margin-left: 100vw;
         background-color: white;
         color: black;
         font-size: 15px;
