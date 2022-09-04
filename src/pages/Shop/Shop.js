@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import './categorybar.scss';
-import CollectionInner from './CollectionInner/CollectionControlTower';
+import './shop.scss';
+import CollectionInner from './CollectionInner/CollectionInner';
 import Sortselector from './sortselector/Sortselector';
 
 function Shop() {

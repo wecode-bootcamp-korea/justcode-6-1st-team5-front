@@ -1,0 +1,41 @@
+#filterbuttonstyle {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+  .button_style {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255);
+    margin: 7px 0 6px;
+    padding-left: 0;
+    font-size: 11px;
+  }
+
+  #bottomspace {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .smallfont1 {
+    width: 80%;
+    list-style: none;
+    text-align: left;
+  }
+
+  .plusbutton {
+    align-items: flex-end;
+    list-style: none;
+    width: 15%;
+    padding-right: 10px;
+    text-align: right;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  }
+
+  .underline {
+    border-bottom: 0.5px solid rgb(207, 207, 207);
+  }
+}

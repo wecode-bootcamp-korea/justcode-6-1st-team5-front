@@ -1,22 +1,11 @@
 import './filteringkeyword.scss';
-import Filterviewerbutton from '../filterkeywordviewer/Filterviewerbutton';
-import { useState } from 'react';
 
 function ProductType(props) {
-  const { createfilterviewer, createfilterarr, filterarrstate } = props;
-  const [id, setid] = useState(1);
-
-  const productfilterview = () => {
-    createfilterviewer(true);
-  };
+  const { createfilterviewer, setProductFilterViewer } = props;
 
   const detailviewer = () => {
-    const filterinfor = {
-      id: setid(id + 1),
-      title: 'Product Type',
-      value: ' In Store Purchase',
-    };
-    createfilterarr([...filterarrstate, filterinfor]);
+    createfilterviewer(true);
+    setProductFilterViewer(p => !p);
   };
 
   return (
@@ -25,7 +14,6 @@ function ProductType(props) {
         <button
           className="inner_keyword_button"
           onClick={() => {
-            productfilterview();
             detailviewer();
           }}
         >
@@ -37,7 +25,6 @@ function ProductType(props) {
         <button
           className="inner_keyword_button"
           onClick={() => {
-            productfilterview();
             detailviewer();
           }}
         >

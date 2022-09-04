@@ -1,15 +1,14 @@
 import { useState } from 'react';
 
-function Filterviewerbutton(props) {
-  const { title, value } = props;
+function FilterViewerButton(props) {
+  const { data } = props;
   const [x, setx] = useState(true);
+
   return (
-    <div>
+    <div id="filterviwer_button">
       {x && (
         <li className="space_between">
-          <button className="category_title">
-            {title}:{value}
-          </button>
+          <button className="category_title">producttype: instore</button>
           <button className="x_type" onClick={() => setx(!true)}>
             x
           </button>
@@ -19,4 +18,4 @@ function Filterviewerbutton(props) {
   );
 }
 
-export default Filterviewerbutton;
+export default FilterViewerButton;

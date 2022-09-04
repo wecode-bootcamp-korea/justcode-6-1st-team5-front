@@ -6,7 +6,7 @@ import Signup from './Signup/Signup';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import Detail from './Detail/Detail';
-import Shop from './Shop/Main';
+import Shop from './Shop/Shop';
 
 function Router() {
   return (

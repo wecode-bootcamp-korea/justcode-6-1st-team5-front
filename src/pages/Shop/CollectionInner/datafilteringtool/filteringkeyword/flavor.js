@@ -1,23 +1,16 @@
 function Flavor(props) {
-  const { createfilterviewer, createfilterarr, filterarrstate } = props;
-  const productfilterview = () => {
+  const { createfilterviewer, setFlavorFilterViewer } = props;
+  const flavorfilterview = () => {
     createfilterviewer(true);
+    setFlavorFilterViewer(p => !p);
   };
-  const detailviewer = () => {
-    const filterinfor = {
-      id: '2',
-      title: 'Flavor',
-      value: ' Maccha',
-    };
-    createfilterarr([...filterarrstate, filterinfor]);
-  };
+
   return (
     <div id="flavor_filtering_category">
       <div className="button_style">
         <button
           onClick={() => {
-            productfilterview();
-            detailviewer();
+            flavorfilterview();
           }}
         >
           <div className="margin_right">Maccha</div>
