@@ -31,8 +31,9 @@ export default function CartDetail() {
     <div className="cart_detail flex_center">
       <div className="cart_title">CART</div>
       <div className="cart_subtitle">
-        {toShipping > 0 &&
-          `Spend $ ${toShipping.toLocaleString()} more and get free shipping!`}
+        {toShipping <= 0
+          ? 'You are eligible for free shipping!'
+          : `Spend $ ${toShipping.toLocaleString()} more and get free shipping!`}
       </div>
       <div className="cart_container">
         <div className="items_box">

@@ -4,7 +4,7 @@
   align-items: center;
   position: absolute;
   right: 0;
-  width: 32.5vw;
+  width: 30vw;
   height: calc(100vh - (64.8px + 25vh));
   margin: 64.8px 0;
   box-shadow: 1px 1px #999, -1px -1px #999;
@@ -36,7 +36,8 @@
     }
 
     .text_box {
-      letter-spacing: 0.1rem;
+      letter-spacing: 0.05rem;
+
       .title {
       }
       .price {
@@ -67,25 +68,27 @@
   .modal_bottom {
     flex-direction: column;
     position: fixed;
-    width: 32.5vw;
+    width: 30vw;
     height: 25vh;
     right: 0;
     bottom: 0px;
     box-shadow: 1px 1px #999, -1px -1px #999;
     background-color: white;
+    letter-spacing: 0.15rem;
     z-index: 1;
 
     .total_price {
       text-align: left;
-      width: 28vw;
+      width: 26vw;
     }
 
     .buy_btn {
       margin-top: 3vh;
-      width: 28vw;
+      width: 26vw;
       height: 8vh;
       background-color: rgb(47, 56, 108);
       color: white;
+      letter-spacing: 0.2rem;
       cursor: pointer;
     }
   }
