@@ -6,13 +6,13 @@
 
   .cart_title {
     margin: 7.5vh 0 4vh 0;
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     letter-spacing: 0.6rem;
   }
 
   .cart_subtitle {
     color: #9d9d9d;
-    letter-spacing: 0.05rem;
+    letter-spacing: 0.001rem;
   }
 
   .cart_container {
@@ -21,8 +21,8 @@
     .items_box {
       width: 70vw;
       margin: 7.5vh 0;
-      border-top: 1px solid black;
-      border-bottom: 1px solid black;
+      border-top: 1px solid #999;
+      border-bottom: 1px solid #999;
 
       .item_box {
         display: flex;
@@ -64,6 +64,7 @@
               position: absolute;
               right: 2.5vw;
               font-size: 0.9rem;
+              color: #999;
               cursor: pointer;
             }
           }
@@ -118,7 +119,7 @@
       width: 70vw;
       padding: 3.5vw;
       margin-bottom: 15vh;
-      border: 1px solid black;
+      border: 1px solid #999;
 
       .title {
         position: absolute;

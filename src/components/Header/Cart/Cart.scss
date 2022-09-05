@@ -9,9 +9,9 @@
   margin: 64.8px 0;
   box-shadow: 1px 1px #999, -1px -1px #999;
   background-color: white;
-  animation: fadein 0.4s;
   overflow-y: auto;
   z-index: 3;
+  animation: fadein 0.4s;
 
   @keyframes fadein {
     from {
@@ -68,6 +68,7 @@
         .remove {
           position: absolute;
           right: 1.5vw;
+          color: #999;
           cursor: pointer;
         }
       }
