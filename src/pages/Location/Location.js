@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Map, MapMarker, MarkerClusterer } from 'react-kakao-maps-sdk';
 
-import Location_list from './LocationList';
-import MapMarkers from './MapMarkers';
+import LocationList from './LocationList';
+import Markers from './Markers';
 import './Location.scss';
 
 const Location = () => {
@@ -30,7 +30,7 @@ const Location = () => {
           <div className="list">
             {locations !== undefined &&
               locations.map(location => {
-                return <Location_list key={locations.id} data={location} />;
+                return <LocationList key={locations.id} data={location} />;
               })}
           </div>
         </div>
@@ -42,22 +42,11 @@ const Location = () => {
             }}
             style={{
               width: '100%',
-              height: '450px',
+              height: '500px',
             }}
             level={10}
           >
-            {locations.map(location => {
-              const { id, name, latlng } = location;
-              const { lat, lng } = latlng;
-              console.log(typeof lat);
-              return (
-                <MapMarker
-                  key={id}
-                  position={{ lat: lat, lng: lng }}
-                  title={name}
-                />
-              );
-            })}
+            <Markers locations={locations} />
           </Map>
         </div>
       </div>

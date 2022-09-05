@@ -95,13 +95,13 @@
     "name": "ROYCE' BIFC",
     "address": "1227-2 Munhyeon-dong, Nam-gu, Busan",
     "phone": "02-521-8238",
-    "latlng": { "lat": 37.499154, "lng": 127.035928 }
+    "latlng": { "lat": 35.148413, "lng": 129.0654 }
   },
   {
     "id": 15,
     "name": "ROYCE' Seomyeon",
     "address": "3rd floor, Seojeon-ro 8, 155-1 Bujeon-dong, Busanjin-gu, Busan Metropolitan City",
     "phone": "02-521-8238",
-    "latlng": { "lat": 35.1575, "lng": 129.0605 }
+    "latlng": { "lat": 35.157504, "lng": 129.060451 }
   }
 ]

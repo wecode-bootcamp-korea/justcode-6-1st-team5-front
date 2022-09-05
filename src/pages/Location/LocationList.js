@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Location_list = ({ data }) => {
+const LocationList = ({ data }) => {
   const { name, address, phone } = data;
 
   return (
@@ -17,4 +17,4 @@ const Location_list = ({ data }) => {
   );
 };
 
-export default Location_list;
+export default LocationList;
