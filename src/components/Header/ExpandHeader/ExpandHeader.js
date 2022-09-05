@@ -4,23 +4,20 @@ import MenuList from '../../MenuList/MenuList';
 import ItemContainer from '../../../pages/Home/ItemContainer/ItemContainer';
 
 const trend = [
-  { url: '/', name: 'Gift Set' },
-  { url: '/', name: 'Boutique Exclusives Only' },
-  { url: '/', name: 'Bars' },
+  { url: '/shop/gift-set', name: 'Gift Set' },
+  { url: '/shop/boutique-exclusive-only', name: 'Boutique Exclusives Only' },
+  { url: '/shop/bars', name: 'Bars' },
 ];
 
 const popular = [
-  { url: '/', name: 'Pure Chocolate' },
-  { url: '/', name: 'Sweet & Salty' },
-  { url: '/', name: 'Wafers' },
+  { url: '/shop/pure-chocolate', name: 'Pure Chocolate' },
+  { url: '/shop/sweet-salty', name: 'Sweet & Salty' },
+  { url: '/shop/wafers', name: 'Wafers' },
 ];
 
-export default function ExpandHeader({ setIsShopClicked }) {
+export default function ExpandHeader() {
   return (
-    <div
-      className="expand_container flex_center"
-      onMouseLeave={() => setIsShopClicked(false)}
-    >
+    <div className="expand_container flex_center">
       <div className="expand_wrapper flex_center">
         <div className="menu_list flex_center">
           <MenuList title="TRENDING" menu={trend}></MenuList>
@@ -29,16 +26,16 @@ export default function ExpandHeader({ setIsShopClicked }) {
           <MenuList title="POPULAR" menu={popular}></MenuList>
         </div>
         <ItemContainer
-          img="./Images/home_part_1.jpg"
+          img="/Images/home_part_1.jpg"
           name="ROECY Signature Chocolate"
           rate={5}
-          price={'32,000'}
+          price={'30.99'}
         />
         <ItemContainer
-          img="./Images/home_part_1.jpg"
+          img="/Images/home_part_1.jpg"
           name="ROECY Signature Chocolate"
           rate={5}
-          price={'32,000'}
+          price={'30.99'}
         />
       </div>
     </div>

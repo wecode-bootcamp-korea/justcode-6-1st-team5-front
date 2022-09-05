@@ -10,8 +10,16 @@ export default function Search({ setIsSearchClicked }) {
   const [itemData, setItemData] = useState([]);
   const [inputValue, setInputValue] = useState('');
 
+  const moveAndScrollToTop = url => {
+    navigate(url);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  };
+
   useEffect(() => {
-    fetch('./mockdata/products.json')
+    fetch('/mockdata/products.json')
       .then(res => res.json())
       .then(data => setItemData(data));
   }, []);
@@ -48,13 +56,13 @@ export default function Search({ setIsSearchClicked }) {
             className="item_container_x"
             onClick={() => {
               setIsSearchClicked(false);
-              navigate(`/product/detail/${data.id}`);
+              moveAndScrollToTop(`/product/detail/${data.id}`);
             }}
           >
             <img src={data.photo} alt="item" className="img" />
             <div className="info flex_center">
               <div className="name">{data.name}</div>
-              <div className="price">₩ {data.price.toLocaleString()}</div>
+              <div className="price">$ {data.price.toLocaleString()}</div>
             </div>
           </div>
         ))}

@@ -15,14 +15,14 @@ function Home() {
 
       <Part
         type="left"
-        pic="./Images/home_part_1.jpg"
+        pic="/Images/home_part_1.jpg"
         text1="PURE CHOCOLATE"
         text2={`WE ARE "PURELY" ADDICTED`}
       />
 
       <Part
         type="right"
-        pic="./Images/home_part_2.jpg"
+        pic="/Images/home_part_2.jpg"
         text1="GIFT SET"
         text2="IF YOU WANT TO GIVE LUXURY AS A GIFT"
       />
@@ -30,7 +30,7 @@ function Home() {
       <Trending />
 
       <video
-        src="./Images/chocolate.mp4"
+        src="/Images/chocolate.mp4"
         autoPlay
         loop
         muted
