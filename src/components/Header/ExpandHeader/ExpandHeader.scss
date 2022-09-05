@@ -1,8 +1,8 @@
 .nav_container {
   .expand_container {
-    -webkit-animation: fadein 0.25s;
+    animation: fadein 0.4s;
 
-    @-webkit-keyframes fadein {
+    @keyframes fadein {
       from {
         opacity: 0;
       }

@@ -1,5 +1,5 @@
 @mixin font {
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Jost', sans-serif;
   letter-spacing: 2.5px;
 }
 
@@ -74,6 +74,7 @@ section.outter_content_signup {
       }
 
       button.signup_btn {
+        cursor: pointer;
         height: 46px;
         padding: 12px 14px;
         background-color: #2f386c;

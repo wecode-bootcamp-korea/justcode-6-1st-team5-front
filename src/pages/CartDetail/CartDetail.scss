@@ -2,16 +2,17 @@
   flex-direction: column;
   padding-top: 10vh;
   font-family: 'Jost', sans-serif;
+  letter-spacing: 0.2rem;
 
   .cart_title {
+    margin: 7.5vh 0 4vh 0;
     font-size: 1.75rem;
     letter-spacing: 0.6rem;
-    margin: 7.5vh 0 4vh 0;
   }
 
   .cart_subtitle {
     color: #9d9d9d;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.05rem;
   }
 
   .cart_container {
@@ -25,10 +26,10 @@
 
       .item_box {
         display: flex;
-        position: relative;
-        align-items: center;
         flex-direction: row;
+        position: relative;
         width: 70vw;
+        align-items: center;
 
         .pic {
           height: 10vw;
@@ -38,9 +39,10 @@
 
         .text_box {
           flex-direction: column;
+          letter-spacing: 0.1rem;
 
           .title {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
           }
           .price {
             margin: 20px 0;
@@ -59,9 +61,9 @@
               cursor: pointer;
             }
             .remove {
-              font-size: 0.9rem;
               position: absolute;
               right: 2.5vw;
+              font-size: 0.9rem;
               cursor: pointer;
             }
           }
@@ -69,16 +71,18 @@
       }
     }
     .cart_bottom {
-      position: relative;
       flex-direction: row;
       justify-content: space-between;
+      position: relative;
       margin-bottom: 20vh;
+
       .order_note {
         .text_area {
           width: 22.5vw;
-          height: 15vh;
+          height: 14vh;
           margin: 4vh 0;
           padding: 1vw;
+          resize: none;
           font-family: 'Jost', sans-serif;
         }
       }
@@ -87,12 +91,14 @@
         flex-direction: column;
         align-items: flex-end;
         text-align: right;
+
         .cart_checkout_title {
           margin-bottom: 2vh;
         }
         .cart_checkout_subtitle {
           margin-bottom: 2vh;
           color: #9d9d9d;
+          letter-spacing: 0.03rem;
           font-size: 0.9rem;
         }
         .checkout_btn {

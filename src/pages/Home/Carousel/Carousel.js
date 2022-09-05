@@ -1,9 +1,9 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './Xbar.scss';
+import './Carousel.scss';
 
-export default function Xbar({ data }) {
+export default function Carousel({ data }) {
   const settings = {
     dots: false,
     infinite: true,
@@ -12,8 +12,10 @@ export default function Xbar({ data }) {
     slidesToScroll: 4,
   };
   return (
-    <div className="items_container flex_center">
-      <Slider {...settings}>{data}</Slider>
+    <div className="carousel">
+      <div className="items_container flex_center">
+        <Slider {...settings}>{data}</Slider>
+      </div>
     </div>
   );
 }

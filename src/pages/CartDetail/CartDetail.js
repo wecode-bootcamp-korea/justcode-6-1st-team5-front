@@ -9,11 +9,13 @@ export default function CartDetail() {
   });
 
   let price = 0;
-  itemData.product_price.map((el, i) => (price += el * itemData.num[i]));
-  const toShipping = 130000 - price;
+  itemData.product_price.map(
+    (el, i) => (price += Number(el * itemData.num[i]))
+  );
+  const toShipping = 999 - price;
 
   useEffect(() => {
-    fetch('./mockdata/cart.json')
+    fetch('/mockdata/cart.json')
       .then(res => res.json())
       .then(data => {
         data.map(el => {
@@ -29,7 +31,9 @@ export default function CartDetail() {
     <div className="cart_detail flex_center">
       <div className="cart_title">CART</div>
       <div className="cart_subtitle">
-        Spend ₩ {toShipping} more and get free shipping!
+        {toShipping <= 0
+          ? 'You are eligible for free shipping!'
+          : `Spend $ ${toShipping.toLocaleString()} more and get free shipping!`}
       </div>
       <div className="cart_container">
         <div className="items_box">
@@ -58,10 +62,13 @@ export default function CartDetail() {
           </div>
           <div className="cart_checkout flex_center">
             <div className="cart_checkout_title">
-              TOTAL : ₩ {price.toLocaleString()}
+              TOTAL : ${' '}
+              {price.toLocaleString > 999
+                ? price.toLocaleString()
+                : Number((price + 3).toLocaleString())}
             </div>
             <div className="cart_checkout_subtitle">
-              Shipping & taxes not calculated at checkout
+              Shipping & taxes calculated at checkout
             </div>
             <div className="checkout_btn flex_center">CHECKOUT</div>
           </div>
