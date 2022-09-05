@@ -27,6 +27,7 @@ const Review = forwardRef((props, ref) => {
               <span className="num">0</span>
             </div>
           </div>
+          <div className="line"></div>
           {visible && <ReviewForm />}
           <div className="view_review">
             <div className="rating">★★★★★</div>
