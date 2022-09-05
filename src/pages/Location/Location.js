@@ -46,12 +46,6 @@ const Location = () => {
             }}
             level={10}
           >
-            <MapMarker
-              position={{
-                lat: '37.555611',
-                lng: '126.570667',
-              }}
-            />
             {locations.map(location => {
               const { id, name, latlng } = location;
               const { lat, lng } = latlng;
