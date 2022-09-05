@@ -20,7 +20,7 @@ const Detail = () => {
       });
   }, []);
 
-  const { photos, ...description } = product;
+  const { photos } = product;
 
   const scrollToReview = () => {
     reviewRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -40,10 +40,7 @@ const Detail = () => {
           </div>
         </div>
         <div>
-          <Description
-            description={description}
-            scrollFunction={scrollToReview}
-          />
+          <Description description={product} scrollFunction={scrollToReview} />
         </div>
       </section>
       <Review props={photos} ref={reviewRef} />

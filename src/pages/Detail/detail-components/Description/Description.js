@@ -3,16 +3,28 @@ import React, { useState, useRef } from 'react';
 import './Description.scss';
 
 const Description = ({ description, scrollFunction }) => {
-  const { name, rating, price, info, allerges, temperature, nutrition, tags } =
-    description;
+  const {
+    photos,
+    name,
+    rating,
+    price,
+    info,
+    allerges,
+    temperature,
+    nutrition,
+    categories,
+  } = description;
 
   const [quantity, setQuantity] = useState(1);
-  // const reviewRef = useRef();
 
   const handleQuantity = e => {
     const check = e.target.textContent;
     if (check === '⎼' && quantity > 1) setQuantity(current => current - 1);
     else if (check === '+') setQuantity(current => current + 1);
+  };
+
+  const onChange = e => {
+    setQuantity(Number(e.target.value));
   };
 
   function starRate(rating) {
@@ -24,6 +36,29 @@ const Description = ({ description, scrollFunction }) => {
     else return '☆☆☆☆☆';
   }
 
+  const onSubmit = e => {
+    e.preventDefault();
+    const body = {
+      product_name: name,
+      product_photos: photos[0],
+      product_price: price * quantity,
+      num: quantity,
+    };
+    console.log(body);
+
+    fetch('http://localhost:3000/cart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    })
+      .then(res => res.json())
+      .then(json => {
+        alert(json);
+      });
+  };
+
   return (
     <div className="description">
       <div className="product_meta">
@@ -34,14 +69,10 @@ const Description = ({ description, scrollFunction }) => {
         </div>
         <p className="price">${price}</p>
       </div>
-      <form className="product_form">
+      <form className="product_form" onSubmit={onSubmit}>
         <div className="quantity_selector">
           <span onClick={handleQuantity}>⎼</span>
-          <input
-            value={quantity}
-            onChange={e => console.log('바보')}
-            type="text"
-          />
+          <input value={quantity} onChange={onChange} type="text" />
           <span onClick={handleQuantity}>+</span>
         </div>
         <button>ADD TO CART • ${price * quantity} </button>
