@@ -5,13 +5,13 @@ import { useEffect, useState } from 'react';
 import FilterController from './datafilteringtool/filterviewer/filterController';
 
 function CollectionInner(props) {
-  const [goodsstate, setgoodsstate] = useState([]); //데이터상태
+  const [goodsState, setGoodsState] = useState([]); //데이터상태
 
   useEffect(() => {
     fetch('mockdata/product.json')
       .then(res => res.json())
       .then(data => {
-        setgoodsstate(data.product);
+        setGoodsState(data.product);
       });
   }, []);
 
@@ -20,14 +20,14 @@ function CollectionInner(props) {
       <FilterController />
       <div className="products_space">
         {props.sortbutton
-          ? goodsstate.map(f => {
+          ? goodsState.map(f => {
               return (
                 <div key={f.id} className="product_wrapper_wrapper">
                   <ProductList goodsdata={f} />
                 </div>
               );
             })
-          : goodsstate.map(f => {
+          : goodsState.map(f => {
               return (
                 <div key={f.id} className="big_product_wrapper_wrapper">
                   <BigProductList goodsdata={f} />

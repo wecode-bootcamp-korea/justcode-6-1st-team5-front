@@ -7,7 +7,7 @@ import Contact from './Contact/Contact';
 import Header from '../components/Header/Header';
 import Footer from '../components/Footer/Footer';
 import Detail from './Detail/Detail';
-import Shop from './Shop/Main';
+import Shop from './Shop/Shop';
 import Location from './Location/Location';
 import CartDetail from './CartDetail/CartDetail';
 import Chatting from '../components/Chatting/Chatting';

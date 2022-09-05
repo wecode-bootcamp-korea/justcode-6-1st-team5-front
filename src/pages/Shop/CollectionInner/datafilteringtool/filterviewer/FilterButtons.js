@@ -5,7 +5,7 @@ import ProductType from '../filteringkeyword/productType';
 import './filterbuttons.scss';
 
 function FilterButtons(props) {
-  const [display, setdisplay] = useState(false);
+  const [display, setDisplay] = useState(false);
   const [filterKeyword, setFilterKeyword] = useState();
   const { name, mission } = props;
 
@@ -17,14 +17,14 @@ function FilterButtons(props) {
   }, []);
 
   return (
-    <div id="filterbuttonstyle">
-      <ul className="button_style" id="bottomspace">
-        <li className="smallfont1">{name}</li>
-        <button className="plusbutton" onClick={() => setdisplay(p => !p)}>
+    <div id="filter_button_style">
+      <ul className="button_style" id="bottom_space">
+        <li className="small_font1">{name}</li>
+        <button className="plus_button" onClick={() => setDisplay(p => !p)}>
           +
         </button>
       </ul>
-      <div className="underline">{display && filterKeyword}</div>
+      <div className="under_line">{display && filterKeyword}</div>
     </div>
   );
 }

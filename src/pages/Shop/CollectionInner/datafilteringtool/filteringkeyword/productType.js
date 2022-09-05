@@ -3,7 +3,7 @@ import './filteringkeyword.scss';
 function ProductType(props) {
   const { mission } = props;
 
-  const detailviewer = () => {
+  const detailViewer = () => {
     mission(p => !p);
   };
 
@@ -13,7 +13,7 @@ function ProductType(props) {
         <button
           className="inner_keyword_button"
           onClick={() => {
-            detailviewer();
+            detailViewer();
           }}
         >
           In Store Purchase
@@ -24,7 +24,7 @@ function ProductType(props) {
         <button
           className="inner_keyword_button"
           onClick={() => {
-            detailviewer();
+            detailViewer();
           }}
         >
           <div className="margin_right">Ecommerce</div>

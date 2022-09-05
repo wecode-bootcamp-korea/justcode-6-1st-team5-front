@@ -1,4 +1,4 @@
-#filterbuttonstyle {
+#filter_button_style {
   display: block;
   margin: 0;
   padding: 0;
@@ -13,18 +13,18 @@
     font-size: 11px;
   }
 
-  #bottomspace {
+  #bottom_space {
     margin-top: 20px;
     margin-bottom: 20px;
   }
 
-  .smallfont1 {
+  .small_font1 {
     width: 80%;
     list-style: none;
     text-align: left;
   }
 
-  .plusbutton {
+  .plus_button {
     align-items: flex-end;
     list-style: none;
     width: 15%;
@@ -35,7 +35,7 @@
     background-color: transparent;
   }
 
-  .underline {
+  .under_line {
     border-bottom: 0.5px solid rgb(207, 207, 207);
   }
 }

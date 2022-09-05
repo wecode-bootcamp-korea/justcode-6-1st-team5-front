@@ -50,7 +50,7 @@ function FilterController() {
           <FilterButtons name="Flavor" mission={setFlavor} />
         </div>
       </div>
-      <div className="blankspace" />
+      <div className="blank_space" />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 function Flavor(props) {
   const { mission } = props;
 
-  const detailviewer = () => {
+  const detailViewer = () => {
     mission(p => !p);
   };
 
@@ -10,7 +10,7 @@ function Flavor(props) {
       <div className="button_style">
         <button
           onClick={() => {
-            detailviewer();
+            detailViewer();
           }}
         >
           <div className="margin_right">Maccha</div>
