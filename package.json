@@ -11,6 +11,7 @@
   "dependencies": {
     "@tawk.to/tawk-messenger-react": "^2.0.1",
     "axios": "^0.27.2",
+    "jwt-decode": "^3.1.2",
     "node-sass": "^7.0.1",
     "rc-slider": "^10.0.1",
     "react": "^18.1.0",
@@ -19,8 +20,8 @@
     "react-router-dom": "^6.3.0",
     "react-script": "^2.0.5",
     "react-slick": "^0.29.0",
-    "slick-carousel": "^1.8.1",
-    "sass": "^1.54.5"
+    "sass": "^1.54.5",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "eslint": "^8.17.0",

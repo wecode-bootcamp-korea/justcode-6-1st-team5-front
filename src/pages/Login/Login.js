@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import jwtDecode from 'jwt-decode';
+
 import Account from '../Account/Account';
 
 import './Login.scss';
@@ -51,8 +53,7 @@ function Login() {
       .then(response => {
         if (response.token) {
           localStorage.setItem('token', response.token);
-        } else {
-          go_login();
+          go_main();
         }
       });
   };
@@ -64,6 +65,10 @@ function Login() {
       tokenStatus !== null ? setLoggedIn(true) : setLoggedIn(false);
     }
   };
+
+  // const decodeToken = localStorage.getItem('token');
+  // const decode = jwtDecode(decodeToken);
+  // console.log(decode);
 
   useEffect(() => {
     setValidPwd(PWD_REGEX.test(pwd));
@@ -77,18 +82,18 @@ function Login() {
     getToken();
   }, []);
 
-  useEffect(() => {
-    fetch('http://localhost:10010/token/auth', {
-      method: 'GET',
-      headers: {
-        Authorization: 'Bearer ',
-      },
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch('http://localhost:10010/token/auth', {
+  //     method: 'GET',
+  //     headers: {
+  //       Authorization: 'Bearer ',
+  //     },
+  //   })
+  //     .then(response => response.json())
+  //     .then(data => {
+  //       console.log(data);
+  //     });
+  // }, []);
 
   return (
     <>
@@ -153,7 +158,7 @@ function Login() {
               <button
                 type="button"
                 className="login_btn"
-                onClick={go_main}
+                onClick={go_login}
                 onMouseDown={postHandlerLogin}
                 disabled={!validPwd || !validEmail ? true : false}
               >
