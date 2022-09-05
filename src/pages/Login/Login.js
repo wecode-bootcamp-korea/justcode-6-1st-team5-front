@@ -18,6 +18,8 @@ function Login() {
   const [validEmail, setValidEmail] = useState(false);
   const [emailFocus, setEmailFocus] = useState(false);
 
+  const [loggedIn, setLoggedIn] = useState(false);
+
   const navigate = useNavigate();
   const go_signup = () => {
     navigate('/signup');
@@ -49,17 +51,11 @@ function Login() {
       });
   };
 
-  // const token = localStorage.getItem('token') || '';
-
-  // fetch('http://localhost:8000/users/login', {
-  //   headers: {
-  //     Authorization: token,
-  //   },
-  // })
-  //   .then(response => response.text())
-  //   .then(response => {
-  //     console.log(response.data);
-  //   });
+  // const getToken = () => {
+  //   if (localStorage.getItem('token') !== '') {
+  //     console.log('token');
+  //   }
+  // };
 
   useEffect(() => {
     setValidPwd(PWD_REGEX.test(pwd));
@@ -68,6 +64,10 @@ function Login() {
   useEffect(() => {
     setValidEmail(EMAIL_REGEX.test(email));
   }, [email]);
+
+  // useEffect(() => {
+  //   getToken();
+  // }, []);
 
   return (
     <section className="wrapper_content_login">
