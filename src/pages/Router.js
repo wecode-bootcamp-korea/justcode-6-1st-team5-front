@@ -11,6 +11,7 @@ import Shop from './Shop/Shop';
 import Location from './Location/Location';
 import CartDetail from './CartDetail/CartDetail';
 import Chatting from '../components/Chatting/Chatting';
+import About from './About/About';
 
 function Router() {
   return (
@@ -25,6 +26,7 @@ function Router() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/location" element={<Location />} />
         <Route path="/cart" element={<CartDetail />} />
+        <Route path="/about" element={<About />} />
       </Routes>
       <Footer />
       <Chatting />
