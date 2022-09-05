@@ -8,20 +8,13 @@ function Account() {
       <div className="wrapper_content_account">
         <section className="account_header">
           <Logout />
-          <header> My Account</header>
-          <p>Welcome back!</p>
+          <h1 className="account_header_title"> My Account</h1>
+          <p className="account_header_text">Welcome back!</p>
         </section>
 
-        <section className="account_info">
-          <div>
-            <h2></h2>
-            <p></p>
-          </div>
-
-          <div>
-            <h2></h2>
-            <p></p>
-          </div>
+        <section className="account_order">
+          <h2 className="account_order_title">MY ORDERS</h2>
+          <p className="account_order_text">You haven't placed any order yet</p>
         </section>
       </div>
     </>

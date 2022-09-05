@@ -4,11 +4,41 @@
   color: #2f386c;
 }
 
-.wrapper_content_account {
+@mixin account_font {
+  letter-spacing: 2px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+div.wrapper_content_account {
   padding-top: 10vh;
   margin: 0px 90px;
 
-  .account_header {
-    padding: 80px;
+  section.account_header {
+    padding: 60px 80px;
+
+    h1.account_header_title {
+      font-size: 20px;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    p.account_header_text {
+      font-size: 15px;
+      font-weight: 300;
+    }
+  }
+  section.account_order {
+    padding: 20px 80px 100px 80px;
+    @include account_font();
+    h2.account_order_title {
+      color: rgb(157, 157, 157);
+      margin-bottom: 40px;
+      border-bottom: 1px solid rgb(157, 157, 157);
+      padding: 5px;
+    }
+    p.account_order_text {
+      color: #2f386c;
+    }
   }
 }

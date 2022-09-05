@@ -46,6 +46,11 @@ function Signup() {
       .then(data => console.log(data));
   };
 
+  const getToken = () => {
+    localStorage.getItem('token');
+    console.log(getToken);
+  };
+
   // useEffect(() => {
   //   userRef.current.focus();
   // }, []);
