@@ -3,11 +3,11 @@ import './Contact.scss';
 
 function Contact() {
   return (
-    <div className="">
+    <div>
       <title className="contact_header_titile">CONTACT US FOR ASSISTANCE</title>
       <section className="wrapper_content_contact">
         <div className="contact_description">
-          <h1 className="contact_description_h1">Need help?</h1>
+          <h1 className="contact_description_h1">NEED HELP?</h1>
           <img
             className="contact_img"
             alt="contact img"
@@ -24,7 +24,7 @@ function Contact() {
               We are closed on major US holiday
             </p>
             <p>
-              Thank you for visiting <span>ROECY'</span>website
+              Thank you for visiting <span>ROECY' </span>website
             </p>
           </div>
         </div>
