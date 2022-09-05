@@ -28,13 +28,16 @@ function Login() {
   const go_main = () => {
     navigate('/');
   };
+  const go_login = () => {
+    navigate('/login');
+  };
 
-  const sendHandler = e => {
+  const postHandlerLogin = e => {
     e.preventDefault();
     console.log(pwdRef.current.value);
     console.log(emailRef.current.value);
 
-    fetch('http://localhost:8000/users/login', {
+    fetch('http://localhost:10010/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -48,6 +51,8 @@ function Login() {
       .then(response => {
         if (response.token) {
           localStorage.setItem('token', response.token);
+        } else {
+          go_login();
         }
       });
   };
@@ -57,8 +62,6 @@ function Login() {
   const getToken = () => {
     if (tokenStatus) {
       tokenStatus !== null ? setLoggedIn(true) : setLoggedIn(false);
-      // console.log(tokenStatus);
-      // setLoggedIn(false);
     }
   };
 
@@ -72,6 +75,19 @@ function Login() {
 
   useEffect(() => {
     getToken();
+  }, []);
+
+  useEffect(() => {
+    fetch('http://localhost:10010/token/auth', {
+      method: 'GET',
+      headers: {
+        Authorization: 'Bearer ',
+      },
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+      });
   }, []);
 
   return (
@@ -138,7 +154,7 @@ function Login() {
                 type="button"
                 className="login_btn"
                 onClick={go_main}
-                onMouseDown={sendHandler}
+                onMouseDown={postHandlerLogin}
                 disabled={!validPwd || !validEmail ? true : false}
               >
                 Login
