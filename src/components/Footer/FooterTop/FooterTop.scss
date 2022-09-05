@@ -1,32 +1,26 @@
 $btn-color: rgb(47, 56, 108);
-$shadow: 1px 1px #999, -1px -1px #999;
-
-@mixin Jost {
-  font-family: 'Jost', sans-serif;
-  letter-spacing: 2.5px;
-}
 
 .footer_container {
   .top_container {
     flex-direction: row;
-    background-color: rgb(47, 56, 108);
     width: 100%;
+    background-color: $btn-color;
     color: white;
-    font-size: 11.5px;
+    font-size: 0.7rem;
+    letter-spacing: 0.05rem;
 
     .top_box {
-      height: 110px;
       width: 25%;
-
+      height: 15vh;
       .icon {
-        width: 45px;
-        margin-right: 20px;
+        width: 6vh;
+        margin-right: 2vw;
         filter: invert(100%) sepia(0%) saturate(7470%) hue-rotate(116deg)
           brightness(109%) contrast(109%);
       }
 
       .text {
-        line-height: 20px;
+        line-height: 3vh;
         text-align: center;
       }
     }

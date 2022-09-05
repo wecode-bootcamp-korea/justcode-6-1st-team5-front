@@ -43,7 +43,6 @@ function Signup() {
       }),
     })
       .then(res => res.json())
-      //! res.json() 적용 시 오류 발생
       .then(data => console.log(data));
   };
 
@@ -72,7 +71,7 @@ function Signup() {
   }, [email]);
 
   return (
-    <>
+    <section className="outter_content_signup ">
       {success ? (
         <section className="toLogin">
           <h1>Success</h1>
@@ -176,8 +175,7 @@ function Signup() {
           </div>
         </section>
       )}
-    </>
+    </section>
   );
 }
-
 export default Signup;

@@ -4,22 +4,23 @@
     width: 255px;
 
     .title {
-      font-size: 17.5px;
       width: 100%;
-      text-align: left;
       margin-bottom: 20px;
+      text-align: left;
+      font-size: 17.5px;
     }
 
     .menu {
       width: 100%;
-      text-align: left;
       margin-bottom: 10px;
+      text-align: left;
       cursor: pointer;
+      letter-spacing: 0.01rem;
     }
     .text {
-      line-height: 23.5px;
       margin-top: 25px;
       margin-bottom: -25px;
+      line-height: 23.5px;
     }
   }
 }

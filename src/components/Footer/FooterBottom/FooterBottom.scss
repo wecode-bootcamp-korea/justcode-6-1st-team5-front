@@ -1,46 +1,37 @@
-$btn-color: rgb(47, 56, 108);
-$shadow: 1px 1px #999, -1px -1px #999;
-
-@mixin Jost {
-  font-family: 'Jost', sans-serif;
-  letter-spacing: 2.5px;
-}
-
 .footer_container {
   .bottom_container {
     width: 100%;
+
     .bottom_box {
-      margin: 75px 0;
       width: 25%;
+      margin: 10vh 0 7.5vh 0;
 
       &:first-of-type {
-        margin-right: 50px;
+        margin-right: 4vw;
       }
 
       &:last-of-type {
-        margin-left: -100px;
+        margin-left: -10vw;
       }
       .wrapper {
         flex-direction: column;
         width: 255px;
 
         .text {
-          line-height: 23.5px;
-          margin-top: 25px;
-          margin-bottom: -25px;
+          margin-top: 4vh;
+          line-height: 3.5vh;
+          letter-spacing: 0.01rem;
         }
 
         .corporate {
-          font-size: 17.5px;
-          margin-top: 40px;
-          margin-bottom: -20px;
+          margin-top: 3vh;
+          font-size: 1.12rem;
         }
       }
 
       .icons {
         margin-left: 150px;
-        margin-top: 220px;
-        margin-bottom: -40px;
+        margin-top: 35vh;
       }
     }
   }

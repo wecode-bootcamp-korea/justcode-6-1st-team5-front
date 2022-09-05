@@ -1,15 +1,13 @@
-.x_bar {
+.carousel {
   .items_container {
-    flex-direction: row;
     margin: 50px 0;
-    height: 475px;
+    height: 65vh;
 
     .slick-list {
       width: 90vw;
     }
     .slick-prev::before,
     .slick-next::before {
-      // opacity: 0;
       display: none;
     }
 

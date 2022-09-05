@@ -1,0 +1,115 @@
+.cart_detail {
+  flex-direction: column;
+  padding-top: 10vh;
+  font-family: 'Jost', sans-serif;
+  letter-spacing: 0.2rem;
+
+  .cart_title {
+    margin: 7.5vh 0 4vh 0;
+    font-size: 1.75rem;
+    letter-spacing: 0.6rem;
+  }
+
+  .cart_subtitle {
+    color: #9d9d9d;
+    letter-spacing: 0.05rem;
+  }
+
+  .cart_container {
+    letter-spacing: 0.15rem;
+
+    .items_box {
+      width: 70vw;
+      margin: 7.5vh 0;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+
+      .item_box {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        width: 70vw;
+        align-items: center;
+
+        .pic {
+          height: 10vw;
+          width: 10vw;
+          margin: 25px;
+        }
+
+        .text_box {
+          flex-direction: column;
+          letter-spacing: 0.1rem;
+
+          .title {
+            font-size: 1.15rem;
+          }
+          .price {
+            margin: 20px 0;
+          }
+          .wrapper {
+            display: flex;
+            flex-direction: row;
+
+            .quantity {
+              margin: 0 10px;
+            }
+            .add,
+            .minus {
+              height: 15px;
+              width: 15px;
+              cursor: pointer;
+            }
+            .remove {
+              position: absolute;
+              right: 2.5vw;
+              font-size: 0.9rem;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+    .cart_bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      position: relative;
+      margin-bottom: 20vh;
+
+      .order_note {
+        .text_area {
+          width: 22.5vw;
+          height: 14vh;
+          margin: 4vh 0;
+          padding: 1vw;
+          resize: none;
+          font-family: 'Jost', sans-serif;
+        }
+      }
+
+      .cart_checkout {
+        flex-direction: column;
+        align-items: flex-end;
+        text-align: right;
+
+        .cart_checkout_title {
+          margin-bottom: 2vh;
+        }
+        .cart_checkout_subtitle {
+          margin-bottom: 2vh;
+          color: #9d9d9d;
+          letter-spacing: 0.03rem;
+          font-size: 0.9rem;
+        }
+        .checkout_btn {
+          width: 20vw;
+          height: 8vh;
+          margin: 6vh 0 4vh 0;
+          background-color: rgb(47, 56, 108);
+          color: white;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

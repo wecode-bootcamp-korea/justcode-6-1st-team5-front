@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import './Login.scss';
 
@@ -70,7 +70,7 @@ function Login() {
   }, [email]);
 
   return (
-    <>
+    <section className="wrapper_content_login">
       <div className="border_box_login">
         <div className="header_content_login">
           <h1 className="login-text-h">Login</h1>
@@ -89,7 +89,7 @@ function Login() {
             aria-describedby="emailnote"
             onFocus={() => setEmailFocus(true)}
             onBlur={() => setEmailFocus(false)}
-          ></input>
+          />
           <p
             id="emailnote"
             className={
@@ -112,7 +112,7 @@ function Login() {
             aria-describedby="pwdnote"
             onFocus={() => setPwdFocus(true)}
             onBlur={() => setPwdFocus(false)}
-          ></input>
+          />
           <p
             id="pwdnote"
             className={pwdFocus && pwd && !validPwd ? 'cond_msg' : 'offscreen'}
@@ -125,7 +125,7 @@ function Login() {
 
           <button
             type="button"
-            className="signup_btn"
+            className="login_btn"
             onClick={go_main}
             onMouseDown={sendHandler}
             disabled={!validPwd || !validEmail ? true : false}
@@ -141,7 +141,7 @@ function Login() {
           </span>
         </div>
       </div>
-    </>
+    </section>
   );
 }
 
