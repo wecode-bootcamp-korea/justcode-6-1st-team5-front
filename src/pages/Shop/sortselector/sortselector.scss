@@ -1,0 +1,56 @@
+#sortselector_shadow {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5%;
+  position: fixed;
+  animation: buttonfadein 0.5s;
+
+  @keyframes buttonfadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  #row_reverse {
+    z-index: 3;
+    display: flex;
+    flex-direction: row-reverse;
+
+    #triangle {
+      margin-right: 10px;
+      width: 0;
+      height: 0;
+      filter: drop-shadow(0 -2px 2px rgba(54, 54, 54, 0.2));
+      border: {
+        top: 0px solid transparent;
+        right: 10px solid transparent;
+        left: 10px solid transparent;
+        bottom: 10px solid rgb(255, 255, 255);
+      }
+    }
+  }
+
+  #sort_selector {
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -0.5px -0.5px 8px -1px rgb(177, 177, 177);
+    width: 190px;
+    margin-top: 0%;
+    padding-top: 8%;
+    height: 295px;
+
+    .sortbutton {
+      width: 100%;
+      text-align: right;
+      font-size: 10px;
+      color: rgb(160, 160, 160);
+      background-color: transparent;
+      border: none;
+      margin: 6px 0;
+      padding-right: 28px;
+    }
+  }
+}

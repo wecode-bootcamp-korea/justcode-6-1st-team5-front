@@ -1,27 +1,38 @@
-// import { useEffect, useState } from 'react';
 import './filteringkeyword.scss';
-function ProductType(props) {
-  // const [offLineButton, setOffLineButton] = useState(false);
 
-  // useEffect(() => {
-  //   offLineButton && props.goodsstate.filter(d => d.salesmethod === 'offline');
-  //   console.log(offLineButton);
-  // }, [setOffLineButton]);
+function ProductType(props) {
+  const { mission } = props;
+
+  const detailViewer = () => {
+    mission(p => !p);
+  };
 
   return (
     <div id="product_filtering_category">
       <div className="button_style">
-        <button id="inner_keyword_button">
+        <button
+          className="inner_keyword_button"
+          onClick={() => {
+            detailViewer();
+          }}
+        >
           In Store Purchase
           <div className="margin_right">(갯수)</div>
         </button>
       </div>
-
       <div className="button_style">
-        <div className="margin_right">Ecommerce</div>
-        <div className="margin_right">(갯수)</div>
+        <button
+          className="inner_keyword_button"
+          onClick={() => {
+            detailViewer();
+          }}
+        >
+          <div className="margin_right">Ecommerce</div>
+          <div className="margin_right">(갯수)</div>
+        </button>
       </div>
     </div>
   );
 }
+
 export default ProductType;
