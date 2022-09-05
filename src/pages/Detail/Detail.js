@@ -3,6 +3,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import PhotoList from './detail-components/Photo/PhotoList';
 import Description from './detail-components/Description/Description';
 import Review from './detail-components/Reiview/Review';
+import Trending from '../Home/Trending/Trending';
+import Carousel from '../Home/Carousel/Carousel';
 
 import './Detail.scss';
 import { useParams } from 'react-router-dom';
@@ -20,7 +22,7 @@ const Detail = () => {
       });
   }, []);
 
-  const { photos } = product;
+  const { photos, rating } = product;
 
   const scrollToReview = () => {
     reviewRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -43,7 +45,8 @@ const Detail = () => {
           <Description description={product} scrollFunction={scrollToReview} />
         </div>
       </section>
-      <Review props={photos} ref={reviewRef} />
+      <Review rating={rating} ref={reviewRef} />
+      <Trending />
     </>
   );
 };

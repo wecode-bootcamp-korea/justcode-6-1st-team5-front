@@ -8,7 +8,7 @@ const ReviewForm = () => {
   const [email, setEmail] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [star, setStar] = useState(false);
+  const [rating, setRating] = useState('');
 
   const handleInput = e => {
     const value = e.target.value;
@@ -23,11 +23,13 @@ const ReviewForm = () => {
     const body = {
       name,
       email,
+      rating,
       title,
       content,
     };
     setName('');
     setEmail('');
+    setClicked([false, false, false, false, false]);
     setTitle('');
     setContent('');
     console.log(body);
@@ -49,6 +51,8 @@ const ReviewForm = () => {
 
   const handleRating = e => {
     const rate = e.target.id;
+    setRating(Number(rate));
+
     if (rate === '1') setClicked([true, false, false, false, false]);
     else if (rate === '2') setClicked([true, true, false, false, false]);
     else if (rate === '3') setClicked([true, true, true, false, false]);

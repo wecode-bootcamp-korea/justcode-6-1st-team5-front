@@ -16,6 +16,7 @@ const Description = ({ description, scrollFunction }) => {
   } = description;
 
   const [quantity, setQuantity] = useState(1);
+  const pureNum = Math.round(price * quantity * 100) / 100;
 
   const handleQuantity = e => {
     const check = e.target.textContent;
@@ -41,7 +42,7 @@ const Description = ({ description, scrollFunction }) => {
     const body = {
       product_name: name,
       product_photos: photos[0],
-      product_price: price * quantity,
+      product_price: pureNum,
       num: quantity,
     };
     console.log(body);
@@ -63,9 +64,9 @@ const Description = ({ description, scrollFunction }) => {
     <div className="description">
       <div className="product_meta">
         <h1 className="product_name">{name}</h1>
-        <div className="review">
+        <div className="review" onClick={scrollFunction}>
           <span className="total_rating">{starRate(rating)}</span>
-          <a onClick={scrollFunction}>Write A Review</a>
+          <a>Write A Review</a>
         </div>
         <p className="price">${price}</p>
       </div>
@@ -75,7 +76,7 @@ const Description = ({ description, scrollFunction }) => {
           <input value={quantity} onChange={onChange} type="text" />
           <span onClick={handleQuantity}>+</span>
         </div>
-        <button>ADD TO CART • ${price * quantity} </button>
+        <button>ADD TO CART • ${pureNum} </button>
       </form>
       <div className="product_description">
         <p className="content">{info}</p>
