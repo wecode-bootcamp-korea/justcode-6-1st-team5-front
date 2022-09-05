@@ -87,8 +87,12 @@ function ItemBox({ setItemData, cartId, name, img, price, num }) {
 function Cart({ setIsCartClicked }) {
   const navigate = useNavigate();
   const [itemData, setItemData] = useState({
+    cart_id: [],
     product_name: [],
     product_price: [],
+    num: [],
+    product_photos: [],
+    product_prices: [],
   });
 
   let price = 0;
@@ -108,8 +112,9 @@ function Cart({ setIsCartClicked }) {
       method: 'get',
       url: `http://localhost:8000/cart/${localStorage.getItem('token')}`,
     }).then(res => {
-      setItemData(res.data[0]);
-      console.log(res.data[0]);
+      if (res.data[0].num.length !== 0) {
+        setItemData(res.data[0]);
+      }
     });
   }, []);
 

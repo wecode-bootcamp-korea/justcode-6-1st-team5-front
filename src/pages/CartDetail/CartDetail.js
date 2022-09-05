@@ -25,6 +25,7 @@ export default function CartDetail() {
     setIsPopupOpen(false);
   };
 
+  console.log(mainAddress);
   function order() {
     axios({
       method: 'post',
@@ -43,14 +44,16 @@ export default function CartDetail() {
   itemData.product_price.map(
     (el, i) => (price += Number(el * itemData.num[i]))
   );
-  const toShipping = 999 - price;
+  const toShipping = 99 - price;
 
   useEffect(() => {
     axios({
       method: 'get',
       url: `http://localhost:8000/cart/${localStorage.getItem('token')}`,
     }).then(res => {
-      setItemData(res.data[0]);
+      if (res.data[0].num.length !== 0) {
+        setItemData(res.data[0]);
+      }
     });
   }, []);
 
@@ -95,7 +98,7 @@ export default function CartDetail() {
           <div className="cart_checkout flex_center">
             <div className="cart_checkout_title">
               TOTAL : ${' '}
-              {price > 999
+              {price > 99
                 ? price.toLocaleString()
                 : (price + 3).toLocaleString()}
             </div>
@@ -105,7 +108,11 @@ export default function CartDetail() {
             <div
               className="checkout_btn flex_center"
               onClick={() => {
-                order();
+                if (itemData.product_name.length === 0)
+                  alert('Please add products to the cart.');
+                else if (mainAddress === 'Main Address')
+                  alert('Please enter an address.');
+                else order();
               }}
             >
               CHECKOUT

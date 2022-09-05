@@ -7,7 +7,7 @@ function FooterTop() {
         <img src="/Images/truck.png" alt="truck" className="icon" />
         <p className="text">
           WE OFFER FREE SHIPPING ON <br />
-          ORDERS OVER $ 999 USD
+          ORDERS OVER $ 99 USD
         </p>
       </div>
       <div className="top_box flex_center">
