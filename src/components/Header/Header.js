@@ -15,7 +15,7 @@ export default function Header() {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const updateScroll = () => {
-    if (location.pathname === '/') setScrollPosition(window.scrollY);
+    setScrollPosition(window.scrollY);
   };
 
   useEffect(() => {

@@ -22,7 +22,7 @@ function ItemBox({ itemData, name, img, price, num }) {
     }).then(res => res.json());
   }
 
-  function minus() {
+  function remove() {
     fetch(`/mockdata/cart.json/${itemData.user_id}`, {
       method: 'delete',
     }).then(res => res.json());
@@ -51,6 +51,7 @@ function Cart({ setIsCartClicked }) {
     product_name: [],
     product_price: [],
   });
+  const [isLogin, setIsLogin] = useState(true);
 
   let price = 0;
 
@@ -82,29 +83,38 @@ function Cart({ setIsCartClicked }) {
       onRequestClose={() => setIsCartClicked(false)}
       className="modal_cart"
     >
-      {itemData.product_name.map((el, i) => {
-        return (
-          <ItemBox
-            itemData={itemData}
-            key={itemData.product_id[i]}
-            name={itemData.product_name[i]}
-            img={itemData.product_photos[i]}
-            price={itemData.product_price[i]}
-            num={itemData.num[i]}
-          />
-        );
-      })}
+      {isLogin ? (
+        itemData.product_name.map((el, i) => {
+          return (
+            <ItemBox
+              itemData={itemData}
+              key={itemData.product_id[i]}
+              name={itemData.product_name[i]}
+              img={itemData.product_photos[i]}
+              price={itemData.product_price[i]}
+              num={itemData.num[i]}
+            />
+          );
+        })
+      ) : (
+        <div className="not_login flex_center">
+          <div className="login_plz">Only ROECY' members can order</div>
+        </div>
+      )}
 
       <div className="modal_bottom flex_center">
-        <p className="total_price">Total : $ {price.toLocaleString()}</p>
+        <p className="total_price">
+          {isLogin ? `Total : $ ${price.toLocaleString()}` : ''}
+        </p>
         <div
           className="buy_btn flex_center"
           onClick={() => {
-            moveAndScrollToTop('/cart');
             setIsCartClicked(false);
+            if (isLogin) moveAndScrollToTop('/cart');
+            else moveAndScrollToTop('/login');
           }}
         >
-          REVIEW CART
+          {isLogin ? 'REVIEW CART' : 'Login'}
         </div>
       </div>
     </Modal>
