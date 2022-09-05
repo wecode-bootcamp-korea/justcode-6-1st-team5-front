@@ -21,6 +21,7 @@
 
   .location_list {
     width: 25%;
+    height: fit-content;
 
     .search {
       margin-bottom: 15px;
@@ -36,7 +37,7 @@
 
       button {
         background-color: #333333;
-        margin-left: 10px;
+        margin-left: 20px;
         padding: 8px 10px;
         border: none;
         border-radius: 4px;
@@ -49,7 +50,23 @@
 
     .list {
       overflow: scroll;
-      height: 300px;
+      height: 450px;
+
+      // &::-webkit-scrollbar {
+      //   width: 5px; /* 스크롤바의 너비 */
+      // }
+
+      // &::-webkit-scrollbar-thumb {
+      //   height: 5%; /* 스크롤바의 길이 */
+      //   background: gray; /* 스크롤바의 색상 */
+
+      //   border-radius: 10px;
+      // }
+
+      &::-webkit-scrollbar-track {
+        width: 10px; /* 스크롤바 배경의 너비 */
+        background: lightgray; /*스크롤바 뒷 배경 색상*/
+      }
 
       li {
         display: flex;
@@ -91,6 +108,7 @@
   }
 
   .location_map {
-    width: 60%;
+    width: 70%;
+    height: fit-content;
   }
 }

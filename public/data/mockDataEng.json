@@ -1,6 +1,6 @@
 {
   "id": 6,
-  "photo": [
+  "photos": [
     "https://postfiles.pstatic.net/MjAyMjA5MDJfNjgg/MDAxNjYyMDgxOTk1MzMy.UgN9YW3PeGTD5olfUi_KovRYM2bGmnN5RIhUSmpXquAg.qQwCLENqmsX0BjHIlAmbon1D5vH7YK3kRTx45L2Dz_0g.PNG.jdc19407/image.png?type=w966",
     "https://postfiles.pstatic.net/MjAyMjA5MDJfMTE1/MDAxNjYyMTA2NTg1NjY3.aUtvyUlQL7oajWVTXlXjp7p6M6qfGZ401ulIppkbxBgg.WgAiLeO6LhCKh4hqxel1JO1azzduargOLdVvWXltXJog.PNG.jdc19407/image.png?type=w966",
     "https://postfiles.pstatic.net/MjAyMjA5MDJfMjUw/MDAxNjYyMTIxMjc5MDgx.7XhZz0eNnUjGqE8ro9B7iITuMGd3a9zzjMvG92xLttEg.RjyInWNTR42Pze96uImQCuT7twWjAC0KCFuatH9zSiYg.PNG.jdc19407/image.png?type=w966",
@@ -10,11 +10,11 @@
     "https://postfiles.pstatic.net/MjAyMjA5MDNfMTQw/MDAxNjYyMTgxNzMzNjcz.KJJQ_KY3dLF5VOzarzHRPEJiW1d1kl-vvHYed4ShEG4g.aaKv9NcbCU2NMy6rcmL2Epq8kGr2CI_zf7wL0IVCj1Qg.PNG.jdc19407/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2022-09-03_%EC%98%A4%EC%A0%84_11.34.25.png?type=w966"
   ],
   "name": "ROYCE’ TASTING BOX",
-  "rate": 1,
+  "rating": 1,
   "price": 51.99,
   "info": "A confection made with a rich and smooth blend of premium milk chocolate and fresh cream with a slight hint of brandy. Contains liquor. 20 pieces inside.",
-  "allerge": "Allergens: Milk, Soy, May Contain Tree Nuts",
-  "temp": "Storage Temperature: 50°F Or Below",
+  "allerges": "Allergens: Milk, Soy, May Contain Tree Nuts",
+  "temperature": "Storage Temperature: 50°F Or Below",
   "nutrition": "Nutrition Facts (Download Here)",
-  "tags": "bars"
+  "categories": "bars"
 }
