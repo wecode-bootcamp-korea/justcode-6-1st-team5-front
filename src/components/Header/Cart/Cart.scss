@@ -12,6 +12,7 @@
   overflow-y: auto;
   z-index: 3;
   animation: fadein 0.4s;
+  font-weight: 400;
 
   @keyframes fadein {
     from {
@@ -51,6 +52,7 @@
       }
       .price {
         margin: 20px 0;
+        font-weight: 300;
       }
       .wrapper {
         display: flex;
@@ -90,6 +92,7 @@
     .total_price {
       text-align: left;
       width: 26vw;
+      font-weight: 400;
     }
 
     .buy_btn {
@@ -99,6 +102,7 @@
       background-color: rgb(47, 56, 108);
       color: white;
       letter-spacing: 0.2rem;
+      font-weight: 400;
       cursor: pointer;
     }
   }

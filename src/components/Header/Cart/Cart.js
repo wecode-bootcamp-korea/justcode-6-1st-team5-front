@@ -2,30 +2,48 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Cart.scss';
 import Modal from 'react-modal';
+import axios from 'axios';
 
-function ItemBox({ itemData, name, img, price, num }) {
+function ItemBox({ setItemData, cartId, name, img, price, num }) {
   function plus() {
-    fetch('/mockdata/cart.json', {
+    axios({
       method: 'put',
-      body: {
-        cart_id: itemData.user_id,
+      url: 'http://localhost:8000/cart/',
+      data: {
+        token: localStorage.getItem('token'),
+        cart_id: cartId,
+        num: num + 1,
       },
-    }).then(res => res.json());
+    }).then(res => {
+      setItemData(res.data[0]);
+    });
   }
 
   function minus() {
-    fetch('/mockdata/cart.json', {
+    axios({
       method: 'put',
-      body: {
-        cart_id: itemData.user_id,
+      url: 'http://localhost:8000/cart/',
+      data: {
+        token: localStorage.getItem('token'),
+        cart_id: cartId,
+        num: num - 1,
       },
-    }).then(res => res.json());
+    }).then(res => {
+      setItemData(res.data[0]);
+    });
   }
 
   function remove() {
-    fetch(`/mockdata/cart.json/${itemData.user_id}`, {
+    axios({
       method: 'delete',
-    }).then(res => res.json());
+      url: 'http://localhost:8000/cart',
+      data: {
+        token: localStorage.getItem('token'),
+        cart_id: cartId,
+      },
+    }).then(res => {
+      setItemData(res.data[0]);
+    });
   }
 
   return (
@@ -33,12 +51,33 @@ function ItemBox({ itemData, name, img, price, num }) {
       <img src={img} alt="item" className="pic" />
       <div className="text_box">
         <div className="title">{name}</div>
-        <div className="price">$ {price}</div>
+        <div className="price">$ {price.toLocaleString()}</div>
         <div className="wrapper">
-          <img src="/Images/add.png" alt="add" className="add" />
+          <img
+            src="/Images/add.png"
+            alt="add"
+            className="add"
+            onClick={() => {
+              plus();
+            }}
+          />
           <p className="quantity">{num}</p>
-          <img src="/Images/minus.png" alt="minus" className="minus" />
-          <div className="remove">Remove</div>
+          <img
+            src="/Images/minus.png"
+            alt="minus"
+            className="minus"
+            onClick={() => {
+              minus();
+            }}
+          />
+          <div
+            className="remove"
+            onClick={() => {
+              remove();
+            }}
+          >
+            Remove
+          </div>
         </div>
       </div>
     </div>
@@ -51,7 +90,6 @@ function Cart({ setIsCartClicked }) {
     product_name: [],
     product_price: [],
   });
-  const [isLogin, setIsLogin] = useState(true);
 
   let price = 0;
 
@@ -66,33 +104,33 @@ function Cart({ setIsCartClicked }) {
   };
 
   useEffect(() => {
-    fetch('/mockdata/cart.json')
-      .then(res => res.json())
-      .then(data => {
-        data.map(el => {
-          if (el.user_id === 1) {
-            setItemData(el);
-          }
-        });
-      });
+    axios({
+      method: 'get',
+      url: `http://localhost:8000/cart/${localStorage.getItem('token')}`,
+    }).then(res => {
+      setItemData(res.data[0]);
+      console.log(res.data[0]);
+    });
   }, []);
 
   return (
     <Modal
       isOpen={true}
       onRequestClose={() => setIsCartClicked(false)}
+      ariaHideApp={false}
       className="modal_cart"
     >
-      {isLogin ? (
+      {localStorage.getItem('token') !== null ? (
         itemData.product_name.map((el, i) => {
           return (
             <ItemBox
-              itemData={itemData}
+              cartId={itemData.cart_id[i]}
               key={itemData.product_id[i]}
               name={itemData.product_name[i]}
               img={itemData.product_photos[i]}
               price={itemData.product_price[i]}
               num={itemData.num[i]}
+              setItemData={setItemData}
             />
           );
         })
@@ -104,17 +142,20 @@ function Cart({ setIsCartClicked }) {
 
       <div className="modal_bottom flex_center">
         <p className="total_price">
-          {isLogin ? `Total : $ ${price.toLocaleString()}` : ''}
+          {localStorage.getItem('token') !== null
+            ? `Total : $ ${price.toLocaleString()}`
+            : ''}
         </p>
         <div
           className="buy_btn flex_center"
           onClick={() => {
             setIsCartClicked(false);
-            if (isLogin) moveAndScrollToTop('/cart');
+            if (localStorage.getItem('token') !== null)
+              moveAndScrollToTop('/cart');
             else moveAndScrollToTop('/login');
           }}
         >
-          {isLogin ? 'REVIEW CART' : 'Login'}
+          {localStorage.getItem('token') !== null ? 'REVIEW CART' : 'Login'}
         </div>
       </div>
     </Modal>

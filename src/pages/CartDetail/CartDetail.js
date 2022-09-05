@@ -4,6 +4,7 @@ import { ItemBox } from '../../components/Header/Cart/Cart';
 import { useState, useEffect } from 'react';
 import PopupPostCode from '../../components/Address/PopupPostCode';
 import Modal from 'react-modal';
+import axios from 'axios';
 
 export default function CartDetail() {
   const [itemData, setItemData] = useState({
@@ -12,7 +13,7 @@ export default function CartDetail() {
   });
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
-
+  const [orderNote, setOrderNote] = useState('');
   const [mainAddress, setMainAddress] = useState('Main Address');
   const [detailedAddress, setDetailedAddress] = useState('');
 
@@ -24,6 +25,20 @@ export default function CartDetail() {
     setIsPopupOpen(false);
   };
 
+  function order() {
+    axios({
+      method: 'post',
+      url: 'http://localhost:8000/order',
+      data: {
+        token: localStorage.getItem('token'),
+        message: orderNote,
+        address: mainAddress + ' ' + detailedAddress,
+      },
+    }).then(res => {
+      alert('주문완료!');
+    });
+  }
+
   let price = 0;
   itemData.product_price.map(
     (el, i) => (price += Number(el * itemData.num[i]))
@@ -31,15 +46,12 @@ export default function CartDetail() {
   const toShipping = 999 - price;
 
   useEffect(() => {
-    fetch('/mockdata/cart.json')
-      .then(res => res.json())
-      .then(data => {
-        data.map(el => {
-          if (el.user_id === 1) {
-            setItemData(el);
-          }
-        });
-      });
+    axios({
+      method: 'get',
+      url: `http://localhost:8000/cart/${localStorage.getItem('token')}`,
+    }).then(res => {
+      setItemData(res.data[0]);
+    });
   }, []);
 
   return (
@@ -55,12 +67,13 @@ export default function CartDetail() {
           {itemData.product_name.map((el, i) => {
             return (
               <ItemBox
-                itemData={itemData}
+                cartId={itemData.cart_id[i]}
                 key={itemData.product_id[i]}
                 name={itemData.product_name[i]}
                 img={itemData.product_photos[i]}
                 price={itemData.product_price[i]}
                 num={itemData.num[i]}
+                setItemData={setItemData}
               />
             );
           })}
@@ -73,19 +86,30 @@ export default function CartDetail() {
               cols="30"
               rows="10"
               placeholder="How Can We Help You?"
-            ></textarea>
+              onChange={e => {
+                setOrderNote(e.target.value);
+                console.log(orderNote);
+              }}
+            />
           </div>
           <div className="cart_checkout flex_center">
             <div className="cart_checkout_title">
               TOTAL : ${' '}
-              {price.toLocaleString > 999
+              {price > 999
                 ? price.toLocaleString()
-                : Number((price + 3).toLocaleString())}
+                : (price + 3).toLocaleString()}
             </div>
             <div className="cart_checkout_subtitle">
               Shipping & taxes calculated at checkout
             </div>
-            <div className="checkout_btn flex_center">CHECKOUT</div>
+            <div
+              className="checkout_btn flex_center"
+              onClick={() => {
+                order();
+              }}
+            >
+              CHECKOUT
+            </div>
           </div>
         </div>
 
@@ -114,6 +138,7 @@ export default function CartDetail() {
                   <Modal
                     isOpen={true}
                     onRequestClose={() => setIsPopupOpen(false)}
+                    ariaHideApp={false}
                     className="addressModal"
                   >
                     <PopupPostCode

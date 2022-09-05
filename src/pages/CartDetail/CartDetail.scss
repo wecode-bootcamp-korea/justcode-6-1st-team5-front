@@ -45,7 +45,9 @@
             font-size: 1.15rem;
           }
           .price {
-            margin: 20px 0;
+            margin: 3vh 0;
+            font-size: 0.9rem;
+            font-weight: 300;
           }
           .wrapper {
             display: flex;
@@ -78,6 +80,9 @@
       margin-bottom: 10vh;
 
       .order_note {
+        .order_title {
+          letter-spacing: 0.01rem;
+        }
         .text_area {
           width: 22.5vw;
           height: 14vh;
@@ -161,7 +166,7 @@
         }
       }
       .address_text {
-        margin-top: 0.5vh;
+        margin-top: 5vh;
         padding: 0.5vw;
         font-size: 1rem;
         letter-spacing: 0.05rem;
