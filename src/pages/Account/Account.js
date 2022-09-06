@@ -2,7 +2,7 @@ import React from 'react';
 import './Account.scss';
 import { useEffect } from 'react';
 
-import Logout from '../../components/Footer/Logout/Logout';
+import Logout from '../../components/Logout/Logout';
 
 function Account() {
   return (

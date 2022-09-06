@@ -21,6 +21,8 @@ function Login() {
   const [validEmail, setValidEmail] = useState(false);
   const [emailFocus, setEmailFocus] = useState(false);
 
+  const invalidRef = useRef();
+  const [invalid, setInvalid] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
 
   const navigate = useNavigate();
@@ -54,6 +56,8 @@ function Login() {
         if (response.token) {
           localStorage.setItem('token', response.token);
           go_main();
+        } else {
+          setInvalid('check check');
         }
       });
   };
@@ -82,18 +86,9 @@ function Login() {
     getToken();
   }, []);
 
-  // useEffect(() => {
-  //   fetch('http://localhost:10010/token/auth', {
-  //     method: 'GET',
-  //     headers: {
-  //       Authorization: 'Bearer ',
-  //     },
-  //   })
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log(data);
-  //     });
-  // }, []);
+  useEffect(() => {
+    setInvalid('');
+  }, [email, pwd]);
 
   return (
     <>
@@ -105,6 +100,13 @@ function Login() {
             <div className="header_content_login">
               <h1 className="login-text-h">Login</h1>
               <p className="login-text-p">Please enter your e-mail password:</p>
+              <p
+                ref={invalidRef}
+                className={invalid ? 'errPopUp' : 'offscreen'}
+                aria-live="assertive"
+              >
+                Please Check Your E-mail and Password
+              </p>
             </div>
 
             <div className="input_content_login">
@@ -158,7 +160,6 @@ function Login() {
               <button
                 type="button"
                 className="login_btn"
-                onClick={go_login}
                 onMouseDown={postHandlerLogin}
                 disabled={!validPwd || !validEmail ? true : false}
               >
