@@ -1,2 +1,40 @@
+@mixin font {
+  font-family: 'Jost', sans-serif;
+}
 
+.store_box {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  border-top: 2px dotted #ccc;
+  line-height: 25px;
+  @include font;
 
+  .pin_icon {
+    width: 20%;
+    padding: 20px 20px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .location_info {
+    width: 80%;
+    padding: 15px 0px;
+    .store_name {
+      font-weight: 700;
+    }
+
+    .store_address {
+      padding-bottom: 13px;
+      font-weight: 300;
+    }
+
+    .phone_number {
+      margin-top: 13px;
+      font-weight: 300;
+      text-decoration: underline;
+    }
+  }
+}
