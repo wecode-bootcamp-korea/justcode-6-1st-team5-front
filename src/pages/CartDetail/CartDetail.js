@@ -1,9 +1,8 @@
 import './CartDetail.scss';
 import { ItemBox } from '../../components/Header/Cart/Cart';
 import { useState, useEffect } from 'react';
-import PopupPostCode from './Address/PopupPostCode';
-import Modal from 'react-modal';
 import axios from 'axios';
+import { Address } from './Address/Address';
 
 export default function CartDetail() {
   const [itemData, setItemData] = useState({
@@ -11,18 +10,9 @@ export default function CartDetail() {
     product_price: [],
   });
 
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-  const [orderNote, setOrderNote] = useState('');
   const [mainAddress, setMainAddress] = useState('Main Address');
   const [detailedAddress, setDetailedAddress] = useState('');
-
-  const openPostCode = () => {
-    setIsPopupOpen(true);
-  };
-
-  const closePostCode = () => {
-    setIsPopupOpen(false);
-  };
+  const [orderNote, setOrderNote] = useState('');
 
   function order() {
     axios({
@@ -38,12 +28,6 @@ export default function CartDetail() {
     });
   }
 
-  let price = 0;
-  itemData.product_price.map(
-    (el, i) => (price += Number(el * itemData.num[i]))
-  );
-  const toShipping = 99 - price;
-
   useEffect(() => {
     axios({
       method: 'get',
@@ -54,6 +38,12 @@ export default function CartDetail() {
       }
     });
   }, []);
+
+  let price = 0;
+  itemData.product_price.map(
+    (el, i) => (price += Number(el * itemData.num[i]))
+  );
+  const toShipping = 99 - price;
 
   return (
     <div className="cart_detail flex_center">
@@ -117,53 +107,11 @@ export default function CartDetail() {
           </div>
         </div>
 
-        <div className="cart_address_container flex_center">
-          <div className="title">Shipping Destination</div>
-          <div className="cart_address">
-            <div className="input_address flex_center">
-              <div className="main_address flex_center">{mainAddress}</div>
-              <input
-                type="text"
-                className="detailed_address flex_center"
-                placeholder="Detailed Address"
-                onChange={e => {
-                  setDetailedAddress(e.target.value);
-                }}
-              />
-              <button
-                type="button"
-                onClick={openPostCode}
-                className="address_btn"
-              >
-                FIND ADDRESS
-              </button>
-              <div id="popupDom">
-                {isPopupOpen && (
-                  <Modal
-                    isOpen={true}
-                    onRequestClose={() => setIsPopupOpen(false)}
-                    ariaHideApp={false}
-                    className="addressModal"
-                  >
-                    <PopupPostCode
-                      onClose={closePostCode}
-                      setMainAddress={setMainAddress}
-                    />
-                  </Modal>
-                )}
-              </div>
-            </div>
-            <div className="address_text">
-              No Saturday and Sunday delivery.
-              <br /> We only ship domestically across the Korean Peninsula
-              (include Jeju-do, Ulleung-do, Dok-do etc).
-              <br />
-              Shipping is not available in the following states and/or
-              territories:
-              <span className="bold"> All over the world except Korea</span>
-            </div>
-          </div>
-        </div>
+        <Address
+          mainAddress={mainAddress}
+          setDetailedAddress={setDetailedAddress}
+          setMainAddress={setMainAddress}
+        />
       </div>
     </div>
   );
