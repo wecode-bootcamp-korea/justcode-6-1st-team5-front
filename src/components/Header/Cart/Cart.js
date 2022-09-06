@@ -29,7 +29,16 @@ function ItemBox({ setItemData, cartId, name, img, price, num }) {
         num: num - 1,
       },
     }).then(res => {
-      setItemData(res.data[0]);
+      if (res.data.length === 0)
+        setItemData({
+          cart_id: [],
+          product_name: [],
+          product_price: [],
+          num: [],
+          product_photos: [],
+          product_prices: [],
+        });
+      else setItemData(res.data[0]);
     });
   }
 
@@ -42,7 +51,16 @@ function ItemBox({ setItemData, cartId, name, img, price, num }) {
         cart_id: cartId,
       },
     }).then(res => {
-      setItemData(res.data[0]);
+      if (res.data[0].num.length === 0)
+        setItemData({
+          cart_id: [],
+          product_name: [],
+          product_price: [],
+          num: [],
+          product_photos: [],
+          product_prices: [],
+        });
+      else setItemData(res.data[0]);
     });
   }
 
@@ -118,6 +136,43 @@ function Cart({ setIsCartClicked }) {
     });
   }, []);
 
+  function button() {
+    if (localStorage.getItem('token') !== null)
+      return itemData.num.length !== 0 ? (
+        <div
+          className="buy_btn flex_center"
+          onClick={() => {
+            setIsCartClicked(false);
+            moveAndScrollToTop('/cart');
+          }}
+        >
+          REVIEW CART
+        </div>
+      ) : (
+        <div
+          className="buy_btn flex_center"
+          onClick={() => {
+            setIsCartClicked(false);
+            moveAndScrollToTop('/shop');
+          }}
+        >
+          SHOP
+        </div>
+      );
+    else
+      return (
+        <div
+          className="buy_btn flex_center"
+          onClick={() => {
+            setIsCartClicked(false);
+            moveAndScrollToTop('/login');
+          }}
+        >
+          LOGIN
+        </div>
+      );
+  }
+
   return (
     <Modal
       isOpen={true}
@@ -126,19 +181,25 @@ function Cart({ setIsCartClicked }) {
       className="modal_cart"
     >
       {localStorage.getItem('token') !== null ? (
-        itemData.product_name.map((el, i) => {
-          return (
-            <ItemBox
-              cartId={itemData.cart_id[i]}
-              key={itemData.product_id[i]}
-              name={itemData.product_name[i]}
-              img={itemData.product_photos[i]}
-              price={itemData.product_price[i]}
-              num={itemData.num[i]}
-              setItemData={setItemData}
-            />
-          );
-        })
+        itemData.num.length !== 0 ? (
+          itemData.product_name.map((el, i) => {
+            return (
+              <ItemBox
+                cartId={itemData.cart_id[i]}
+                key={itemData.product_id[i]}
+                name={itemData.product_name[i]}
+                img={itemData.product_photos[i]}
+                price={itemData.product_price[i]}
+                num={itemData.num[i]}
+                setItemData={setItemData}
+              />
+            );
+          })
+        ) : (
+          <div className="not_login flex_center">
+            <div className="login_plz">Cart is empty</div>
+          </div>
+        )
       ) : (
         <div className="not_login flex_center">
           <div className="login_plz">Only ROECY' members can order</div>
@@ -151,17 +212,7 @@ function Cart({ setIsCartClicked }) {
             ? `Total : $ ${price.toLocaleString()}`
             : ''}
         </p>
-        <div
-          className="buy_btn flex_center"
-          onClick={() => {
-            setIsCartClicked(false);
-            if (localStorage.getItem('token') !== null)
-              moveAndScrollToTop('/cart');
-            else moveAndScrollToTop('/login');
-          }}
-        >
-          {localStorage.getItem('token') !== null ? 'REVIEW CART' : 'Login'}
-        </div>
+        {button()}
       </div>
     </Modal>
   );

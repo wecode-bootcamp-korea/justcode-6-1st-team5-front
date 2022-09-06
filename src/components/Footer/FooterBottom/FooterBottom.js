@@ -1,7 +1,7 @@
 import Logo from '../../Header/Logo/Logo';
 import './FooterBottom.scss';
 import { Link, useNavigate } from 'react-router-dom';
-import MenuList from '../../MenuList/MenuList';
+import MenuList from '../../Header/MenuList/MenuList';
 import SnsIcons from '../SnsIcons/SnsIcons';
 
 const general = [

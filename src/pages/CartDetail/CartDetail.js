@@ -1,8 +1,7 @@
 import './CartDetail.scss';
-import DaumPostcode from 'react-daum-postcode';
 import { ItemBox } from '../../components/Header/Cart/Cart';
 import { useState, useEffect } from 'react';
-import PopupPostCode from '../../components/Address/PopupPostCode';
+import PopupPostCode from './Address/PopupPostCode';
 import Modal from 'react-modal';
 import axios from 'axios';
 

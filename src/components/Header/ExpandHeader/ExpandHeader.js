@@ -1,6 +1,6 @@
 import './ExpandHeader.scss';
 import { Link, useNavigate } from 'react-router-dom';
-import MenuList from '../../MenuList/MenuList';
+import MenuList from '../MenuList/MenuList';
 import ItemContainer from '../../../pages/Home/ItemContainer/ItemContainer';
 import { useEffect, useRef } from 'react';
 
@@ -18,11 +18,9 @@ const popular = [
 
 export default function ExpandHeader({ isShopClicked, setIsShopClicked }) {
   const hideDiv = useRef();
-  console.log(hideDiv);
   useEffect(() => {
     if (isShopClicked === false) {
       setTimeout(() => {
-        console.log('hi');
         hideDiv.current.classList.add('upInTheAir');
       }, 300);
     }

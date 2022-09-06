@@ -1,7 +1,7 @@
 .nav_container {
   .expand_container {
     opacity: 1;
-    transition: opacity 300ms;
+    transition: opacity 400ms;
 
     .expand_wrapper {
       align-items: flex-start;
@@ -40,7 +40,7 @@
   .hide_container {
     opacity: 0;
     visibility: hidden;
-    transition: opacity 300ms, visibility 300ms;
+    transition: opacity 400ms, visibility 400ms;
 
     .expand_wrapper {
       align-items: flex-start;
