@@ -1,10 +1,11 @@
 import React from 'react';
+import '../Location/LocationList.scss';
 
 const LocationList = ({ data }) => {
   const { name, address, phone } = data;
 
   return (
-    <li>
+    <li className="store_box">
       <span className="pin_icon">
         <img src="/image/pin.png" />
       </span>

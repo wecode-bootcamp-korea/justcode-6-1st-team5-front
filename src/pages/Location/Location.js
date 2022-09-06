@@ -7,6 +7,16 @@ import './Location.scss';
 
 const Location = () => {
   const [locations, setLocations] = useState([]);
+  const [searchInput, setSearchInput] = useState('');
+
+  // useEffect(() => {
+  //   fetch('http://localhost:10010/location')
+  //     .then(res => res.json())
+  //     .then(json => {
+  //       setLocations(json);
+  //       console.log(json);
+  //     });
+  // }, []);
 
   useEffect(() => {
     fetch('http://localhost:3000/data/locationData.json')
@@ -16,37 +26,50 @@ const Location = () => {
       });
   }, []);
 
+  const onChange = e => {
+    setSearchInput(e.target.value);
+  };
+
+  const setStores = locations.filter(location => {
+    return location.name.toLowerCase().includes(searchInput.toLowerCase());
+  });
+
+  console.log(setStores);
+
   return (
     <>
       <h1 className="store_locator">STORE LOCATOR</h1>
       <div className="location_container">
         <div className="location_list">
           <div className="search">
-            <input placeholder="Type a postcode or address..." />
+            <input
+              onChange={onChange}
+              placeholder="Type a postcode or address..."
+            />
             <button>
               <img src="/image/search_icon.png" />
             </button>
           </div>
           <div className="list">
-            {locations !== undefined &&
-              locations.map(location => {
-                return <LocationList key={locations.id} data={location} />;
+            {setStores !== undefined &&
+              setStores.map(store => {
+                return <LocationList key={locations.id} data={store} />;
               })}
           </div>
         </div>
         <div className="location_map">
           <Map
             center={{
-              lat: 37.555611,
-              lng: 126.973511,
+              lat: 36.43308,
+              lng: 128.040514,
             }}
             style={{
               width: '100%',
               height: '500px',
             }}
-            level={10}
+            level={13}
           >
-            <Markers locations={locations} />
+            <Markers locations={setStores} />
           </Map>
         </div>
       </div>

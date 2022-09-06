@@ -26,6 +26,7 @@ const ReviewForm = () => {
       rating,
       title,
       content,
+      product_id: 1,
     };
     setName('');
     setEmail('');
@@ -34,7 +35,7 @@ const ReviewForm = () => {
     setContent('');
     console.log(body);
 
-    fetch('http://localhost:3000/review', {
+    fetch('http://localhost:10010/reviews/product', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

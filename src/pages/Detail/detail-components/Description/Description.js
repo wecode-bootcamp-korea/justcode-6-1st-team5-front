@@ -4,6 +4,7 @@ import './Description.scss';
 
 const Description = ({ description, scrollFunction }) => {
   const {
+    id,
     photos,
     name,
     rating,
@@ -40,9 +41,8 @@ const Description = ({ description, scrollFunction }) => {
   const onSubmit = e => {
     e.preventDefault();
     const body = {
-      product_name: name,
-      product_photos: photos[0],
-      product_price: pureNum,
+      token: localStorage['token'],
+      product_id: id,
       num: quantity,
     };
     console.log(body);
@@ -50,6 +50,7 @@ const Description = ({ description, scrollFunction }) => {
     fetch('http://localhost:3000/cart', {
       method: 'POST',
       headers: {
+        Authorization: localStorage['token'],
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
@@ -80,10 +81,10 @@ const Description = ({ description, scrollFunction }) => {
       </form>
       <div className="product_description">
         <p className="content">{info}</p>
-        <p className="allergens">Allergens{allerges}</p>
+        <p className="allergens">Allergens: {allerges}</p>
         <p className="temperature">{temperature}</p>
         <a href="https://www.fda.gov/media/99203/download">
-          <p className="nutrition">{nutrition}</p>
+          <p className="nutrition">Nutrition Facts(Download Here)</p>
         </a>
       </div>
     </div>
