@@ -7,7 +7,6 @@ function FilterController() {
   const [productType, setProductType] = useState(false);
   const [price, setPrice] = useState(false);
   const [flavor, setFlavor] = useState(false);
-  console.log('test', 1);
   const [priceValue, setPriceValue] = useState([9, 106]);
 
   const stopView = () => {
@@ -36,7 +35,14 @@ function FilterController() {
                   x={productType}
                 />
               )}
-              {price && <FilterViewerButton name="Price" way="90" />}
+              {price && (
+                <FilterViewerButton
+                  name="Price"
+                  way={priceValue}
+                  setx={setPrice}
+                  x={price}
+                />
+              )}
               {flavor && (
                 <FilterViewerButton
                   name="Flavor"
