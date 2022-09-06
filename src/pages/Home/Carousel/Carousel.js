@@ -11,6 +11,7 @@ export default function Carousel({ data }) {
     slidesToShow: 4,
     slidesToScroll: 4,
   };
+
   return (
     <div className="carousel">
       <div className="items_container flex_center">
