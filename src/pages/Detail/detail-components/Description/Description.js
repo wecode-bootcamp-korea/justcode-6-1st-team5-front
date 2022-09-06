@@ -3,7 +3,7 @@ import React, { useState, useRef } from 'react';
 import './Description.scss';
 
 const Description = ({ description, scrollFunction }) => {
-  const { name, rate, price, info, allerge, temp, nutrition, tags } =
+  const { name, rating, price, info, allerges, temperature, nutrition, tags } =
     description;
 
   const [quantity, setQuantity] = useState(1);
@@ -15,12 +15,12 @@ const Description = ({ description, scrollFunction }) => {
     else if (check === '+') setQuantity(current => current + 1);
   };
 
-  function starRate(rate) {
-    if (rate === 5) return '★★★★★';
-    if (rate === 4) return '★★★★☆';
-    if (rate === 3) return '★★★☆☆';
-    if (rate === 2) return '★★☆☆☆';
-    if (rate === 1) return '★☆☆☆☆';
+  function starRate(rating) {
+    if (rating === 5) return '★★★★★';
+    if (rating === 4) return '★★★★☆';
+    if (rating === 3) return '★★★☆☆';
+    if (rating === 2) return '★★☆☆☆';
+    if (rating === 1) return '★☆☆☆☆';
     else return '☆☆☆☆☆';
   }
 
@@ -29,7 +29,7 @@ const Description = ({ description, scrollFunction }) => {
       <div className="product_meta">
         <h1 className="product_name">{name}</h1>
         <div className="review">
-          <span className="total_rating">{starRate(rate)}</span>
+          <span className="total_rating">{starRate(rating)}</span>
           <a onClick={scrollFunction}>Write A Review</a>
         </div>
         <p className="price">${price}</p>
@@ -48,8 +48,8 @@ const Description = ({ description, scrollFunction }) => {
       </form>
       <div className="product_description">
         <p className="content">{info}</p>
-        <p className="allergens">{allerge}</p>
-        <p className="temperature">{temp}</p>
+        <p className="allergens">Allergens{allerges}</p>
+        <p className="temperature">{temperature}</p>
         <a href="https://www.fda.gov/media/99203/download">
           <p className="nutrition">{nutrition}</p>
         </a>
