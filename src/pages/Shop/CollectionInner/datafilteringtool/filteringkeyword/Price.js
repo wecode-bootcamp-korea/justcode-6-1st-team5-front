@@ -1,15 +1,18 @@
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
+import { useEffect } from 'react';
 
 export default function Price(props) {
   const { priceValue, setPriceValue, mission } = props;
   //const [priceValue, setPriceValue] = useState([9, 106]);
-
-  if (priceValue[0] !== 9) {
-    mission(true);
-  } else if (priceValue[1] !== 106) {
-    mission(true);
-  }
+  //useEffect로 pricevalue 의존성 배열로 만들어 해결
+  useEffect(() => {
+    if (priceValue[0] !== 9) {
+      mission(true);
+    } else if (priceValue[1] !== 106) {
+      mission(true);
+    }
+  }, [priceValue]);
 
   return (
     <div id="price_filtering_category">

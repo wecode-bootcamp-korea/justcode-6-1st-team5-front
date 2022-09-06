@@ -3,6 +3,10 @@ import './filterviewerbutton.scss';
 function FilterViewerButton(props) {
   const { name, way, setx, x } = props;
 
+  const xbutton = () => {
+    setx(false);
+    console.log('test', 1);
+  };
   return (
     <div id="filterviwer_button">
       {x && (
@@ -19,7 +23,7 @@ function FilterViewerButton(props) {
               {name}: <span id="bold">{way}</span>
             </button>
           )}
-          <button className="x_type" onClick={() => setx(false)}>
+          <button className="x_type" onClick={xbutton}>
             x
           </button>
         </li>
