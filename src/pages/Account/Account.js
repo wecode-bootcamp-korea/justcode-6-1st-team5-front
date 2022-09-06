@@ -1,6 +1,8 @@
 import React from 'react';
 import './Account.scss';
-import Logout from '../../components/Footer/Logout/Logout';
+import { useEffect } from 'react';
+
+import Logout from '../../components/Logout/Logout';
 
 function Account() {
   return (

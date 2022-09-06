@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import jwtDecode from 'jwt-decode';
+
 import Account from '../Account/Account';
 
 import './Login.scss';
@@ -19,6 +21,8 @@ function Login() {
   const [validEmail, setValidEmail] = useState(false);
   const [emailFocus, setEmailFocus] = useState(false);
 
+  const invalidRef = useRef();
+  const [invalid, setInvalid] = useState('');
   const [loggedIn, setLoggedIn] = useState(false);
 
   const navigate = useNavigate();
@@ -28,13 +32,16 @@ function Login() {
   const go_main = () => {
     navigate('/');
   };
+  const go_login = () => {
+    navigate('/login');
+  };
 
-  const sendHandler = e => {
+  const postHandlerLogin = e => {
     e.preventDefault();
     console.log(pwdRef.current.value);
     console.log(emailRef.current.value);
 
-    fetch('http://localhost:8000/users/login', {
+    fetch('http://localhost:10010/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -48,6 +55,9 @@ function Login() {
       .then(response => {
         if (response.token) {
           localStorage.setItem('token', response.token);
+          go_main();
+        } else {
+          setInvalid('check check');
         }
       });
   };
@@ -57,10 +67,12 @@ function Login() {
   const getToken = () => {
     if (tokenStatus) {
       tokenStatus !== null ? setLoggedIn(true) : setLoggedIn(false);
-      // console.log(tokenStatus);
-      // setLoggedIn(false);
     }
   };
+
+  // const decodeToken = localStorage.getItem('token');
+  // const decode = jwtDecode(decodeToken);
+  // console.log(decode);
 
   useEffect(() => {
     setValidPwd(PWD_REGEX.test(pwd));
@@ -74,6 +86,10 @@ function Login() {
     getToken();
   }, []);
 
+  useEffect(() => {
+    setInvalid('');
+  }, [email, pwd]);
+
   return (
     <>
       {loggedIn ? (
@@ -84,6 +100,13 @@ function Login() {
             <div className="header_content_login">
               <h1 className="login-text-h">Login</h1>
               <p className="login-text-p">Please enter your e-mail password:</p>
+              <p
+                ref={invalidRef}
+                className={invalid ? 'errPopUp' : 'offscreen'}
+                aria-live="assertive"
+              >
+                Please Check Your E-mail and Password
+              </p>
             </div>
 
             <div className="input_content_login">
@@ -137,8 +160,7 @@ function Login() {
               <button
                 type="button"
                 className="login_btn"
-                onClick={go_main}
-                onMouseDown={sendHandler}
+                onMouseDown={postHandlerLogin}
                 disabled={!validPwd || !validEmail ? true : false}
               >
                 Login
