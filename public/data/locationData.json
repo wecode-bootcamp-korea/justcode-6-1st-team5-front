@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "name": "ROYCE' Seoul Square",
+    "address": "416, Hangang-daero, Jung-gu, Seoul, Republic of Korea",
+    "phone": "02-521-8238",
+    "latlng": { "lat": 37.555611, "lng": 126.973511 }
+  },
+  {
+    "id": 2,
+    "name": "ROYCE' Gwanghwamun",
+    "address": "2nd floor, 50 Jongno 1-gil, Junghak-dong, Seoul",
+    "phone": "02-521-8238",
+    "latlng": { "lat": 37.574581, "lng": 126.979227 }
+  },
+  {
+    "id": 3,
+    "name": "ROYCE' Euljiro",
+    "address": "343, Samil-daero, Jung-gu, Seoul",
+    "phone": "02-521-8238",
+    "latlng": { "lat": 37.56527, "lng": 126.987231 }
+  },
+  {
+    "id": 4,
+    "name": "ROYCE' Gangnam Station",
+    "address": "373, Gangnam-daero, Seocho-gu, Seoul.",
+    "phone": "02-521-8238",
+    "latlng": { "lat": 37.496076, "lng": 127.027995 }
+  },
+  {
+    "id": 5,
+    "name": "ROYCE' Shrine",
+    "address": "586 Gangnam-daero, Nonhyeon 1-dong, Gangnam-gu, Seoul.",
+    "phone": "02-52-8238",
+    "latlng": { "lat": 37.506587, "lng": 127.053627 }
+  },
+  {
+    "id": 6,
+    "name": "ROYCE' Hongdae",
+    "address": "Yanghwa Mapo-gu, Seoul Metropolitan Government, 147.",
+    "phone": "02-521-8238",
+    "latlng": { "lat": 37.506587, "lng": 127.053627 }
+  },
+  {
+    "id": 7,
+    "name": "ROYCE' Yeouido Station",
+    "address": "Seoul Metropolitan Government Medical Center 83.",
+    "phone": "02-521-8238",
+    "latlng": { "lat": 37.506587, "lng": 127.053627 }
+  },
+  {
+    "id": 8,
+    "name": "ROYCE' Samsung Station",
+    "address": "507 Teheran-ro, Seoul",
+    "phone": "02-521-8238",
+    "latlng": { "lat": 37.507679, "lng": 127.05776 }
+  },
+  {
+    "id": 9,
+    "name": "ROYCE' Sunreung",
+    "address": "302, Teheran-ro, Gangnam-gu, Seoul.",
+    "phone": "02-521-8238",
+    "latlng": { "lat": 37.507679, "lng": 127.05776 }
+  },
+  {
+    "id": 10,
+    "name": "ROYCE' Sunreung No. 2",
+    "address": "427, Teheran-ro, Gangnam-gu, Seoul.",
+    "phone": "02-521-8238",
+    "latlng": { "lat": 37.506587, "lng": 127.053627 }
+  },
+  {
+    "id": 11,
+    "name": "ROYCE' Sunreung No. 3",
+    "address": "428 Seolleung-ro, Gangnam-gu, Seoul.",
+    "phone": "02-521-8238",
+    "latlng": { "lat": 37.507679, "lng": 127.05776 }
+  },
+  {
+    "id": 12,
+    "name": "ROYCE' Yeoksam Station",
+    "address": "142, Teheran-ro, Seoul",
+    "phone": "02-521-8238",
+    "latlng": { "lat": 37.499684, "lng": 127.034911 }
+  },
+  {
+    "id": 13,
+    "name": "ROYCE' Yeoksam Station No. 2",
+    "address": "14, Teheran-ro 26-gil, Gangnam-gu, Seoul",
+    "phone": "02-521-8238",
+    "latlng": { "lat": 37.499188, "lng": 127.035917 }
+  },
+  {
+    "id": 14,
+    "name": "ROYCE' BIFC",
+    "address": "1227-2 Munhyeon-dong, Nam-gu, Busan",
+    "phone": "02-521-8238",
+    "latlng": { "lat": 35.148413, "lng": 129.0654 }
+  },
+  {
+    "id": 15,
+    "name": "ROYCE' Seomyeon",
+    "address": "3rd floor, Seojeon-ro 8, 155-1 Bujeon-dong, Busanjin-gu, Busan Metropolitan City",
+    "phone": "02-521-8238",
+    "latlng": { "lat": 35.157504, "lng": 129.060451 }
+  }
+]
