@@ -1,15 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React from 'react';
 import './Contact.scss';
 
 function Contact() {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [content, setContent] = useState('');
-
-  const nameRef = useRef();
-  const emailRef = useRef();
-  const contentRef = useRef();
-
   return (
     <div>
       <title className="contact_header_titile">CONTACT US FOR ASSISTANCE</title>
@@ -31,6 +23,7 @@ function Contact() {
               Customer Care Team is available Monday to Friday, 9am to 5pm ET.
               We are closed on major US holiday
             </p>
+
             <p>
               Thank you for visiting <span>ROECY' </span>website
             </p>
@@ -45,11 +38,6 @@ function Contact() {
             className="contact_form_input"
             id="name"
             type="text"
-            value={name}
-            ref={nameRef}
-            onChange={e => {
-              setName(e.target.value);
-            }}
             placeholder="Your name"
           />
 
@@ -60,11 +48,6 @@ function Contact() {
             className="contact_form_input"
             id="email"
             type="text"
-            value={email}
-            ref={emailRef}
-            onChange={e => {
-              setEmail(e.target.value);
-            }}
             placeholder="Your email"
           />
 
@@ -75,11 +58,6 @@ function Contact() {
             className="contact_form_input_lg"
             id="message"
             type="text"
-            value={content}
-            ref={contentRef}
-            onChange={e => {
-              setContent(e.target.value);
-            }}
             placeholder="Your message"
           />
           <button className="contact_btn">Send message</button>
