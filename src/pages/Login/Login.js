@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import jwtDecode from 'jwt-decode';
 
 import Account from '../Account/Account';
 
@@ -32,9 +31,6 @@ function Login() {
   const go_main = () => {
     navigate('/');
   };
-  const go_login = () => {
-    navigate('/login');
-  };
 
   const postHandlerLogin = e => {
     e.preventDefault();
@@ -57,7 +53,7 @@ function Login() {
           localStorage.setItem('token', response.token);
           go_main();
         } else {
-          setInvalid('check check');
+          setInvalid('activated');
         }
       });
   };
