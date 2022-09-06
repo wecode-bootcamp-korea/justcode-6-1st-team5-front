@@ -5,8 +5,8 @@
   margin-top: calc(8vh + 2% + 64.8px);
   box-shadow: 1px 1px #999, -1px -1px #999;
   letter-spacing: 0.1rem;
-  animation: fadein 0.4s;
   overflow-y: auto;
+  animation: fadein 0.4s;
 
   @keyframes fadein {
     from {

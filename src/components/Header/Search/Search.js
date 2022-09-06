@@ -35,6 +35,7 @@ export default function Search({ setIsSearchClicked }) {
     <Modal
       isOpen={true}
       onRequestClose={() => setIsSearchClicked(false)}
+      ariaHideApp={false}
       className="modal_search"
     >
       <div className="input_container">
