@@ -9,9 +9,10 @@
   margin: 64.8px 0;
   box-shadow: 1px 1px #999, -1px -1px #999;
   background-color: white;
-  animation: fadein 0.4s;
   overflow-y: auto;
   z-index: 3;
+  animation: fadein 0.4s;
+  font-weight: 400;
 
   @keyframes fadein {
     from {
@@ -19,6 +20,15 @@
     }
     to {
       opacity: 1;
+    }
+  }
+
+  .not_login {
+    display: flex;
+    height: 100%;
+    .login_plz {
+      color: #999;
+      font-size: 1.25rem;
     }
   }
 
@@ -42,6 +52,7 @@
       }
       .price {
         margin: 20px 0;
+        font-weight: 300;
       }
       .wrapper {
         display: flex;
@@ -59,6 +70,7 @@
         .remove {
           position: absolute;
           right: 1.5vw;
+          color: #999;
           cursor: pointer;
         }
       }
@@ -80,6 +92,8 @@
     .total_price {
       text-align: left;
       width: 26vw;
+      letter-spacing: 0.1rem;
+      font-weight: 400;
     }
 
     .buy_btn {
@@ -89,6 +103,7 @@
       background-color: rgb(47, 56, 108);
       color: white;
       letter-spacing: 0.2rem;
+      font-weight: 400;
       cursor: pointer;
     }
   }

@@ -17,6 +17,10 @@
         flex-direction: column;
         width: 255px;
 
+        .title {
+          letter-spacing: 0.15rem;
+        }
+
         .text {
           margin-top: 4vh;
           line-height: 3.5vh;
