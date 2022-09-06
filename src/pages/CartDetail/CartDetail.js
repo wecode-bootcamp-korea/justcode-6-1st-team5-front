@@ -25,7 +25,6 @@ export default function CartDetail() {
     setIsPopupOpen(false);
   };
 
-  console.log(mainAddress);
   function order() {
     axios({
       method: 'post',
@@ -36,7 +35,7 @@ export default function CartDetail() {
         address: mainAddress + ' ' + detailedAddress,
       },
     }).then(res => {
-      alert('주문완료!');
+      alert('Your order has been successfully received.');
     });
   }
 
@@ -91,7 +90,6 @@ export default function CartDetail() {
               placeholder="How Can We Help You?"
               onChange={e => {
                 setOrderNote(e.target.value);
-                console.log(orderNote);
               }}
             />
           </div>

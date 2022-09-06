@@ -112,7 +112,10 @@ export default function Header() {
         </div>
       </div>
 
-      {isShopClicked && <ExpandHeader />}
+      <ExpandHeader
+        isShopClicked={isShopClicked}
+        setIsShopClicked={setIsShopClicked}
+      />
       {isCartClicked && <Cart setIsCartClicked={setIsCartClicked} />}
       {isSearchClicked && <Search setIsSearchClicked={setIsSearchClicked} />}
     </div>

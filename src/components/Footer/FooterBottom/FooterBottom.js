@@ -28,7 +28,7 @@ export default function FooterBottom() {
       <div className="bottom_box flex_center">
         <div className="wrapper flex_center">
           <Logo fontSize={'2.65rem'} />
-          <p className="text">
+          <div className="text">
             Precisely crafted using only the <br />
             highest quality ingredients,
             <br /> ROECY' has been making
@@ -36,7 +36,7 @@ export default function FooterBottom() {
             northernmost
             <br /> island of Japan).
             <div className="corporate">© ROECY' CHOCOLATE</div>
-          </p>
+          </div>
         </div>
       </div>
       <div className="bottom_box flex_center">
