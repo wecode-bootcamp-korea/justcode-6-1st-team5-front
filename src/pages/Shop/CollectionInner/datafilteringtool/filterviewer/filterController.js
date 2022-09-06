@@ -5,12 +5,14 @@ import { useState } from 'react';
 
 function FilterController() {
   const [productType, setProductType] = useState(false);
+  const [productType2, setProductType2] = useState(false);
   const [price, setPrice] = useState(false);
   const [flavor, setFlavor] = useState(false);
   const [priceValue, setPriceValue] = useState([9, 106]);
 
   const stopView = () => {
     setProductType(false);
+    setProductType2(false);
     setPrice(false);
     setFlavor(false);
   };
@@ -35,6 +37,14 @@ function FilterController() {
                   x={productType}
                 />
               )}
+              {productType2 && (
+                <FilterViewerButton
+                  name="ProductType"
+                  way="Ecommerce"
+                  setx={setProductType2}
+                  x={productType2}
+                />
+              )}
               {price && (
                 <FilterViewerButton
                   name="Price"
@@ -53,7 +63,11 @@ function FilterController() {
               )}
             </ul>
           </div>
-          <FilterButtons name="Producttype" mission={setProductType} />
+          <FilterButtons
+            name="Producttype"
+            mission1={setProductType}
+            mission2={setProductType2}
+          />
           <FilterButtons
             name="Price"
             mission={setPrice}
