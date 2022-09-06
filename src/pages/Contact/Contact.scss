@@ -89,6 +89,23 @@ section.wrapper_content_contact {
       font-size: 16px;
     }
 
+    p.cond_msg {
+      font-size: 0.75rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgb(0, 0, 0);
+      color: #000;
+      padding: 0.25rem;
+      position: relative;
+      bottom: -0.5px;
+      margin-bottom: 13px;
+      @include font();
+    }
+
+    p.offscreen {
+      position: absolute;
+      left: -9999px;
+    }
+
     button.contact_btn {
       height: 8%;
       padding: 12px 14px;
