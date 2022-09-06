@@ -34,8 +34,6 @@ const Location = () => {
     return location.name.toLowerCase().includes(searchInput.toLowerCase());
   });
 
-  console.log(setStores);
-
   return (
     <>
       <h1 className="store_locator">STORE LOCATOR</h1>
