@@ -12,19 +12,10 @@ function Sortselector() {
           <button className="sortbutton">BEST SELLING</button>
         </li>
         <li>
-          <button className="sortbutton">FEATURED</button>
-        </li>
-        <li>
           <button className="sortbutton">LOWEST PRICE</button>
         </li>
         <li>
           <button className="sortbutton">HIGHEST PRICE</button>
-        </li>
-        <li>
-          <button className="sortbutton">ALPHABETICALLY, A-Z</button>
-        </li>
-        <li>
-          <button className="sortbutton">ALPHABETICALLY, Z-A</button>
         </li>
         <li>
           <button className="sortbutton">DATE, NEW TO OLD</button>

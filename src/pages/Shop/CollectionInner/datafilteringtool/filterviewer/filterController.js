@@ -7,6 +7,8 @@ function FilterController() {
   const [productType, setProductType] = useState(false);
   const [price, setPrice] = useState(false);
   const [flavor, setFlavor] = useState(false);
+  console.log('test', 1);
+  const [priceValue, setPriceValue] = useState([9, 106]);
 
   const stopView = () => {
     setProductType(false);
@@ -46,7 +48,12 @@ function FilterController() {
             </ul>
           </div>
           <FilterButtons name="Producttype" mission={setProductType} />
-          <FilterButtons name="Price" mission={setPrice} />
+          <FilterButtons
+            name="Price"
+            mission={setPrice}
+            priceValue={priceValue}
+            setPriceValue={setPriceValue}
+          />
           <FilterButtons name="Flavor" mission={setFlavor} />
         </div>
       </div>
