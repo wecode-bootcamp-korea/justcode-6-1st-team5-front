@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Signup.scss';
 
-const USER_REGEX = /^[a-zA-Z]{3,10}$/;
+const USER_REGEX = /^[a-zA-Z\s]{3,30}$/;
 const EMAIL_REGEX = /^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
@@ -128,11 +128,11 @@ function Signup() {
                     userFocus && user && !validName ? 'cond_msg' : 'offscreen'
                   }
                 >
-                  Name length should be 3 to 10 characters.
+                  Name length should be 3 to 30 characters.
                   <br />
                   Only uppecase and smallcase will allowed.
                   <br />
-                  Please, input your name without spacing.
+                  Please, input your name .
                 </p>
 
                 <input
