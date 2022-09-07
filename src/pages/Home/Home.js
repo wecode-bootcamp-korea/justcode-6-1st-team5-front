@@ -7,6 +7,8 @@ import Description from '../Detail/detail-components/Description/Description';
 function Home() {
   const [product, setProduct] = useState({
     photos: ['/Images/home_part_1.jpg'],
+    name: "ROECY' SIGNATURE CHCOLATE",
+    price: 100.99,
   });
   useEffect(() => {
     fetch('http://localhost:8000/product/detail/39')

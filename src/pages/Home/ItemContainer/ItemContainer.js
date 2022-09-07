@@ -26,15 +26,14 @@ export default function ItemContainer({ id, img, name, rate, price }) {
     width: '18vw',
     height: '18vw',
     backgroundSize: 'cover',
-    zIndex: -3,
     backgroundImage: 'url(' + img + ')',
   };
 
   const hoveredStyle = {
     width: '18vw',
     height: '18vw',
-    backgroundSize: 'cover',
-    zIndex: -3,
+    backgroundSize: '120%',
+    backgroundPosition: '50% 50%',
     backgroundImage:
       'linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(' +
       img +
@@ -59,7 +58,9 @@ export default function ItemContainer({ id, img, name, rate, price }) {
         <div className="img_container">
           <div
             style={isItemHovered ? hoveredStyle : basicStyle}
-            className="img flex_center"
+            className={
+              isItemHovered ? 'hovered_img flex_center' : 'img flex_center'
+            }
           >
             {isItemHovered && <div className="in_img">SEE MORE</div>}
           </div>

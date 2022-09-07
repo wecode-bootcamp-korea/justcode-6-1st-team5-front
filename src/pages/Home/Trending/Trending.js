@@ -14,7 +14,7 @@ export default function Trending() {
       <ItemContainer
         key={data}
         img="/Images/home_part_1.jpg"
-        name="ROCYE SIGNATURE CHOCOLATE"
+        name="ROECY' SIGNATURE CHOCOLATE"
         rate={5}
         price={60.99}
       />
@@ -26,7 +26,7 @@ export default function Trending() {
       <ItemContainer
         key={data}
         img="/Images/home_part_1.jpg"
-        name="ROCYE SIGNATURE CHOCOLATE"
+        name="ROECY' SIGNATURE CHOCOLATE"
         rate={5}
         price={60.99}
       />
