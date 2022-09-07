@@ -3,13 +3,25 @@
     flex-direction: column;
     font-weight: 400;
     letter-spacing: 0.1rem;
+    line-height: 1.25vw;
     cursor: pointer;
 
-    .img {
-      width: 18vw;
-      height: 18vw;
+    .img_container {
+      .img {
+        .in_img {
+          font-size: 1.5rem;
+          font-weight: 300;
+          color: white;
+        }
+      }
+
+      .detail {
+        position: absolute;
+      }
     }
+
     .name {
+      height: 2.5vh;
       margin: 5vh 0 3.5vh 0;
       text-align: center;
     }

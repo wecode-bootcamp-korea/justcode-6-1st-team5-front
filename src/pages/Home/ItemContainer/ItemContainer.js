@@ -1,7 +1,11 @@
 import './ItemContainer.scss';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function ItemContainer({ id, img, name, rate, price }) {
+  const [isItemHovered, setIsItemHovered] = useState();
+  const navigate = useNavigate();
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -18,7 +22,25 @@ export default function ItemContainer({ id, img, name, rate, price }) {
     else return '☆☆☆☆☆';
   }
 
-  const navigate = useNavigate();
+  const basicStyle = {
+    width: '18vw',
+    height: '18vw',
+    backgroundSize: 'cover',
+    zIndex: -3,
+    backgroundImage: 'url(' + img + ')',
+  };
+
+  const hoveredStyle = {
+    width: '18vw',
+    height: '18vw',
+    backgroundSize: 'cover',
+    zIndex: -3,
+    backgroundImage:
+      'linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(' +
+      img +
+      ')',
+  };
+
   return (
     <div className="items_container">
       <div
@@ -27,8 +49,21 @@ export default function ItemContainer({ id, img, name, rate, price }) {
           navigate(`/product/detail/${id}`);
           scrollToTop();
         }}
+        onMouseOver={() => {
+          setIsItemHovered(true);
+        }}
+        onMouseLeave={() => {
+          setIsItemHovered(false);
+        }}
       >
-        <img src={img} alt={name} className="img" />
+        <div className="img_container">
+          <div
+            style={isItemHovered ? hoveredStyle : basicStyle}
+            className="img flex_center"
+          >
+            {isItemHovered && <div className="in_img">SEE MORE</div>}
+          </div>
+        </div>
         <div className="name flex_center">{name}</div>
         <div className="rate">{starRate()}</div>
         <div className="price">$ {price.toLocaleString()}</div>

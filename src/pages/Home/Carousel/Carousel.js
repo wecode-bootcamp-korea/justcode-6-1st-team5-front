@@ -3,7 +3,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Carousel.scss';
 
-export default function Carousel({ data }) {
+export default function Carousel({ data, isPpClicked }) {
   const settings = {
     dots: false,
     infinite: true,
@@ -14,7 +14,22 @@ export default function Carousel({ data }) {
 
   return (
     <div className="carousel">
-      <div className="items_container flex_center">
+      <div
+        className={
+          isPpClicked
+            ? 'hide_items_container flex_center'
+            : 'items_container flex_center'
+        }
+      >
+        <Slider {...settings}>{data}</Slider>
+      </div>
+      <div
+        className={
+          isPpClicked
+            ? 'items_container flex_center'
+            : 'hide_items_container flex_center'
+        }
+      >
         <Slider {...settings}>{data}</Slider>
       </div>
     </div>

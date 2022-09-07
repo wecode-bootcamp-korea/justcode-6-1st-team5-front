@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Home/Home';
 import Login from './Login/Login';
@@ -14,6 +14,11 @@ import CartDetail from './CartDetail/CartDetail';
 import Chatting from '../components/Chatting/Chatting';
 
 function Router() {
+  useEffect(() => {
+    const titleElement = document.getElementsByTagName('title')[0];
+    titleElement.innerHTML = `ROECY' Chocolate`;
+  }, []);
+
   return (
     <BrowserRouter>
       <Header />
