@@ -1,5 +1,6 @@
 import React, { useState, forwardRef } from 'react';
 import ReviewForm from './ReviewForm';
+import ReviewList from './ReviewList';
 
 import './Review.scss';
 import './ReviewForm.scss';
@@ -41,6 +42,7 @@ const Review = forwardRef(({ rating }, ref) => {
             <div className="rating">★★★★★</div>
             <p>Be the first to review this item</p>
           </div>
+          <ReviewList />
         </div>
       </section>
     </>
