@@ -34,8 +34,6 @@ function Login() {
 
   const postHandlerLogin = e => {
     e.preventDefault();
-    console.log(pwdRef.current.value);
-    console.log(emailRef.current.value);
 
     fetch('http://localhost:8000/users/login', {
       method: 'POST',

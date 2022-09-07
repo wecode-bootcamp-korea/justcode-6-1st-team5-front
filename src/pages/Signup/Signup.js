@@ -36,9 +36,6 @@ function Signup() {
 
   const sendHandler = e => {
     e.preventDefault();
-    console.log(userRef.current.value);
-    console.log(pwdRef.current.value);
-    console.log(emailRef.current.value);
 
     fetch('http://localhost:8000/users/signup', {
       method: 'POST',

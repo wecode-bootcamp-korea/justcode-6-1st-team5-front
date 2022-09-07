@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './Contact.scss';
 
 function Contact() {
@@ -11,6 +13,10 @@ function Contact() {
   const nameRef = useRef('');
   const emailRef = useRef('');
   const contentRef = useRef('');
+  const navigate = useNavigate();
+
+  const [success, setSuccess] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     setValidEmail(EMAIL_REGEX.test(email));
@@ -18,9 +24,6 @@ function Contact() {
 
   const postHandlerContact = e => {
     e.preventDefault();
-    console.log(nameRef.current.value);
-    console.log(emailRef.current.value);
-    console.log(contentRef.current.value);
 
     fetch('http://localhost:8000/inquiry', {
       method: 'POST',
@@ -32,6 +35,12 @@ function Contact() {
         email: emailRef.current.value,
         content: contentRef.current.value,
       }),
+    }).then(response => {
+      if (response.status == 200) {
+        setSuccess(true);
+      } else {
+        setFailed(true);
+      }
     });
   };
 
@@ -64,6 +73,20 @@ function Contact() {
         </div>
 
         <form className="contact_form">
+          <p
+            className={failed ? 'errPopUp' : 'offscreen'}
+            aria-live="assertive"
+          >
+            Email has already taken.
+          </p>
+
+          <p
+            className={success ? 'successPopUp' : 'offscreen'}
+            aria-live="assertive"
+          >
+            Thank you! <br />
+            Your inquiry has been submitted successfully.
+          </p>
           <label className="contact_form_label" htmlFor="name">
             Your name
           </label>

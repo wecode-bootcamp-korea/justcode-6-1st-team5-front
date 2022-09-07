@@ -6,15 +6,21 @@ import Logout from '../../components/Logout/Logout';
 
 function Account() {
   const [userName, setUserName] = useState([]);
+  const [cartData, setCartData] = useState();
+  const [getData, setGetData] = useState();
 
   useEffect(() => {
-    fetch(`http://localhost:8000/order/${localStorage.getItem('token')}`, {
+    fetch(`http://localhost:8000/cart/${localStorage.getItem('token')}`, {
       headers: {
         'Content-Type': 'application/json',
       },
-    }).then(res => {
-      console.log(res);
-    });
+    })
+      .then(res => {
+        console.log(res);
+      })
+      .then(data => {
+        setCartData(data);
+      });
   });
 
   useEffect(() => {
@@ -50,7 +56,17 @@ function Account() {
 
         <section className="account_order">
           <h2 className="account_order_title">MY ORDERS</h2>
-          <p className="account_order_text">You haven't placed any order yet</p>
+          {cartData ? (
+            <ul>
+              {getData.map(getData => (
+                <li>{getData}</li>
+              ))}
+            </ul>
+          ) : (
+            <p className="account_order_text">
+              You haven't placed any order yet
+            </p>
+          )}
         </section>
       </div>
     </>
