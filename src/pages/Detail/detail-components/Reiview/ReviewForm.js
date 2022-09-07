@@ -4,7 +4,7 @@ import Review from './Review';
 
 import './ReviewForm.scss';
 
-const ReviewForm = ({ props }) => {
+const ReviewForm = ({ setRender }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [title, setTitle] = useState('');
@@ -49,7 +49,7 @@ const ReviewForm = ({ props }) => {
       .then(res => res.json())
       .then(json => {
         alert(JSON.stringify(json.message));
-        props(current => current + 1);
+        setRender(current => current + 1);
       });
   };
 

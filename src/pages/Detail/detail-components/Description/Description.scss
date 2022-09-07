@@ -92,28 +92,28 @@
       z-index: 1;
       @include font;
 
-      &:after {
-        border: 1px solid #2f386c;
-        position: absolute;
-        color: #2f386c;
-        content: 'ADD TO CART';
-        width: 0;
-        height: 44px;
-        top: 263px;
-        right: 0;
-        z-index: -1;
-        background-color: #ffffff;
-        transition: all 1s ease;
-      }
+      // &:after {
+      //   border: 1px solid #2f386c;
+      //   position: absolute;
+      //   color: #2f386c;
+      //   content: 'ADD TO CART';
+      //   width: 0;
+      //   height: 44px;
+      //   top: 263px;
+      //   right: 0;
+      //   z-index: -1;
+      //   background-color: #ffffff;
+      //   transition: all 1s ease;
+      // }
 
-      &:hover:after {
-        left: 0;
-        width: 99%;
-      }
+      // &:hover:after {
+      //   left: 0;
+      //   width: 99%;
+      // }
 
-      &:active {
-        top: 2px;
-      }
+      // &:active {
+      //   top: 2px;
+      // }
     }
   }
 

@@ -7,8 +7,8 @@ import './ReviewForm.scss';
 
 const Review = forwardRef(({ rating }, ref) => {
   const [visible, setVisible] = useState(false);
-  const [test, setTest] = useState(0);
-  const [len, setLen] = useState(0);
+  const [render, setRender] = useState(0);
+  const [length, setLength] = useState(0);
   const handleOpenForm = () => {
     setVisible(current => !current);
   };
@@ -24,7 +24,7 @@ const Review = forwardRef(({ rating }, ref) => {
   return (
     <>
       <section ref={ref} className="review_container">
-        <div className="star_rating">{starRate(rating)}</div>
+        <div className="star_rating">{starRate(Number(rating))}</div>
         <div className="review_wrapper">
           <div onClick={handleOpenForm} className="write_btn">
             <span>
@@ -35,16 +35,19 @@ const Review = forwardRef(({ rating }, ref) => {
           <div className="tab-review">
             <div>
               <span>Reviews</span>
-              <span className="num">{len}</span>
+              <span className="num">{length}</span>
             </div>
           </div>
           <div className="line"></div>
-          {visible && <ReviewForm props={setTest} />}
-          <div className="view_review">
-            <div className="rating">★★★★★</div>
-            <p>Be the first to review this item</p>
-          </div>
-          <ReviewList props={test} len={setLen} />
+          {visible && <ReviewForm setRender={setRender} />}
+          {length === 0 ? (
+            <div className="view_review">
+              <div className="rating">★★★★★</div>
+              <p>Be the first to review this item</p>
+            </div>
+          ) : (
+            <ReviewList render={render} setLength={setLength} />
+          )}
         </div>
       </section>
     </>

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import '../Reiview/ReviewList.scss';
 
-const ReviewList = ({ props, len }) => {
+const ReviewList = ({ render, setLength }) => {
   const [reviewData, setReviewData] = useState([]);
   const [reviewArr, setReviewArr] = useState([]);
 
@@ -25,9 +25,9 @@ const ReviewList = ({ props, len }) => {
       .then(json => {
         setReviewData(json);
         // console.log(json);
-        len(json.length);
+        setLength(json.length);
       });
-  }, [props]);
+  }, [render]);
 
   function starRate(rating) {
     if (rating === 5) return '★★★★★';
