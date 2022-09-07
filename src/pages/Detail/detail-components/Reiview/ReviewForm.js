@@ -4,7 +4,7 @@ import Review from './Review';
 
 import './ReviewForm.scss';
 
-const ReviewForm = () => {
+const ReviewForm = ({ props }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [title, setTitle] = useState('');
@@ -37,7 +37,7 @@ const ReviewForm = () => {
     setClicked([false, false, false, false, false]);
     setTitle('');
     setContent('');
-    console.log(body);
+    // console.log(body);
 
     fetch('http://localhost:8000/reviews/product', {
       method: 'POST',
@@ -48,7 +48,8 @@ const ReviewForm = () => {
     })
       .then(res => res.json())
       .then(json => {
-        alert(json);
+        alert(JSON.stringify(json.message));
+        props(current => current + 1);
       });
   };
 

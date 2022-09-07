@@ -7,6 +7,8 @@ import './ReviewForm.scss';
 
 const Review = forwardRef(({ rating }, ref) => {
   const [visible, setVisible] = useState(false);
+  const [test, setTest] = useState(0);
+  const [len, setLen] = useState(0);
   const handleOpenForm = () => {
     setVisible(current => !current);
   };
@@ -33,16 +35,16 @@ const Review = forwardRef(({ rating }, ref) => {
           <div className="tab-review">
             <div>
               <span>Reviews</span>
-              <span className="num">0</span>
+              <span className="num">{len}</span>
             </div>
           </div>
           <div className="line"></div>
-          {visible && <ReviewForm />}
+          {visible && <ReviewForm props={setTest} />}
           <div className="view_review">
             <div className="rating">★★★★★</div>
             <p>Be the first to review this item</p>
           </div>
-          <ReviewList />
+          <ReviewList props={test} len={setLen} />
         </div>
       </section>
     </>
