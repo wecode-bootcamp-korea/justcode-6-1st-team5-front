@@ -1,11 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 
 import PhotoList from './detail-components/Photo/PhotoList';
 import Description from './detail-components/Description/Description';
 import Review from './detail-components/Reiview/Review';
+import ReviewList from './detail-components/Reiview/ReviewList';
+import Trending from '../Home/Trending/Trending';
+import Carousel from '../Home/Carousel/Carousel';
 
 import './Detail.scss';
-import { useParams } from 'react-router-dom';
 
 const Detail = () => {
   const params = useParams();
@@ -20,7 +23,16 @@ const Detail = () => {
       });
   }, []);
 
-  const { photos, ...description } = product;
+  // useEffect(() => {
+  //   fetch(`http://localhost:8000/product/detail/${productId}`)
+  //     .then(res => res.json())
+  //     .then(json => {
+  //       console.log(json);
+  //       setProduct(json);
+  //     });
+  // }, []);
+
+  const { photos, rating } = product;
 
   const scrollToReview = () => {
     reviewRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -40,13 +52,12 @@ const Detail = () => {
           </div>
         </div>
         <div>
-          <Description
-            description={description}
-            scrollFunction={scrollToReview}
-          />
+          <Description description={product} scrollFunction={scrollToReview} />
         </div>
       </section>
-      <Review props={photos} ref={reviewRef} />
+      <Review rating={rating} ref={reviewRef} />
+      <ReviewList />
+      <Trending />
     </>
   );
 };
