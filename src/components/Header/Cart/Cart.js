@@ -51,7 +51,7 @@ function ItemBox({ setItemData, cartId, name, img, price, num }) {
         cart_id: cartId,
       },
     }).then(res => {
-      if (res.data[0].num.length === 0)
+      if (res.data.length === 0)
         setItemData({
           cart_id: [],
           product_name: [],

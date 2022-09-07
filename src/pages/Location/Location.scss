@@ -15,9 +15,11 @@
 }
 
 .location_container {
+  position: relative;
   display: flex;
   justify-content: space-between;
   margin: 100px;
+  z-index: 0;
 
   .location_list {
     width: 25%;

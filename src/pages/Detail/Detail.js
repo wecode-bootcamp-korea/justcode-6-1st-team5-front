@@ -15,22 +15,22 @@ const Detail = () => {
   const productId = params.id;
 
   const [product, setProduct] = useState([]);
-  useEffect(() => {
-    fetch('http://localhost:3000/data/mockDataEng.json')
-      .then(res => res.json())
-      .then(json => {
-        setProduct(json);
-      });
-  }, []);
-
   // useEffect(() => {
-  //   fetch(`http://localhost:8000/product/detail/${productId}`)
+  //   fetch('http://localhost:3000/data/mockDataEng.json')
   //     .then(res => res.json())
   //     .then(json => {
-  //       console.log(json);
   //       setProduct(json);
   //     });
   // }, []);
+
+  useEffect(() => {
+    fetch(`http://localhost:8000/product/detail/${productId}`)
+      .then(res => res.json())
+      .then(json => {
+        console.log(json);
+        setProduct(json);
+      });
+  }, []);
 
   const { photos, rating } = product;
 

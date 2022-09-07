@@ -1,8 +1,22 @@
 import './Home.scss';
+import { useState, useEffect } from 'react';
 import Part from './Part/Part';
 import Trending from './Trending/Trending';
+import Description from '../Detail/detail-components/Description/Description';
 
 function Home() {
+  const [product, setProduct] = useState({
+    photos: ['/Images/home_part_1.jpg'],
+  });
+  useEffect(() => {
+    fetch('http://localhost:8000/product/detail/39')
+      .then(res => res.json())
+      .then(json => {
+        console.log(json);
+        setProduct(json);
+      });
+  }, []);
+
   return (
     <div className="home_container">
       <div className="home_main">
@@ -36,6 +50,14 @@ function Home() {
         muted
         className="video"
       ></video>
+      <div className="description_container">
+        <img
+          src={product.photos[0]}
+          alt="product"
+          className="description_img"
+        />
+        <Description description={product} />
+      </div>
     </div>
   );
 }

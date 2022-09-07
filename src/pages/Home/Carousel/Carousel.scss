@@ -1,5 +1,122 @@
 .carousel {
   .items_container {
+    position: relative;
+    margin: 9vh 0;
+    height: 65vh;
+
+    animation: fadeInUp 0.5s;
+
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translateZ(0);
+      }
+    }
+
+    .slick-list {
+      width: 87.5vw;
+    }
+    .slick-prev::before,
+    .slick-next::before {
+      display: none;
+    }
+
+    .slick-prev {
+      width: 0px;
+      height: 0px;
+      margin-left: -40px;
+      border-bottom: 25px solid transparent;
+      border-top: 25px solid transparent;
+      border-left: 25px solid transparent;
+      border-right: 25px solid rgb(47, 56, 108);
+    }
+
+    .slick-next {
+      width: 0px;
+      height: 0px;
+      margin-right: -40px;
+      border-bottom: 25px solid transparent;
+      border-top: 25px solid transparent;
+      border-left: 25px solid rgb(47, 56, 108);
+      border-right: 25px solid transparent;
+    }
+  }
+
+  .le_items_container {
+    margin: 50px 0;
+    height: 65vh;
+
+    .slick-list {
+      width: 87.5vw;
+    }
+    .slick-prev::before,
+    .slick-next::before {
+      display: none;
+    }
+
+    .slick-prev {
+      width: 0px;
+      height: 0px;
+      margin-left: -40px;
+      border-bottom: 25px solid transparent;
+      border-top: 25px solid transparent;
+      border-left: 25px solid transparent;
+      border-right: 25px solid rgb(47, 56, 108);
+    }
+
+    .slick-next {
+      width: 0px;
+      height: 0px;
+      margin-right: -40px;
+      border-bottom: 25px solid transparent;
+      border-top: 25px solid transparent;
+      border-left: 25px solid rgb(47, 56, 108);
+      border-right: 25px solid transparent;
+    }
+  }
+
+  .hide_items_container {
+    position: absolute;
+    left: -300vh;
+    margin: 50px 0;
+    height: 65vh;
+    opacity: 0;
+    visibility: hidden;
+
+    .slick-list {
+      width: 87.5vw;
+    }
+    .slick-prev::before,
+    .slick-next::before {
+      display: none;
+    }
+
+    .slick-prev {
+      width: 0px;
+      height: 0px;
+      margin-left: -40px;
+      border-bottom: 25px solid transparent;
+      border-top: 25px solid transparent;
+      border-left: 25px solid transparent;
+      border-right: 25px solid rgb(47, 56, 108);
+    }
+
+    .slick-next {
+      width: 0px;
+      height: 0px;
+      margin-right: -40px;
+      border-bottom: 25px solid transparent;
+      border-top: 25px solid transparent;
+      border-left: 25px solid rgb(47, 56, 108);
+      border-right: 25px solid transparent;
+    }
+  }
+
+  .le_items_container {
     margin: 50px 0;
     height: 65vh;
 
