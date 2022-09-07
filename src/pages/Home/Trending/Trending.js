@@ -39,7 +39,6 @@ export default function Trending() {
       .then(data => {
         setTrDatas(
           data.map(data => {
-            console.log(data);
             return (
               <ItemContainer
                 id={data.id}

@@ -3,8 +3,10 @@ import { ItemBox } from '../../components/Header/Cart/Cart';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Address } from './Address/Address';
+import { useNavigate } from 'react-router-dom';
 
 export default function CartDetail() {
+  const navigate = useNavigate();
   const [itemData, setItemData] = useState({
     product_name: [],
     product_price: [],
@@ -13,6 +15,14 @@ export default function CartDetail() {
   const [mainAddress, setMainAddress] = useState('Main Address');
   const [detailedAddress, setDetailedAddress] = useState('');
   const [orderNote, setOrderNote] = useState('');
+
+  const moveAndScrollToTop = url => {
+    navigate(url);
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  };
 
   function order() {
     axios({
@@ -25,6 +35,7 @@ export default function CartDetail() {
       },
     }).then(res => {
       alert('Your order has been successfully received.');
+      moveAndScrollToTop('/');
     });
   }
 

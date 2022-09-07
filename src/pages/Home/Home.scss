@@ -60,4 +60,18 @@
       }
     }
   }
+  .description_container {
+    display: flex;
+    padding: 6vw 6vw 6vw 9vw;
+    letter-spacing: 0.01rem;
+
+    .description_img {
+      width: 40vw;
+      height: 40vw;
+      margin-right: 3.5vw;
+    }
+    .description {
+      margin-top: -50px;
+    }
+  }
 }

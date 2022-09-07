@@ -5,15 +5,15 @@ import ItemContainer from '../../../pages/Home/ItemContainer/ItemContainer';
 import { useEffect, useRef, useState } from 'react';
 
 const trend = [
-  { url: '/shop/gift-set', name: 'Gift Set' },
-  { url: '/shop/limited-edition', name: 'Limited Edition' },
-  { url: '/shop/bars', name: 'Bars' },
+  { url: '/shop?category=gift', name: 'Gift Set' },
+  { url: '/shop?category=limited', name: 'Limited Edition' },
+  { url: '/shop?category=bars', name: 'Bars' },
 ];
 
 const popular = [
-  { url: '/shop/pure-chocolate', name: 'Pure Chocolate' },
-  { url: '/shop/sweet-salty', name: 'Sweet & Salty' },
-  { url: '/shop/wafers', name: 'Wafers' },
+  { url: '/shop?category=pure', name: 'Pure Chocolate' },
+  { url: '/shop?category=sweet', name: 'Sweet & Salty' },
+  { url: '/shop?category=wafers', name: 'Wafers' },
 ];
 
 export default function ExpandHeader({ isShopClicked, setIsShopClicked }) {

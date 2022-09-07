@@ -47,7 +47,7 @@ const Description = ({ description, scrollFunction }) => {
     };
     console.log(body);
 
-    fetch('http://localhost:3000/cart', {
+    fetch('http://localhost:8000/cart', {
       method: 'POST',
       headers: {
         Authorization: localStorage['token'],
