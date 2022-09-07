@@ -3,22 +3,11 @@
     flex-direction: column;
     font-weight: 400;
     letter-spacing: 0.1rem;
+    line-height: 1.25vw;
     cursor: pointer;
 
     .img_container {
       .img {
-        .in_img {
-          font-size: 1.5rem;
-          font-weight: 300;
-          color: white;
-        }
-      }
-
-      .hovered_img {
-        background-size: cover;
-        width: 18vw;
-        height: 18vw;
-
         .in_img {
           font-size: 1.5rem;
           font-weight: 300;

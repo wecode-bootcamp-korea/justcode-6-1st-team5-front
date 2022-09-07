@@ -34,18 +34,19 @@ export default function Trending() {
   );
 
   useEffect(() => {
-    fetch('/mockdata/products.json')
+    fetch('http://localhost:8000/product?trending=12')
       .then(res => res.json())
       .then(data => {
         setTrDatas(
           data.map(data => {
+            console.log(data);
             return (
               <ItemContainer
                 id={data.id}
                 key={data.id}
-                img={data.photo}
+                img={data.photos}
                 name={data.name}
-                rate={data.rate}
+                rate={data.rating}
                 price={data.price}
               />
             );
@@ -54,26 +55,26 @@ export default function Trending() {
       });
   }, []);
 
-  // useEffect(() => {
-  //   fetch('/mockdata/products.json')
-  //     .then(res => res.json())
-  //     .then(data => {
-  //       setLEDatas(
-  //         data.map(data => {
-  //           return (
-  //             <ItemContainer
-  //               id={data.id}
-  //               key={data.id}
-  //               img={data.photo}
-  //               name={data.name}
-  //               rate={data.rate}
-  //               price={data.price}
-  //             />
-  //           );
-  //         })
-  //       );
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch('http://localhost:8000/product?popular=12')
+      .then(res => res.json())
+      .then(data => {
+        setPpDatas(
+          data.map(data => {
+            return (
+              <ItemContainer
+                id={data.id}
+                key={data.id}
+                img={data.photos}
+                name={data.name}
+                rate={data.rating}
+                price={data.price}
+              />
+            );
+          })
+        );
+      });
+  }, []);
 
   return (
     <div className="home_trending ">
