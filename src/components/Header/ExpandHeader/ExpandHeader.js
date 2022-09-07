@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from 'react';
 
 const trend = [
   { url: '/shop/gift-set', name: 'Gift Set' },
-  { url: '/shop/boutique-exclusive-only', name: 'Boutique Exclusives Only' },
+  { url: '/shop/limited-edition', name: 'Limited Edition' },
   { url: '/shop/bars', name: 'Bars' },
 ];
 

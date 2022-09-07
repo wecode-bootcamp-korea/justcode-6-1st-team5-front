@@ -1,6 +1,7 @@
 import './Home.scss';
 import Part from './Part/Part';
 import Trending from './Trending/Trending';
+import Description from '../Detail/detail-components/Description/Description';
 
 function Home() {
   return (
@@ -36,6 +37,8 @@ function Home() {
         muted
         className="video"
       ></video>
+
+      <Description />
     </div>
   );
 }
