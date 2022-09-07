@@ -19,14 +19,14 @@ export default function Search({ setIsSearchClicked }) {
   };
 
   useEffect(() => {
-    fetch('/mockdata/products.json')
+    fetch('http://localhost:8000/product')
       .then(res => res.json())
       .then(data => setItemData(data));
   }, []);
 
   const filtered = itemData.filter(el => {
     return el.name
-      .replace(/(\s*)/g, '')
+      .replace(/(\s*)(\“*)(\”*)/g, '')
       .toUpperCase()
       .includes(inputValue.replace(/(\s*)/g, '').toUpperCase());
   });
@@ -35,6 +35,7 @@ export default function Search({ setIsSearchClicked }) {
     <Modal
       isOpen={true}
       onRequestClose={() => setIsSearchClicked(false)}
+      ariaHideApp={false}
       className="modal_search"
     >
       <div className="input_container">
@@ -59,7 +60,7 @@ export default function Search({ setIsSearchClicked }) {
               moveAndScrollToTop(`/product/detail/${data.id}`);
             }}
           >
-            <img src={data.photo} alt="item" className="img" />
+            <img src={data.photos} alt="item" className="img" />
             <div className="info flex_center">
               <div className="name">{data.name}</div>
               <div className="price">$ {data.price.toLocaleString()}</div>

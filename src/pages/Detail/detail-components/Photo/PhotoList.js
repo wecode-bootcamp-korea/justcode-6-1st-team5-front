@@ -2,13 +2,14 @@ import React from 'react';
 
 import './PhotoList.scss';
 
-const PhotoList = ({ photo }) => {
-  console.log(photo);
+const PhotoList = ({ photos }) => {
+  photos !== undefined && console.log(photos[0]);
+
   return (
     <>
-      {photo !== undefined &&
-        photo.map((el, i) => {
-          return <img key={i} src={el} alt={`choco${i}`} />;
+      {photos !== undefined &&
+        photos.map((photo, i) => {
+          return <img key={i} src={photo} alt={`choco${i}`} />;
         })}
     </>
   );

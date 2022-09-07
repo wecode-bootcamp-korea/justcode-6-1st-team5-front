@@ -1,20 +1,20 @@
 @mixin font {
-  font-family: 'Nanum Gothic', sans-serif;
+  font-family: 'Jost', sans-serif;
   letter-spacing: 1px;
   color: #2f386c;
 }
 
 title.contact_header_titile {
   display: flex;
-  padding-top: 10vh;
-  padding-bottom: 2vh;
+  padding-top: 13vh;
+  padding-bottom: 5vh;
   width: 100%;
   justify-content: center;
   align-items: center;
   height: 130px;
   border-bottom: 1px solid #2f386c;
-  font-size: 20px;
-  font-weight: 900;
+  font-size: 25px;
+  font-weight: 700;
   @include font();
 }
 
@@ -29,8 +29,8 @@ section.wrapper_content_contact {
     height: 700px;
 
     h1.contact_description_h1 {
-      font-weight: 900;
-      font-size: 20px;
+      font-weight: 800;
+      font-size: 25px;
       @include font();
       margin-bottom: 25px;
     }
@@ -43,13 +43,17 @@ section.wrapper_content_contact {
     div.description_text {
       height: 30%;
       @include font();
-      font-size: 17px;
-      font-weight: 500;
+      font-size: 18px;
+      font-weight: 300;
+      color: black;
       p {
         width: 100%;
         margin-top: 25px;
         margin-bottom: 30px;
-        letter-spacing: 0px;
+        letter-spacing: 0.5px;
+        span {
+          font-weight: 700;
+        }
       }
     }
   }
@@ -62,9 +66,11 @@ section.wrapper_content_contact {
     @include font();
 
     label.contact_form_label {
+      @include font();
       margin-bottom: 10px;
       font-size: 16px;
-      font-weight: 600;
+      font-weight: 400;
+      color: black;
       letter-spacing: 0.3px;
     }
 

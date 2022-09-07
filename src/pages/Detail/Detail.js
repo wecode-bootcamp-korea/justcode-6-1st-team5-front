@@ -1,26 +1,38 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 
 import PhotoList from './detail-components/Photo/PhotoList';
 import Description from './detail-components/Description/Description';
 import Review from './detail-components/Reiview/Review';
+import ReviewList from './detail-components/Reiview/ReviewList';
+import Trending from '../Home/Trending/Trending';
+import Carousel from '../Home/Carousel/Carousel';
 
 import './Detail.scss';
-import { useParams } from 'react-router-dom';
 
 const Detail = () => {
   const params = useParams();
   const productId = params.id;
 
   const [product, setProduct] = useState([]);
+  // useEffect(() => {
+  //   fetch('http://localhost:3000/data/mockDataEng.json')
+  //     .then(res => res.json())
+  //     .then(json => {
+  //       setProduct(json);
+  //     });
+  // }, []);
+
   useEffect(() => {
-    fetch('http://localhost:3000/data/mockDataEng.json')
+    fetch(`http://localhost:8000/product/detail/${productId}`)
       .then(res => res.json())
       .then(json => {
+        console.log(json);
         setProduct(json);
       });
   }, []);
 
-  const { photo, ...description } = product;
+  const { photos, rating } = product;
 
   const scrollToReview = () => {
     reviewRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -33,20 +45,19 @@ const Detail = () => {
       <section className="detail_container">
         <div className="photo">
           <div className="small-photo">
-            <PhotoList photo={photo} />
+            <PhotoList photos={photos} />
           </div>
           <div className="big-photo">
-            <PhotoList photo={photo} />
+            <PhotoList photos={photos} />
           </div>
         </div>
         <div>
-          <Description
-            description={description}
-            scrollFunction={scrollToReview}
-          />
+          <Description description={product} scrollFunction={scrollToReview} />
         </div>
       </section>
-      <Review props={photo} ref={reviewRef} />
+      <Review rating={rating} ref={reviewRef} />
+      <ReviewList />
+      <Trending />
     </>
   );
 };

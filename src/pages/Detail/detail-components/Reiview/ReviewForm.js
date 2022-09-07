@@ -8,7 +8,7 @@ const ReviewForm = () => {
   const [email, setEmail] = useState('');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const [star, setStar] = useState(false);
+  const [rating, setRating] = useState('');
 
   const handleInput = e => {
     const value = e.target.value;
@@ -23,16 +23,19 @@ const ReviewForm = () => {
     const body = {
       name,
       email,
+      rating,
       title,
       content,
+      product_id: 1,
     };
     setName('');
     setEmail('');
+    setClicked([false, false, false, false, false]);
     setTitle('');
     setContent('');
     console.log(body);
 
-    fetch('http://localhost:3000/review', {
+    fetch('http://localhost:10010/reviews/product', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -45,22 +48,17 @@ const ReviewForm = () => {
       });
   };
 
-  const [rating] = useState([1, 2, 3, 4, 5]);
+  const [clicked, setClicked] = useState([false, false, false, false, false]);
 
   const handleRating = e => {
-    console.log(star);
     const rate = e.target.id;
-    console.log('rate');
-    if (rate === '1') {
-      setStar('★☆☆☆☆');
-      console.log('1');
-    }
-    if (rate === '2') {
-      setStar('★★☆☆☆');
-      console.log('2');
-    } else if (rate === '3') setStar('★★★☆☆');
-    else if (rate === '4') setStar('★★★★☆');
-    else if (rate === '5') setStar('★★★★★');
+    setRating(Number(rate));
+
+    if (rate === '1') setClicked([true, false, false, false, false]);
+    else if (rate === '2') setClicked([true, true, false, false, false]);
+    else if (rate === '3') setClicked([true, true, true, false, false]);
+    else if (rate === '4') setClicked([true, true, true, true, false]);
+    else if (rate === '5') setClicked([true, true, true, true, true]);
   };
 
   return (
@@ -90,15 +88,17 @@ const ReviewForm = () => {
       <div className="rating_box space">
         <label htmlFor="rating">Raiting</label>
         <div className="star">
-          {star ? (
-            <span>{star}</span>
-          ) : (
-            rating.map(el => (
-              <span key={el} id={el} onClick={handleRating}>
+          {clicked.map((el, i) => {
+            return el ? (
+              <span key={i} id={i + 1} onClick={handleRating}>
+                ★
+              </span>
+            ) : (
+              <span key={i} id={i + 1} onClick={handleRating}>
                 ☆
               </span>
-            ))
-          )}
+            );
+          })}
         </div>
       </div>
       <div className="review_title_box space">

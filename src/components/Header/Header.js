@@ -15,7 +15,7 @@ export default function Header() {
   const [scrollPosition, setScrollPosition] = useState(0);
 
   const updateScroll = () => {
-    if (location.pathname === '/') setScrollPosition(window.scrollY);
+    setScrollPosition(window.scrollY);
   };
 
   useEffect(() => {
@@ -29,6 +29,13 @@ export default function Header() {
       behavior: 'auto',
     });
   };
+
+  if (document.querySelector('.ReactModal__Overlay--after-open') !== null) {
+    const modal = document.querySelector('.ReactModal__Overlay--after-open');
+    modal.addEventListener('mouseover', () => {
+      setIsShopClicked(false);
+    });
+  }
 
   return (
     <div
@@ -47,25 +54,48 @@ export default function Header() {
         }
       >
         <div className="nav_menu_container">
-          <div className="nav_menu" onClick={() => moveAndScrollToTop('/')}>
+          <div
+            className="nav_menu"
+            onClick={() => {
+              moveAndScrollToTop('/');
+              setIsShopClicked(false);
+              setIsSearchClicked(false);
+              setIsCartClicked(false);
+            }}
+          >
             HOME
           </div>
           <div
             className="nav_menu"
-            onClick={() => moveAndScrollToTop('/about')}
+            onClick={() => {
+              moveAndScrollToTop('/about');
+              setIsShopClicked(false);
+              setIsSearchClicked(false);
+              setIsCartClicked(false);
+            }}
           >
             ABOUT
           </div>
           <div
             className="nav_menu"
-            onClick={() => moveAndScrollToTop('/shop')}
+            onClick={() => {
+              moveAndScrollToTop('/shop');
+              setIsSearchClicked(false);
+              setIsShopClicked(false);
+              setIsCartClicked(false);
+            }}
             onMouseOver={() => setIsShopClicked(true)}
           >
             SHOP ▽
           </div>
           <div
             className="nav_menu"
-            onClick={() => moveAndScrollToTop('/contact')}
+            onClick={() => {
+              moveAndScrollToTop('/contact');
+              setIsShopClicked(false);
+              setIsSearchClicked(false);
+              setIsCartClicked(false);
+            }}
           >
             CONTACT
           </div>
@@ -77,13 +107,23 @@ export default function Header() {
         <div className="nav_menu_container">
           <div
             className="nav_menu"
-            onClick={() => moveAndScrollToTop('/location')}
+            onClick={() => {
+              moveAndScrollToTop('/location');
+              setIsShopClicked(false);
+              setIsSearchClicked(false);
+              setIsCartClicked(false);
+            }}
           >
             LOCATION
           </div>
           <div
             className="nav_menu"
-            onClick={() => moveAndScrollToTop('/login')}
+            onClick={() => {
+              moveAndScrollToTop('/login');
+              setIsShopClicked(false);
+              setIsSearchClicked(false);
+              setIsCartClicked(false);
+            }}
           >
             ACCOUNT
           </div>
@@ -112,7 +152,10 @@ export default function Header() {
         </div>
       </div>
 
-      {isShopClicked && <ExpandHeader />}
+      <ExpandHeader
+        isShopClicked={isShopClicked}
+        setIsShopClicked={setIsShopClicked}
+      />
       {isCartClicked && <Cart setIsCartClicked={setIsCartClicked} />}
       {isSearchClicked && <Search setIsSearchClicked={setIsSearchClicked} />}
     </div>

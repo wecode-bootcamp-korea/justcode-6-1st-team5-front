@@ -1,9 +1,20 @@
 .home_trending {
-  .title_1 {
+  .sub_title {
     margin: 15vh 0 5vh 0;
+    font-size: 0.85rem;
   }
-  .title_2 {
-    margin-bottom: 5vh;
-    font-size: 1.75rem;
+  .title {
+    padding-bottom: 1vh;
+    margin: 0 1vw 3vh 1vw;
+    border-bottom: 1px solid black;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .unpicked_title {
+    margin: 0 1vw 4vh 1vw;
+    color: #999;
+    font-size: 1.2rem;
+    cursor: pointer;
   }
 }

@@ -1,0 +1,16 @@
+@mixin account_grey_font {
+  color: rgb(157, 157, 157);
+  letter-spacing: 2px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+button.logout_btn {
+  font-family: 'Nanum Gothic', sans-serif;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: 25px;
+  cursor: pointer;
+  @include account_grey_font();
+}

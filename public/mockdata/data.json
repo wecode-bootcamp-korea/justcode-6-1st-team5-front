@@ -1,0 +1,152 @@
+[
+  {
+    "name": "ROECY' PURE CHOCOLATE “SWEET & MILK”",
+    "rating": 5,
+    "price": 18.99,
+    "info": "This selection has a mix of semi-sweet and classic milk chocolates. 55% Cacao (Pure Chocolate “Sweet”) and 43% Cacao (Pure Chocolate “Milk”).",
+    "temperature": "77°F Or Below",
+    "photos": [
+      "https://i.esdrop.com/d/f/WFi7Wlweew/VEgBNprL1a.jpg",
+      "https://i.esdrop.com/d/f/WFi7Wlweew/s31ixS7d2q.jpg"
+    ],
+    "onoff": true,
+    "flavor": "original",
+    "categories": "pure chocolate",
+    "allergies": ["Milk", "Soy", "May Contain Tree Nuts"]
+  },
+  {
+    "name": "ROECY' PURE CHOCOLATE “CARAMEL MILK”",
+    "rating": 4,
+    "price": 18.99,
+    "info": "This selection has a mix of milk and white chocolates. 42% Cacao (Pure Chocolate “Caramel Milk”) and 37% Cacao (Pure Chocolate “Creamy White”).",
+    "temperature": "77°F Or Below",
+    "photos": [
+      "https://i.esdrop.com/d/f/WFi7Wlweew/evUoEhGBAh.png",
+      "https://i.esdrop.com/d/f/WFi7Wlweew/gT3CH7kTmJ.png"
+    ],
+    "onoff": true,
+    "flavor": "original",
+    "categories": "pure chocolate",
+    "allergies": ["Milk", "Soy", "May Contain Tree Nuts"]
+  },
+  {
+    "name": "ROECY' PURE CHOCOLATE “MACCHA MILK”",
+    "rating": 3,
+    "price": 18.99,
+    "info": "This selection has a mix of milk and maccha chocolates. 42% Cacao (Pure Chocolate “Caramel Milk”) and 37% Maccha (Pure Chocolate “Maccha”).",
+    "temperature": "77°F Or Below",
+    "photos": [
+      "https://i.esdrop.com/d/f/WFi7Wlweew/SRNyOvPM11.png",
+      "https://i.esdrop.com/d/f/WFi7Wlweew/pGrpyY0e2V.png"
+    ],
+    "onoff": true,
+    "flavor": "maccha",
+    "categories": "pure chocolate",
+    "allergies": ["Milk", "Soy", "May Contain Tree Nuts"]
+  },
+  {
+    "name": "ROECY' CRUNCH CHOCOLATE",
+    "rating": 4,
+    "price": 25.99,
+    "info": "This selection has a crunch chocolates. 80% Cacao (Pure Chocolate “Mild Bitter”).",
+    "temperature": "77°F Or Below",
+    "photos": [
+      "https://i.esdrop.com/d/f/WFi7Wlweew/GWoRtBbfpx.jpg",
+      "https://i.esdrop.com/d/f/WFi7Wlweew/MBH574A3dR.jpg"
+    ],
+    "onoff": true,
+    "flavor": "original",
+    "categories": "pure chocolate",
+    "allergies": ["Milk", "Soy", "May Contain Tree Nuts"]
+  },
+  {
+    "name": "ROECY' HEART CHOCOLATE",
+    "rating": 3,
+    "price": 30.99,
+    "info": "This selection has a mix of milk and white chocolates. 42% Cacao (Pure Chocolate “Caramel Milk”) and 37% Cacao (Pure Chocolate “Creamy White”).",
+    "temperature": "77°F Or Below",
+    "photos": [
+      "https://i.esdrop.com/d/f/WFi7Wlweew/3JckjOZrZe.jpg",
+      "https://i.esdrop.com/d/f/WFi7Wlweew/AskTWIUFRu.jpg"
+    ],
+    "onoff": true,
+    "flavor": "original",
+    "categories": "pure chocolate",
+    "allergies": ["Milk", "Soy", "May Contain Tree Nuts"]
+  },
+  {
+    "name": "ROECY' CHOCOLATE WAFERS “HAZEL CREAM”",
+    "rating": 5,
+    "price": 18.99,
+    "info": "This selection features delicately sweet hazelnut cream sandwiched between crispy wafers and coated with milk chocolate. 12 pieces inside.",
+    "temperature": "77°F Or Below",
+    "photos": [
+      "https://i.esdrop.com/d/f/WFi7Wlweew/lpADub4gpl.jpg",
+      "https://i.esdrop.com/d/f/WFi7Wlweew/0OYl90t4cC.jpg"
+    ],
+    "onoff": true,
+    "flavor": "original",
+    "categories": "wafers",
+    "allergies": ["Wheats", "Milk", "Soy", "Tree Nuts"]
+  },
+  {
+    "name": "ROECY' CHOCOLATE WAFERS “STRAWBERRY CREAM”",
+    "rating": 4,
+    "price": 18.99,
+    "info": "This selection has chocolate-coated crispy wafers filled with strawberry cream. 12 pieces inside.",
+    "temperature": "77°F Or Below",
+    "photos": [
+      "https://i.esdrop.com/d/f/WFi7Wlweew/ihh0v8Xhor.jpg",
+      "https://i.esdrop.com/d/f/WFi7Wlweew/5c1soPR5by.jpg"
+    ],
+    "onoff": true,
+    "flavor": "original",
+    "categories": "wafers",
+    "allergies": ["Wheats", "Milk", "Soy", "Tree Nuts"]
+  },
+  {
+    "name": "ROECY' CHOCOLATE WAFERS “MACCHA”",
+    "rating": 3,
+    "price": 18.99,
+    "info": "This selection has Matcha cream sandwiched between crispy wafers and coated with white chocolate infused with Maccha. 12 pieces inside.",
+    "temperature": "77°F Or Below",
+    "photos": [
+      "https://i.esdrop.com/d/f/WFi7Wlweew/vLnrkTDsZO.jpg",
+      "https://i.esdrop.com/d/f/WFi7Wlweew/IkRaXCJGRZ.jpg"
+    ],
+    "onoff": true,
+    "flavor": "original",
+    "categories": "wafers",
+    "allergies": ["Wheats", "Milk", "Soy", "Tree Nuts"]
+  },
+  {
+    "name": "ROECY' CHOCOLATE WAFERS “CHERRY CREAM”",
+    "rating": 3,
+    "price": 18.99,
+    "info": "This selection has chocolate-coated crispy wafers filled with cherry cream. 12 pieces inside.",
+    "temperature": "77°F Or Below",
+    "photos": [
+      "https://i.esdrop.com/d/f/WFi7Wlweew/bmyUamoCK9.jpg",
+      "https://i.esdrop.com/d/f/WFi7Wlweew/X86zIqeUl3.jpg"
+    ],
+    "onoff": true,
+    "flavor": "original",
+    "categories": "wafers",
+    "allergies": ["Wheats", "Milk", "Soy", "Tree Nuts"]
+  },
+  {
+    "name": "ROECY' CHOCOLATE WAFERS ROLL",
+    "rating": 3,
+    "price": 28.99,
+    "info": "This selection features delicately sweet hazelnut cream sandwiched between crispy wafers and coated with milk chocolate. 16 pieces inside.",
+    "temperature": "77°F Or Below",
+    "photos": [
+      "https://i.esdrop.com/d/f/WFi7Wlweew/7zEVzih6wb.jpg",
+      "https://i.esdrop.com/d/f/WFi7Wlweew/OevnP5nN0G.jpg"
+    ],
+    "onoff": true,
+    "flavor": "original",
+    "categories": "wafers",
+    "allergies": ["Wheats", "Milk", "Soy", "Tree Nuts"]
+  }
+]

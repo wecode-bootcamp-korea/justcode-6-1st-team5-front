@@ -3,11 +3,21 @@ import React, { useState, useRef } from 'react';
 import './Description.scss';
 
 const Description = ({ description, scrollFunction }) => {
-  const { name, rate, price, info, allerge, temp, nutrition, tags } =
-    description;
+  const {
+    id,
+    photos,
+    name,
+    rating,
+    price,
+    info,
+    allerges,
+    temperature,
+    nutrition,
+    categories,
+  } = description;
 
   const [quantity, setQuantity] = useState(1);
-  // const reviewRef = useRef();
+  const pureNum = Math.round(price * quantity * 100) / 100;
 
   const handleQuantity = e => {
     const check = e.target.textContent;
@@ -15,43 +25,66 @@ const Description = ({ description, scrollFunction }) => {
     else if (check === '+') setQuantity(current => current + 1);
   };
 
-  function starRate(rate) {
-    if (rate === 5) return '★★★★★';
-    if (rate === 4) return '★★★★☆';
-    if (rate === 3) return '★★★☆☆';
-    if (rate === 2) return '★★☆☆☆';
-    if (rate === 1) return '★☆☆☆☆';
+  const onChange = e => {
+    setQuantity(Number(e.target.value));
+  };
+
+  function starRate(rating) {
+    if (rating === 5) return '★★★★★';
+    if (rating === 4) return '★★★★☆';
+    if (rating === 3) return '★★★☆☆';
+    if (rating === 2) return '★★☆☆☆';
+    if (rating === 1) return '★☆☆☆☆';
     else return '☆☆☆☆☆';
   }
+
+  const onSubmit = e => {
+    e.preventDefault();
+    const body = {
+      token: localStorage['token'],
+      product_id: id,
+      num: quantity,
+    };
+    console.log(body);
+
+    fetch('http://localhost:8000/cart', {
+      method: 'POST',
+      headers: {
+        Authorization: localStorage['token'],
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(body),
+    })
+      .then(res => res.json())
+      .then(json => {
+        alert(json);
+      });
+  };
 
   return (
     <div className="description">
       <div className="product_meta">
         <h1 className="product_name">{name}</h1>
-        <div className="review">
-          <span className="total_rating">{starRate(rate)}</span>
-          <a onClick={scrollFunction}>Write A Review</a>
+        <div className="review" onClick={scrollFunction}>
+          <span className="total_rating">{starRate(rating)}</span>
+          <a>Write A Review</a>
         </div>
         <p className="price">${price}</p>
       </div>
-      <form className="product_form">
+      <form className="product_form" onSubmit={onSubmit}>
         <div className="quantity_selector">
           <span onClick={handleQuantity}>⎼</span>
-          <input
-            value={quantity}
-            onChange={e => console.log('바보')}
-            type="text"
-          />
+          <input value={quantity} onChange={onChange} type="text" />
           <span onClick={handleQuantity}>+</span>
         </div>
-        <button>ADD TO CART • ${price * quantity} </button>
+        <button>ADD TO CART • ${pureNum} </button>
       </form>
       <div className="product_description">
         <p className="content">{info}</p>
-        <p className="allergens">{allerge}</p>
-        <p className="temperature">{temp}</p>
+        <p className="allergens">Allergens: {allerges}</p>
+        <p className="temperature">{temperature}</p>
         <a href="https://www.fda.gov/media/99203/download">
-          <p className="nutrition">{nutrition}</p>
+          <p className="nutrition">Nutrition Facts(Download Here)</p>
         </a>
       </div>
     </div>
