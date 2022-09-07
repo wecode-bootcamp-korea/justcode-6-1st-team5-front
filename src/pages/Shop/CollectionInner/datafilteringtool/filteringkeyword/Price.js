@@ -1,11 +1,20 @@
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
 import { useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function Price(props) {
-  const { priceValue, setPriceValue, mission } = props;
+  const { priceValue, setPriceValue, mission, setUrl } = props;
   //const [priceValue, setPriceValue] = useState([9, 106]);
   //useEffect로 pricevalue 의존성 배열로 만들어 해결
+  const navi = useNavigate();
+  const location = useLocation();
+  const query = location.search;
+
+  function onFetchClick() {
+    navi(`?min=${priceValue[0]}&max=${priceValue[1]}`);
+  }
+
   useEffect(() => {
     if (priceValue[0] !== 9) {
       mission(true);
@@ -32,6 +41,7 @@ export default function Price(props) {
             onChange={e => setPriceValue(e)}
           />
         </div>
+        <button onClick={onFetchClick}>search</button>
         <div id="bottom_line_box" className="margin_right"></div>
       </div>
     </div>

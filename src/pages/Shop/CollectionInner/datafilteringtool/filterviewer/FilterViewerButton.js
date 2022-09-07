@@ -5,8 +5,8 @@ function FilterViewerButton(props) {
 
   const xbutton = () => {
     setx(false);
-    console.log('test', 1);
   };
+
   return (
     <div id="filterviwer_button">
       {x && (
@@ -20,7 +20,10 @@ function FilterViewerButton(props) {
             </button>
           ) : (
             <button className="category_title">
-              {name}: <span id="bold">{way}</span>
+              <span>
+                {' '}
+                {name}:<span id="bold">{way}</span>
+              </span>
             </button>
           )}
           <button className="x_type" onClick={xbutton}>

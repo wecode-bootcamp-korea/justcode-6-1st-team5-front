@@ -9,7 +9,7 @@
     display: flex;
     flex-wrap: wrap;
     border: none;
-    width: 1050px;
+    width: 80%;
   }
 
   .product_wrapper_wrapper {
@@ -18,6 +18,31 @@
 
   .big_product_wrapper_wrapper {
     width: 50%;
-    height: 13%;
+    height: 5%;
+  }
+
+  .page_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .page {
+    width: 22%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(98, 98, 98);
+    padding-bottom: 7px;
+  }
+
+  button {
+    width: 36px;
+    height: 25px;
+    font-size: 13px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+    color: rgb(98, 98, 98);
   }
 }

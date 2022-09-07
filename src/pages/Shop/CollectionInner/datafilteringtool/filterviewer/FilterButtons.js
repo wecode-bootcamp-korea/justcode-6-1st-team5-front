@@ -7,8 +7,15 @@ import './filterbuttons.scss';
 function FilterButtons(props) {
   const [display, setDisplay] = useState(false);
   //const [filterKeyword, setFilterKeyword] = useState(); 기존에는 상태값으로 관리했으나 그럴필요가 없었다.
-  const { name, mission, mission1, mission2, priceValue, setPriceValue } =
-    props;
+  const {
+    name,
+    mission,
+    mission1,
+    mission2,
+    priceValue,
+    setPriceValue,
+    missionstate,
+  } = props;
 
   let setFilterKeyword;
   if (name === 'Producttype') {
@@ -22,7 +29,7 @@ function FilterButtons(props) {
       />
     );
   } else if (name === 'Flavor') {
-    setFilterKeyword = <Flavor mission={mission} />;
+    setFilterKeyword = <Flavor mission={mission} missionstate={missionstate} />;
   }
   //선언한 변수값을 if문으로 분기에 따라서 다른 값을 넣을 수 있다.
   return (

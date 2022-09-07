@@ -1,6 +1,21 @@
 import './sortselector.scss';
 
-function Sortselector() {
+function Sortselector(props) {
+  const { setGoodsState } = props;
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:8000/product/${location.search}`, {
+  //     method: 'GET',
+  //     body: {
+  //       sort: 'lowestprice',
+  //     },
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setGoodsState(data);
+  //     });
+  // }, [sortstate]);
+
   return (
     <div id="sortselector_shadow">
       <div id="row_reverse">
