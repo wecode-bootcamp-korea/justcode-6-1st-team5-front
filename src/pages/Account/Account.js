@@ -8,7 +8,7 @@ function Account() {
   const [userName, setUserName] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:8000/cart/${localStorage.getItem('token')}`, {
+    fetch(`http://localhost:8000/order/${localStorage.getItem('token')}`, {
       headers: {
         'Content-Type': 'application/json',
       },
