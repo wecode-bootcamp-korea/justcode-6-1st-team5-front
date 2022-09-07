@@ -22,7 +22,7 @@ function Contact() {
     console.log(emailRef.current.value);
     console.log(contentRef.current.value);
 
-    fetch('http://localhost:10010/inquiry', {
+    fetch('http://localhost:8000/inquiry', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

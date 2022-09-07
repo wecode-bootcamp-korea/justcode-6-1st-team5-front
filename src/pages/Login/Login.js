@@ -37,7 +37,7 @@ function Login() {
     console.log(pwdRef.current.value);
     console.log(emailRef.current.value);
 
-    fetch('http://localhost:10010/users/login', {
+    fetch('http://localhost:8000/users/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

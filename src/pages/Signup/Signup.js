@@ -40,7 +40,7 @@ function Signup() {
     console.log(pwdRef.current.value);
     console.log(emailRef.current.value);
 
-    fetch('http://localhost:10010/users/signup', {
+    fetch('http://localhost:8000/users/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
