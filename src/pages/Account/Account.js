@@ -6,22 +6,22 @@ import Logout from '../../components/Logout/Logout';
 
 function Account() {
   const [userName, setUserName] = useState([]);
-  const [cartData, setCartData] = useState();
-  const [getData, setGetData] = useState();
+  const [orderData, setOrderData] = useState('');
+  const [getData, setGetData] = useState([]);
+
+  // ${localStorage.getItem('token')
 
   useEffect(() => {
-    fetch(`http://localhost:8000/cart/${localStorage.getItem('token')}`, {
+    fetch(`http://localhost:8000/order/3`, {
       headers: {
         'Content-Type': 'application/json',
       },
     })
-      .then(res => {
-        console.log(res);
-      })
-      .then(data => {
-        setCartData(data);
-      });
-  });
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .then(data => setGetData(data))
+      .then(setOrderData(true));
+  }, []);
 
   useEffect(() => {
     fetch('http://localhost:8000/users/name', {
@@ -56,11 +56,12 @@ function Account() {
 
         <section className="account_order">
           <h2 className="account_order_title">MY ORDERS</h2>
-          {cartData ? (
+          {orderData ? (
             <ul>
-              {getData.map(getData => (
-                <li>{getData}</li>
-              ))}
+              {/* Your order will be shipped within 3 business day
+              {getData.map(data => (
+                <li>{data.created_at}</li>
+              ))} */}
             </ul>
           ) : (
             <p className="account_order_text">

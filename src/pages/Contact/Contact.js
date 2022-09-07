@@ -36,7 +36,7 @@ function Contact() {
         content: contentRef.current.value,
       }),
     }).then(response => {
-      if (response.status == 200) {
+      if (response.status === 200) {
         setSuccess(true);
       } else {
         setFailed(true);
@@ -77,7 +77,7 @@ function Contact() {
             className={failed ? 'errPopUp' : 'offscreen'}
             aria-live="assertive"
           >
-            Email has already taken.
+            Error.
           </p>
 
           <p
