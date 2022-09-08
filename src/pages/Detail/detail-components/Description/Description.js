@@ -66,7 +66,7 @@ const Description = ({ description, scrollFunction }) => {
       <div className="product_meta">
         <h1 className="product_name">{name}</h1>
         <div className="review" onClick={scrollFunction}>
-          <span className="total_rating">{starRate(rating)}</span>
+          <span className="total_rating">{starRate(Number(rating))}</span>
           <a>Write A Review</a>
         </div>
         <p className="price">${price}</p>
