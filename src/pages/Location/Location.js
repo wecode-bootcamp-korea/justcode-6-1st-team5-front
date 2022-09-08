@@ -30,6 +30,10 @@ const Location = () => {
     setSearchInput(e.target.value);
   };
 
+  const onClick = e => {
+    console.log(e.target);
+  };
+
   const setStores = locations.filter(location => {
     return location.name.toLowerCase().includes(searchInput.toLowerCase());
   });
@@ -51,7 +55,13 @@ const Location = () => {
           <div className="list">
             {setStores !== undefined &&
               setStores.map(store => {
-                return <LocationList key={locations.id} data={store} />;
+                return (
+                  <LocationList
+                    key={locations.id}
+                    data={store}
+                    onClick={onClick}
+                  />
+                );
               })}
           </div>
         </div>
