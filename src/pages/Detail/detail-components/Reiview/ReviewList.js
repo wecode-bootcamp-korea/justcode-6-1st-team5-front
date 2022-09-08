@@ -5,11 +5,9 @@ import '../Reiview/ReviewList.scss';
 
 const ReviewList = ({ render, setLength }) => {
   const [reviewData, setReviewData] = useState([]);
-  const [reviewArr, setReviewArr] = useState([]);
 
   const params = useParams();
   const productId = Number(params.id);
-  console.log(productId);
 
   useEffect(() => {
     const body = { product_id: productId };
@@ -24,7 +22,6 @@ const ReviewList = ({ render, setLength }) => {
       .then(res => res.json())
       .then(json => {
         setReviewData(json);
-        // console.log(json);
         setLength(json.length);
       });
   }, [render]);
