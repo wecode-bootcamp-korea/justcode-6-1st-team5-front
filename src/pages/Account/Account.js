@@ -6,21 +6,22 @@ import Logout from '../../components/Logout/Logout';
 
 function Account() {
   const [userName, setUserName] = useState([]);
-  const [orderData, setOrderData] = useState('');
-  const [getData, setGetData] = useState([]);
+  const [orderData, setOrderData] = useState(true);
 
   // ${localStorage.getItem('token')
 
   useEffect(() => {
-    fetch(`http://localhost:8000/order/3`, {
+    fetch(`http://localhost:8000/order/${localStorage.getItem('token')}`, {
       headers: {
         'Content-Type': 'application/json',
       },
     })
       .then(res => res.json())
-      .then(data => console.log(data))
-      .then(data => setGetData(data))
-      .then(setOrderData(true));
+      .then(data => {
+        if (data[0] == null) {
+          setOrderData(false);
+        }
+      });
   }, []);
 
   useEffect(() => {
@@ -55,14 +56,9 @@ function Account() {
         </section>
 
         <section className="account_order">
-          <h2 className="account_order_title">MY ORDERS</h2>
+          <h2 className="account_order_title">MY ORDER STATUS</h2>
           {orderData ? (
-            <ul>
-              {/* Your order will be shipped within 3 business day
-              {getData.map(data => (
-                <li>{data.created_at}</li>
-              ))} */}
-            </ul>
+            <ul>Your order will be shipped within 3 business day</ul>
           ) : (
             <p className="account_order_text">
               You haven't placed any order yet
