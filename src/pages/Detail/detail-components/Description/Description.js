@@ -43,7 +43,7 @@ const Description = ({
     else return '☆☆☆☆☆';
   }
 
-  const onSubmit = e => {
+  const onSubmit = async e => {
     e.preventDefault();
     const body = {
       token: localStorage['token'],
@@ -52,7 +52,7 @@ const Description = ({
     };
     console.log(body);
 
-    fetch('http://localhost:8000/cart', {
+    await fetch('http://localhost:8000/cart', {
       method: 'POST',
       headers: {
         Authorization: localStorage['token'],
@@ -64,6 +64,7 @@ const Description = ({
       .then(json => {
         alert(json);
       });
+    setIsCartClicked(true);
   };
 
   return (
@@ -84,9 +85,7 @@ const Description = ({
           <input value={quantity} onChange={onChange} type="text" />
           <span onClick={handleQuantity}>+</span>
         </div>
-        <button onClick={() => setIsCartClicked(true)}>
-          ADD TO CART • ${pureNum}{' '}
-        </button>
+        <button>ADD TO CART • ${pureNum} </button>
       </form>
       <div className="product_description">
         <p className="content">{info}</p>

@@ -4,7 +4,25 @@ import './Cart.scss';
 import Modal from 'react-modal';
 import axios from 'axios';
 
-function ItemBox({ setItemData, cartId, name, img, price, num }) {
+function ItemBox({
+  setItemData,
+  cartId,
+  name,
+  img,
+  price,
+  num,
+  productId,
+  setIsCartClicked,
+}) {
+  const navigate = useNavigate();
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  };
+
   function plus() {
     axios({
       method: 'put',
@@ -32,11 +50,11 @@ function ItemBox({ setItemData, cartId, name, img, price, num }) {
       if (res.data.length === 0)
         setItemData({
           cart_id: [],
+          product_id: [],
           product_name: [],
           product_price: [],
           num: [],
           product_photos: [],
-          product_prices: [],
         });
       else setItemData(res.data[0]);
     });
@@ -54,11 +72,11 @@ function ItemBox({ setItemData, cartId, name, img, price, num }) {
       if (res.data.length === 0)
         setItemData({
           cart_id: [],
+          product_id: [],
           product_name: [],
           product_price: [],
           num: [],
           product_photos: [],
-          product_prices: [],
         });
       else setItemData(res.data[0]);
     });
@@ -68,7 +86,16 @@ function ItemBox({ setItemData, cartId, name, img, price, num }) {
     <div className="item_box">
       <img src={img} alt="item" className="pic" />
       <div className="text_box">
-        <div className="title">{name}</div>
+        <div
+          className="title"
+          onClick={() => {
+            navigate(`/product/detail/${productId}`);
+            scrollToTop();
+            setIsCartClicked(false);
+          }}
+        >
+          {name}
+        </div>
         <div className="price">$ {price.toLocaleString()}</div>
         <div className="wrapper">
           <img
@@ -106,11 +133,11 @@ function Cart({ setIsCartClicked, setScrollPosition }) {
   const navigate = useNavigate();
   const [itemData, setItemData] = useState({
     cart_id: [],
+    product_id: [],
     product_name: [],
     product_price: [],
     num: [],
     product_photos: [],
-    product_prices: [],
   });
 
   let price = 0;
@@ -191,12 +218,14 @@ function Cart({ setIsCartClicked, setScrollPosition }) {
             return (
               <ItemBox
                 cartId={itemData.cart_id[i]}
+                productId={itemData.product_id[i]}
                 key={itemData.product_id[i]}
                 name={itemData.product_name[i]}
                 img={itemData.product_photos[i]}
                 price={itemData.product_price[i]}
                 num={itemData.num[i]}
                 setItemData={setItemData}
+                setIsCartClicked={setIsCartClicked}
               />
             );
           })

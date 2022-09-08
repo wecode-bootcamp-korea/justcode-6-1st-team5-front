@@ -140,10 +140,12 @@ export default function Header({ isCartClicked, setIsCartClicked }) {
           <div
             className="nav_menu"
             onClick={() => {
-              setIsShopClicked(false);
-              setIsSearchClicked(false);
-              if (isCartClicked === false) setIsCartClicked(true);
-              else setIsCartClicked(false);
+              if (window.location.pathname !== '/cart') {
+                setIsShopClicked(false);
+                setIsSearchClicked(false);
+                if (isCartClicked === false) setIsCartClicked(true);
+                else setIsCartClicked(false);
+              }
             }}
           >
             CART
