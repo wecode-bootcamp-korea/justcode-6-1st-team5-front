@@ -5,7 +5,7 @@ const LocationList = ({ data, onClick }) => {
   const { name, address, phone } = data;
 
   return (
-    <li className="store_box"햣>
+    <li className="store_box">
       <span className="pin_icon">
         <img src="/image/pin.png" />
       </span>

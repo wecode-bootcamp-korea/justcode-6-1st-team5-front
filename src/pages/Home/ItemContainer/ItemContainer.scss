@@ -7,16 +7,23 @@
     cursor: pointer;
 
     .img_container {
-      .img {
+      .hovered_img {
+        animation: fadeout 0.5s;
+
+        @keyframes fadeout {
+          0% {
+            background-size: cover;
+          }
+          0% {
+            background-size: 100%;
+          }
+        }
+
         .in_img {
           font-size: 1.5rem;
           font-weight: 300;
           color: white;
         }
-      }
-
-      .detail {
-        position: absolute;
       }
     }
 
