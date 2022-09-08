@@ -21,14 +21,14 @@ export default function ExpandHeader({ isShopClicked, setIsShopClicked }) {
   const [item, setItem] = useState(
     <>
       <ItemContainer
-        img="/Images/home_part_1.jpg"
+        img="/image/home_part_1.jpg"
         name="ROECY Signature Chocolate"
         rate={5}
         price={'30.99'}
       />
 
       <ItemContainer
-        img="/Images/home_part_1.jpg"
+        img="/image/home_part_1.jpg"
         name="ROECY Signature Chocolate"
         rate={5}
         price={'30.99'}

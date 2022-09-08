@@ -9,7 +9,7 @@ import Carousel from '../Home/Carousel/Carousel';
 
 import './Detail.scss';
 
-const Detail = () => {
+const Detail = ({ setIsCartClicked }) => {
   const params = useParams();
   const productId = params.id;
 
@@ -51,7 +51,11 @@ const Detail = () => {
           </div>
         </div>
         <div>
-          <Description description={product} scrollFunction={scrollToReview} />
+          <Description
+            description={product}
+            scrollFunction={scrollToReview}
+            setIsCartClicked={setIsCartClicked}
+          />
         </div>
       </section>
       <Review rating={rating} ref={reviewRef} />

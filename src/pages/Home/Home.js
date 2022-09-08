@@ -4,9 +4,9 @@ import Part from './Part/Part';
 import Trending from './Trending/Trending';
 import Description from '../Detail/detail-components/Description/Description';
 
-function Home() {
+function Home({ setIsCartClicked }) {
   const [product, setProduct] = useState({
-    photos: ['/Images/home_part_1.jpg'],
+    photos: ['/image/home_part_1.jpg'],
     name: "ROECY' SIGNATURE CHCOLATE",
     price: 100.99,
   });
@@ -31,14 +31,14 @@ function Home() {
 
       <Part
         type="left"
-        pic="/Images/home_part_1.jpg"
+        pic="/image/home_part_1.jpg"
         text1="PURE CHOCOLATE"
         text2={`WE ARE "PURELY" ADDICTED`}
       />
 
       <Part
         type="right"
-        pic="/Images/home_part_2.jpg"
+        pic="/image/home_part_2.jpg"
         text1="GIFT SET"
         text2="IF YOU WANT TO GIVE LUXURY AS A GIFT"
       />
@@ -46,7 +46,7 @@ function Home() {
       <Trending />
 
       <video
-        src="/Images/chocolate.mp4"
+        src="/image/chocolate.mp4"
         autoPlay
         loop
         muted
@@ -58,7 +58,11 @@ function Home() {
           alt="product"
           className="description_img"
         />
-        <Description description={product} />
+        <Description
+          description={product}
+          setIsCartClicked={setIsCartClicked}
+          rate="no"
+        />
       </div>
     </div>
   );

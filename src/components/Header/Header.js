@@ -6,11 +6,10 @@ import Logo from './Logo/Logo';
 import { Cart } from './Cart/Cart';
 import Search from './Search/Search';
 
-export default function Header() {
+export default function Header({ isCartClicked, setIsCartClicked }) {
   const navigate = useNavigate();
   const location = useLocation();
   const [isShopClicked, setIsShopClicked] = useState(false);
-  const [isCartClicked, setIsCartClicked] = useState(false);
   const [isSearchClicked, setIsSearchClicked] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 

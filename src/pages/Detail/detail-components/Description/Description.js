@@ -2,7 +2,12 @@ import React, { useState, useRef } from 'react';
 
 import './Description.scss';
 
-const Description = ({ description, scrollFunction }) => {
+const Description = ({
+  description,
+  scrollFunction,
+  setIsCartClicked,
+  rate,
+}) => {
   const {
     id,
     photos,
@@ -65,10 +70,12 @@ const Description = ({ description, scrollFunction }) => {
     <div className="description">
       <div className="product_meta">
         <h1 className="product_name">{name}</h1>
-        <div className="review" onClick={scrollFunction}>
-          <span className="total_rating">{starRate(Number(rating))}</span>
-          <a>Write A Review</a>
-        </div>
+        {rate !== 'no' && (
+          <div className="review" onClick={scrollFunction}>
+            <span className="total_rating">{starRate(Number(rating))}</span>
+            <a>Write A Review</a>
+          </div>
+        )}
         <p className="price">${price}</p>
       </div>
       <form className="product_form" onSubmit={onSubmit}>
@@ -77,7 +84,9 @@ const Description = ({ description, scrollFunction }) => {
           <input value={quantity} onChange={onChange} type="text" />
           <span onClick={handleQuantity}>+</span>
         </div>
-        <button>ADD TO CART • ${pureNum} </button>
+        <button onClick={() => setIsCartClicked(true)}>
+          ADD TO CART • ${pureNum}{' '}
+        </button>
       </form>
       <div className="product_description">
         <p className="content">{info}</p>
