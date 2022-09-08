@@ -1,15 +1,23 @@
 import './filtercontroller.scss';
 import FilterViewerButton from './FilterViewerButton';
 import FilterButtons from './FilterButtons';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-function FilterController() {
+function FilterController(props) {
   const [productType, setProductType] = useState(false);
+  const [productType2, setProductType2] = useState(false);
   const [price, setPrice] = useState(false);
   const [flavor, setFlavor] = useState(false);
+  const [priceValue, setPriceValue] = useState([9, 106]);
+  //const [url, setUrl] = useState('/shop');
+  const { setGoodsState } = props;
+  const navi = useNavigate();
 
   const stopView = () => {
+    navi('/shop');
     setProductType(false);
+    setProductType2(false);
     setPrice(false);
     setFlavor(false);
   };
@@ -29,12 +37,27 @@ function FilterController() {
               {productType && (
                 <FilterViewerButton
                   name="ProductType"
-                  way="Instore Purchase"
+                  way="In store Purchase"
                   setx={setProductType}
                   x={productType}
                 />
               )}
-              {price && <FilterViewerButton name="Price" way="90" />}
+              {productType2 && (
+                <FilterViewerButton
+                  name="ProductType"
+                  way=" Ecommerce"
+                  setx={setProductType2}
+                  x={productType2}
+                />
+              )}
+              {price && (
+                <FilterViewerButton
+                  name="Price"
+                  way={priceValue}
+                  setx={setPrice}
+                  x={price}
+                />
+              )}
               {flavor && (
                 <FilterViewerButton
                   name="Flavor"
@@ -45,9 +68,25 @@ function FilterController() {
               )}
             </ul>
           </div>
-          <FilterButtons name="Producttype" mission={setProductType} />
-          <FilterButtons name="Price" mission={setPrice} />
-          <FilterButtons name="Flavor" mission={setFlavor} />
+          <FilterButtons
+            name="Producttype"
+            mission1state={productType}
+            mission2state={productType2}
+            mission1={setProductType}
+            mission2={setProductType2}
+          />
+          <FilterButtons
+            setGoodsState={setGoodsState}
+            name="Price"
+            mission={setPrice}
+            priceValue={priceValue}
+            setPriceValue={setPriceValue}
+          />
+          <FilterButtons
+            name="Flavor"
+            mission={setFlavor}
+            missionstate={flavor}
+          />
         </div>
       </div>
       <div className="blank_space" />

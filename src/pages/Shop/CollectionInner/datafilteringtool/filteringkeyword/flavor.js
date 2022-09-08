@@ -1,8 +1,11 @@
-function Flavor(props) {
-  const { mission } = props;
+import { useNavigate } from 'react-router-dom';
 
+function Flavor(props) {
+  const { mission, missionstate } = props;
+  const navi = useNavigate();
   const detailViewer = () => {
     mission(p => !p);
+    missionstate ? navi('/shop') : navi('flavor=maccha');
   };
 
   return (
