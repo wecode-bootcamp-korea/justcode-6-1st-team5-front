@@ -1,6 +1,21 @@
 import './sortselector.scss';
 
-function Sortselector() {
+function Sortselector(props) {
+  const { setGoodsState } = props;
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:8000/product/${location.search}`, {
+  //     method: 'GET',
+  //     body: {
+  //       sort: 'lowestprice',
+  //     },
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setGoodsState(data);
+  //     });
+  // }, [sortstate]);
+
   return (
     <div id="sortselector_shadow">
       <div id="row_reverse">
@@ -12,19 +27,10 @@ function Sortselector() {
           <button className="sortbutton">BEST SELLING</button>
         </li>
         <li>
-          <button className="sortbutton">FEATURED</button>
-        </li>
-        <li>
           <button className="sortbutton">LOWEST PRICE</button>
         </li>
         <li>
           <button className="sortbutton">HIGHEST PRICE</button>
-        </li>
-        <li>
-          <button className="sortbutton">ALPHABETICALLY, A-Z</button>
-        </li>
-        <li>
-          <button className="sortbutton">ALPHABETICALLY, Z-A</button>
         </li>
         <li>
           <button className="sortbutton">DATE, NEW TO OLD</button>
