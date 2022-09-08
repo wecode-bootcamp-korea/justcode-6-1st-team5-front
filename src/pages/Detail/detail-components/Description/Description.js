@@ -45,7 +45,6 @@ const Description = ({ description, scrollFunction }) => {
       product_id: id,
       num: quantity,
     };
-    console.log(body);
 
     fetch('http://localhost:8000/cart', {
       method: 'POST',
@@ -54,11 +53,7 @@ const Description = ({ description, scrollFunction }) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
-    })
-      .then(res => res.json())
-      .then(json => {
-        alert(json);
-      });
+    });
   };
 
   return (
@@ -66,7 +61,7 @@ const Description = ({ description, scrollFunction }) => {
       <div className="product_meta">
         <h1 className="product_name">{name}</h1>
         <div className="review" onClick={scrollFunction}>
-          <span className="total_rating">{starRate(rating)}</span>
+          <span className="total_rating">{starRate(Number(rating))}</span>
           <a>Write A Review</a>
         </div>
         <p className="price">${price}</p>

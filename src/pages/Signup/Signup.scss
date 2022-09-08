@@ -43,6 +43,31 @@ section.outter_content_signup {
         letter-spacing: 1px;
         @include font();
       }
+
+      p.errPopUp {
+        padding-top: 10vh;
+        background-color: lightpink;
+        color: firebrick;
+        font-weight: bold;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+    p.cond_msg {
+      font-size: 0.75rem;
+      border-radius: 0.5rem;
+      border: 1px solid rgb(0, 0, 0);
+      color: #000;
+      padding: 0.25rem;
+      position: relative;
+      bottom: -0.5px;
+      margin-bottom: 13px;
+      @include font();
+    }
+
+    p.offscreen {
+      position: absolute;
+      left: -9999px;
     }
     form.input_content_signup {
       display: flex;
@@ -54,23 +79,6 @@ section.outter_content_signup {
         margin-bottom: 15px;
         padding: 12px 14px;
         @include font();
-      }
-
-      .cond_msg {
-        font-size: 0.75rem;
-        border-radius: 0.5rem;
-        border: 1px solid rgb(0, 0, 0);
-        color: #000;
-        padding: 0.25rem;
-        position: relative;
-        bottom: -0.5px;
-        margin-bottom: 13px;
-        @include font();
-      }
-
-      .offscreen {
-        position: absolute;
-        left: -9999px;
       }
 
       button.signup_btn {

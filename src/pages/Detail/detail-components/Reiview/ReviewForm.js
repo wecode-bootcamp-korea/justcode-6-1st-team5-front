@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Review from './Review';
 
 import './ReviewForm.scss';
 
-const ReviewForm = () => {
+const ReviewForm = ({ setRender }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [title, setTitle] = useState('');
@@ -18,6 +19,9 @@ const ReviewForm = () => {
     else if (e.target.id === 'review_content') setContent(value);
   };
 
+  const params = useParams();
+  const productId = Number(params.id);
+
   const onSubmit = e => {
     e.preventDefault();
     const body = {
@@ -26,16 +30,15 @@ const ReviewForm = () => {
       rating,
       title,
       content,
-      product_id: 1,
+      product_id: productId,
     };
     setName('');
     setEmail('');
     setClicked([false, false, false, false, false]);
     setTitle('');
     setContent('');
-    console.log(body);
 
-    fetch('http://localhost:10010/reviews/product', {
+    fetch('http://localhost:8000/reviews/product', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -44,7 +47,8 @@ const ReviewForm = () => {
     })
       .then(res => res.json())
       .then(json => {
-        alert(json);
+        alert(JSON.stringify(json.message));
+        setRender(current => current + 1);
       });
   };
 
@@ -72,6 +76,7 @@ const ReviewForm = () => {
             id="name"
             placeholder="Enter your name"
             autoComplete="off"
+            required={true}
           />
         </div>
         <div className="email">
@@ -82,6 +87,8 @@ const ReviewForm = () => {
             id="email"
             placeholder="john.smith@example.com"
             autoComplete="off"
+            type="email"
+            required={true}
           />
         </div>
       </div>
@@ -110,6 +117,7 @@ const ReviewForm = () => {
           type="text"
           placeholder="Give your review a title"
           autoComplete="off"
+          required={true}
         />
       </div>
       <div className="review_content_box space">
@@ -119,6 +127,7 @@ const ReviewForm = () => {
           onChange={handleInput}
           id="review_content"
           type="text"
+          required={true}
         ></textarea>
       </div>
       <div className="submit_btn_box space">
