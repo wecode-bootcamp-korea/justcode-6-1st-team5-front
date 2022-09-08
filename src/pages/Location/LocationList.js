@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Location/LocationList.scss';
 
-const LocationList = ({ data }) => {
+const LocationList = ({ data, onClick }) => {
   const { name, address, phone } = data;
 
   return (
@@ -9,7 +9,7 @@ const LocationList = ({ data }) => {
       <span className="pin_icon">
         <img src="/image/pin.png" />
       </span>
-      <div className="location_info">
+      <div className="location_info" onClick={onClick}>
         <p className="store_name">{name}</p>
         <p className="store_address">{address}</p>
         <a className="phone_number">{phone}</a>
