@@ -1,7 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import './Contact.scss';
 
 function Contact() {
+  const EMAIL_REGEX = /^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+
+  const [email, setEmail] = useState('');
+  const [validEmail, setValidEmail] = useState(false);
+  const [emailFocus, setEmailFocus] = useState(false);
+
+  const nameRef = useRef('');
+  const emailRef = useRef('');
+  const contentRef = useRef('');
+  const navigate = useNavigate();
+
+  const [success, setSuccess] = useState(false);
+  const [failed, setFailed] = useState(false);
+
+  useEffect(() => {
+    setValidEmail(EMAIL_REGEX.test(email));
+  }, [email]);
+
+  const postHandlerContact = e => {
+    e.preventDefault();
+
+    fetch('http://localhost:8000/inquiry', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: nameRef.current.value,
+        email: emailRef.current.value,
+        content: contentRef.current.value,
+      }),
+    }).then(response => {
+      if (response.status === 200) {
+        setSuccess(true);
+      } else {
+        setFailed(true);
+      }
+    });
+  };
+
   return (
     <div>
       <title className="contact_header_titile">CONTACT US FOR ASSISTANCE</title>
@@ -31,6 +73,20 @@ function Contact() {
         </div>
 
         <form className="contact_form">
+          <p
+            className={failed ? 'errPopUp' : 'offscreen'}
+            aria-live="assertive"
+          >
+            Error.
+          </p>
+
+          <p
+            className={success ? 'successPopUp' : 'offscreen'}
+            aria-live="assertive"
+          >
+            Thank you! <br />
+            Your inquiry has been submitted successfully.
+          </p>
           <label className="contact_form_label" htmlFor="name">
             Your name
           </label>
@@ -39,6 +95,7 @@ function Contact() {
             id="name"
             type="text"
             placeholder="Your name"
+            ref={nameRef}
           />
 
           <label className="contact_form_label" htmlFor="email">
@@ -49,7 +106,24 @@ function Contact() {
             id="email"
             type="text"
             placeholder="Your email"
+            ref={emailRef}
+            onChange={e => setEmail(e.target.value)}
+            required
+            aria-invalid={validEmail ? 'false' : 'true'}
+            aria-describedby="emailnote"
+            onFocus={() => setEmailFocus(true)}
+            onBlur={() => setEmailFocus(false)}
           />
+          <p
+            id="emailnote"
+            className={
+              emailFocus && email && !validEmail ? 'cond_msg' : 'offscreen'
+            }
+          >
+            E-mail should include "@"
+            <br />
+            Please check your email address
+          </p>
 
           <label className="contact_form_label" htmlFor="message">
             Your message
@@ -59,8 +133,11 @@ function Contact() {
             id="message"
             type="text"
             placeholder="Your message"
+            ref={contentRef}
           />
-          <button className="contact_btn">Send message</button>
+          <button onClick={postHandlerContact} className="contact_btn">
+            Send message
+          </button>
         </form>
       </section>
     </div>
