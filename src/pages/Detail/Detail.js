@@ -14,7 +14,10 @@ const Detail = () => {
   const productId = params.id;
 
   const [product, setProduct] = useState([]);
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
   // useEffect(() => {
   //   fetch('http://localhost:3000/data/mockDataEng.json')
   //     .then(res => res.json())

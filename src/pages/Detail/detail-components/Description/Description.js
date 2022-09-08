@@ -45,7 +45,6 @@ const Description = ({ description, scrollFunction }) => {
       product_id: id,
       num: quantity,
     };
-    console.log(body);
 
     fetch('http://localhost:8000/cart', {
       method: 'POST',

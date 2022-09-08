@@ -9,17 +9,8 @@ const Location = () => {
   const [locations, setLocations] = useState([]);
   const [searchInput, setSearchInput] = useState('');
 
-  // useEffect(() => {
-  //   fetch('http://localhost:8000/location')
-  //     .then(res => res.json())
-  //     .then(json => {
-  //       setLocations(json);
-  //       console.log(json);
-  //     });
-  // }, []);
-
   useEffect(() => {
-    fetch('http://localhost:3000/data/locationData.json')
+    fetch('http://localhost:8000/location')
       .then(res => res.json())
       .then(json => {
         setLocations(json);
@@ -31,7 +22,6 @@ const Location = () => {
   };
 
   const onClick = e => {
-    console.log(e);
     setSearchInput(e.target.innerHTML);
   };
 

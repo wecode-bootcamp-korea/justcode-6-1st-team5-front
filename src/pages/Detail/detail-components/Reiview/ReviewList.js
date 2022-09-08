@@ -8,7 +8,6 @@ const ReviewList = ({ render, setLength }) => {
 
   const params = useParams();
   const productId = Number(params.id);
-  console.log(productId);
 
   useEffect(() => {
     const body = { product_id: productId };
@@ -24,7 +23,6 @@ const ReviewList = ({ render, setLength }) => {
       .then(json => {
         setReviewData(json);
         setLength(json.length);
-        console.log(json.length);
       });
   }, [render]);
 
