@@ -12,7 +12,6 @@ function Home() {
     fetch('http://localhost:8000/product/detail/39')
       .then(res => res.json())
       .then(json => {
-        console.log(json);
         setProduct(json);
       });
   }, []);

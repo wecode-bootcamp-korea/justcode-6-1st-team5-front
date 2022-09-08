@@ -9,17 +9,8 @@ const Location = () => {
   const [locations, setLocations] = useState([]);
   const [searchInput, setSearchInput] = useState('');
 
-  // useEffect(() => {
-  //   fetch('http://localhost:10010/location')
-  //     .then(res => res.json())
-  //     .then(json => {
-  //       setLocations(json);
-  //       console.log(json);
-  //     });
-  // }, []);
-
   useEffect(() => {
-    fetch('http://localhost:3000/data/locationData.json')
+    fetch('http://localhost:8000/location')
       .then(res => res.json())
       .then(json => {
         setLocations(json);
@@ -28,6 +19,10 @@ const Location = () => {
 
   const onChange = e => {
     setSearchInput(e.target.value);
+  };
+
+  const onClick = e => {
+    setSearchInput(e.target.innerHTML);
   };
 
   const setStores = locations.filter(location => {
@@ -51,7 +46,13 @@ const Location = () => {
           <div className="list">
             {setStores !== undefined &&
               setStores.map(store => {
-                return <LocationList key={locations.id} data={store} />;
+                return (
+                  <LocationList
+                    key={locations.id}
+                    data={store}
+                    onClick={onClick}
+                  />
+                );
               })}
           </div>
         </div>
