@@ -8,8 +8,6 @@ function Account() {
   const [userName, setUserName] = useState([]);
   const [orderData, setOrderData] = useState(true);
 
-  // ${localStorage.getItem('token')
-
   useEffect(() => {
     fetch(`http://localhost:8000/order/${localStorage.getItem('token')}`, {
       headers: {
