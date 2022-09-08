@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Search.scss';
 import Modal from 'react-modal';
 
-export default function Search({ setIsSearchClicked }) {
+export default function Search({ setIsSearchClicked, setScrollPosition }) {
   const navigate = useNavigate();
 
   let price = 10000;
@@ -34,7 +34,10 @@ export default function Search({ setIsSearchClicked }) {
   return (
     <Modal
       isOpen={true}
-      onRequestClose={() => setIsSearchClicked(false)}
+      onRequestClose={() => {
+        setIsSearchClicked(false);
+        setScrollPosition(window.scrollY);
+      }}
       ariaHideApp={false}
       className="modal_search"
     >

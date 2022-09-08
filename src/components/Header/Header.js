@@ -155,8 +155,18 @@ export default function Header({ isCartClicked, setIsCartClicked }) {
         isShopClicked={isShopClicked}
         setIsShopClicked={setIsShopClicked}
       />
-      {isCartClicked && <Cart setIsCartClicked={setIsCartClicked} />}
-      {isSearchClicked && <Search setIsSearchClicked={setIsSearchClicked} />}
+      {isCartClicked && (
+        <Cart
+          setIsCartClicked={setIsCartClicked}
+          setScrollPosition={setScrollPosition}
+        />
+      )}
+      {isSearchClicked && (
+        <Search
+          setIsSearchClicked={setIsSearchClicked}
+          setScrollPosition={setScrollPosition}
+        />
+      )}
     </div>
   );
 }

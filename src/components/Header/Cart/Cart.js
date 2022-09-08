@@ -72,7 +72,7 @@ function ItemBox({ setItemData, cartId, name, img, price, num }) {
         <div className="price">$ {price.toLocaleString()}</div>
         <div className="wrapper">
           <img
-            src="/Images/add.png"
+            src="/image/add.png"
             alt="add"
             className="add"
             onClick={() => {
@@ -81,7 +81,7 @@ function ItemBox({ setItemData, cartId, name, img, price, num }) {
           />
           <p className="quantity">{num}</p>
           <img
-            src="/Images/minus.png"
+            src="/image/minus.png"
             alt="minus"
             className="minus"
             onClick={() => {
@@ -102,7 +102,7 @@ function ItemBox({ setItemData, cartId, name, img, price, num }) {
   );
 }
 
-function Cart({ setIsCartClicked }) {
+function Cart({ setIsCartClicked, setScrollPosition }) {
   const navigate = useNavigate();
   const [itemData, setItemData] = useState({
     cart_id: [],
@@ -126,14 +126,16 @@ function Cart({ setIsCartClicked }) {
   };
 
   useEffect(() => {
-    axios({
-      method: 'get',
-      url: `http://localhost:8000/cart/${localStorage.getItem('token')}`,
-    }).then(res => {
-      if (res.data[0].num.length !== 0) {
-        setItemData(res.data[0]);
-      }
-    });
+    if (localStorage.getItem('token') !== null) {
+      axios({
+        method: 'get',
+        url: `http://localhost:8000/cart/${localStorage.getItem('token')}`,
+      }).then(res => {
+        if (res.data[0].num.length !== 0) {
+          setItemData(res.data[0]);
+        }
+      });
+    }
   }, []);
 
   function button() {
@@ -176,7 +178,10 @@ function Cart({ setIsCartClicked }) {
   return (
     <Modal
       isOpen={true}
-      onRequestClose={() => setIsCartClicked(false)}
+      onRequestClose={() => {
+        setIsCartClicked(false);
+        setScrollPosition(window.scrollY);
+      }}
       ariaHideApp={false}
       className="modal_cart"
     >
