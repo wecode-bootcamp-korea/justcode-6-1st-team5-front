@@ -1,8 +1,8 @@
 import './sortselector.scss';
+import { useNavigate } from 'react-router-dom';
 
-function Sortselector(props) {
-  const { setGoodsState } = props;
-
+function Sortselector() {
+  const navi = useNavigate();
   // useEffect(() => {
   //   fetch(`http://localhost:8000/product/${location.search}`, {
   //     method: 'GET',
@@ -24,19 +24,29 @@ function Sortselector(props) {
       </div>
       <ul id="sort_selector">
         <li>
-          <button className="sortbutton">BEST SELLING</button>
+          <button className="sortbutton" onClick={navi(`?sort=bestselling`)}>
+            BEST SELLING
+          </button>
         </li>
         <li>
-          <button className="sortbutton">LOWEST PRICE</button>
+          <button className="sortbutton" onClick={navi(`?sort=lowestprice`)}>
+            LOWEST PRICE
+          </button>
         </li>
         <li>
-          <button className="sortbutton">HIGHEST PRICE</button>
+          <button className="sortbutton" onClick={navi(`?sort=highestprice`)}>
+            HIGHEST PRICE
+          </button>
         </li>
         <li>
-          <button className="sortbutton">DATE, NEW TO OLD</button>
+          <button className="sortbutton" onClick={navi('?sort=newtoold')}>
+            DATE, NEW TO OLD
+          </button>
         </li>
         <li>
-          <button className="sortbutton">DATE, OLD TO NEW</button>
+          <button className="sortbutton" onClick={navi('?sort=oldtonew')}>
+            DATE, OLD TO NEW
+          </button>
         </li>
       </ul>
     </div>

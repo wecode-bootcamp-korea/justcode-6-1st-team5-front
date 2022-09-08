@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function Price(props) {
-  const { priceValue, setPriceValue, mission, setUrl } = props;
+  const { priceValue, setPriceValue, mission } = props;
   //const [priceValue, setPriceValue] = useState([9, 106]);
   //useEffect로 pricevalue 의존성 배열로 만들어 해결
   const navi = useNavigate();

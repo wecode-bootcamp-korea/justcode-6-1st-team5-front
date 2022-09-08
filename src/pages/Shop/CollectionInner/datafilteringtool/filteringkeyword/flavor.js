@@ -5,7 +5,7 @@ function Flavor(props) {
   const navi = useNavigate();
   const detailViewer = () => {
     mission(p => !p);
-    missionstate ? navi('/shop') : navi('flavor=maccha');
+    missionstate ? navi('/shop') : navi('?flavor=maccha');
   };
 
   return (
@@ -17,7 +17,7 @@ function Flavor(props) {
           }}
         >
           <div className="margin_right">Maccha</div>
-          <div className="margin_right">(갯수)</div>
+          <div className="margin_right">()</div>
         </button>
       </div>
     </div>

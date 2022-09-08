@@ -2,16 +2,23 @@ import React, { useState } from 'react';
 import './shop.scss';
 import CollectionInner from './CollectionInner/CollectionInner';
 import Sortselector from './sortselector/Sortselector';
+import { useNavigate } from 'react-router-dom';
 
 function Shop() {
   const [sortButton, setSortButton] = useState(true);
   const [sortSelector, setSortSelector] = useState(false);
+  const navi = useNavigate();
+
+  const bigGridClick = () => {
+    setSortButton(false);
+    navi(navi(`?min=9&max=39`));
+  };
 
   return (
     <div id="shop_choc">
       <div id="category_bar">
         <span className="tool_line" id="left_tool">
-          <button className="sortbutton" onClick={() => setSortButton(false)}>
+          <button className="sortbutton" onClick={bigGridClick}>
             <img id="menu_box" src="images/menu.png" alt="menu" />
           </button>
           <button className="sortbutton" onClick={() => setSortButton(true)}>
