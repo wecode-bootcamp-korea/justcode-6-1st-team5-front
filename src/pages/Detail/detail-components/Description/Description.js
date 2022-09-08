@@ -2,7 +2,12 @@ import React, { useState, useRef } from 'react';
 
 import './Description.scss';
 
-const Description = ({ description, scrollFunction }) => {
+const Description = ({
+  description,
+  scrollFunction,
+  setIsCartClicked,
+  rate,
+}) => {
   const {
     id,
     photos,
@@ -38,7 +43,7 @@ const Description = ({ description, scrollFunction }) => {
     else return '☆☆☆☆☆';
   }
 
-  const onSubmit = e => {
+  const onSubmit = async e => {
     e.preventDefault();
     const body = {
       token: localStorage['token'],
@@ -46,7 +51,7 @@ const Description = ({ description, scrollFunction }) => {
       num: quantity,
     };
 
-    fetch('http://localhost:8000/cart', {
+    await fetch('http://localhost:8000/cart', {
       method: 'POST',
       headers: {
         Authorization: localStorage['token'],
@@ -54,16 +59,19 @@ const Description = ({ description, scrollFunction }) => {
       },
       body: JSON.stringify(body),
     });
+    setIsCartClicked(true);
   };
 
   return (
     <div className="description">
       <div className="product_meta">
         <h1 className="product_name">{name}</h1>
-        <div className="review" onClick={scrollFunction}>
-          <span className="total_rating">{starRate(Number(rating))}</span>
-          <a>Write A Review</a>
-        </div>
+        {rate !== 'no' && (
+          <div className="review" onClick={scrollFunction}>
+            <span className="total_rating">{starRate(Number(rating))}</span>
+            <a>Write A Review</a>
+          </div>
+        )}
         <p className="price">${price}</p>
       </div>
       <form className="product_form" onSubmit={onSubmit}>

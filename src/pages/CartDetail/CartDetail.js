@@ -8,8 +8,12 @@ import { useNavigate } from 'react-router-dom';
 export default function CartDetail() {
   const navigate = useNavigate();
   const [itemData, setItemData] = useState({
+    cart_id: [],
+    product_id: [],
     product_name: [],
     product_price: [],
+    num: [],
+    product_photos: [],
   });
 
   const [mainAddress, setMainAddress] = useState('Main Address');
@@ -70,6 +74,7 @@ export default function CartDetail() {
             return (
               <ItemBox
                 cartId={itemData.cart_id[i]}
+                productId={itemData.product_id[i]}
                 key={itemData.product_id[i]}
                 name={itemData.product_name[i]}
                 img={itemData.product_photos[i]}

@@ -13,8 +13,8 @@ export default function Trending() {
     arr.map(data => (
       <ItemContainer
         key={data}
-        img="/Images/home_part_1.jpg"
-        name="ROCYE SIGNATURE CHOCOLATE"
+        img="/image/home_part_1.jpg"
+        name="ROECY' SIGNATURE CHOCOLATE"
         rate={5}
         price={60.99}
       />
@@ -25,8 +25,8 @@ export default function Trending() {
     arr.map(data => (
       <ItemContainer
         key={data}
-        img="/Images/home_part_1.jpg"
-        name="ROCYE SIGNATURE CHOCOLATE"
+        img="/image/home_part_1.jpg"
+        name="ROECY' SIGNATURE CHOCOLATE"
         rate={5}
         price={60.99}
       />
