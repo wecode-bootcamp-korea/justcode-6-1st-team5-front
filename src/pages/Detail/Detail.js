@@ -27,7 +27,6 @@ const Detail = () => {
     fetch(`http://localhost:8000/product/detail/${productId}`)
       .then(res => res.json())
       .then(json => {
-        console.log(json);
         setProduct(json);
       });
   }, [productId]);

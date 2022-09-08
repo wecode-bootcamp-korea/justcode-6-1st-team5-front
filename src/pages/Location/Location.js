@@ -31,7 +31,8 @@ const Location = () => {
   };
 
   const onClick = e => {
-    console.log(e.target);
+    console.log(e);
+    setSearchInput(e.target.innerHTML);
   };
 
   const setStores = locations.filter(location => {

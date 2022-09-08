@@ -54,11 +54,7 @@ const Description = ({ description, scrollFunction }) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
-    })
-      .then(res => res.json())
-      .then(json => {
-        alert(json);
-      });
+    });
   };
 
   return (

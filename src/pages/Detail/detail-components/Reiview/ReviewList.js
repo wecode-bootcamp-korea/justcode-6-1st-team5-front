@@ -12,7 +12,6 @@ const ReviewList = ({ render, setLength }) => {
 
   useEffect(() => {
     const body = { product_id: productId };
-    console.log(body);
 
     fetch('http://localhost:8000/reviews', {
       method: 'POST',
