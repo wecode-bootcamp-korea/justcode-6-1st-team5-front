@@ -1,19 +1,20 @@
 import './filteringkeyword.scss';
 import { useNavigate } from 'react-router-dom';
 function ProductType(props) {
-  const { mission1, mission2, mission1state, mission2state } = props;
+  const { mission1, mission2, mission1state, mission2state, goodsState } =
+    props;
   const navi = useNavigate();
 
   const detailViewer = () => {
     mission1(p => !p);
     mission2(false);
-    mission1state ? navi('/shop') : navi('onoff=on');
+    mission1state ? navi('/shop') : navi('?onoff=on');
   };
 
   const detailViewer2 = () => {
     mission2(p => !p);
     mission1(false);
-    mission2state ? navi('/shop') : navi('onoff=off');
+    mission2state ? navi('/shop') : navi('?onoff=off');
   };
 
   return (
@@ -26,7 +27,7 @@ function ProductType(props) {
           }}
         >
           In Store Purchase
-          <div className="margin_right">(갯수)</div>
+          <div className="margin_right">()</div>
         </button>
       </div>
       <div className="button_style">
@@ -37,7 +38,7 @@ function ProductType(props) {
           }}
         >
           <div className="margin_right">Ecommerce</div>
-          <div className="margin_right">(갯수)</div>
+          <div className="margin_right">()</div>
         </button>
       </div>
     </div>

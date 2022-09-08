@@ -11,11 +11,11 @@ function FilterController(props) {
   const [flavor, setFlavor] = useState(false);
   const [priceValue, setPriceValue] = useState([9, 106]);
   //const [url, setUrl] = useState('/shop');
-  const { setGoodsState } = props;
+  const { setGoodsState, goodsState, sortbutton } = props;
   const navi = useNavigate();
 
   const stopView = () => {
-    navi('/shop');
+    sortbutton ? navi('/shop') : navi('?min=9&max=39'); //??왜 true일때 shop으로 안가지는지 이유파악
     setProductType(false);
     setProductType2(false);
     setPrice(false);
@@ -69,6 +69,7 @@ function FilterController(props) {
             </ul>
           </div>
           <FilterButtons
+            goodsState={goodsState}
             name="Producttype"
             mission1state={productType}
             mission2state={productType2}

@@ -2,10 +2,17 @@ import React, { useState } from 'react';
 import './shop.scss';
 import CollectionInner from './CollectionInner/CollectionInner';
 import Sortselector from './sortselector/Sortselector';
+import { useNavigate } from 'react-router-dom';
 
 function Shop() {
   const [sortButton, setSortButton] = useState(true);
   const [sortSelector, setSortSelector] = useState(false);
+  const navi = useNavigate();
+
+  const bigGridClick = () => {
+    setSortButton(false);
+    navi(navi(`?min=9&max=39`));
+  };
 
   return (
     <div id="shop_choc">
