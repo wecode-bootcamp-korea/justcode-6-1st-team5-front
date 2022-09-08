@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import PhotoList from './detail-components/Photo/PhotoList';
 import Description from './detail-components/Description/Description';
 import Review from './detail-components/Reiview/Review';
-import ReviewList from './detail-components/Reiview/ReviewList';
 import Trending from '../Home/Trending/Trending';
 import Carousel from '../Home/Carousel/Carousel';
 
@@ -15,22 +14,22 @@ const Detail = () => {
   const productId = params.id;
 
   const [product, setProduct] = useState([]);
-  // useEffect(() => {
-  //   fetch('http://localhost:3000/data/mockDataEng.json')
-  //     .then(res => res.json())
-  //     .then(json => {
-  //       setProduct(json);
-  //     });
-  // }, []);
-
   useEffect(() => {
-    fetch(`http://localhost:8000/product/detail/${productId}`)
+    fetch('http://localhost:3000/data/mockDataEng.json')
       .then(res => res.json())
       .then(json => {
-        console.log(json);
         setProduct(json);
       });
   }, []);
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:8000/product/detail/${productId}`)
+  //     .then(res => res.json())
+  //     .then(json => {
+  //       console.log(json);
+  //       setProduct(json);
+  //     });
+  // }, [productId]);
 
   const { photos, rating } = product;
 
@@ -56,7 +55,6 @@ const Detail = () => {
         </div>
       </section>
       <Review rating={rating} ref={reviewRef} />
-      <ReviewList />
       <Trending />
     </>
   );

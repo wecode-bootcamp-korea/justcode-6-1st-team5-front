@@ -3,8 +3,6 @@ import React from 'react';
 import './PhotoList.scss';
 
 const PhotoList = ({ photos }) => {
-  photos !== undefined && console.log(photos[0]);
-
   return (
     <>
       {photos !== undefined &&
