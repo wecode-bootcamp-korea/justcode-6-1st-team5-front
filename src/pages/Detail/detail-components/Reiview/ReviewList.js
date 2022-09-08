@@ -5,7 +5,6 @@ import '../Reiview/ReviewList.scss';
 
 const ReviewList = ({ render, setLength }) => {
   const [reviewData, setReviewData] = useState([]);
-  const [reviewArr, setReviewArr] = useState([]);
 
   const params = useParams();
   const productId = Number(params.id);
@@ -13,6 +12,7 @@ const ReviewList = ({ render, setLength }) => {
 
   useEffect(() => {
     const body = { product_id: productId };
+    console.log(body);
 
     fetch('http://localhost:8000/reviews', {
       method: 'POST',
@@ -24,8 +24,8 @@ const ReviewList = ({ render, setLength }) => {
       .then(res => res.json())
       .then(json => {
         setReviewData(json);
-        // console.log(json);
         setLength(json.length);
+        console.log(json.length);
       });
   }, [render]);
 

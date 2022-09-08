@@ -10,7 +10,7 @@ const Location = () => {
   const [searchInput, setSearchInput] = useState('');
 
   // useEffect(() => {
-  //   fetch('http://localhost:10010/location')
+  //   fetch('http://localhost:8000/location')
   //     .then(res => res.json())
   //     .then(json => {
   //       setLocations(json);
