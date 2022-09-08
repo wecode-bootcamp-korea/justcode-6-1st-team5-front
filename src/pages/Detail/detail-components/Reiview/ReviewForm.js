@@ -37,7 +37,6 @@ const ReviewForm = ({ setRender }) => {
     setClicked([false, false, false, false, false]);
     setTitle('');
     setContent('');
-    // console.log(body);
 
     fetch('http://localhost:8000/reviews/product', {
       method: 'POST',

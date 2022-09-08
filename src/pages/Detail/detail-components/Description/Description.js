@@ -50,7 +50,6 @@ const Description = ({
       product_id: id,
       num: quantity,
     };
-    console.log(body);
 
     await fetch('http://localhost:8000/cart', {
       method: 'POST',
@@ -59,11 +58,7 @@ const Description = ({
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
-    })
-      .then(res => res.json())
-      .then(json => {
-        alert(json);
-      });
+    });
     setIsCartClicked(true);
   };
 

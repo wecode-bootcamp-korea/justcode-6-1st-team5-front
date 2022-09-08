@@ -1,16 +1,18 @@
 import React from 'react';
 import '../Location/LocationList.scss';
 
-const LocationList = ({ data }) => {
+const LocationList = ({ data, onClick }) => {
   const { name, address, phone } = data;
 
   return (
-    <li className="store_box">
+    <li className="store_box"햣>
       <span className="pin_icon">
         <img src="/image/pin.png" />
       </span>
-      <div className="location_info">
-        <p className="store_name">{name}</p>
+      <div id={name} className="location_info">
+        <p className="store_name" onClick={onClick}>
+          {name}
+        </p>
         <p className="store_address">{address}</p>
         <a className="phone_number">{phone}</a>
       </div>
