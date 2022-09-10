@@ -36,7 +36,7 @@ function Home({ setIsCartClicked }) {
           <div className="text_2">DELICIOUSLY UNIQUE</div>
           <div
             className="text_btn flex_center"
-            onClick={() => moveAndScrollToTop('/shop')}
+            onClick={() => moveAndScrollToTop('/shop/1')}
           >
             SHOP NOW
           </div>
@@ -48,7 +48,7 @@ function Home({ setIsCartClicked }) {
         pic="/image/home_part_1.jpg"
         text1="PURE CHOCOLATE"
         text2={`WE ARE "PURELY" ADDICTED`}
-        url="/shop"
+        url="/shop/1"
       />
 
       <Part
@@ -56,7 +56,7 @@ function Home({ setIsCartClicked }) {
         pic="/image/home_part_2.jpg"
         text1="GIFT SET"
         text2="IF YOU WANT TO GIVE LUXURY AS A GIFT"
-        url="/shop"
+        url="/shop/1"
       />
 
       <Trending />

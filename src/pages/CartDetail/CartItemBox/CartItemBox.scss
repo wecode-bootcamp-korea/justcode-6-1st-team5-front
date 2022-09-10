@@ -1,0 +1,45 @@
+.item_box {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  font-size: 0.9rem;
+
+  .pic {
+    height: 10vw;
+    width: 10vw;
+    margin: 1.8vw;
+  }
+
+  .text_box {
+    letter-spacing: 0.05rem;
+
+    .title {
+      cursor: pointer;
+    }
+    .price {
+      margin: 20px 0;
+      font-weight: 300;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: row;
+
+      .quantity {
+        margin: 0 10px;
+      }
+      .add,
+      .minus {
+        height: 1vw;
+        width: 1vw;
+        cursor: pointer;
+      }
+      .remove {
+        position: absolute;
+        right: 1.5vw;
+        color: #999;
+        cursor: pointer;
+      }
+    }
+  }
+}
