@@ -19,10 +19,18 @@ function Shop() {
       <div id="category_bar">
         <span className="tool_line" id="left_tool">
           <button className="sortbutton" onClick={bigGridClick}>
-            <img id="menu_box" src="images/menu.png" alt="menu" />
+            <img
+              id="menu_box"
+              src="https://i.esdrop.com/d/f/NlKPuBbCgn/O1JWoygg4y.png"
+              alt="menu"
+            />
           </button>
           <button className="sortbutton" onClick={() => setSortButton(true)}>
-            <img id="menu_box2" src="images/menu2.png" alt="menu2" />
+            <img
+              id="menu_box2"
+              src="https://i.esdrop.com/d/f/NlKPuBbCgn/H7pnwEl6Mr.png"
+              alt="menu2"
+            />
           </button>
         </span>
         <div>
