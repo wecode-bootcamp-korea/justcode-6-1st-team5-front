@@ -31,6 +31,10 @@
         width: 70vw;
         align-items: center;
 
+        .title {
+          cursor: pointer;
+        }
+
         .pic {
           height: 10vw;
           width: 10vw;

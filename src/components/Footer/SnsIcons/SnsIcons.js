@@ -4,7 +4,7 @@ export default function SnsIcons() {
   return (
     <div className="sns_icons">
       <img
-        src="/Images/facebook.png"
+        src="/image/facebook.png"
         alt="facebook"
         className="icon"
         onClick={() =>
@@ -15,7 +15,7 @@ export default function SnsIcons() {
         }
       />
       <img
-        src="/Images/instagram.png"
+        src="/image/instagram.png"
         alt="instagram"
         className="icon"
         onClick={() =>
@@ -23,7 +23,7 @@ export default function SnsIcons() {
         }
       />
       <img
-        src="/Images/youtube.png"
+        src="/image/youtube.png"
         alt="youtube"
         className="icon"
         onClick={() =>
