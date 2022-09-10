@@ -10,15 +10,15 @@ function ProductList(props) {
 
   let starnumber;
   if (rating === '1') {
-    starnumber = <img className="star_img" src="./image/rating/1.jpg" />;
+    starnumber = <div className="star_img">★☆☆☆☆</div>;
   } else if (rating === '2') {
-    starnumber = <img className="star_img" src="./image/rating/2.jpg" />;
+    starnumber = <div className="star_img">★★☆☆☆</div>;
   } else if (rating === '3') {
-    starnumber = <img className="star_img" src="./image/rating/3.jpg" />;
+    starnumber = <div className="star_img">★★★☆☆</div>;
   } else if (rating === '4') {
-    starnumber = <img className="star_img" src="./image/rating/4.jpg" />;
+    starnumber = <div className="star_img">★★★★☆</div>;
   } else if (rating === '5') {
-    starnumber = <img className="star_img" src="./image/rating/5.jpg" />;
+    starnumber = <div className="star_img">★★★★★</div>;
   }
 
   const basic = {

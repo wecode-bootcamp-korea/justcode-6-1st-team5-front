@@ -1,20 +1,19 @@
 import './filteringkeyword.scss';
 import { useNavigate } from 'react-router-dom';
 function ProductType(props) {
-  const { mission1, mission2, mission1state, mission2state, goodsState } =
-    props;
+  const { mission1, mission2, mission1state, mission2state } = props;
   const navi = useNavigate();
 
   const detailViewer = () => {
     mission1(p => !p);
     mission2(false);
-    mission1state ? navi('/shop') : navi('?onoff=on');
+    mission1state ? navi('/shop/1') : navi('?onoff=on');
   };
 
   const detailViewer2 = () => {
     mission2(p => !p);
     mission1(false);
-    mission2state ? navi('/shop') : navi('?onoff=off');
+    mission2state ? navi('/shop/1') : navi('?onoff=off');
   };
 
   return (

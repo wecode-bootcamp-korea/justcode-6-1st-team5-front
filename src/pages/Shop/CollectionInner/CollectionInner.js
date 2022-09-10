@@ -2,16 +2,25 @@ import ProductList from './productlist/ProductList';
 import BigProductList from './productlist/BigProductList';
 import './collectioninner.scss';
 import { useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import FilterController from './datafilteringtool/filterviewer/filterController';
+// import ProductType from './datafilteringtool/filteringkeyword/productType';
 
 function CollectionInner(props) {
   const [goodsState, setGoodsState] = useState([]); //데이터상태
+  const [url, seturl] = useState([]);
+  // const [productType1, setproductType1] = useState();
 
   const location = useLocation();
   const navi = useNavigate();
+  const params = useParams();
+  const pageid = params.id;
 
   const { sortbutton } = props;
+  //const [url, seturl] = useEffect([]);
+
+  //const newurl = {ecommerce : 'producttype:ecommerce'}
+  //url.join('&') >> url 처리
 
   // useEffect(() => {
   //   fetch('./mockdata/product.json')
@@ -24,7 +33,7 @@ function CollectionInner(props) {
   // >>>>>>>>>>>Mock-up 데이터
 
   useEffect(() => {
-    fetch(`http://localhost:8000/product/${location.search}`, {
+    fetch(`http://localhost:8000/shop/${pageid}${location.search}`, {
       method: 'GET',
     })
       .then(res => res.json())
@@ -32,38 +41,27 @@ function CollectionInner(props) {
         setGoodsState(data);
         console.log(data);
       });
-  }, [location.search]);
+  }, [location.search, pageid]);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, [location.search, pageid]);
 
   //console.log('test', goodsState.length);
   const pagination = () => {
-    navi(`?min=9&max=39`);
+    navi(`/shop/1`);
   };
 
   const pagination2 = () => {
-    navi(`?min=40&max=70`);
+    navi(`/shop/2`);
   };
 
   const pagination3 = () => {
-    navi(`?min=71&max=109`);
+    navi(`/shop/3`);
   };
-
-  // const basic = {
-  //   width: '18vw',
-  //   height: '18vw',
-  //   backgroundSize: 'cover',
-  //   backgroundImage: 'url(' + img + ')',
-  // };
-
-  // const hovered = {
-  //   width: '18vw',
-  //   height: '18vw',
-  //   backgroundSize: '120%',
-  //   backgroundPosition: '50% 50%',
-  //   backgroundImage:
-  //     'linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(' +
-  //     img +
-  //     ')',
-  // };
 
   return (
     <div className="collection_inner">
@@ -75,15 +73,15 @@ function CollectionInner(props) {
         {sortbutton
           ? goodsState.map(f => {
               return (
-                <div key={f.id} className="big_product_wrapper_wrapper">
-                  <BigProductList goodsdata={f} id={f.id} />
+                <div key={f.id} className="product_wrapper_wrapper">
+                  <ProductList goodsdata={f} id={f.id} />
                 </div>
               );
             })
           : goodsState.map(f => {
               return (
-                <div key={f.id} className="product_wrapper_wrapper">
-                  <ProductList goodsdata={f} id={f.id} />
+                <div key={f.id} className="big_product_wrapper_wrapper">
+                  <BigProductList goodsdata={f} id={f.id} />
                 </div>
               );
             })}

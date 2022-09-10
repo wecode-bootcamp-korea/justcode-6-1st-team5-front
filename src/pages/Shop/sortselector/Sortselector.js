@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 function Sortselector() {
   const navi = useNavigate();
+
   // useEffect(() => {
   //   fetch(`http://localhost:8000/product/${location.search}`, {
   //     method: 'GET',
@@ -16,6 +17,12 @@ function Sortselector() {
   //     });
   // }, [sortstate]);
 
+  //
+  //
+  //
+  //
+  //
+
   return (
     <div id="sortselector_shadow">
       <div id="row_reverse">
@@ -24,27 +31,36 @@ function Sortselector() {
       </div>
       <ul id="sort_selector">
         <li>
-          <button className="sortbutton" onClick={navi(`?sort=bestselling`)}>
+          <button
+            className="sortbutton"
+            onClick={() => navi(`?sort=bestselling`)}
+          >
             BEST SELLING
           </button>
         </li>
         <li>
-          <button className="sortbutton" onClick={navi(`?sort=lowestprice`)}>
+          <button
+            className="sortbutton"
+            onClick={() => navi(`?sort=lowestprice`)}
+          >
             LOWEST PRICE
           </button>
         </li>
         <li>
-          <button className="sortbutton" onClick={navi(`?sort=highestprice`)}>
+          <button
+            className="sortbutton"
+            onClick={() => navi(`?sort=highestprice`)}
+          >
             HIGHEST PRICE
           </button>
         </li>
         <li>
-          <button className="sortbutton" onClick={navi('?sort=newtoold')}>
+          <button className="sortbutton" onClick={() => navi('?sort=newtoold')}>
             DATE, NEW TO OLD
           </button>
         </li>
         <li>
-          <button className="sortbutton" onClick={navi('?sort=oldtonew')}>
+          <button className="sortbutton" onClick={() => navi('?sort=oldtonew')}>
             DATE, OLD TO NEW
           </button>
         </li>

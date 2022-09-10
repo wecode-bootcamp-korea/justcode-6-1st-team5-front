@@ -10,15 +10,15 @@ function ProductList(props) {
 
   let starnumber;
   if (rating === '1') {
-    starnumber = <img className="big_star_img" src="./image/rating/1.jpg" />;
+    starnumber = <div className="big_star_img">★☆☆☆☆</div>;
   } else if (rating === '2') {
-    starnumber = <img className="big_star_img" src="./image/rating/2.jpg" />;
+    starnumber = <div className="big_star_img">★★☆☆☆</div>;
   } else if (rating === '3') {
-    starnumber = <img className="big_star_img" src="./image/rating/3.jpg" />;
+    starnumber = <div className="big_star_img">★★★☆☆</div>;
   } else if (rating === '4') {
-    starnumber = <img className="big_star_img" src="./image/rating/4.jpg" />;
+    starnumber = <div className="big_star_img">★★★★☆</div>;
   } else if (rating === '5') {
-    starnumber = <img className="big_star_img" src="./image/rating/5.jpg" />;
+    starnumber = <div className="big_star_img">★★★★★</div>;
   }
 
   const basic = {
@@ -61,7 +61,7 @@ function ProductList(props) {
             style={hover ? hovered : basic}
             className={hover && 'big_hovered'}
           >
-            {hover && <div className="see_more">SEE MORE</div>}
+            {hover && <div className="big_see_more">SEE MORE</div>}
           </div>
         </div>
         <div className="big_product_name" onClick={goDetail}>

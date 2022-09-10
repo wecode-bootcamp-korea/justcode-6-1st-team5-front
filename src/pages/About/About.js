@@ -31,7 +31,7 @@ export default function About() {
               <br />
               an ideal place for producing chocolates of excellent quality.
               <br />
-              The philosophy of ROEYC' for constantly producing perfect
+              The philosophy of ROECY' for constantly producing perfect
               <br /> chocolates still holds true, and the result is a brand that
               people
               <br /> around the world have come to love.
@@ -104,7 +104,7 @@ export default function About() {
           />
           <History
             year="2012"
-            intro="Established ROEYC’ Confect USA and opened flagship boutique on Madison Avenue."
+            intro="Established ROECY’ Confect USA and opened flagship boutique on Madison Avenue."
             name="last"
             img="./image/history/about_2.png"
             alt="choc9"
