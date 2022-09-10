@@ -24,6 +24,10 @@ const ReviewForm = ({ setRender }) => {
 
   const onSubmit = e => {
     e.preventDefault();
+    if (rating === '') {
+      alert('Please rate the product.');
+      return;
+    }
     const body = {
       name,
       email,
@@ -32,6 +36,7 @@ const ReviewForm = ({ setRender }) => {
       content,
       product_id: productId,
     };
+    console.log(body);
     setName('');
     setEmail('');
     setClicked([false, false, false, false, false]);
@@ -47,7 +52,8 @@ const ReviewForm = ({ setRender }) => {
     })
       .then(res => res.json())
       .then(json => {
-        alert(JSON.stringify(json.message));
+        console.log(json);
+        alert('your review has been submitted!');
         setRender(current => current + 1);
       });
   };

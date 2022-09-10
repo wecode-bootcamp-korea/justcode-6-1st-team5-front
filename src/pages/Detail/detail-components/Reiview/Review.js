@@ -21,6 +21,9 @@ const Review = forwardRef(({ rating }, ref) => {
     if (rating === 1) return '★☆☆☆☆';
     else return '☆☆☆☆☆';
   }
+
+  console.log(length);
+
   return (
     <>
       <section ref={ref} className="review_container">
@@ -40,13 +43,12 @@ const Review = forwardRef(({ rating }, ref) => {
           </div>
           <div className="line"></div>
           {visible && <ReviewForm setRender={setRender} />}
-          {{ length } === 0 && (
+          {length === 0 && (
             <div className="view_review">
               <div className="rating">★★★★★</div>
               <p>Be the first to review this item</p>
             </div>
           )}
-
           <ReviewList render={render} setLength={setLength} />
         </div>
       </section>
