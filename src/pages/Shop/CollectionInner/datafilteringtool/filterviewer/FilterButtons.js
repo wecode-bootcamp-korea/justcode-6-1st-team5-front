@@ -5,7 +5,7 @@ import ProductType from '../filteringkeyword/productType';
 import './filterbuttons.scss';
 
 function FilterButtons(props) {
-  const [display, setDisplay] = useState(false);
+  const [display, setDisplay, goodsState] = useState(false);
   //const [filterKeyword, setFilterKeyword] = useState(); 기존에는 상태값으로 관리했으나 그럴필요가 없었다.
   const {
     name,
@@ -19,7 +19,13 @@ function FilterButtons(props) {
 
   let setFilterKeyword;
   if (name === 'Producttype') {
-    setFilterKeyword = <ProductType mission1={mission1} mission2={mission2} />;
+    setFilterKeyword = (
+      <ProductType
+        mission1={mission1}
+        mission2={mission2}
+        goodsState={goodsState}
+      />
+    );
   } else if (name === 'Price') {
     setFilterKeyword = (
       <Price

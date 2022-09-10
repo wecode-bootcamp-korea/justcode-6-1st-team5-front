@@ -6,11 +6,10 @@ import Logo from './Logo/Logo';
 import { Cart } from './Cart/Cart';
 import Search from './Search/Search';
 
-export default function Header() {
+export default function Header({ isCartClicked, setIsCartClicked }) {
   const navigate = useNavigate();
   const location = useLocation();
   const [isShopClicked, setIsShopClicked] = useState(false);
-  const [isCartClicked, setIsCartClicked] = useState(false);
   const [isSearchClicked, setIsSearchClicked] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -141,10 +140,12 @@ export default function Header() {
           <div
             className="nav_menu"
             onClick={() => {
-              setIsShopClicked(false);
-              setIsSearchClicked(false);
-              if (isCartClicked === false) setIsCartClicked(true);
-              else setIsCartClicked(false);
+              if (window.location.pathname !== '/cart') {
+                setIsShopClicked(false);
+                setIsSearchClicked(false);
+                if (isCartClicked === false) setIsCartClicked(true);
+                else setIsCartClicked(false);
+              }
             }}
           >
             CART
@@ -156,8 +157,18 @@ export default function Header() {
         isShopClicked={isShopClicked}
         setIsShopClicked={setIsShopClicked}
       />
-      {isCartClicked && <Cart setIsCartClicked={setIsCartClicked} />}
-      {isSearchClicked && <Search setIsSearchClicked={setIsSearchClicked} />}
+      {isCartClicked && (
+        <Cart
+          setIsCartClicked={setIsCartClicked}
+          setScrollPosition={setScrollPosition}
+        />
+      )}
+      {isSearchClicked && (
+        <Search
+          setIsSearchClicked={setIsSearchClicked}
+          setScrollPosition={setScrollPosition}
+        />
+      )}
     </div>
   );
 }

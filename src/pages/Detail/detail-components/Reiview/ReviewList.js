@@ -24,7 +24,7 @@ const ReviewList = ({ render, setLength }) => {
         setReviewData(json);
         setLength(json.length);
       });
-  }, [render]);
+  }, [render, productId]);
 
   function starRate(rating) {
     if (rating === 5) return '★★★★★';
