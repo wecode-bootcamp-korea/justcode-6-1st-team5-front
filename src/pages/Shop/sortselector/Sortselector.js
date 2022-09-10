@@ -55,12 +55,18 @@ function Sortselector() {
           </button>
         </li>
         <li>
-          <button className="sortbutton" onClick={() => navi('?sort=newtoold')}>
+          <button
+            className="sortbutton"
+            onClick={() => navi('?sort=datetoold')}
+          >
             DATE, NEW TO OLD
           </button>
         </li>
         <li>
-          <button className="sortbutton" onClick={() => navi('?sort=oldtonew')}>
+          <button
+            className="sortbutton"
+            onClick={() => navi('?sort=datetonew')}
+          >
             DATE, OLD TO NEW
           </button>
         </li>
