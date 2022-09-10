@@ -26,7 +26,8 @@ const Detail = () => {
   useEffect(() => {
     fetch(`http://localhost:8000/product/detail/${productId}`)
       .then(res => res.json())
-      .then(json => {i
+      .then(json => {
+        i;
         setProduct(json);
       });
   }, [productId]);

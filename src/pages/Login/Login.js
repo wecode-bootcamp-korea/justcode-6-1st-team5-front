@@ -99,7 +99,7 @@ function Login() {
                 className={invalid ? 'errPopUp' : 'offscreen'}
                 aria-live="assertive"
               >
-                Please Check Your E-mail and Password
+                Please, Check Your E-mail and Password.
               </p>
             </div>
 
@@ -124,7 +124,7 @@ function Login() {
               >
                 E-mail should include "@"
                 <br />
-                Please check your email address
+                Please, check your email.
               </p>
 
               <input
@@ -145,9 +145,10 @@ function Login() {
                   pwdFocus && pwd && !validPwd ? 'cond_msg' : 'offscreen'
                 }
               >
-                Password length should be 8 to 24 characters. Must includes
+                Password should be 8 to 24 characters. must include at least one
+                uppercase,
                 <br />
-                uppercase, lowercase and one special characters(!,@,#,$).
+                lowercase and one special character(!,@,#,$).
                 <br />
               </p>
 
@@ -157,7 +158,7 @@ function Login() {
                 onMouseDown={postHandlerLogin}
                 disabled={!validPwd || !validEmail ? true : false}
               >
-                Login
+                LOGIN
               </button>
             </div>
 
