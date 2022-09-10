@@ -7,7 +7,6 @@ import FilterController from './datafilteringtool/filterviewer/filterController'
 
 function CollectionInner(props) {
   const [goodsState, setGoodsState] = useState([]); //데이터상태
-  const [hover, sethover] = useState(false);
 
   const location = useLocation();
   const navi = useNavigate();

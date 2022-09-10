@@ -27,6 +27,26 @@
     overflow: hidden;
   }
 
+  .big_hovered {
+    animation: fadeout 0.5s;
+
+    @keyframes fadeout {
+      0% {
+        background-size: cover;
+      }
+      0% {
+        background-size: 100%;
+      }
+    }
+  }
+
+  .see_more {
+    text-align: center;
+    padding-top: 49%;
+    font-size: 30px;
+    color: rgb(255, 254, 220);
+  }
+
   .big_product_name {
     margin: {
       top: 20px;
