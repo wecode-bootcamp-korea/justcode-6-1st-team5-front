@@ -107,12 +107,12 @@ function Cart({ setIsCartClicked, setScrollPosition }) {
           })
         ) : (
           <div className="not_login flex_center">
-            <div className="login_plz">Cart is empty</div>
+            <div className="nothing_text">Cart is empty</div>
           </div>
         )
       ) : (
         <div className="not_login flex_center">
-          <div className="login_plz">Only ROECY' members can order</div>
+          <div className="nothing_text">Only ROECY' members can order</div>
         </div>
       )}
 
