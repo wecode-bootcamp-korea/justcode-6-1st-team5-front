@@ -22,7 +22,7 @@ export default function About() {
               <br />
               <br />
               Precisely crafted using only the highest quality ingredients,
-              <br /> ROYCE' has been making exquisite, world class confections
+              <br /> ROECY' has been making exquisite, world class confections
               in
               <br />
               Hokkaido (the northernmost island of Japan). Hokkaido is best
@@ -31,7 +31,7 @@ export default function About() {
               <br />
               an ideal place for producing chocolates of excellent quality.
               <br />
-              The philosophy of ROYCE' for constantly producing perfect
+              The philosophy of ROEYC' for constantly producing perfect
               <br /> chocolates still holds true, and the result is a brand that
               people
               <br /> around the world have come to love.
@@ -52,7 +52,7 @@ export default function About() {
           />
           <History
             year="1983"
-            intro="ROYCE' Confect Co., Ltd was established."
+            intro="ROECY' Confect Co., Ltd was established."
             name="right"
             img="./image/history/about_1.png"
             alt="choc1"
@@ -78,33 +78,33 @@ export default function About() {
           />
           <History
             year="2002"
-            intro="Started production of 'Bar Chocolate Nut' and 'Baton Cookies'."
+            intro="Started production of 'Nut in Chocolate'."
             name="right"
             img="./image/history/about_5.png"
             alt="choc5"
           />
           <History
             year="2004"
-            intro="Introduced a unique confection, 'Potatochip Chocolate'."
+            intro="Introduced a unique confection, 'Chocolate in Chocolate'."
             img="./image/history/about_6.png"
             alt="choc6"
           />
           <History
             year="1983"
-            intro="Started production of 'Chocolate Wafers'."
+            intro="Started production of 'Chocolate Cake'."
             name="right"
             img="./image/history/about_7.png"
             alt="choc7"
           />
           <History
             year="2008"
-            intro="Launched in its boutiques the 'Prafeuille Chocolat Berry Cube'."
+            intro="Launched in its boutiques the 'Prafeuille Chocolate rose'."
             img="./image/history/about_8.png"
             alt="choc8"
           />
           <History
             year="2012"
-            intro="Established ROYCE’ Confect USA and opened flagship boutique on Madison Avenue."
+            intro="Established ROEYC’ Confect USA and opened flagship boutique on Madison Avenue."
             name="last"
             img="./image/history/about_2.png"
             alt="choc9"

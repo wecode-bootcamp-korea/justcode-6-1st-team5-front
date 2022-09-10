@@ -7,7 +7,8 @@ import FilterController from './datafilteringtool/filterviewer/filterController'
 
 function CollectionInner(props) {
   const [goodsState, setGoodsState] = useState([]); //데이터상태
-  const navigate = useNavigate();
+  const [hover, sethover] = useState(false);
+
   const location = useLocation();
   const navi = useNavigate();
 
@@ -21,6 +22,7 @@ function CollectionInner(props) {
   //       console.log(data);
   //     });
   // }, []);
+  // >>>>>>>>>>>Mock-up 데이터
 
   useEffect(() => {
     fetch(`http://localhost:8000/product/${location.search}`, {
@@ -46,6 +48,24 @@ function CollectionInner(props) {
     navi(`?min=71&max=109`);
   };
 
+  // const basic = {
+  //   width: '18vw',
+  //   height: '18vw',
+  //   backgroundSize: 'cover',
+  //   backgroundImage: 'url(' + img + ')',
+  // };
+
+  // const hovered = {
+  //   width: '18vw',
+  //   height: '18vw',
+  //   backgroundSize: '120%',
+  //   backgroundPosition: '50% 50%',
+  //   backgroundImage:
+  //     'linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(' +
+  //     img +
+  //     ')',
+  // };
+
   return (
     <div className="collection_inner">
       <FilterController
@@ -53,30 +73,18 @@ function CollectionInner(props) {
         setGoodsState={setGoodsState}
       />
       <div className="products_space">
-        {props.sortbutton
+        {sortbutton
           ? goodsState.map(f => {
               return (
-                <div
-                  onClick={() => {
-                    navigate(`/product/detail/${f.id}`);
-                  }}
-                  key={f.id}
-                  className="product_wrapper_wrapper"
-                >
-                  <ProductList goodsdata={f} />
+                <div key={f.id} className="big_product_wrapper_wrapper">
+                  <BigProductList goodsdata={f} id={f.id} />
                 </div>
               );
             })
           : goodsState.map(f => {
               return (
-                <div
-                  onClick={() => {
-                    navigate(`/product/detail/${f.id}`);
-                  }}
-                  key={f.id}
-                  className="big_product_wrapper_wrapper"
-                >
-                  <BigProductList goodsdata={f} />
+                <div key={f.id} className="product_wrapper_wrapper">
+                  <ProductList goodsdata={f} id={f.id} />
                 </div>
               );
             })}

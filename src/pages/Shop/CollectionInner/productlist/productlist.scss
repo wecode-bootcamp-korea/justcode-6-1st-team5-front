@@ -61,11 +61,15 @@
   }
 
   .product_name {
-    padding-top: 20px;
+    margin: {
+      top: 20px;
+      bottom: 30px;
+    }
     font-size: 13px;
-    height: 50px;
+    height: 10px;
     background-color: rgb(255, 255, 255);
     text-align: center;
+    cursor: pointer;
   }
 
   .star {

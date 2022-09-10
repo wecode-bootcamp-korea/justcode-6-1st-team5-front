@@ -1,7 +1,11 @@
 import './bigproductlist.scss';
+import { useNavigate } from 'react-router-dom';
 
-function ProductList({ goodsdata }) {
+function ProductList(props) {
+  const { goodsdata, id } = props;
+  const navigate = useNavigate();
   const rating = goodsdata.rating;
+
   let starnumber;
   if (rating === '1') {
     starnumber = <img className="big_star_img" src="./image/rating/1.jpg" />;
@@ -15,13 +19,19 @@ function ProductList({ goodsdata }) {
     starnumber = <img className="big_star_img" src="./image/rating/5.jpg" />;
   }
 
+  const goDetail = () => {
+    navigate(`/product/detail/${id}`);
+  };
+
   return (
     <div className="big_product_wrapper">
       <div className="big_product">
-        <div id="big_goods_img_wrapper">
+        <div id="big_goods_img_wrapper" onClick={goDetail}>
           <img id="big_goods_img" src={goodsdata.photos} />
         </div>
-        <div className="big_product_name">{goodsdata.name}</div>
+        <div className="big_product_name" onClick={goDetail}>
+          {goodsdata.name}
+        </div>
         <div className="big_star">{starnumber}</div>
         <div id="big_product_price">${goodsdata.price}</div>
       </div>
