@@ -5,7 +5,7 @@ function Flavor(props) {
   const navi = useNavigate();
   const detailViewer = () => {
     mission(p => !p);
-    missionstate ? navi('/shop') : navi('?flavor=maccha');
+    missionstate ? navi('/shop/1') : navi('?flavor=maccha');
   };
 
   return (

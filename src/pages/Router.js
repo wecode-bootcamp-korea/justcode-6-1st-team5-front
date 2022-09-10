@@ -41,7 +41,7 @@ function Router() {
           path="/product/detail/:id"
           element={<Detail setIsCartClicked={setIsCartClicked} />}
         />
-        <Route path="/shop" element={<Shop />} />
+        <Route path="/shop/:id" element={<Shop />} />
         <Route path="/location" element={<Location />} />
         <Route path="/cart" element={<CartDetail />} />
         <Route path="/about" element={<About />} />
