@@ -65,7 +65,6 @@ function Contact() {
               Customer Care Team is available Monday to Friday, 9am to 5pm ET.
               We are closed on major US holiday
             </p>
-
             <p>
               Thank you for visiting <span>ROECY' </span>website
             </p>

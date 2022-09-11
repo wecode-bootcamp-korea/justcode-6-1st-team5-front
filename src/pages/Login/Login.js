@@ -33,7 +33,7 @@ function Login() {
   };
 
   const postHandlerLogin = e => {
-    e.preventDefault();
+    // e.preventDefault();
 
     fetch('http://localhost:8000/users/login', {
       method: 'POST',
@@ -54,6 +54,14 @@ function Login() {
           setInvalid('activated');
         }
       });
+  };
+
+  const handleKeyDown = e => {
+    if (e.key === 'Enter') {
+      {
+        postHandlerLogin();
+      }
+    }
   };
 
   const tokenStatus = localStorage.getItem('token');
@@ -143,6 +151,7 @@ function Login() {
                 required
                 aria-invalid={validPwd ? 'false' : 'ture'}
                 aria-describedby="pwdnote"
+                onKeyDown={handleKeyDown}
                 onFocus={() => setPwdFocus(true)}
                 onBlur={() => setPwdFocus(false)}
               />
