@@ -1,9 +1,9 @@
 import './Header.scss';
-import { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import ExpandHeader from './ExpandHeader/ExpandHeader';
 import Logo from './Logo/Logo';
-import { Cart } from './Cart/Cart';
+import Cart from './Cart/Cart';
 import Search from './Search/Search';
 
 export default function Header({ isCartClicked, setIsCartClicked }) {
@@ -78,7 +78,7 @@ export default function Header({ isCartClicked, setIsCartClicked }) {
           <div
             className="nav_menu"
             onClick={() => {
-              moveAndScrollToTop('/shop');
+              moveAndScrollToTop('/shop/1');
               setIsSearchClicked(false);
               setIsShopClicked(false);
               setIsCartClicked(false);

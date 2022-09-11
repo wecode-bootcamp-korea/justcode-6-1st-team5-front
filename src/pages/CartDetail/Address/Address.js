@@ -23,6 +23,7 @@ export function Address({ mainAddress, setDetailedAddress, setMainAddress }) {
             type="text"
             className="detailed_address flex_center"
             placeholder="Detailed Address"
+            autocomplete="off"
             onChange={e => {
               setDetailedAddress(e.target.value);
             }}

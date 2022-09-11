@@ -6,7 +6,6 @@ import Modal from 'react-modal';
 export default function Search({ setIsSearchClicked, setScrollPosition }) {
   const navigate = useNavigate();
 
-  let price = 10000;
   const [itemData, setItemData] = useState([]);
   const [inputValue, setInputValue] = useState('');
 
@@ -26,7 +25,7 @@ export default function Search({ setIsSearchClicked, setScrollPosition }) {
 
   const filtered = itemData.filter(el => {
     return el.name
-      .replace(/(\s*)(\“*)(\”*)/g, '')
+      .replace(/(\s*)(\“*)(\”*)(\'*)/g, '')
       .toUpperCase()
       .includes(inputValue.replace(/(\s*)/g, '').toUpperCase());
   });
@@ -47,9 +46,11 @@ export default function Search({ setIsSearchClicked, setScrollPosition }) {
           name="text"
           className="input_search"
           placeholder="SEARCH"
+          autocomplete="off"
           onChange={e => {
             setInputValue(e.target.value);
           }}
+          style={{ textTransform: 'uppercase' }}
         />
       </div>
 

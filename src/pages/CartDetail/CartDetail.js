@@ -1,11 +1,18 @@
 import './CartDetail.scss';
-import { ItemBox } from '../../components/Header/Cart/Cart';
+import CartItemBox from './CartItemBox/CartItemBox';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Address } from './Address/Address';
 import { useNavigate } from 'react-router-dom';
 
 export default function CartDetail() {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, []);
+
   const navigate = useNavigate();
   const [itemData, setItemData] = useState({
     cart_id: [],
@@ -72,7 +79,7 @@ export default function CartDetail() {
         <div className="items_box">
           {itemData.product_name.map((el, i) => {
             return (
-              <ItemBox
+              <CartItemBox
                 cartId={itemData.cart_id[i]}
                 productId={itemData.product_id[i]}
                 key={itemData.product_id[i]}
@@ -93,6 +100,7 @@ export default function CartDetail() {
               cols="30"
               rows="10"
               placeholder="How Can We Help You?"
+              autocomplete="off"
               onChange={e => {
                 setOrderNote(e.target.value);
               }}

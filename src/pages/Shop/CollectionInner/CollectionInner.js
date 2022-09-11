@@ -39,7 +39,6 @@ function CollectionInner(props) {
       .then(res => res.json())
       .then(data => {
         setGoodsState(data);
-        console.log(data);
       });
   }, [location.search, pageid]);
 
