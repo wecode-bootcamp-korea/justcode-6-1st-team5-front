@@ -53,7 +53,7 @@ function Contact() {
           <img
             className="contact_img"
             alt="contact img"
-            src="https://images.unsplash.com/photo-1610450949065-1f2841536c88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+            src="https://images.unsplash.com/photo-1600070360386-b5377405efa8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1180&q=80"
           />
           <div className="description_text">
             <p>We're here to answer your questions</p>
