@@ -26,7 +26,6 @@ const Detail = ({ setIsCartClicked }) => {
     fetch(`http://localhost:8000/product/detail/${productId}`)
       .then(res => res.json())
       .then(json => {
-        i;
         setProduct(json);
       });
   }, [productId]);

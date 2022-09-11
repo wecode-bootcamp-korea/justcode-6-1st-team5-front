@@ -84,6 +84,13 @@ function Login() {
     setInvalid('');
   }, [email, pwd]);
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, []);
+
   return (
     <>
       {loggedIn ? (
