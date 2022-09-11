@@ -58,18 +58,6 @@ function Signup() {
       });
   };
 
-  // useEffect(() => {
-  //   userRef.current.focus();
-  // }, []);
-
-  // useEffect(() => {
-  //   pwdRef.current.focus();
-  // }, []);
-
-  // useEffect(()=>{
-  //   email.current.focus()
-  // }, [])
-
   useEffect(() => {
     setValidName(USER_REGEX.test(user));
   }, [user]);
@@ -101,7 +89,7 @@ function Signup() {
                   className={exist ? 'errPopUp' : 'offscreen'}
                   aria-live="assertive"
                 >
-                  Email has already taken.
+                  Email has already been taken.
                 </p>
               </div>
 
@@ -127,9 +115,9 @@ function Signup() {
                 >
                   Name length should be 3 to 30 characters.
                   <br />
-                  Only uppecase and smallcase will allowed.
+                  No special characters allowed
                   <br />
-                  Please, input your name .
+                  Please, input your name.
                 </p>
 
                 <input
@@ -154,7 +142,7 @@ function Signup() {
                 >
                   E-mail should include "@"
                   <br />
-                  Please check your email address
+                  Please check your email.
                 </p>
 
                 <input
@@ -175,10 +163,9 @@ function Signup() {
                     pwdFocus && pwd && !validPwd ? 'cond_msg' : 'offscreen'
                   }
                 >
-                  Password length should be 8 to 24 characters. Must includes
+                  Password length should be 8 to 24 characters.
                   <br />
-                  uppercase, lowercase and one special characters(!,@,#,$).
-                  <br />
+                  No special characters allowed. <br />
                 </p>
 
                 <button

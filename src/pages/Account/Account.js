@@ -3,10 +3,16 @@ import './Account.scss';
 import { useState, useEffect } from 'react';
 
 import Logout from '../../components/Logout/Logout';
+import { useParams } from 'react-router-dom';
 
 function Account() {
   const [userName, setUserName] = useState([]);
   const [orderData, setOrderData] = useState(true);
+  const [item, setItem] = useState([]);
+  const [passedItem, setPassedItem] = useState([]);
+
+  const params = useParams();
+  // const productId = 1;
 
   useEffect(() => {
     fetch(`http://localhost:8000/order/${localStorage.getItem('token')}`, {
@@ -16,11 +22,32 @@ function Account() {
     })
       .then(res => res.json())
       .then(data => {
+        console.log(data);
         if (data[0] == null) {
           setOrderData(false);
         }
       });
   }, []);
+
+  useEffect(() => {
+    fetch(`http://localhost:8000/order/${localStorage.getItem('token')}`, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(res => res.json())
+      .then(data => setItem(data));
+  }, []);
+
+  // useEffect(() => {
+  //   fetch(`http://localhost:8000/product/detail/:id `, {
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //   })
+  //     .then(res => res.json())
+  //     .then(data => console.log(data));
+  // }, []);
 
   useEffect(() => {
     fetch('http://localhost:8000/users/name', {
@@ -58,6 +85,13 @@ function Account() {
           {orderData ? (
             <ul>Your order will be shipped within 3 business day</ul>
           ) : (
+            // <ul>
+            //   {item.map(item => (
+            //     <li key={item}>
+            //       <div>{item.product_id}</div>
+            //     </li>
+            //   ))}
+            // </ul>
             <p className="account_order_text">
               You haven't placed any order yet
             </p>

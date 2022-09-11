@@ -33,7 +33,7 @@ function Login() {
   };
 
   const postHandlerLogin = e => {
-    e.preventDefault();
+    // e.preventDefault();
 
     fetch('http://localhost:8000/users/login', {
       method: 'POST',
@@ -54,6 +54,14 @@ function Login() {
           setInvalid('activated');
         }
       });
+  };
+
+  const handleKeyDown = e => {
+    if (e.key === 'Enter') {
+      {
+        postHandlerLogin();
+      }
+    }
   };
 
   const tokenStatus = localStorage.getItem('token');
@@ -84,6 +92,13 @@ function Login() {
     setInvalid('');
   }, [email, pwd]);
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, []);
+
   return (
     <>
       {loggedIn ? (
@@ -99,7 +114,7 @@ function Login() {
                 className={invalid ? 'errPopUp' : 'offscreen'}
                 aria-live="assertive"
               >
-                Please Check Your E-mail and Password
+                Please, Check Your E-mail and Password.
               </p>
             </div>
 
@@ -124,7 +139,7 @@ function Login() {
               >
                 E-mail should include "@"
                 <br />
-                Please check your email address
+                Please, check your email.
               </p>
 
               <input
@@ -136,6 +151,7 @@ function Login() {
                 required
                 aria-invalid={validPwd ? 'false' : 'ture'}
                 aria-describedby="pwdnote"
+                onKeyDown={handleKeyDown}
                 onFocus={() => setPwdFocus(true)}
                 onBlur={() => setPwdFocus(false)}
               />
@@ -145,9 +161,10 @@ function Login() {
                   pwdFocus && pwd && !validPwd ? 'cond_msg' : 'offscreen'
                 }
               >
-                Password length should be 8 to 24 characters. Must includes
+                Password should be 8 to 24 characters. must include at least one
+                uppercase,
                 <br />
-                uppercase, lowercase and one special characters(!,@,#,$).
+                lowercase and one special character(!,@,#,$).
                 <br />
               </p>
 
@@ -157,7 +174,7 @@ function Login() {
                 onMouseDown={postHandlerLogin}
                 disabled={!validPwd || !validEmail ? true : false}
               >
-                Login
+                LOGIN
               </button>
             </div>
 
