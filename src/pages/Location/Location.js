@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Map, MapMarker, MarkerClusterer } from 'react-kakao-maps-sdk';
+import React, { useState, useEffect } from 'react';
+import { Map } from 'react-kakao-maps-sdk';
 
 import LocationList from './LocationList';
 import Markers from './Markers';
@@ -45,7 +45,7 @@ const Location = () => {
               placeholder="Type a postcode or address..."
             />
             <button onClick={handleSearch}>
-              <img src="/image/search_icon.png" />
+              <img src="/image/search_icon.png" alt="pin_icon" />
             </button>
           </div>
           <div className="list">

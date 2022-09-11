@@ -5,7 +5,6 @@ import PhotoList from './detail-components/Photo/PhotoList';
 import Description from './detail-components/Description/Description';
 import ReviewContainer from './detail-components/Reiview/ReviewContainer';
 import Trending from '../Home/Trending/Trending';
-import Carousel from '../Home/Carousel/Carousel';
 
 import './Detail.scss';
 
@@ -14,13 +13,6 @@ const Detail = ({ setIsCartClicked }) => {
   const productId = params.id;
 
   const [product, setProduct] = useState([]);
-  // useEffect(() => {
-  //   fetch('http://localhost:3000/data/mockDataEng.json')
-  //     .then(res => res.json())
-  //     .then(json => {
-  //       setProduct(json);
-  //     });
-  // }, []);
 
   useEffect(() => {
     fetch(`http://localhost:8000/product/detail/${productId}`)

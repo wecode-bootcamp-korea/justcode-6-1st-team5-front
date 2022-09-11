@@ -35,6 +35,7 @@ const ReviewList = ({ render, setLength }) => {
             key={review.id}
             review={review}
             setReviewData={setReviewData}
+            setLength={setLength}
           />
         );
       })}
