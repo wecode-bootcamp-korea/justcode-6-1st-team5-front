@@ -1,92 +1,83 @@
-.review_container {
-  .star_rating {
-    padding: 40px 0;
-    text-align: center;
-    font-size: 26px;
-    letter-spacing: 3px;
-    color: rgb(69, 68, 68);
-  }
-
-  .review_wrapper {
-    margin: 0 105px;
-
-    .write_btn {
-      position: relative;
-      height: 40px;
-
-      span {
-        display: flex;
-        position: absolute;
-        justify-content: space-evenly;
-        align-items: center;
-        right: 0;
-        width: 155px;
-        height: 38px;
-        border: 1px solid lightgray;
-        border-radius: 3px;
-        box-shadow: 3px 3px 5px gray;
-
-        img {
-          height: 12px;
-          padding-left: 10px;
-        }
-
-        p {
-          font-size: 13px;
-          font-weight: 500;
-          cursor: pointer;
-        }
-
-        &:hover {
-          box-shadow: none;
-        }
-      }
-    }
-
-    .tab-review {
-      position: relative;
-      height: 49px;
-
-      div {
-        position: absolute;
-        left: 0;
-        padding: 15px 10px;
-        border-bottom: 3px solid black;
-      }
-
-      span {
-        font-size: 16px;
-      }
-
-      .num {
-        padding: 5px;
-        margin-left: 8px;
-        background-color: rgb(251, 251, 251);
-        border-radius: 3px;
-      }
-    }
-  }
-
-  .line {
-    border-top: 1px solid lightgray;
-  }
-
-  .view_review {
-    margin: 50px 0;
-    text-align: center;
-    color: gray;
-
-    .rating {
-      letter-spacing: 3px;
-      font-size: 18px;
-    }
-
-    p {
-      padding: 15px 0;
-    }
-  }
+@mixin font {
+  font-family: 'Jost', sans-serif;
+  font-weight: 350;
 }
 
-.space {
-  margin-bottom: 15px;
+.review_box {
+  position: relative;
+  display: flex;
+  padding: 30px 0px;
+  border-top: 1px solid lightgray;
+
+  .writer_info {
+    display: flex;
+    flex-direction: column;
+    margin-right: 30px;
+    width: 15%;
+
+    .star_rate {
+      color: rgb(255, 208, 0);
+      letter-spacing: 4px;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .writer_name,
+    .created_at {
+      margin-bottom: 10px;
+      color: gray;
+      font-size: 14px;
+    }
+  }
+
+  .review_content {
+    .title {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .content {
+      font-size: 16px;
+    }
+  }
+
+  .delete_btn {
+    position: absolute;
+    right: 0;
+
+    img {
+      width: 15px;
+      position: absolute;
+      right: 0;
+
+      &:hover {
+        opacity: 30%;
+      }
+    }
+
+    form {
+      input {
+        padding: 3px;
+        height: 25px;
+        width: 200px;
+        border: 1.5px solid lightgray;
+        border-radius: 0;
+        @include font;
+      }
+
+      button {
+        margin-left: 3px;
+        height: 25px;
+        width: 50px;
+        border: 1px solid lightgray;
+        border-radius: 1px;
+        background-color: white;
+        @include font;
+
+        &:hover {
+          opacity: 50%;
+        }
+      }
+    }
+  }
 }

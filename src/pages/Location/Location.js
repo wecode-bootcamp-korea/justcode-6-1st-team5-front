@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Map, MapMarker, MarkerClusterer } from 'react-kakao-maps-sdk';
+import React, { useState, useEffect } from 'react';
+import { Map } from 'react-kakao-maps-sdk';
 
 import LocationList from './LocationList';
 import Markers from './Markers';
@@ -7,6 +7,7 @@ import './Location.scss';
 
 const Location = () => {
   const [locations, setLocations] = useState([]);
+  const [value, setValue] = useState('');
   const [searchInput, setSearchInput] = useState('');
 
   useEffect(() => {
@@ -18,11 +19,15 @@ const Location = () => {
   }, []);
 
   const onChange = e => {
-    setSearchInput(e.target.value);
+    setValue(e.target.value);
   };
 
   const onClick = e => {
     setSearchInput(e.target.innerHTML);
+  };
+
+  const handleSearch = () => {
+    setSearchInput(value);
   };
 
   const setStores = locations.filter(location => {
@@ -39,19 +44,15 @@ const Location = () => {
               onChange={onChange}
               placeholder="Type a postcode or address..."
             />
-            <button>
-              <img src="/image/search_icon.png" />
+            <button onClick={handleSearch}>
+              <img src="/image/search_icon.png" alt="pin_icon" />
             </button>
           </div>
           <div className="list">
             {setStores !== undefined &&
               setStores.map(store => {
                 return (
-                  <LocationList
-                    key={locations.id}
-                    data={store}
-                    onClick={onClick}
-                  />
+                  <LocationList key={store.id} data={store} onClick={onClick} />
                 );
               })}
           </div>

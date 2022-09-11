@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
+import Review from './Review';
 import '../Reiview/ReviewList.scss';
 
 const ReviewList = ({ render, setLength }) => {
@@ -26,34 +27,16 @@ const ReviewList = ({ render, setLength }) => {
       });
   }, [render, productId]);
 
-  function starRate(rating) {
-    if (rating === 5) return '★★★★★';
-    if (rating === 4) return '★★★★☆';
-    if (rating === 3) return '★★★☆☆';
-    if (rating === 2) return '★★☆☆☆';
-    if (rating === 1) return '★☆☆☆☆';
-    else return '☆☆☆☆☆';
-  }
-
   return (
     <div className="reveiw_list_container">
-      {/* <button onClick={onClick}>리뷰 보기</button> */}
       {reviewData.map(review => {
-        const { id, name, rating, title, content, created_at } = review;
         return (
-          <>
-            <div className="review_box">
-              <div className="writer_info">
-                <span className="star_rate">{starRate(Number(rating))}</span>
-                <span className="writer_name">{name}</span>
-                <span className="created_at">{created_at}</span>
-              </div>
-              <div className="review_content">
-                <p className="title">{title}</p>
-                <p className="content">{content}</p>
-              </div>
-            </div>
-          </>
+          <Review
+            key={review.id}
+            review={review}
+            setReviewData={setReviewData}
+            setLength={setLength}
+          />
         );
       })}
     </div>

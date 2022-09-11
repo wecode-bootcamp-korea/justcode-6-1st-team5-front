@@ -17,7 +17,8 @@
     flex-direction: column;
     justify-content: space-around;
     padding-top: 20px;
-    height: 114px;
+    line-height: 25px;
+    height: 160px;
 
     .product_name {
       letter-spacing: 4px;
@@ -68,6 +69,10 @@
         font-size: 22px;
         cursor: pointer;
         @include font;
+
+        &:hover {
+          opacity: 30%;
+        }
       }
 
       input {

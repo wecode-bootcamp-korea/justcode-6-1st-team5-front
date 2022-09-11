@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 
 import './Description.scss';
 
@@ -8,18 +8,7 @@ const Description = ({
   setIsCartClicked,
   rate,
 }) => {
-  const {
-    id,
-    photos,
-    name,
-    rating,
-    price,
-    info,
-    allerges,
-    temperature,
-    nutrition,
-    categories,
-  } = description;
+  const { id, name, rating, price, info, allerges, temperature } = description;
 
   const [quantity, setQuantity] = useState(1);
   const pureNum = Math.round(price * quantity * 100) / 100;
@@ -31,7 +20,8 @@ const Description = ({
   };
 
   const onChange = e => {
-    setQuantity(Number(e.target.value));
+    if (isNaN(e.target.value)) return;
+    else setQuantity(Number(e.target.value));
   };
 
   function starRate(rating) {
@@ -46,7 +36,7 @@ const Description = ({
   const onSubmit = async e => {
     e.preventDefault();
     const body = {
-      token: localStorage['token'],
+      token: localStorage.token,
       product_id: id,
       num: quantity,
     };
@@ -54,7 +44,7 @@ const Description = ({
     await fetch('http://localhost:8000/cart', {
       method: 'POST',
       headers: {
-        Authorization: localStorage['token'],
+        Authorization: localStorage.token,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(body),
