@@ -35,6 +35,7 @@ function Cart({ setIsCartClicked, setScrollPosition }) {
         url: `http://localhost:8000/cart/${localStorage.getItem('token')}`,
       }).then(res => {
         if (res.data[0].num.length !== 0) {
+          console.log(res.data[0]);
           setItemData(res.data[0]);
         }
       });
