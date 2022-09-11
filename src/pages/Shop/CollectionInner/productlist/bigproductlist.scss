@@ -27,12 +27,36 @@
     overflow: hidden;
   }
 
+  .big_hovered {
+    animation: fadeout 0.5s;
+
+    @keyframes fadeout {
+      0% {
+        background-size: cover;
+      }
+      0% {
+        background-size: 100%;
+      }
+    }
+  }
+
+  .big_see_more {
+    text-align: center;
+    padding-top: 49%;
+    font-size: 30px;
+    color: rgb(255, 254, 220);
+  }
+
   .big_product_name {
-    padding-top: 20px;
+    margin: {
+      top: 20px;
+      bottom: 30px;
+    }
     font-size: 13px;
-    height: 50px;
+    height: 20px;
     background-color: rgb(255, 255, 255);
     text-align: center;
+    cursor: pointer;
   }
 
   .big_star {
@@ -46,6 +70,7 @@
   }
   .big_star_img {
     height: 10px;
+    color: rgb(255, 178, 70);
   }
   #big_product_price {
     font-size: 13px;

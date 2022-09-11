@@ -2,16 +2,25 @@ import ProductList from './productlist/ProductList';
 import BigProductList from './productlist/BigProductList';
 import './collectioninner.scss';
 import { useEffect, useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, useParams } from 'react-router-dom';
 import FilterController from './datafilteringtool/filterviewer/filterController';
+// import ProductType from './datafilteringtool/filteringkeyword/productType';
 
 function CollectionInner(props) {
   const [goodsState, setGoodsState] = useState([]); //데이터상태
-  const navigate = useNavigate();
+  const [url, seturl] = useState([]);
+  // const [productType1, setproductType1] = useState();
+
   const location = useLocation();
   const navi = useNavigate();
+  const params = useParams();
+  const pageid = params.id;
 
   const { sortbutton } = props;
+  //const [url, seturl] = useEffect([]);
+
+  //const newurl = {ecommerce : 'producttype:ecommerce'}
+  //url.join('&') >> url 처리
 
   // useEffect(() => {
   //   fetch('./mockdata/product.json')
@@ -21,9 +30,10 @@ function CollectionInner(props) {
   //       console.log(data);
   //     });
   // }, []);
+  // >>>>>>>>>>>Mock-up 데이터
 
   useEffect(() => {
-    fetch(`http://localhost:8000/product/${location.search}`, {
+    fetch(`http://localhost:8000/shop/${pageid}${location.search}`, {
       method: 'GET',
     })
       .then(res => res.json())
@@ -31,19 +41,26 @@ function CollectionInner(props) {
         setGoodsState(data);
         console.log(data);
       });
-  }, [location.search]);
+  }, [location.search, pageid]);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'auto',
+    });
+  }, [location.search, pageid]);
 
   //console.log('test', goodsState.length);
   const pagination = () => {
-    navi(`?min=9&max=39`);
+    navi(`/shop/1`);
   };
 
   const pagination2 = () => {
-    navi(`?min=40&max=70`);
+    navi(`/shop/2`);
   };
 
   const pagination3 = () => {
-    navi(`?min=71&max=109`);
+    navi(`/shop/3`);
   };
 
   return (
@@ -53,30 +70,18 @@ function CollectionInner(props) {
         setGoodsState={setGoodsState}
       />
       <div className="products_space">
-        {props.sortbutton
+        {sortbutton
           ? goodsState.map(f => {
               return (
-                <div
-                  onClick={() => {
-                    navigate(`/product/detail/${f.id}`);
-                  }}
-                  key={f.id}
-                  className="product_wrapper_wrapper"
-                >
-                  <ProductList goodsdata={f} />
+                <div key={f.id} className="product_wrapper_wrapper">
+                  <ProductList goodsdata={f} id={f.id} />
                 </div>
               );
             })
           : goodsState.map(f => {
               return (
-                <div
-                  onClick={() => {
-                    navigate(`/product/detail/${f.id}`);
-                  }}
-                  key={f.id}
-                  className="big_product_wrapper_wrapper"
-                >
-                  <BigProductList goodsdata={f} />
+                <div key={f.id} className="big_product_wrapper_wrapper">
+                  <BigProductList goodsdata={f} id={f.id} />
                 </div>
               );
             })}
