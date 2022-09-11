@@ -7,6 +7,7 @@ import './Location.scss';
 
 const Location = () => {
   const [locations, setLocations] = useState([]);
+  const [value, setValue] = useState('');
   const [searchInput, setSearchInput] = useState('');
 
   useEffect(() => {
@@ -18,11 +19,15 @@ const Location = () => {
   }, []);
 
   const onChange = e => {
-    setSearchInput(e.target.value);
+    setValue(e.target.value);
   };
 
   const onClick = e => {
     setSearchInput(e.target.innerHTML);
+  };
+
+  const handleSearch = () => {
+    setSearchInput(value);
   };
 
   const setStores = locations.filter(location => {
@@ -39,7 +44,7 @@ const Location = () => {
               onChange={onChange}
               placeholder="Type a postcode or address..."
             />
-            <button>
+            <button onClick={handleSearch}>
               <img src="/image/search_icon.png" />
             </button>
           </div>
@@ -47,11 +52,7 @@ const Location = () => {
             {setStores !== undefined &&
               setStores.map(store => {
                 return (
-                  <LocationList
-                    key={locations.id}
-                    data={store}
-                    onClick={onClick}
-                  />
+                  <LocationList key={store.id} data={store} onClick={onClick} />
                 );
               })}
           </div>

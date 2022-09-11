@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import PhotoList from './detail-components/Photo/PhotoList';
 import Description from './detail-components/Description/Description';
-import Review from './detail-components/Reiview/Review';
+import ReviewContainer from './detail-components/Reiview/ReviewContainer';
 import Trending from '../Home/Trending/Trending';
 import Carousel from '../Home/Carousel/Carousel';
 
@@ -26,7 +26,6 @@ const Detail = ({ setIsCartClicked }) => {
     fetch(`http://localhost:8000/product/detail/${productId}`)
       .then(res => res.json())
       .then(json => {
-        console.log(json);
         setProduct(json);
       });
   }, [productId]);
@@ -58,7 +57,7 @@ const Detail = ({ setIsCartClicked }) => {
           />
         </div>
       </section>
-      <Review rating={rating} ref={reviewRef} />
+      <ReviewContainer rating={rating} ref={reviewRef} />
       <Trending />
     </>
   );

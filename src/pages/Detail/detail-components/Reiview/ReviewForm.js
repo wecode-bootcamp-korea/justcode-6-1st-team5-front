@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Review from './Review';
 
 import './ReviewForm.scss';
 
@@ -52,9 +51,8 @@ const ReviewForm = ({ setRender }) => {
     })
       .then(res => res.json())
       .then(json => {
-        console.log(json);
-        alert('your review has been submitted!');
-        setRender(current => current + 1);
+        alert('Your review has been submitted!');
+        setRender(current => !current);
       });
   };
 
