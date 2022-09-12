@@ -4,15 +4,19 @@
 
 ## 프로젝트명 ROECY' Chocolate
 
-ROYCE' Chocolate 공식 홈페이지 클론 프로젝트입니다.
-ROYCE's official website clone project.
+**ROYCE' Chocolate 공식 홈페이지 클론 프로젝트입니다.**
+
+**ROYCE's official website clone project.**
 
 https://roycechocolate.com/
 
-개발 기간: 2022-08-29 ~ 2022-09-08 14:00
-개발 인원: 6명
-FE : 김진영, 김유현, 정예원, 천찬영
-BE : 오서준, 오지호
+**개발 기간**: 2022-08-29 ~ 2022-09-08 14:00
+
+**개발 인원**: 6명
+
+**FE** : 김진영, 김유현, 정예원, 천찬영
+
+**BE** : 오서준, 오지호
 
 ### GitHub 주소
 * [ROECY' FE](https://github.com/wecode-bootcamp-korea/justcode-6-1st-ypt-front)
