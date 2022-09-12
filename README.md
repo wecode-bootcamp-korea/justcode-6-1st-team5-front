@@ -1,8 +1,8 @@
-# 프로젝트 소개
+# 프로젝트 소개 🍫
 
 ![](https://velog.velcdn.com/images/jinyoung985/post/2cf13d22-b82d-4473-ad26-3c17632802b4/image.png)
 
-## 프로젝트명 'ROECY' Chocolate'
+## 프로젝트명 ROECY' Chocolate
 
 ROYCE' Chocolate 공식 홈페이지 클론 프로젝트입니다.
 ROYCE's official website clone project.
